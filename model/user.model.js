@@ -5,7 +5,7 @@ const User = sequelize.define('users', {
     email: {
         type: Sequelize.STRING,
         allowNull: false,
-        uniqueKey: true,
+        uniqueKey: false,
     },
     password: {
         type: Sequelize.TEXT,
@@ -29,11 +29,11 @@ const User = sequelize.define('users', {
     },
     spreadsheet: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     software: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     subscribe: {
         type: Sequelize.STRING,
@@ -42,11 +42,11 @@ const User = sequelize.define('users', {
     },
     social_media: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     client_location: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     token: {
         type: Sequelize.TEXT,

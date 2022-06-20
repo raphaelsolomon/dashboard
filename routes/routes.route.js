@@ -88,7 +88,7 @@ route.get('/delete/:id', isAuthenticated, async(req, res, next) => {
 //===============================AUTHENTICATION MODE===========================================
 
 route.get('/register', async(req, res, next) => {
-    return res.status(200).json({message: 'not ready....'});
+    return res.status(200).render({ message: 'not ready....' });
 });
 
 route.post('/register', async(req, res, next) => {
