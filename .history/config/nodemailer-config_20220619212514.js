@@ -7,7 +7,7 @@ require('dotenv').config();
 exports.sendLink = (link, email) => {
 
     let transporter = nodemailer.createTransport({
-      //  host: process.env.NODEMAILERSMTP,
+        host: process.env.NODEMAILERSMTP,
         service: 'gmail',
         auth: {
             user: process.env.NODEMAILERUSER, // generated ethereal user

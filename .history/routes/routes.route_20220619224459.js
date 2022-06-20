@@ -125,7 +125,7 @@ route.post('/forget-password', async(req, res, next) => {
         user.save();
         let sentEmail = sendLink(`http://192.168.100.10:4000/reset-password?id=${token}}`, email);
         if (sentEmail) {
-            return res.status(202).redirect('/login');
+            return res.status(404).redirect('/login');
         }
         return res.status(404).redirect('/404');
     }

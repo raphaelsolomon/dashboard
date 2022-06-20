@@ -88,7 +88,7 @@ route.get('/delete/:id', isAuthenticated, async(req, res, next) => {
 //===============================AUTHENTICATION MODE===========================================
 
 route.get('/register', async(req, res, next) => {
-    return res.status(200).json({message: 'not ready....'});
+    return res.status()
 });
 
 route.post('/register', async(req, res, next) => {
@@ -123,9 +123,9 @@ route.post('/forget-password', async(req, res, next) => {
     if (user) {
         user.token = `${token}`;
         user.save();
-        let sentEmail = sendLink(`http://192.168.100.10:4000/reset-password?id=${token}}`, email);
+        let sentEmail = require('../config/nodemailer-config').sendLink(`http://192.168.100.10:4000/reset-password?id=${token}}`, email);
         if (sentEmail) {
-            return res.status(202).redirect('/login');
+            return res.status(404).redirect('/login');
         }
         return res.status(404).redirect('/404');
     }

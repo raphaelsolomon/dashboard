@@ -57,7 +57,7 @@ app.set('views', [
 app.set('view engine', 'ejs');
 
 app.use(require('./routes/routes.route'));
-app.use((req, res, next) => {
+app.use('*', (req, res, next) => {
     return res.status(404).render('../auths/404');
 })
 
