@@ -20,7 +20,8 @@ const User = sequelize.define('users', {
     },
     contact_person: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        uniqueKey: true,
     },
     trade: {
         type: Sequelize.STRING,
@@ -28,21 +29,24 @@ const User = sequelize.define('users', {
     },
     spreadsheet: {
         type: Sequelize.STRING,
+        allowNull: true,
     },
     software: {
-        type: Sequelize.STRING,
     },
     subscribe: {
         type: Sequelize.STRING,
     },
     social_media: {
         type: Sequelize.STRING,
+        allowNull: true,
     },
     client_location: {
         type: Sequelize.STRING,
+        allowNull: true,
     },
     token: {
         type: Sequelize.TEXT,
+        allowNull: true,
     }
 });
 

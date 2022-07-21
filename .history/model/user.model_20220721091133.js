@@ -43,6 +43,7 @@ const User = sequelize.define('users', {
     },
     token: {
         type: Sequelize.TEXT,
+        allowNull: true,
     }
 });
 

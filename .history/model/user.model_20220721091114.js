@@ -27,22 +27,23 @@ const User = sequelize.define('users', {
         allowNull: false,
     },
     spreadsheet: {
-        type: Sequelize.STRING,
     },
     software: {
-        type: Sequelize.STRING,
     },
     subscribe: {
         type: Sequelize.STRING,
     },
     social_media: {
         type: Sequelize.STRING,
+        allowNull: true,
     },
     client_location: {
         type: Sequelize.STRING,
+        allowNull: true,
     },
     token: {
         type: Sequelize.TEXT,
+        allowNull: true,
     }
 });
 

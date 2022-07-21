@@ -88,7 +88,7 @@ route.get('/delete/:id', isAuthenticated, async(req, res, next) => {
 //===============================AUTHENTICATION MODE===========================================
 
 route.get('/register', async(req, res, next) => {
-    return res.status(200).render('../auths/register');
+    return res.status(200).render({ message: 'not ready....' });
 });
 
 route.post('/register', async(req, res, next) => {
@@ -98,7 +98,7 @@ route.post('/register', async(req, res, next) => {
 
     User.create(req.body).then((user) => {
         if (user) {
-            return res.status(200).redirect('/login');
+            return res.status(200).red('login');
         }
         return res.status(404).redirect('/404');
     }).catch((err) => console.log(err));

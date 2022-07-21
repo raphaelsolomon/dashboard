@@ -30,7 +30,6 @@ const User = sequelize.define('users', {
         type: Sequelize.STRING,
     },
     software: {
-        type: Sequelize.STRING,
     },
     subscribe: {
         type: Sequelize.STRING,
@@ -43,6 +42,7 @@ const User = sequelize.define('users', {
     },
     token: {
         type: Sequelize.TEXT,
+        allowNull: true,
     }
 });
 
