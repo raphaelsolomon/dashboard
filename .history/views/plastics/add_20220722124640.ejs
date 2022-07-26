@@ -1,0 +1,435 @@
+<%- include('../includes/header.ejs') %>
+
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Add data</div>
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h3 class="text-center title-2">PLASTIC DATA GATHERING</h3>
+                                </div>
+                                <hr>
+                                <form action="/add" method="post">
+
+
+                                    <div class="row form-group">
+
+                                        <div class="col-12 col-md-12">
+                                            <div class="col col-md-3">
+                                                <label for="select" class=" form-control-label">Plastics Retrieved From</label>
+                                            </div>
+
+                                            <select name="retrieved_from" id="select" class="form-control" required>
+                                                        <option value="0">Please select</option>
+                                                        <option value="1">Ogba Multipurpose Complex, Ogba</option>
+                                                        <option value="2">724 Bar, CBD Alausa</option>
+                                                        <option value="3">VGC Road 27, Ajah</option>
+                                                        <option value="4">10 Wale Odunlami Street, Ojodu Berger</option>
+                                                        <option value="5">4/6 Sangowewe Street, Ikorodu</option>
+                                                        <option value="6">32 Ondo Street, Ogba</option>
+                                                        <option value="7">Berger Bus-Stop, Ojodu</option>
+                                                        <option value="8">NAHCO Car Park, Airport Road</option>
+                                                        <option value="9">NAHCO Facility, Airport Road</option>
+                                                        <option value="10">Precious Kitchen Restaurant, Akowonjo</option>
+                                                        <option value="11">Calabar Kitchen, Ondo Street, Ogba</option>
+                                                        <option value="12">Odogbolu Street, Surulere</option>
+                                                        <option value="13">General Pickup</option>
+                                                        <option value="14">Oshorun Estate, Opic Isheri North</option>
+                                                        <option value="15">Diary Farm Estate, Agege</option>
+                                                        <option value="16">Ogudu Ori-Oke Bus Stop</option>
+                                                        <option value="17">11 Adebola Ogunsanya Street, Surulere</option>
+                                                        <option value="18">Even Yisrael Center, Ojodu</option>
+                                                        <option value="19">Bell Centre, Lagos Island</option>
+                                                        <option value="20">Safety Commission, The Secretariat, Alausa</option>
+                                                        <option value="21">Eyiaro Street, Ogudu Ori-Oke</option>
+                                                        
+                                                    </select>
+                                        </div>
+
+                                        <div class="col-12 col-md-12">
+                                            <div class="col col-md-3">
+                                                <label for="date" class=" form-control-label">Date</label>
+                                            </div>
+
+                                            <input id="date" name="date" type="date" class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="col-12 col-md-12">
+                                            <div class="col col-md-3">
+                                                <label for="date" class=" form-control-label">Date</label>
+                                            </div>
+
+                                            <input id="zone" name="zone" type="date" class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="col-12 col-md-12">
+                                            <div class="col col-md-3">
+                                                <label for="select" class=" form-control-label">Plastics Size</label>
+                                            </div>
+
+                                            <select name="plastic_size" id="select" class="form-control" required>
+                                                        <option value="750">750</option>
+                                                        <option value="50">50</option>
+                                                        <option value="60">60</option>
+                                                        <option value="40">40</option>
+                                                        <option value="75">75</option>
+                                                        <option value="450">450</option>
+                                                        <option value="360">360</option>
+                                                        <option value="350">350</option>
+                                                        <option value="300">500</option>
+                                                        <option value="35">35</option>
+                                                        <option value="45">45</option>
+                                                        <option value="1.5">1.5</option>
+                                                        <option value="30">30</option>
+                                                        <option value="33">33</option>
+                                                        <option value="70">70</option>
+                                                        <option value="78">78</option>
+                                                        <option value="0.75">0.75</option>
+                                                        <option value="400">400</option>
+                                                        <option value="330">330</option>
+                                                        <option value="150">150</option>
+                                                        <option value="1">1</option>
+                                                        <option value="85">85</option>
+                                                        <option value="473">473</option>
+                                                        <option value="600">600</option>
+                                                        <option value="720">720</option>
+                                                        <option value="250">250</option>
+                                                        <option value="525">525</option>
+                                                        <option value="100">100</option>
+                                                        <option value="55">55</option>
+                                                        <option value="591">591</option>
+                                                        <option value="72">72</option>
+                                                        <option value="90">90</option>
+                                                        <option value="20">20</option>
+                                                    </select>
+                                        </div>
+
+                                        <div class="col-12 col-md-12">
+                                            <div class="col col-md-3">
+                                                <label for="tonnage" class=" form-control-label">Tonnage</label>
+                                            </div>
+
+                                            <select name="tonnage" id="select" class="form-control" required>
+                                                        <option value="ml">ml</option>
+                                                        <option value="cl">cl</option>
+                                                        <option value="l">l</option>
+                                                        <option value="g">g</option>
+                                                    
+                                                    </select>
+                                        </div>
+
+                                        <div class="col-12 col-md-12">
+                                            <div class="col col-md-3">
+                                                <label for="product" class=" form-control-label">Product</label>
+                                            </div>
+
+                                            <select name="product" id="select" class="form-control" required>
+                                                        <option value="Cway">Cway</option>
+                                                        <option value="Pepsi">Pepsi</option>
+                                                        <option value="Teem">Teem</option>
+                                                        <option value="Nestle Pure Life">Nestle Pure Life</option>
+                                                        <option value="Nestle Protect">Nestle Protect</option>
+                                                        <option value="7up Free">7up Free</option>
+                                                        <option value="Coca Cola">Coca Cola</option>
+                                                        <option value="Fanta">Fanta</option>
+                                                        <option value="Lydin">Lydin</option>
+                                                        <option value="Koowo">Koowo</option>
+                                                        <option value="Lucozade Boost">Lucozade Boost</option>
+                                                        <option value="Big">Big</option>
+                                                        <option value="Bigi">Bigi</option>
+                                                        <option value="Fearless">Fearless</option>
+                                                        <option value="La casera">La casera</option>
+                                                        <option value="Lipton">Lipton</option>
+                                                        <option value="Cascade">Cascade</option>
+                                                        <option value="Eva">Eva</option>
+                                                        <option value="7up Lemon, Lime, & Bubbles">7up Lemon, Lime, & Bubbles</option>
+                                                        <option value="Sprite">Sprite</option>
+                                                        <option value="Mr. V">Mr. V</option>
+                                                        <option value="Avita">Avita</option>
+                                                        <option value="Ello">Ello</option>
+                                                        <option value="Supa Komando">Supa Komando</option>
+                                                        <option value="Maltina Classic">Maltina Classic</option>
+                                                        <option value="5alive">5alive</option>
+                                                        <option value="Viju">Viju</option>
+                                                        <option value="Swan">Swan</option>
+                                                        <option value="Klien Aby">Klien Aby</option>
+                                                        <option value="Nirvana">Nirvana</option>
+                                                        <option value="Gossy">Gossy</option>
+                                                        <option value="Lawna">Lawna</option>
+                                                        <option value="Vent">Vent</option>
+                                                        <option value="Freshyo">Freshyo</option>
+                                                        <option value="Smoov">Smoov</option>
+                                                        <option value="Shally">Shally</option>
+                                                        <option value="Lasena">Lasena</option>
+                                                        <option value="Farm Pride">Farm Pride</option>
+                                                        <option value="Kachtej">Kachtej</option>
+                                                        <option value="Polcoop">Polcoop</option>
+                                                        <option value="Juli-Life">Juli-Life</option>
+                                                        <option value="Aquarite">Aquarite</option>
+                                                        <option value="Blizz">Blizz</option>
+                                                        <option value="3PFM">PFM</option>
+                                                        <option value="Sparklett">Sparklett</option>
+                                                        <option value="Aquafina">Aquafina</option>
+                                                        <option value="Aquadana">Aquadana</option>
+                                                        <option value="Hagnas">Hagnas</option>
+                                                        <option value="Agis">Agis</option>
+                                                        <option value="Maschil">Maschil</option>
+                                                        <option value="Miranda">Miranda</option>
+                                                        <option value="Sparwasser">Sparwasser</option>
+                                                        <option value="Lemonade">Lemonade</option>
+                                                        <option value="Tigernut">Tigernut</option>
+                                                        <option value="Malta Guinness">Malta Guinness</option>
+                                                        <option value="Fifun Todos Classic">Fifun Todos Classic</option>
+                                                        <option value="Dubic Malt">Dubic Malt</option>
+                                                        <option value="Amstel Malta">Amstel Malta</option>
+                                                        <option value="Halt & Halt">Halt & Halt</option>
+                                                        <option value="Redemption">Redemption</option>
+                                                        <option value="Hebron">Hebron</option>
+                                                        <option value="Aqua Celom">Aqua Celom</option>
+                                                        <option value="Beta">Beta</option>
+                                                        <option value="Essence Ace">Essence Ace</option>
+                                                        <option value="Vanch Cool">Vanch Cool</option>
+                                                        <option value="Predator">Predator</option>
+                                                        <option value="Ribena">Ribena</option>
+                                                        <option value="Fizz">Fizz</option>
+                                                        <option value="GCU">GCU</option>
+                                                        <option value="Probiotics">Probiotics</option>
+                                                        <option value="Nutri-Milk">Nutri-Milk</option>
+                                                        <option value="Ivy Dew">Ivy Dew</option>
+                                                        <option value="Ibat">Ibat</option>
+                                                        <option value="Sana">Sana</option>
+                                                        <option value="Rachtej">Rachtej</option>
+                                                        <option value="Austin">Austin</option>
+                                                        <option value="Eves Organics">Eves Organics</option>
+                                                        <option value="Highlight">Highlight</option>
+                                                        <option value="Phoenix">Phoenix</option>
+                                                        <option value="Dudu">Dudu</option>
+                                                        <option value="Hagnos">Hagnos</option>
+                                                        <option value="Climax">Climax</option>
+                                                        <option value="Pepsi Light">Pepsi Light</option>
+                                                        <option value="Aquarkice">Aquarkice</option>
+                                                        <option value="Tasty Time">Tasty Time</option>
+                                                        <option value="Le Elair">Le Elair</option>
+                                                        <option value="Unknown">Unknown</option>
+                                                        <option value="Citrus Burst">Citrus Burst</option>
+                                                        <option value="Lina">Lina</option>
+                                                        <option value="Algor">Algor</option>
+                                                        <option value="UIO">UIO</option>
+                                                        <option value="Zoborite">Zoborite</option>
+                                                        <option value="Wellness">Wellness</option>
+                                                        <option value="Rachy's">Rachy's</option>
+                                                        <option value="Massah">Massah</option>
+                                                        <option value="Augton Natural">Augton Natural</option>
+                                                        <option value="Yago">Yago</option>
+                                                        <option value="Etana">Etana</option>
+                                                        <option value="Taid">Taid</option>
+                                                        <option value="Toche">Toche</option>
+                                                        <option value="Babcock Water">Babcock Water</option>
+                                                        <option value="Akogate">Akogate</option>
+                                                        <option value="Juma">Juma</option>
+                                                        <option value="Tophyna">Tophyna</option>
+                                                        <option value="Kingstine Jo">Kingstine Jo</option>
+                                                        <option value="Diamon Aquarius">Diamon Aquarius</option>
+                                                        <option value="Delican">Delican</option>
+                                                        <option value="Origin">Origin</option>
+                                                        <option value="PSVL">PSVL</option>
+                                                        <option value="Utu">Utu</option>
+                                                        <option value="Minimie">Minimie</option>
+                                                        <option value="L&2">L&2</option>
+                                                    </select>
+                                        </div>
+
+                                        <div class="col-12 col-md-12">
+                                            <div class="col col-md-3">
+                                                <label for="volume of plastic" class=" form-control-label">Volume of plastics (pcs)</label>
+                                            </div>
+
+                                            <input id="volume_plastic" name="volume_of_plastics" type="number" class="form-control" aria-required="true" aria-invalid="false" required>
+                                        </div>
+
+
+                                        <div class="col-12 col-md-12">
+                                            <div class="col col-md-3">
+                                                <label for="select" class=" form-control-label">Initial Content</label>
+                                            </div>
+
+                                            <select name="initial_content" id="select" class="form-control" required>
+                                                        <option value="Water">Water</option>
+                                                        <option value="Cola">Cola</option>
+                                                        <option value="Bitter Lemon">Bitter Lemon</option>
+                                                        <option value="Sweetend Carbonated Beverage">Sweetend Carbonated Beverage</option>
+                                                        <option value="Less Sugar Cola">Less Sugar Cola</option>
+                                                        <option value="Orange Flavoured Drink">Orange Flavoured Drink</option>
+                                                        <option value="Gluscose Drink">Gluscose Drink</option>
+                                                        <option value="Tropical Drink">Tropical Drink</option>
+                                                        <option value="Apple Flavour">Apple Flavour</option>
+                                                        <option value="Energy Drink">Energy Drink</option>
+                                                        <option value="Apple Drink">Apple Drink</option>
+                                                        <option value="Nutrimilk">Nutrimilk</option>
+                                                        <option value="Flavour Ice Tea">Flavour Ice Tea</option>
+                                                        <option value="Lemon, Lime, Flavour Drink">Lemon, Lime, Flavour Drink</option>
+                                                        <option value="Orange Flavour">Orange Flavour</option>
+                                                        <option value="Tropical Flavour">Tropical Flavour</option>
+                                                        <option value="Lemon-Lime Drink">Lemon-Lime Drink</option>
+                                                        <option value="Orange Fruit Drink">Orange Fruit Drink</option>
+                                                        <option value="Malt Drink">Malt Drink</option>
+                                                        <option value="Chapman">Chapman</option>
+                                                        <option value="Peach Flavour">Peach Flavour</option>
+                                                        <option value="Rosselle Drink">Rosselle Drink</option>
+                                                        <option value="Sweetened Yoghurt">Sweetened Yoghurt</option>
+                                                        <option value="Free Lemon">Free Lemon</option>
+                                                        <option value="Tigernut">Tigernut</option>
+                                                        <option value="Green Apple">Green Apple</option>
+                                                        <option value="Lemon Drink">Lemon Drink</option>
+                                                        <option value="Iced Tea">Iced Tea</option>
+                                                        <option value="Black Current Flavour">Black Current Flavour</option>
+                                                        <option value="Zobo Drink">Zobo Drink</option>
+                                                        <option value="Yoghurt Apple">Yoghurt Apple</option>
+                                                        <option value="Lemon Flavour">Lemon Flavour</option>
+                                                        <option value="Berryblast">Berryblast</option>
+                                                        <option value="Orange">Orange</option>
+                                                        <option value="Cream Soda">Cream Soda</option>
+                                                        <option value="Tea-Peach">Tea-Peach</option>
+                                                        <option value="Fresh Fruit Juice">Fresh Fruit Juice</option>
+                                                        <option value="Hibiscus Drink">Hibiscus Drink</option>
+                                                        <option value="Groundnut">Groundnut</option>
+                                                        <option value="Viju Milk - Chocolate Flavour">Viju Milk - Chocolate Flavour</option>
+                                                        <option value="Bitters">Bitters</option>
+                                                        <option value="Chinchin">Chinchin</option>
+                                                    </select>
+                                        </div>
+
+                                        <div class="col-12 col-md-12">
+                                            <div class="col col-md-3">
+                                                <label for="manufacturer" class=" form-control-label">Manufacturers</label>
+                                            </div>
+
+                                            <select name="manufacturer" id="select" class="form-control" required>
+                                                        <option value="Cway Nigeria Drinking Water Science and Tech Ltd">Cway Nigeria Drinking Water Science and Tech Ltd</option>
+                                                        <option value="7up Bottling Company">7up Bottling Company</option>
+                                                        <option value="Nestle Nigeria Limited">Nestle Nigeria Limited</option>
+                                                        <option value="Nigerian Bottling Company">Nigerian Bottling Company</option>
+                                                        <option value="Lydin Limited">Lydin Limited</option>
+                                                        <option value="Geeyun Nigeria Limited">Geeyun Nigeria Limited</option>
+                                                        <option value="Suntory Beverage and Food Nig. Ltd.">Suntory Beverage and Food Nig. Ltd.</option>
+                                                        <option value="The Big Bottling Company">The Big Bottling Company</option>
+                                                        <option value="Rite Foods">Rite Foods</option>
+                                                        <option value="La Casera Company Plc">La Casera Company Plc</option>
+                                                        <option value="Cway Food & Beverages Nig. Company">Cway Food & Beverages Nig. Company</option>
+                                                        <option value="Krs Investment Limited">Krs Investment Limited</option>
+                                                        <option value="Nigerian Breweries Plc">Nigerian Breweries Plc</option>
+                                                        <option value="Viju Industries Nigeria Limited">Viju Industries Nigeria Limited</option>
+                                                        <option value="Global Avita Integrated Limited">Global Avita Integrated Limited</option>
+                                                        <option value="Retail Solutions Marketing Company">Retail Solutions Marketing Company</option>
+                                                        <option value="Flurex Foods & Beverages Limited">Flurex Foods & Beverages Limited</option>
+                                                        <option value="Authority of Classic Beverages">Authority of Classic Beverages</option>
+                                                        <option value="Dac Foods and Beverage Limited">Dac Foods and Beverage Limited</option>
+                                                        <option value="Comforter Rides Limited">Comforter Rides Limited</option>
+                                                        <option value="Nigeria Police Cooperative Multipurpose">Nigeria Police Cooperative Multipurpose</option>
+                                                        <option value="Stric Hygienic">Stric Hygienic</option>
+                                                        <option value="Trading & Industries Nigeria Limited">Trading & Industries Nigeria Limited</option>
+                                                        <option value="Avila Naturalle Limited">Avila Naturalle Limited</option>
+                                                        <option value="Strict Hygienic">Strict Hygienic</option>
+                                                        <option value="Sparklett Bottling Company Limited">Sparklett Bottling Company Limited</option>
+                                                        <option value="Caraway Africa Nigeria Limited">Caraway Africa Nigeria Limited</option>
+                                                        <option value="Mardi Marl Investment Limited">Mardi Marl Investment Limited</option>
+                                                        <option value="Marketing Company Limited">Marketing Company Limited</option>
+                                                        <option value="Agis Nigeria Limited">Agis Nigeria Limited</option>
+                                                        <option value="Maschil Global Limited">Maschil Global Limited</option>
+                                                        <option value="Nigerian-German Chemicals Plc">Nigerian-German Chemicals Plc</option>
+                                                        <option value="Akanbi Ventures Limited">Akanbi Ventures Limited</option>
+                                                        <option value="Kaanan Group">Kaanan Group</option>
+                                                        <option value="Guinness Nigeria Plc">Guinness Nigeria Plc</option>
+                                                        <option value="Gossy Warm Springs Limited">Gossy Warm Springs Limited</option>
+                                                        <option value="Beverage Marketing">Beverage Marketing</option>
+                                                        <option value="Redeemer's Ventures">Redeemer's Ventures</option>
+                                                        <option value="Covenant University Limited">Covenant University Limited</option>
+                                                        <option value="Celom Nigeria Limited">Celom Nigeria Limited</option>
+                                                        <option value="Tasty Time Nigeria Limited">Tasty Time Nigeria Limited</option>
+                                                        <option value="Tapoc Nigeria Limited">Tapoc Nigeria Limited</option>
+                                                        <option value="International Breweries Plc">International Breweries Plc</option>
+                                                        <option value="Futureone Enterprises Nigeria Limited">Futureone Enterprises Nigeria Limited</option>
+                                                        <option value="Bottling Company Limited">Bottling Company Limited</option>
+                                                        <option value="Bottling Venture Limited">Bottling Venture Limited</option>
+                                                        <option value="Beverage and Food Nigeria Limited">Beverage and Food Nigeria Limited</option>
+                                                        <option value="Dominion Global Limited">Dominion Global Limited</option>
+                                                        <option value="Bobo Food and Beverage Limited">Bobo Food and Beverage Limited</option>
+                                                        <option value="GCU">GCU</option>
+                                                        <option value="Spring Waters Nigeria Limited">Spring Waters Nigeria Limited</option>
+                                                        <option value="Germnig Floaters Limited">Germnig Floaters Limited</option>
+                                                        <option value="Niyya Food and Drinks">Niyya Food and Drinks</option>
+                                                        <option value="Royal Ibat Food & Beverages">Royal Ibat Food & Beverages</option>
+                                                        <option value="Pharma Demko Plc">Pharma Demko Plc</option>
+                                                        <option value="Comforter Ride Limited">Comforter Ride Limited</option>
+                                                        <option value="Omega Labs Ventures">Omega Labs Ventures</option>
+                                                        <option value="Highlight Foods & Allied Product">Highlight Foods & Allied Product</option>
+                                                        <option value="Eves Organic Limited">Eves Organic Limited</option>
+                                                        <option value="Unknown">Unknown</option>
+                                                        <option value="Anxin Industries Limited">Anxin Industries Limited</option>
+                                                        <option value="Unmena B.V">Unmena B.V</option>
+                                                        <option value="Aquarkice Company Limited">Aquarkice Company Limited</option>
+                                                        <option value="Phoenix Haulage Services">Phoenix Haulage Services</option>
+                                                        <option value="Authority of Snapple Beverage">Authority of Snapple Beverage</option>
+                                                        <option value="Sparklett Water">Sparklett Water</option>
+                                                        <option value="OGC Foods and Beverages">OGC Foods and Beverages</option>
+                                                        <option value="Shash Industries Limited">Shash Industries Limited</option>
+                                                        <option value="Cooperative Multipurpose Limited">Cooperative Multipurpose Limited</option>
+                                                        <option value="Pay-lima Industries Ltd">Pay-lima Industries Ltd</option>
+                                                        <option value="Havic Integrated Resource Ltd">Havic Integrated Resource Ltd</option>
+                                                        <option value="Dunacare International Ltd">Dunacare International Ltd</option>
+                                                        <option value="Je Wellness Venture">Je Wellness Venture</option>
+                                                        <option value="Uio Water Limited">Uio Water Limited</option>
+                                                        <option value="Zubik Sylva Nigeria Ltd">Zubik Sylva Nigeria Ltd</option>
+                                                        <option value="Gustony Ventures">Gustony Ventures</option>
+                                                        <option value="Yagocom Nigeria Ltd">Yagocom Nigeria Ltd</option>
+                                                        <option value="Forthright Manufacturing Ltd">Forthright Manufacturing Ltd</option>
+                                                        <option value="Taid Water">Taid Water</option>
+                                                        <option value="Toche Water">Toche Water</option>
+                                                        <option value="Babcock University Venture Limited">Babcock University Venture Limited</option>
+                                                        <option value="Akogate Group">Akogate Group</option>
+                                                        <option value="Cest Bon Confectionaries & Bottling Ventures">Cest Bon Confectionaries & Bottling Ventures</option>
+                                                        <option value="Kingstine Jo Nigeria Ltd">Kingstine Jo Nigeria Ltd</option>
+                                                        <option value="Tophyna Supreme Integrated">Tophyna Supreme Integrated</option>
+                                                        <option value="Juma Communication">Juma Communication</option>
+                                                        <option value="Diamond Goods Ltd">Diamond Goods Ltd</option>
+                                                        <option value="Metiled Imperial Height Ltd">Metiled Imperial Height Ltd</option>
+                                                        <option value="Vision Projects Limited">Vision Projects Limited</option>
+                                                        <option value="Pure Flour Mills Ltd">Pure Flour Mills Ltd</option>
+                                                        <option value="Conga-Ewa Lakes Ltd">Conga-Ewa Lakes Ltd</option>
+                                                        <option value="Edemakhiota Venture">Edemakhiota Venture</option>
+                                                        <option value="Life System (Nig) Ltd">Life System (Nig) Ltd</option>
+                                                        <option value="L&2 Integrated Farm Ltd">L&2 Integrated Farm Ltd</option>
+                                                        <option value="Pace Setters Vision Projects Limited">Pace Setters Vision Projects Limited</option>
+                                                      
+                                                        
+                                                    </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                                    <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                                    <span id="payment-button-amount">Add data</span>
+                                                    <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                                </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyright">
+                            <p>Copyright © 2022. All rights reserved. <a href="https://dechconsult.com">Dech Consult Limited</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../includes/footer.ejs') %>
