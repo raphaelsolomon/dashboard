@@ -1,0 +1,217 @@
+<%- include('../includes/index_header.ejs') %>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/Microsoft/PowerBI-JavaScript/master/dist/powerbi.min.js"
+        type="text/javascript"></script>
+
+    <!-- STATISTIC-->
+    <section class="statistic statistic2">
+        <div class="container">
+            <div class="row">
+                <div id="Container" style="overflow:hidden; width: 100%; height: 373;">
+                    <iframe width="100%" height="373.5"
+                        src="https://app.powerbi.com/view?r=eyJrIjoiNzg4ZmY2NzMtMDEwMi00Mjk5LTk1YWItYmMwNzY2ZDQ0YWZjIiwidCI6ImZkZGFmMWJiLTVkMjQtNDk3Ni1iNzMxLTBlYjFhMzFlN2I2YyJ9"
+                        frameborder="0" allowFullScreen="false"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END STATISTIC-->
+
+    <!-- STATISTIC CHART-->
+    <section class="statistic-chart">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="title-5 m-b-35">Analysis</h3>
+                </div>
+            </div>
+            <div class="row">
+
+                <div id="Container" style="overflow:hidden; width: 100%; height: 373;">
+                    <iframe width="100%" height="373.5"
+                        src="https://app.powerbi.com/view?r=eyJrIjoiOTJkZDY0MzUtODEwYy00MzFmLWE5ODYtNDc4NjE5YTY0NmVmIiwidCI6ImZkZGFmMWJiLTVkMjQtNDk3Ni1iNzMxLTBlYjFhMzFlN2I2YyJ9"
+                        frameborder="0" allowFullScreen="false"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- END STATISTIC CHART-->
+
+    <center>
+        <a href="/chart">
+            <button class="au-btn au-btn-icon au-btn--green au-btn--small"> more analysis</button>
+        </a>
+    </center>
+
+    <!-- DATA TABLE-->
+    <section class="p-t-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="title-5 m-b-35">data table</h3>
+                    <div class="table-data__tool">
+                        <div class="table-data__tool-left">
+                            <div class="rs-select2--light rs-select2--md">
+                                <select class="js-select2" name="property" onchange="myFunction(this.selectedIndex);">
+                                    <option selected="all">All</option>
+                                    <option value="retrieved_from">PLASTICS RETRIEVED FROM</option>
+                                    <option value="date">DATE</option>
+                                    <option value="size">PLASTIC SIZE</option>
+                                    <option value="">TONNAGE</option>
+                                    <option value="">PRODUCT</option>
+                                    <option value="">VOLUME OF PLASTICS (PCS)</option>
+                                    <option value="">INITIAL CONTENT</option>
+                                    <option value="">MANUFACTURERS</option>
+
+                                </select>
+                                <div class="dropDownSelect2"></div>
+                            </div>
+                            <div class="rs-select2--light rs-select2--sm">
+                                <input style="padding: 7px;" type="date" name="" id="">
+                            </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+
+
+                            <button class="au-btn-filter"><i class="zmdi zmdi-filter-list"></i>filters</button>
+                        </div>
+                        <div class="table-data__tool-right">
+                            <a href="form.html"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                    <i class="zmdi zmdi-plus"></i>add plastic</button></a>
+                            <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                <select class="js-select2" name="type" onchange="myFunction(this.selectedIndex);">
+                                    <option selected="selected">Export</option>
+                                    <option value="csv">CSV</option>
+                                </select>
+                                <div class="dropDownSelect2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive table-responsive-data2">
+                        <table class="table table-data2">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label class="au-checkbox">
+                                            <input type="checkbox">
+                                            <span class="au-checkmark"></span>
+                                        </label>
+                                    </th>
+                                    <th>Plastics Retrieved From</th>
+                                    <th>Date</th>
+                                    <th>Plastic Size</th>
+                                    <th>Tonnage</th>
+                                    <th>Product</th>
+                                    <th>Volume of plastics (pcs)</th>
+                                    <th>Initial Content</th>
+                                    <th>Manufacturers</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% data.tableLimit.forEach(function(e) { %>
+                                    <tr class="tr-shadow">
+                                        <td>
+                                            <label class="au-checkbox">
+                                                <input type="checkbox">
+                                                <span class="au-checkmark"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <%= e.retrieved_from %>
+                                        </td>
+                                        <td>
+                                            <%= e.date %>
+                                        </td>
+                                        <td>
+                                            <%= e.plastic_size %>
+                                        </td>
+                                        <td>
+                                            <%= e.tonnage %>
+                                        </td>
+                                        <td>
+                                            <%= e.product %>
+                                        </td>
+                                        <td>
+                                            <%= e.volume_of_plastics %>
+                                        </td>
+                                        <td>
+                                            <%= e.initial_content %>
+                                        </td>
+                                        <td>
+                                            <%= e.manufacturer %>
+                                        </td>
+
+                                        <td>
+                                            <div class="table-data-feature ">
+
+                                                <a href='/details/<%= e.id %>'><button class="item "
+                                                        data-toggle="tooltip " data-placement="top " title="Edit ">
+                                                        <i class="zmdi zmdi-edit "></i>
+                                                    </button></a>
+                                                <a href='/delete/<%= e.id %>'><button class="item "
+                                                        data-toggle="tooltip " data-placement="top " title="Delete ">
+                                                        <i class="zmdi zmdi-delete "></i>
+                                                    </button></a>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="spacer"></tr>
+                                    <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END DATA TABLE-->
+
+    <%- include('../includes/index_footer.ejs') %>
+        <script>
+            let selected = 'all';
+            const dropdown = ['all', 'retrieved_from', 'date']
+
+            function myFunction(selected) {
+                selected = dropdown[selected];
+            }
+
+            const form = document.getElementById('searchForm');
+            orm.addEventListener('submit', (event) => {
+                // stop form submission
+                //event.preventDefault();
+                const search = form.elements
+            });
+            // $(document).ready(function () {
+            //     var getEmbeddedToken = "";
+
+            //     $.ajax({
+            //         url: getEmbeddedToken,
+            //         jsonpCallback: 'callback',
+            //         contentType: 'application/json',
+            //         dataType: "jsonp",
+            //         success: function (data) {
+            //             var model = window['powerbi-client'].model;
+            //             var embeddedConfiguration = {
+            //                 type: 'report',
+            //                 id: data.ReportId,
+            //                 embedUrl: 'https://app.powerbi.com/reportEmbed?reportId=c6df4303-3d42-4b58-a876-4a75c78cabbe&autoAuth=true&ctid=fddaf1bb-5d24-4976-b731-0eb1a31e7b6c&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXNvdXRoLWFmcmljYS1ub3J0aC1hLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D',
+            //                 tokenType: model.TokenType.Embed,
+            //                 accessToken: data.EmbedToken,
+            //                 settings: {
+            //                     filterPaneEnabled: true,
+            //                     navContentPaneEnabled: true
+            //                 }
+            //             };
+
+            //             var $reportContainer = $('#Container');
+            //             var report = powerbi.embed($reportContainer.get(0), embeddedConfiguration)
+            //         },error: function () {
+            //             alert("error");
+            //         }
+            //     })
+            // })
+        </script>

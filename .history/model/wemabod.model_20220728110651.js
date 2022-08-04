@@ -1,0 +1,28 @@
+const Sequelize = require('sequelize');
+const sequelize = require('../config/database.config');
+
+const Wemabod = sequelize.define('wemabods', {
+    date: {
+        type: Sequelize.STRING
+    },
+    time: {
+        type: Sequelize.STRING,
+    },
+    movemwnt_by_vehicle_resident: {
+        type: Sequelize.INTEGER
+    },
+    movemwnt_by_vehicle_staff: {
+        type: Sequelize.INTEGER
+    },
+    movemwnt_by_vehicle_visi: {
+        type: Sequelize.INTEGER
+    },
+    movemwnt_by_vehicle_resident: {
+        type: Sequelize.INTEGER
+    },
+    movemwnt_by_vehicle_resident: {
+        type: Sequelize.INTEGER
+    },
+});
+
+module.exports = Wemabod;

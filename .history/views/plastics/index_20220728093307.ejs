@@ -1,0 +1,235 @@
+<%- include('../includes/index_header.ejs') %>
+
+    <!-- STATISTIC-->
+    <section class="statistic statistic2">
+        <div class="container">
+            <div class="row">
+                <div id="Container" style="padding-bottom:56.25%; position:relative; display:block; width: 100%">
+                    <iframe id="ViostreamIframe" width="100%" height="541.25"
+                        src="https://app.powerbi.com/reportEmbed?reportId=32de2b5f-a3c9-4b5c-90cc-e2f9ffc0e44c&autoAuth=true&ctid=fddaf1bb-5d24-4976-b731-0eb1a31e7b6c&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXNvdXRoLWFmcmljYS1ub3J0aC1hLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D"
+                        frameborder="0" allowfullscreen="" style="position:absolute; top:0; left: 0"></iframe>
+                </div>
+                <button onclick="myFunction()">Try it</button>
+            </div>
+        </div>
+    </section>
+    <!-- END STATISTIC-->
+
+    <!-- STATISTIC CHART-->
+    <section class="statistic-chart">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="title-5 m-b-35">Analysis</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <!-- CHART-->
+                    <div class="statistic-chart-1">
+                        <h3 class="title-7 m-b-30">count of retrieved pet plastics by brands daily</h3>
+                        <div class="chart-wrap">
+                            <canvas id="widgetChart5"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- END CHART-->
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <!-- TOP CAMPAIGN-->
+                    <div class="top-campaign">
+                        <h3 class="title-7 m-b-30">most consumed beverage (initial content) from retrieval daily</h3>
+                        <div class="table-responsive">
+                            <table class="table table-top-campaign">
+                                <tbody>
+                                    <% for (var i = 0; i <= data.getMostConsumed.length -1; i++) { %>
+                                        <tr>
+                                            <td>
+                                                <%=i + 1%>.
+                                                    <%= data.getMostConsumed[i].initial_content%>
+                                            </td>
+                                            <td>
+                                                <%= data.getMostConsumed[i].count%>
+                                            </td>
+                                        </tr>
+                                        <%}%>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- END TOP CAMPAIGN-->
+
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <!-- CHART PERCENT-->
+                    <div class="chart-percent-2">
+                        <h3 class="title-7 m-b-30">brand with the highest products from retrieving daily</h3>
+                        <div class="chart-wrap">
+                            <canvas id="percent-chart2"></canvas>
+                            <div id="chartjs-tooltip">
+                                <table></table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END CHART PERCENT-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- END STATISTIC CHART-->
+
+    <center>
+        <a href="chart.html">
+            <button class="au-btn au-btn-icon au-btn--green au-btn--small"> more analysis</button>
+        </a>
+    </center>
+
+    <!-- DATA TABLE-->
+    <section class="p-t-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="title-5 m-b-35">data table</h3>
+                    <div class="table-data__tool">
+                        <div class="table-data__tool-left">
+                            <div class="rs-select2--light rs-select2--md">
+                                <select class="js-select2" name="property">
+                                            <option selected="selected">Check</option>
+                                            <option value="">PLASTICS RETRIEVED FROM</option>
+                                            <option value="">DATE</option>
+                                            <option value="">PLASTIC SIZE</option>
+                                            <option value="">TONNAGE</option>
+                                            <option value="">PRODUCT</option>
+                                            <option value="">VOLUME OF PLASTICS (PCS)</option>
+                                            <option value="">INITIAL CONTENT</option>
+                                            <option value="">MANUFACTURERS</option>
+                                        
+                                        </select>
+                                <div class="dropDownSelect2"></div>
+                            </div>
+                            <div class="rs-select2--light rs-select2--sm">
+                                <input style="padding: 7px;" type="date" name="" id="">
+                            </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+
+
+                            <button class="au-btn-filter"><i class="zmdi zmdi-filter-list"></i>filters</button>
+                        </div>
+                        <div class="table-data__tool-right">
+                            <a href="form.html"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                    <i class="zmdi zmdi-plus"></i>add plastic</button></a>
+                            <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                <select class="js-select2" name="type" onchange="myFunction(this.selectedIndex);">
+                                    <option selected="selected">Export</option>
+                                    <option value="csv">CSV</option>
+                                </select>
+                                <div class="dropDownSelect2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive table-responsive-data2">
+                        <table class="table table-data2">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label class="au-checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="au-checkmark"></span>
+                                                </label>
+                                    </th>
+                                    <th>Plastics Retrieved From</th>
+                                    <th>Date</th>
+                                    <th>Plastic Size</th>
+                                    <th>Tonnage</th>
+                                    <th>Product</th>
+                                    <th>Volume of plastics (pcs)</th>
+                                    <th>Initial Content</th>
+                                    <th>Manufacturers</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% data.tableLimit.forEach(function(e) { %>
+                                    <tr class="tr-shadow">
+                                        <td>
+                                            <label class="au-checkbox">
+                                                <input type="checkbox">
+                                                <span class="au-checkmark"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <%= e.retrieved_from %>
+                                        </td>
+                                        <td>
+                                            <%= e.date %>
+                                        </td>
+                                        <td>
+                                            <%= e.plastic_size %>
+                                        </td>
+                                        <td>
+                                            <%= e.tonnage %>
+                                        </td>
+                                        <td>
+                                            <%= e.product %>
+                                        </td>
+                                        <td>
+                                            <%= e.volume_of_plastics %>
+                                        </td>
+                                        <td>
+                                            <%= e.initial_content %>
+                                        </td>
+                                        <td>
+                                            <%= e.manufacturer %>
+                                        </td>
+
+                                        <td>
+                                            <div class="table-data-feature ">
+
+                                                <a href='/details/<%= e.id %>'><button class="item " data-toggle="tooltip " data-placement="top " title="Edit ">
+                                                    <i class="zmdi zmdi-edit "></i>
+                                                </button></a>
+                                                <a href='/delete/<%= e.id %>'><button class="item " data-toggle="tooltip " data-placement="top " title="Delete ">
+                                                    <i class="zmdi zmdi-delete "></i>
+                                                </button></a>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="spacer"></tr>
+                                    <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END DATA TABLE-->
+
+    <%- include('../includes/index_footer.ejs') %>
+    <script>
+        $(document).ready(function() {
+            var getEmbeddedToken =  "";
+
+            $.ajax({
+                url: getEmbeddedToken,
+                jsonpCallback: 'callback',
+                contentType: 'application/json',
+                dataType: "jsonp",
+                success: function(data) {
+                    var model = window['powerbi-client'].model;
+                    var embeddedConfiguration = {
+                        type: 'report',
+                        id: data.ReportId,
+                        embedUrl: data.EmbedUrl,
+                        tokenType: model.TokenType.Embed,
+                        accessToken: data.EmbedToken
+                    };
+
+                    var $reportContainer = $('#reportContainer')
+                }
+            })
+        })
+    </script>
