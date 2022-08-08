@@ -5,7 +5,7 @@ var data = [];
 const date = require('date-and-time');
 
 
-axios.get('')
+axios.get('https://s5.aconvert.com/convert/p3r68-cdx67/cfjdb-789f1.json')
     .then(function(response) {
         response.data.forEach((e) => {
             const str = `${e['Date']}`;
@@ -13,7 +13,7 @@ axios.get('')
 
             data.push({
                 retrieved_from: e['Plastics retrieved from'],
-                date: date.format(now, 'YYYY/MM/DD'),
+                date: newDate,
                 zone: e['Zone'],
                 plastic_size: e['Plastic Size'],
                 tonnage: e['Tonnage'],
@@ -23,7 +23,7 @@ axios.get('')
                 manufacturer: e['Manufacturers']
             })
         });
-        Plastic.bulkCreate(data).then((data) => console.log('done'));
+      //  Plastic.bulkCreate(data).then((data) => console.log('done'));
     }).catch((error) => console.log(error));
 
 
