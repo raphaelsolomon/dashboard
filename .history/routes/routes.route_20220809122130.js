@@ -125,7 +125,7 @@ route.post('/forget-password', async (req, res, next) => {
     if (user) {
         user.token = `${token}`;
         user.save();
-        let sentEmail = sendLink(`https://dech-dashboard.herokuapp.com/reset-password?id=${token}}`, email);
+        let sentEmail = sendLink(`https://dech-dashboard.herokuapp.com//reset-password?id=${token}}`, email);
         if (sentEmail) {
             return res.status(202).redirect('/login');
         }
