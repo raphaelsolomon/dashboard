@@ -81,7 +81,7 @@
                             <a href="/add"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
                                     <i class="zmdi zmdi-plus"></i>add plastic</button></a>
                             <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
-                                <select class="js-select2" name="type" onchange="myFunctionExport(this.selectedIndex);">
+                                <select class="js-select2" name="type" onchange="myFunction(this.selectedIndex);">
                                     <option selected="selected">Export</option>
                                     <option value="csv">CSV</option>
                                 </select>
@@ -179,9 +179,7 @@
             selected = value;
         }
 
-        function myFunctionExport(selected) {
-            window.location = '/recent/2';
-        }
+            
 
         function myClickFunction() {
             var inputDate = document.getElementById("dateFilter").value
