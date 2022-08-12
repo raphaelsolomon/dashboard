@@ -10,6 +10,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@azure/ms-rest-nodeauth": "^3.1.1",
         "axios": "^0.27.2",
         "bcrypt": "^5.0.1",
         "connect-session-sequelize": "^7.1.4",
@@ -23,6 +24,7 @@
         "express-session": "^1.17.3",
         "http": "^0.0.1-security",
         "mysql2": "^2.3.3",
+        "node-fetch": "^3.2.10",
         "nodemailer": "^6.7.5",
         "passport": "^0.6.0",
         "passport-local": "^1.0.0",
