@@ -1,0 +1,2 @@
+{"shippingContact": {"name": {"nameSuffix": "",
+"middleName": "", "nickname": "", "namePrefix": "", "familyName": "Raphael", "phoneticRepresentation": {"middleName": "", "phoneticRepresentation": null, "givenName": "", "nickname": null, "familyName": , "nameSuffix": null, "namePrefix": null}, "givenName": "Uzoechi"}}, "paymentMethod": {"network": null, "displayName": "Simulated Instrument", "type": 0}, "transactionIdentifier": "Simulated Identifier", "token": ""}

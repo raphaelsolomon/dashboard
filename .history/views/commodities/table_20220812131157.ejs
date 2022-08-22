@@ -1,0 +1,145 @@
+<%- include('../includes/header.ejs') %>
+
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- DATA TABLE -->
+                        <h3 class="title-5 m-b-35">data table</h3>
+                        <div class="table-data__tool">
+                            <div class="table-data__tool-left">
+                                <div class="rs-select2--light rs-select2--md">
+                                    <select class="js-select2" name="property">
+                                             
+                                                <option selected="selected">Check</option>
+                                            <option value="">Purchased Date</option>
+                                            <option value="">Purchased Cost</option>
+                                            <option value="">Customer Name</option>
+                                            <option value="">Phone Number</option>
+                                            <option value="">Commodity</option>
+                                            <option value="">Commodity Size</option>
+                                            <option value="">Commodity Color</option>
+                                            <option value="">Sales Date</option>
+                                            <option value="">Sales Cost</option>
+                                            <option value="">Purchasing Gender</option>
+                                            <option value="">Delivery Location</option>
+                                            </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                                <div class="rs-select2--light rs-select2--sm">
+                                    <select class="js-select2" name="time">
+                                                <option selected="selected">Today</option>
+                                                <option value="">3 Days</option>
+                                                <option value="">1 Week</option>
+                                            </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                                <button class="au-btn-filter">
+                                            <i class="zmdi zmdi-filter-list"></i>filters</button>
+                            </div>
+                            <div class="table-data__tool-right">
+                                <a href="/add"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                        <i class="zmdi zmdi-plus"></i>add item</button></a>
+                                <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                    <select class="js-select2" name="type">
+                                                <option selected="selected">Export</option>
+                                                <option value="">CSV</option>
+                                                <option value="">PDF</option>
+                                            </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive table-responsive-data2">
+                            <table class="table table-data2">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <label class="au-checkbox">
+                                                        <input type="checkbox">
+                                                        <span class="au-checkmark"></span>
+                                                    </label>
+                                        </th>
+                                        <th>Purchased Date</th>
+                                        <th>Purchased Cost</th>
+                                        <th>Customer Name </th>
+                                        <th>Phone Number</th>
+                                        <th>Commodity</th>
+                                        <th>Commodity Size</th>
+                                        <th>Commodity Color</th>
+                                        <th>Sales Date</th>
+                                        <th>Sales Cost</th>
+                                        <th>Purchasing Gender</th>
+                                        <th>Mode of Payment</th>
+                                        <th>Delivery Location</th>
+                                        <th>Mode of Transaction</th>
+                                        <th>Advertising Medium</th>
+                                        <th>STATUS</th>
+                                        <th>ACTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% listItem.forEach(function(e) { %>
+                                        <tr class="tr-shadow">
+                                            <td>
+                                                <label class="au-checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="au-checkmark"></span>
+                                                </label>
+                                            </td>
+                                            <td><%= e.purchased_date %></td>
+                                            <td><%= e.purchased_cost %></td>
+                                            <td><&= e.customer_name %></td>
+                                            <td><%= e.phone_no %></td>
+                                            <td>e.commodity</td>
+                                            <td>e.commodity_size</td>
+                                            <td>-------</td>
+                                            <td>-------</td>
+                                            <td>-------</td>
+                                            <td>--------</td>
+                                            <td>--------</td>
+                                            <td>--------</td>
+                                            <td>--------</td>
+                                            <td>--------</td>
+
+                                            <td>
+                                                <span class="status--process">Done</span>
+                                            </td>
+                                            <td>
+                                                <div class="table-data-feature ">
+
+                                                    <a href='/details/<%= e.id %>'><button class="item " data-toggle="tooltip " data-placement="top " title="Edit ">
+                                                        <i class="zmdi zmdi-edit "></i>
+                                                    </button></a>
+                                                    <a href='/delete/<%= e.id %>'><button class="item " data-toggle="tooltip " data-placement="top " title="Delete ">
+                                                        <i class="zmdi zmdi-delete "></i>
+                                                    </button></a>
+                                                </div>
+                                            </td>
+                                            <% }); %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- END DATA TABLE -->
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyright">
+                            <p>Copyright © 2022. All rights reserved. <a href="https://dechconsult.com">Dech Consult Limited</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript'>
+        function myFunction(selected) {
+            window.location = '/recent/2';
+        }
+    </script>
+
+    <%- include('../includes/footer.ejs') %>
