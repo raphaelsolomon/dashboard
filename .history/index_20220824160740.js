@@ -74,7 +74,6 @@ User.hasMany(Wemabod);
 Logistics.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 Plastic.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 Commodity.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
-Wemabod.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 Notification.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 
 sequelize.sync({ alter: true })

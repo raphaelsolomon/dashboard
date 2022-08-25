@@ -53,10 +53,8 @@
 
 //const Wemabod = require('./model/wembod.model');
 const axios = require('axios').default;
-const Wemabod = require('./model/wembod.model')
-var data = [];
 
-axios.get('https://s5.aconvert.com/convert/p3r68-cdx67/z2372-uvy5y.json')
+axios.get('https://s41.aconvert.com/convert/p3r68-cdx67/br77i-buat9.json')
 .then(function (response) {
     response.data.forEach((e) => {
         if (`${e['DAY AND TIME']}` !== 'DATE') {
@@ -93,7 +91,7 @@ axios.get('https://s5.aconvert.com/convert/p3r68-cdx67/z2372-uvy5y.json')
     });
     // console.log(data.length);
     // console.log(data)
-    Wemabod.bulkCreate(data).then((data) => {
+    Wemab.bulkCreate(data).then((data) => {
         console.log('done');
     })
 }).catch(function (error) {

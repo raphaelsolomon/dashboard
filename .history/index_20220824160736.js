@@ -70,11 +70,10 @@ User.hasMany(Logistics);
 User.hasMany(Plastic);
 User.hasMany(Notification)
 User.hasMany(Commodity);
-User.hasMany(Wemabod);
+User.hasMany(Commodity);
 Logistics.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 Plastic.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 Commodity.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
-Wemabod.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 Notification.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 
 sequelize.sync({ alter: true })

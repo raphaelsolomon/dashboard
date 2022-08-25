@@ -13,7 +13,7 @@ const Plastic = require('./model/plastic.model');
 const flash = require('connect-flash');
 const Commodity = require('./model/commodity.model');
 const Notification = require('./model/notification.model');
-const Wemabod = require('./model/wembod.model')
+const Wemabod = require('')
 var SequelizeStore = require("connect-session-sequelize")(session.Store);
 require('dotenv').config();
 
@@ -70,11 +70,9 @@ User.hasMany(Logistics);
 User.hasMany(Plastic);
 User.hasMany(Notification)
 User.hasMany(Commodity);
-User.hasMany(Wemabod);
 Logistics.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 Plastic.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 Commodity.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
-Wemabod.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 Notification.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 
 sequelize.sync({ alter: true })
