@@ -1,5 +1,4 @@
 <%- include('../includes/header.ejs') %>
-
     <!-- MAIN CONTENT-->
     <div class="main-content">
         <div class="section__content section__content--p30">
@@ -13,93 +12,135 @@
                                 <div class="rs-select2--light rs-select2--md">
                                     <select class="js-select2" name="property">
                                         <option selected="selected">Check</option>
-                                        <option value="">PLASTICS RETRIEVED FROM</option>
-                                        <option value="">DATE</option>
-                                        <option value="">PLASTIC SIZE</option>
-                                        <option value="">TONNAGE</option>
-                                        <option value="">PRODUCT</option>
-                                        <option value="">VOLUME OF PLASTICS (PCS)</option>
-                                        <option value="">INITIAL CONTENT</option>
-                                        <option value="">MANUFACTURERS</option>
+                                        <option value="">CONSIGNOR</option>
+                                        <option value="">ORDER</option>
+                                        <option value="">DELIVERED</option>
+                                        <option value="">STREET</option>
+                                        <option value="">AREA</option>
+                                        <option value="">PIKUP</option>
                                     </select>
                                     <div class="dropDownSelect2"></div>
                                 </div>
                                 <div class="rs-select2--light rs-select2--sm">
-                                    <input style="padding: 7px;" type="date" name="" id="">
-                                </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-
+                                    <select class="js-select2" name="time">
+                                        <option selected="selected">Today</option>
+                                        <option value="">3 Days</option>
+                                        <option value="">1 Week</option>
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
                                 <button class="au-btn-filter">
                                     <i class="zmdi zmdi-filter-list"></i>filters</button>
                             </div>
                             <div class="table-data__tool-right">
                                 <a href="/add"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                        <i class="zmdi zmdi-plus"></i>add plastic</button></a>
+                                        <i class="zmdi zmdi-plus"></i>add item</button></a>
                                 <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                                     <select class="js-select2" name="type" onchange="myFunction(this.selectedIndex);">
                                         <option selected="selected">Export</option>
-                                        <option value="">CSV</option>
+                                        <option value=" ">CSV</option>
                                     </select>
-                                    <div class="dropDownSelect2"></div>
+                                    <div class="dropDownSelect2 "></div>
                                 </div>
                             </div>
                         </div>
-
                         <div class="table-overflow">
-                            <div class="table-responsive table-responsive-data2">
-                                <table class="table table-data2">
+                            <div class="table-responsive table-responsive-data2 ">
+                                <table class="table table-data2 ">
                                     <thead>
                                         <tr>
                                             <th>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="au-checkmark"></span>
+                                                <label class="au-checkbox ">
+                                                    <input type="checkbox ">
+                                                    <span class="au-checkmark "></span>
                                                 </label>
                                             </th>
-                                            <th>Plastics Retrieved From</th>
-                                            <th>Date</th>
-                                            <th>Plastic Size</th>
-                                            <th>Tonnage</th>
-                                            <th>Product</th>
-                                            <th>Volume of plastics (pcs)</th>
-                                            <th>Initial Content</th>
-                                            <th>Manufacturers</th>
+                                            <th>CONSIGNOR</th>
+                                            <th>PHONE NUMBER</th>
+                                            <th>ITEM TO BE DELIVERED</th>
+                                            <th>DATE OF ORDER</th>
+                                            <th>PICKUP STREET</th>
+                                            <th>PICKUP AREA </th>
+                                            <th>PICKUP TIME</th>
+                                            <th>CONSIGNEE</th>
+                                            <th>PHONE NUMBER</th>
+                                            <th>DELIVERY STREET</th>
+                                            <th>DELIVERY AREA</th>
+                                            <th>DELIVERY TIME</th>
+                                            <th>PAYMENT METHOD</th>
+                                            <th>STATUS</th>
+                                            <th>RIDER</th>
+                                            <th>AMOUNT PAID</th>
+                                            <th>PAYMENT STATUS</th>
                                             <th>ACTION</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <% listItem.forEach(function(e) { %>
-                                            <tr class="tr-shadow">
+                                            <tr class="tr-shadow ">
                                                 <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
+                                                    <label class="au-checkbox ">
+                                                        <input type="checkbox ">
+                                                        <span class="au-checkmark "></span>
                                                     </label>
                                                 </td>
                                                 <td>
-                                                    <%= e.retrieved_from %>
+                                                    <%= e.consignor %>
                                                 </td>
                                                 <td>
-                                                    <%= e.date %>
+                                                    <%= e.phone_number %>
                                                 </td>
                                                 <td>
-                                                    <%= e.plastic_size %>
+                                                    <%= e.itemToBeDelivered %>
                                                 </td>
                                                 <td>
-                                                    <%= e.tonnage %>
-                                                </td>
-                                                <td>
-                                                    <%= e.product %>
-                                                </td>
-                                                <td>
-                                                    <%= e.volume_of_plastics %>
-                                                </td>
-                                                <td>
-                                                    <%= e.initial_content %>
-                                                </td>
-                                                <td>
-                                                    <%= e.manufacturer %>
+                                                    <%= e.dateOfOrder %>
                                                 </td>
 
+                                                <td>
+                                                    <%= e.pickupaddress_str %>
+                                                </td>
+                                                <td>
+                                                    <%= e.pickupaddress_area %>
+                                                </td>
+                                                <td>
+                                                    <%= e.pickup_time %>
+                                                </td>
+                                                <td>
+                                                    <%= e.consignee %>
+                                                </td>
+                                                <td>
+                                                    <%= e.c_phone_number %>
+                                                </td>
+                                                <td>
+                                                    <%= e.c_deliveryAddress_str %>
+                                                </td>
+                                                <td>
+                                                    <%= e.c_deliveryAddress_area %>
+                                                </td>
+                                                <td>
+                                                    <%= e.c_deliveryTime %>
+                                                </td>
+                                                <td>
+                                                    <%= e.mode_of_pay %>
+                                                </td>
+                                                <td>
+                                                    <span class="status--process ">
+                                                        <%= e.status %>
+                                                    </span>
+                                                </td>
+
+                                                <td>
+                                                    <%= e.rider %>
+                                                </td>
+                                                <td>
+                                                    <%= e.amount_paid %>
+                                                </td>
+                                                <td>
+                                                    <span class="status--process ">
+                                                        <%= e.payment_status %>
+                                                    </span>
+                                                </td>
                                                 <td>
                                                     <div class="table-data-feature ">
 
@@ -117,13 +158,11 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr class="spacer"></tr>
                                             <% }); %>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-
                         <!--===================================================================-->
                         <center>
                             <div class="containerdesign">
@@ -145,21 +184,20 @@
                                                                 <%}%>
                                                                     <% if(page < numbersOfPage) { %>
                                                                         <a class="btn btn-primary btn__primary"
-                                                                            href="/table?page=<%=page + 1%>">></a>
+                                                                            href="/table?page=<%=page + 1%>">>></a>
                                                                         <%}%>
                             </div>
                         </center>
 
                         <!--===================================================================-->
-
                         <!-- END DATA TABLE -->
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="copyright">
-                            <p>Copyright © 2022. All rights reserved. <a href="https://dechconsult.com">Dech Consult
+                <div class="row ">
+                    <div class="col-md-12 ">
+                        <div class="copyright ">
+                            <p>Copyright © 2022. All rights reserved. <a href="https://dechconsult.com ">Dech Consult
                                     Limited</a>.</p>
                         </div>
                     </div>
@@ -167,6 +205,7 @@
             </div>
         </div>
     </div>
+
     <script type='text/javascript'>
         function myFunction(selected) {
             window.location = '/recent/2';

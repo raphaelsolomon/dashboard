@@ -4,7 +4,7 @@ const {
   COMMODITY_HEADER,
   COMMODITY_ATTRIBUTE,
 } = require("../constant/value.const");
-const resultPerPage = 30;
+
 
 exports.commodityIndex = async (req, res, next) => {
   const limitPlastic = await req.user.getCommodities({

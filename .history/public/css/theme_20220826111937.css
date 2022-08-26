@@ -4206,7 +4206,7 @@ section {
  .btn__primary{
     border-radius: 100px;
     padding-left: 12px;
-    padding-right: 12px;
+    padding-right: 10px;
     font-size: 11px;
  }
 
