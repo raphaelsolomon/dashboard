@@ -1,0 +1,153 @@
+<%- include('../includes/header.ejs') %>
+
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Edit data</div>
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h3 class="text-center title-2">UPDATE LOGISTIC DATA</h3>
+                                </div>
+                                <hr>
+                                <form action="/details/<%=logistic.id%>" method="post">
+
+                                    <div class="row form-group">
+                                        <input name="id" type="hidden" value="<%= logistic.id %>" />
+
+
+                                        <div class="form-group">
+                                            <label for="consignor" class="control-label mb-1">Consignor</label>
+                                            <input id="consignor" value="<%=logistic.consignor%>" name="consignor" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="phone no" class="control-label mb-1">Phone No</label>
+                                            <input id="phone_no" value="<%=logistic.consignor%>" name="phone_number" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="delivery item" class="control-label mb-1">Item to be
+                                                delivered</label>
+                                            <input id="delivery_item" value="<%=logistic.consignor%>" name="itemToBeDelivered" type="text"
+                                                class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="date of order" class="control-label mb-1">Date of order</label>
+                                            <input id="date_of_order" value="<%=logistic.consignor%>" name="dateOfOrder" type="date"
+                                                class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="pickup street" class="control-label mb-1">Pickup Street</label>
+                                            <input id="pickup_street" value="<%=logistic.consignor%>" name="pickupaddress_str" type="text"
+                                                class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="pickup area" class="control-label mb-1">Pickup Area</label>
+                                            <input id="pickup_area" value="<%=logistic.consignor%>" name="pickupaddress_area" type="text"
+                                                class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="pickup time" class="control-label mb-1">Pickup Time</label>
+                                            <input id="pickup_time" value="<%=logistic.consignor%>" name="pickup_time" type="time" class="form-control"
+                                                aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="consignor" class="control-label mb-1">Consignee</label>
+                                            <input id="consignor"  name="consignee" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="phone no" class="control-label mb-1">Phone No</label>
+                                            <input id="phone_no" name="c_phone_number" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="delivery street" class="control-label mb-1">Delivery
+                                                Street</label>
+                                            <input id="delivery_street" name="c_deliveryAddress_str" type="text"
+                                                class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="delivery area" class="control-label mb-1">Delivery Area</label>
+                                            <input id="delivery_area" name="c_deliveryAddress_area" type="text"
+                                                class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="delivery time" class="control-label mb-1">Delivery Time</label>
+                                            <input id="delivery_time" name="c_deliveryTime" type="time"
+                                                class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="payment method" class="control-label mb-1">Payment
+                                                Method</label>
+                                            <input id="payment_method" name="mode_of_pay" type="text"
+                                                class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="rider" class="control-label mb-1">Rider</label>
+                                            <input id="rider" name="rider" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="amount paid" class="control-label mb-1">Amount Paid</label>
+                                            <input id="amount_paid" name="amount_paid" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="payment status" class="control-label mb-1">Payment
+                                                Status</label>
+                                            <input id="payment_status" name="payment_status" type="text"
+                                                class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="status" class="control-label mb-1">Status</label>
+                                            <input id="staus" name="status" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false">
+                                        </div>
+                                        <div>
+                                            <button id="payment-button" type="submit"
+                                                class="btn btn-lg btn-info btn-block">
+                                                <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                                <span id="payment-button-amount">Update Record</span>
+                                                <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyright">
+                            <p>Copyright © 2022. All rights reserved. <a href="https://dechconsult.com">Dech Consult
+                                    Limited</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../includes/footer.ejs') %>

@@ -1,0 +1,127 @@
+<%- include('../includes/header.ejs') %>
+
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Edit data</div>
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h3 class="text-center title-2">UPDATE PLASTIC DATA</h3>
+                                </div>
+                                <hr>
+                                <form action="/details/<%=wemabod.id%>" method="post">
+
+                                    <div class="row form-group">
+                                        <input name="id" type="hidden" value="<%= wemabod.id %>"/>
+                                        <div class="form-group">
+                                            <label for="date" class="control-label mb-1">Date</label>
+                                            <input id="date" name="date" type="date" value="<%= wemabod.date %>" class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="time-out" class="control-label mb-1">Time-in</label>
+                                            <input id="time-out" name="from_time" value="<%=wemabod.from_time%>" type="time" class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+    
+                                        <div class="form-group">
+                                            <label for="time-in" class="control-label mb-1">Time-out</label>
+                                            <input id="time-in" name="to_time" value="<%=wemabod.to_time%>" type="time" class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+    
+                                        <div class="form-group">
+                                            <label for="resident-car" class="control-label mb-1">Resident car</label>
+                                            <input id="resident-car" name="movement_by_vehicle_resident" value="<%=wemabod.movement_by_vehicle_resident %>" type="number" class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+    
+                                        <div class="form-group">
+                                            <label for="staff-car" class="control-label mb-1">Staff car</label>
+                                            <input id="staff-car" name="movement_by_vehicle_staff" value="<%=wemabod.movement_by_vehicle_staff%>" type="number" class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+    
+                                        <div class="form-group">
+                                            <label for="visitor-car" class="control-label mb-1">Visitor car</label>
+                                            <input id="visitor-car" name="movement_by_vehicle_visitor" value="<%=wemabod.movement_by_vehicle_staff %>" type="number" class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+    
+                                        <div class="form-group">
+                                            <label for="cab-car" class="control-label mb-1">Cab car</label>
+                                            <input id="cab-car" name="movement_by_vehicle_cab_service" type="number" class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+    
+                                        <div class="form-group">
+                                            <label for="delivery" class="control-label mb-1">Delivery</label>
+                                            <input id="delivery" name="movement_by_vehicle_delivery" type="number" class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+    
+                                        <div class="form-group">
+                                            <label for="npf-matters" class="control-label mb-1">All NPF Matters</label>
+                                            <input id="npf-matters" name="police_matters_all_npf" type="number" class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+    
+                                        <div class="form-group">
+                                            <label for="man-cantre" class="control-label mb-1">Man centre</label>
+                                            <input id="man-cantre" name="man_matters" type="number" class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+    
+                                        <div class="form-group">
+                                            <label for="hospital" class="control-label mb-1">Hospital</label>
+                                            <input id="hospital" name="hospital_matters" type="number" class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+    
+                                        <div class="form-group">
+                                            <label for="select" class=" form-control-label">Visiting Street</label>
+                                            <select name="select" id="select" class="form-control">
+                                                <option value="street_visisted_adeojo">Adeojo</option>
+                                                <option value="street_visisted_eleruwa">Eleruwa</option>
+                                                <option value="street_visisted_olorunnimbe">Olorunnimbe</option>
+                                                <option value="street_visisted_ojora">Ojora</option>
+                                                <option value="street_visisted_eric_moore">Eric-moore</option>
+                                                                                                
+                                            </select>
+                                        </div>  <br>
+    
+                                        <h4>PEDESTRIAN MOVEMENT</h4><hr>
+    
+                                        <div class="form-group">
+                                            <label for="staff" class="control-label mb-1">Staff</label>
+                                            <input id="staff" name="movement_by_ped_staff" type="number" class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+    
+                                        <div class="form-group">
+                                            <label for="visitor" class="control-label mb-1">Visitor</label>
+                                            <input id="visitor" name="movement_by_ped_visitor" type="number" class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+    
+                                        <div class="form-group">
+                                            <label for="resident" class="control-label mb-1">Resident</label>
+                                            <input id="resident" name="movement_by_ped_resident" type="number" class="form-control" aria-required="true" aria-invalid="false">
+                                        </div>
+                                    <div>
+                                        <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                            <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                            <span id="payment-button-amount">Update Record</span>
+                                            <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyright">
+                            <p>Copyright © 2022. All rights reserved. <a href="https://dechconsult.com">Dech Consult
+                                    Limited</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../includes/footer.ejs') %>
