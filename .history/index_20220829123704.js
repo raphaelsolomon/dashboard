@@ -83,6 +83,6 @@ Notification.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 
 sequelize.sync({ alter: true })
     .then((_) => {
-       app.listen(PORT, () => console.log('listening on port ' + PORT));
+       app.listen(PORT, () => console.log('li'))
     })
     .catch((err) => console.log(err))

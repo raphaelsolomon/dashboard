@@ -46,7 +46,8 @@ var store = new SequelizeStore({
     expiration: 1000 * 60 * 60 * 24
 });
 
-const PORT = process.env.PORT || 4000;
+const HTTPSPORT = process.env.PORT || 4001;
+const HTTPPORT = process.env.PORT || 4000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: false }));
@@ -80,9 +81,9 @@ Commodity.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 Wemabod.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 Notification.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 
-
 sequelize.sync({ alter: true })
     .then((_) => {
-       app.listen(PORT, () => console.log('listening on port ' + PORT));
+        //http.createServer(app).listen(HTTPPORT);
+        https.createServer(options, app).listen(HTTPSPORT);
     })
     .catch((err) => console.log(err))
