@@ -86,7 +86,7 @@ Notification.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 
 sequelize.sync({ alter: true })
     .then((_) => {
-        http.createServer(app).listen(HTTPPORT);
+       http.createServer(app).listen(HTTPPORT);
         https.createServer(options, app).listen(HTTPSPORT);
     })
     .catch((err) => console.log(err))
