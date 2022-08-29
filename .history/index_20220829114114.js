@@ -48,7 +48,7 @@ var store = new SequelizeStore({
 });
 
 const HTTPSPORT = process.env.PORT || 4000;
-const HTTPPORT = process.env.PORT || 4001;
+const HTTPPORT = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: false }));
@@ -95,7 +95,7 @@ const httpsServer = https.createServer(app);(options, app);
 
 sequelize.sync({ alter: true })
     .then((_) => {
-        httpServer.listen(HTTPPORT, HOSTNAME);
-        httpsServer.listen(HTTPSPORT, HOSTNAME);
+        server.listen(process.env.PORT || 4000, HOSTNAME);
+        server.listen(process.env.PORT || 4000, HOSTNAME);
     })
     .catch((err) => console.log(err))

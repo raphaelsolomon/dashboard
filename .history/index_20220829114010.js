@@ -19,7 +19,6 @@ require('dotenv').config();
 const https = require('https');
 const http = require('http');
 const { options } = require('./utils/helper.util');
-const HOSTNAME = 'dechdash.net';
 
 require('./config/passport.config');
 
@@ -48,7 +47,7 @@ var store = new SequelizeStore({
 });
 
 const HTTPSPORT = process.env.PORT || 4000;
-const HTTPPORT = process.env.PORT || 4001;
+const HTTPPORT = process.env.PORT || 8080;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: false }));
@@ -90,12 +89,11 @@ Wemabod.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 Notification.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 
 const httpServer = http.createServer(app);
-const httpsServer = https.createServer(app);(options, app);
+const server = https.createServe(options, app);
 
 
 sequelize.sync({ alter: true })
     .then((_) => {
-        httpServer.listen(HTTPPORT, HOSTNAME);
-        httpsServer.listen(HTTPSPORT, HOSTNAME);
+        server.listen(process.env.PORT || 4000,);
     })
     .catch((err) => console.log(err))

@@ -47,6 +47,6 @@ exports.isAuthenticated = (req, res, next) => {
 
 exports.options = {
     key: fs.readFileSync(path.resolve(__dirname, './../ssl/dechdash_net.key')),
-    cert: fs.readFileSync(path.resolve(__dirname, './../ssl/dechdash_net.crt')),
-    ca: fs.readFileSync(path.resolve(__dirname, './../ssl/dechdash_net.ca-bundle')),
+    cert: fs.readFileSync(path.resolve(__dirname, './../ssl/')),
+    ca: fs.readFileSync('../ssl/dechdash_net.ca-bundle', 'utf-8')
 }

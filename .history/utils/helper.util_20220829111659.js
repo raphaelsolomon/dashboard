@@ -2,7 +2,6 @@ require('dotenv').config();
 const bcrypt = require('bcrypt');
 const fs = require('fs');
 const http = require('http');
-const path = require('path');
 
 
 exports.verifyPassword = (password, hash) => {
@@ -45,8 +44,4 @@ exports.isAuthenticated = (req, res, next) => {
     return res.status(200).redirect('/login');
 }
 
-exports.options = {
-    key: fs.readFileSync(path.resolve(__dirname, './../ssl/dechdash_net.key')),
-    cert: fs.readFileSync(path.resolve(__dirname, './../ssl/dechdash_net.crt')),
-    ca: fs.readFileSync(path.resolve(__dirname, './../ssl/dechdash_net.ca-bundle')),
-}
+export

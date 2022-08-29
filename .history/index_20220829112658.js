@@ -16,10 +16,7 @@ const Notification = require('./model/notification.model');
 const Wemabod = require('./model/wembod.model')
 var SequelizeStore = require("connect-session-sequelize")(session.Store);
 require('dotenv').config();
-const https = require('https');
-const http = require('http');
-const { options } = require('./utils/helper.util');
-const HOSTNAME = 'dechdash.net';
+var https = require('https');
 
 require('./config/passport.config');
 
@@ -47,8 +44,7 @@ var store = new SequelizeStore({
     expiration: 1000 * 60 * 60 * 24
 });
 
-const HTTPSPORT = process.env.PORT || 4000;
-const HTTPPORT = process.env.PORT || 4001;
+const PORT = process.env.PORT || 4000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: false }));
@@ -66,12 +62,6 @@ app.set('views', [
 app.set('view engine', 'ejs');
 app.use(flash());
 
-app.use((req, res, next) => {
-    if(req.protocol === 'http') {
-      res.redirect(301, `https://${req.headers.host}${req.url}`);
-    }
-    next();
- });
 app.use(require('./routes/routes.route'));
 app.use((req, res, next) => {
     return res.status(404).render('../auths/404');
@@ -89,13 +79,8 @@ Commodity.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 Wemabod.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 Notification.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 
-const httpServer = http.createServer(app);
-const httpsServer = https.createServer(app);(options, app);
-
+var server
 
 sequelize.sync({ alter: true })
-    .then((_) => {
-        httpServer.listen(HTTPPORT, HOSTNAME);
-        httpsServer.listen(HTTPSPORT, HOSTNAME);
-    })
+    .then((_) => app.listen(process.env.PORT || 4000, () => console.log(`server listening on ${PORT}`)))
     .catch((err) => console.log(err))
