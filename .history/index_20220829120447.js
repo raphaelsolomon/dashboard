@@ -19,6 +19,7 @@ require('dotenv').config();
 const https = require('https');
 const http = require('http');
 const { options } = require('./utils/helper.util');
+const HOSTNAME = 'dechdash.net';
 
 require('./config/passport.config');
 
@@ -46,8 +47,8 @@ var store = new SequelizeStore({
     expiration: 1000 * 60 * 60 * 24
 });
 
-const HTTPSPORT = process.env.PORT || 4001;
-const HTTPPORT = process.env.PORT || 4000;
+const HTTPSPORT = process.env.PORT || 4000;
+const HTTPPORT = process.env.PORT || 4001;
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: false }));
@@ -65,10 +66,19 @@ app.set('views', [
 app.set('view engine', 'ejs');
 app.use(flash());
 
+app.use((req,resp,next){
+    if (req.headers['x-forwarded-proto'] == 'http') {
+        return resp.redirect(301, 'https://' + req.headers.host + '/');
+    } else {
+        return next();
+    }
+  });
+
 app.use(require('./routes/routes.route'));
 app.use((req, res, next) => {
     return res.status(404).render('../auths/404');
 })
+
 
 User.hasMany(Logistics);
 User.hasMany(Plastic);

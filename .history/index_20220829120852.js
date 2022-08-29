@@ -65,10 +65,21 @@ app.set('views', [
 app.set('view engine', 'ejs');
 app.use(flash());
 
+app.use((req,resp,next) => {
+    if (req.headers['x-forwarded-proto'] == 'http') {
+        console.log('here
+        ')
+        return resp.redirect(301, 'https://' + req.headers.host + '/');
+    } else {
+        return next();
+    }
+  });
+
 app.use(require('./routes/routes.route'));
 app.use((req, res, next) => {
     return res.status(404).render('../auths/404');
 })
+
 
 User.hasMany(Logistics);
 User.hasMany(Plastic);
