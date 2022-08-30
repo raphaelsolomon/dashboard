@@ -65,7 +65,7 @@ app.set('view engine', 'ejs');
 app.use(flash());
 
 app.use((req, res, next) => {
-    if(req.protocol === 'http' && process.env.NODE_ENV === 'production') {
+    if(req.protocol === 'http' && process.env.NODE_ENV === 'pro') {
         return res.status(200).redirect('https://dechdash.net/');
     }
     next();
