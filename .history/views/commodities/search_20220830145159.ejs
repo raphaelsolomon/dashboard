@@ -1,5 +1,5 @@
 <%- include('../includes/header.ejs') %>
-
+ 
     <!-- MAIN CONTENT-->
     <div class="main-content">
         <div class="section__content section__content--p30">
@@ -27,9 +27,9 @@
                                     <tr>
                                         <th>
                                             <label class="au-checkbox">
-                                                <input type="checkbox">
-                                                <span class="au-checkmark"></span>
-                                            </label>
+                                                        <input type="checkbox">
+                                                        <span class="au-checkmark"></span>
+                                                    </label>
                                         </th>
                                         th>Purchased Date</th>
                                         <th>Purchased Cost</th>
@@ -60,67 +60,34 @@
                                                     <span class="au-checkmark"></span>
                                                 </label>
                                             </td>
-                                            <td>
-                                                <%= e.purchased_date %>
-                                            </td>
-                                            <td>
-                                                <%= e.purchased_cost %>
-                                            </td>
-                                            <td>
-                                                <&= e.customer_name %>
-                                            </td>
-                                            <td>
-                                                <%= e.phone_no %>
-                                            </td>
-                                            <td>
-                                                <%= e.commodity %>
-                                            </td>
-                                            <td>
-                                                <%= e.commodity_size %>
-                                            </td>
-                                            <td>
-                                                <%= e.commodity_color %>
-                                            </td>
-                                            <td>
-                                                <%= e.sales_date %>
-                                            </td>
-                                            <td>
-                                                <%= e.sales_cost %>
-                                            </td>
-                                            <td>
-                                                <%= e.purchasing_gender %>
-                                            </td>
-                                            <td>
-                                                <%= e.mode_payment %>
-                                            </td>
-                                            <td>
-                                                <%= e.delivery_location %>
-                                            </td>
-                                            <td>
-                                                <%= e.mode_transaction %>
-                                            </td>
-                                            <td>
-                                                <%= e.advertising_medium %>
-                                            </td>
+                                            <td><%= e.purchased_date %></td>
+                                            <td><%= e.purchased_cost %></td>
+                                            <td><&= e.customer_name %></td>
+                                            <td><%= e.phone_no %></td>
+                                            <td><%= e.commodity %></td>
+                                            <td><%= e.commodity_size %></td>
+                                            <td><%= e.commodity_color %></td>
+                                            <td><%= e.sales_date %></td>
+                                            <td><%= e.sales_cost %></td>
+                                            <td><%= e.purchasing_gender %></td>
+                                            <td><%= e.mode_payment %></td>
+                                            <td><%= e.delivery_location %></td>
+                                            <td><%= e.mode_transaction %></td>
+                                            <td><%= e.advertising_medium %></td>
 
                                             <td>
-                                                <span class="status--process">
-                                                    <%= e.status %>
-                                                </span>
+                                                <span class="status--process"><%= e.status %></span>
                                             </td>
 
                                             <td>
                                                 <div class="table-data-feature ">
 
-                                                    <a href='/details/<%= e.id %>'><button class="item "
-                                                            data-toggle="tooltip " data-placement="top " title="Edit ">
-                                                            <i class="zmdi zmdi-edit "></i>
-                                                        </button></a>
-                                                    <a href='/delete/<%= e.id %>'><button class="item "
-                                                            data-toggle="tooltip " data-placement="top "
-                                                            title="Delete ">
-                                                            <i class="zmdi zmdi-delete "></i>
-                                                        </button></a>
+                                                    <a href='/details/<%= e.id %>'><button class="item " data-toggle="tooltip " data-placement="top " title="Edit ">
+                                                        <i class="zmdi zmdi-edit "></i>
+                                                    </button></a>
+                                                    <a href='/delete/<%= e.id %>'><button class="item " data-toggle="tooltip " data-placement="top " title="Delete ">
+                                                        <i class="zmdi zmdi-delete "></i>
+                                                    </button></a>
 
                                                 </div>
                                             </td>
@@ -150,8 +117,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="copyright">
-                            <p>Copyright © 2022. All rights reserved. <a href="https://dechconsult.com">Dech Consult
-                                    Limited</a>.</p>
+                            <p>Copyright © 2022. All rights reserved. <a href="https://dechconsult.com">Dech Consult Limited</a>.</p>
                         </div>
                     </div>
                 </div>
@@ -159,10 +125,6 @@
         </div>
     </div>
 
-    <script>
-        function myFunction(selected) {
-            window.location = '/recent/2';
-        }
-    </script>
+
 
     <%- include('../includes/footer.ejs') %>

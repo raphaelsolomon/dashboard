@@ -328,7 +328,42 @@ route.post("/search", async (req, res, next) => {
       where: {
         [Op.or]: [
           {
-            from_time: {
+            product: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            manufacturer: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            initial_content: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            zone: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            retrieved_from: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            plastic_size: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            tonnage: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            volume_of_plastics: {
               [Op.like]: `%${search}%`,
             },
           },
@@ -337,16 +372,11 @@ route.post("/search", async (req, res, next) => {
               [Op.like]: `%${search}%`,
             },
           },
-          {
-            to_time: {
-              [Op.like]: `%${search}%`,
-            },
-          }
         ],
       },
-    }).then((wemabod) => {
-      return res.status(200).render("../wemabod/search", {
-        listItem: wemabod,
+    }).then((wema) => {
+      return res.status(200).render("../plastics/search", {
+        listItem: plastic,
         user: req.user,
         notification: notification,
         title: "Search",

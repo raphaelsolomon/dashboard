@@ -11,7 +11,6 @@ const Notification = require("../model/notification.model");
 const Commodity = require("../model/commodity.model");
 const Logistic = require("../model/logistics.model");
 const Plastic = require("../model/plastic.model");
-const Wemabod = require("../model/wembod.model");
 
 route.get("/", isAuthenticated, async (req, res, next) => {
   if (req.user.trade === "Logistics") {
@@ -324,36 +323,9 @@ route.post("/search", async (req, res, next) => {
   });
   const { search } = req.body;
   if (req.user.trade === "Wemabod") {
-    return Wemabod.findAll({
-      where: {
-        [Op.or]: [
-          {
-            from_time: {
-              [Op.like]: `%${search}%`,
-            },
-          },
-          {
-            date: {
-              [Op.like]: `%${search}%`,
-            },
-          },
-          {
-            to_time: {
-              [Op.like]: `%${search}%`,
-            },
-          }
-        ],
-      },
-    }).then((wemabod) => {
-      return res.status(200).render("../wemabod/search", {
-        listItem: wemabod,
-        user: req.user,
-        notification: notification,
-        title: "Search",
-      });
-    });
-  }
 
+  }
+  
   if (req.user.trade === "Plastics") {
     return Plastic.findAll({
       where: {

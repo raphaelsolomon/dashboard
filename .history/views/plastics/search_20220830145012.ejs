@@ -9,6 +9,29 @@
                         <!-- DATA TABLE -->
                         <h3 class="title-5 m-b-35">Search Result</h3>
                         <div class="table-data__tool">
+                            <div class="table-data__tool-left">
+                                <div class="rs-select2--light rs-select2--md">
+                                    <select class="js-select2" name="property"
+                                        onchange="myFunctionSelect(this.selectedIndex);">
+                                        <option selected="all">All</option>
+                                        <option value="retrieved_from">PLASTICS RETRIEVED FROM</option>
+                                        <option value="size">PLASTIC SIZE</option>
+                                        <option value="tonnage">TONNAGE</option>
+                                        <option value="product">PRODUCT</option>
+                                        <option value="volume">VOLUME OF PLASTICS (PCS)</option>
+                                        <option value="initial">INITIAL CONTENT</option>
+                                        <option value="manufactures">MANUFACTURERS</option>
+
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                                <div class="rs-select2--light rs-select2--sm">
+                                    <input style="padding: 7px;" type="date" name="dateFilter" id="dateFilter">
+                                </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+                                <button class="au-btn-filter" id="filterBtn" onclick="myClickFunction();"><i
+                                        class="zmdi zmdi-filter-list"></i>filters</button>
+                            </div>
                             <div class="table-data__tool-right">
                                 <a href="/add"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
                                         <i class="zmdi zmdi-plus"></i>add plastic</button></a>
@@ -94,6 +117,19 @@
                                         </tr>
                                         <tr class="spacer"></tr>
                                         <% }); %>
+                                </tbody>
+                            </table>
+                            <table class="table table-data2" id="retrieved_from">
+                                <thead id="retrieved_from_hearder">
+                                    <tr>
+                                        <th id="headerName">Plastics Retrieved From</th>
+                                        <th>Date</th>
+                                        <th>ACTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="retrieved_from_body">
+                                    <tr class="tr-shadow"></tr>
+                                    <tr class="spacer"></tr>
                                 </tbody>
                             </table>
                         </div>

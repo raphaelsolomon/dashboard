@@ -9,6 +9,28 @@
                         <!-- DATA TABLE -->
                         <h3 class="title-5 m-b-35">Search Result</h3>
                         <div class="table-data__tool">
+                            <div class="table-data__tool-left">
+                                <div class="rs-select2--light rs-select2--md">
+                                    <select class="js-select2" name="property" onchange="myFunctionSelect(this.selectedIndex);">
+                                        <option selected="all">All</option>
+                                        <option value="retrieved_from">PLASTICS RETRIEVED FROM</option>
+                                        <option value="size">PLASTIC SIZE</option>
+                                        <option value="tonnage">TONNAGE</option>
+                                        <option value="product">PRODUCT</option>
+                                        <option value="volume">VOLUME OF PLASTICS (PCS)</option>
+                                        <option value="initial">INITIAL CONTENT</option>
+                                        <option value="manufactures">MANUFACTURERS</option>
+    
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                                <div class="rs-select2--light rs-select2--sm">
+                                    <input style="padding: 7px;" type="date" name="dateFilter" id="dateFilter">
+                                </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+                                <button class="au-btn-filter" id="filterBtn" onclick="myClickFunction();"><i
+                                    class="zmdi zmdi-filter-list"></i>filters</button>
+                            </div>
                             <div class="table-data__tool-right">
                                 <a href="/add"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
                                         <i class="zmdi zmdi-plus"></i>add plastic</button></a>
@@ -27,9 +49,9 @@
                                     <tr>
                                         <th>
                                             <label class="au-checkbox">
-                                                <input type="checkbox">
-                                                <span class="au-checkmark"></span>
-                                            </label>
+                                                        <input type="checkbox">
+                                                        <span class="au-checkmark"></span>
+                                                    </label>
                                         </th>
                                         <th>Plastics Retrieved From</th>
                                         <th>Date</th>
@@ -79,21 +101,31 @@
                                             <td>
                                                 <div class="table-data-feature ">
 
-                                                    <a href='/details/<%= e.id %>'><button class="item "
-                                                            data-toggle="tooltip " data-placement="top " title="Edit ">
-                                                            <i class="zmdi zmdi-edit "></i>
-                                                        </button></a>
-                                                    <a href='/delete/<%= e.id %>'><button class="item "
-                                                            data-toggle="tooltip " data-placement="top "
-                                                            title="Delete ">
-                                                            <i class="zmdi zmdi-delete "></i>
-                                                        </button></a>
+                                                    <a href='/details/<%= e.id %>'><button class="item " data-toggle="tooltip " data-placement="top " title="Edit ">
+                                                        <i class="zmdi zmdi-edit "></i>
+                                                    </button></a>
+                                                    <a href='/delete/<%= e.id %>'><button class="item " data-toggle="tooltip " data-placement="top " title="Delete ">
+                                                        <i class="zmdi zmdi-delete "></i>
+                                                    </button></a>
 
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr class="spacer"></tr>
                                         <% }); %>
+                                </tbody>
+                            </table>
+                            <table class="table table-data2" id="retrieved_from">
+                                <thead id="retrieved_from_hearder">
+                                    <tr>
+                                        <th id="headerName">Plastics Retrieved From</th>
+                                        <th>Date</th>
+                                        <th>ACTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="retrieved_from_body">
+                                    <tr class="tr-shadow"></tr>
+                                    <tr class="spacer"></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -104,8 +136,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="copyright">
-                            <p>Copyright © 2022. All rights reserved. <a href="https://dechconsult.com">Dech Consult
-                                    Limited</a>.</p>
+                            <p>Copyright © 2022. All rights reserved. <a href="https://dechconsult.com">Dech Consult Limited</a>.</p>
                         </div>
                     </div>
                 </div>
@@ -113,10 +144,10 @@
         </div>
     </div>
 
-    <script>
-        function myFunction(selected) {
+<script>
+    function myFunction(selected) {
             window.location = '/recent/2';
         }
-    </script>
+</s
 
     <%- include('../includes/footer.ejs') %>

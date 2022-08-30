@@ -11,7 +11,6 @@ const Notification = require("../model/notification.model");
 const Commodity = require("../model/commodity.model");
 const Logistic = require("../model/logistics.model");
 const Plastic = require("../model/plastic.model");
-const Wemabod = require("../model/wembod.model");
 
 route.get("/", isAuthenticated, async (req, res, next) => {
   if (req.user.trade === "Logistics") {
@@ -235,8 +234,8 @@ route.post("/register", async (req, res, next) => {
     return User.create(req.body)
       .then((user) => {
         if (user) {
-          user.createNotification({ message: 'Welcome to dechdash' });
-          user.createNotification({ message: 'Start inputting your business data with Dechdash...' });
+          user.createNotification({message: 'Welcome to dechdash'});
+          user.createNotification({message: 'Start inputting your business data with Dechdash...'});
           req.flash("success", 'Your account has been successfully created, please sign in');
           return res.status(200).redirect("/login");
         }
@@ -256,10 +255,10 @@ route.get("/login", (req, res, next) => {
 });
 
 route.post("/login", passport.authenticate("local", {
-  failureRedirect: "/login",
-  successRedirect: '/',
-  failureFlash: true,
-}));
+    failureRedirect: "/login",
+    successRedirect: '/',
+    failureFlash: true,
+  }));
 
 route.get("/forget-password", (req, res, next) => {
   return res.status(200).render("../auths/forgot");
@@ -324,36 +323,8 @@ route.post("/search", async (req, res, next) => {
   });
   const { search } = req.body;
   if (req.user.trade === "Wemabod") {
-    return Wemabod.findAll({
-      where: {
-        [Op.or]: [
-          {
-            from_time: {
-              [Op.like]: `%${search}%`,
-            },
-          },
-          {
-            date: {
-              [Op.like]: `%${search}%`,
-            },
-          },
-          {
-            to_time: {
-              [Op.like]: `%${search}%`,
-            },
-          }
-        ],
-      },
-    }).then((wemabod) => {
-      return res.status(200).render("../wemabod/search", {
-        listItem: wemabod,
-        user: req.user,
-        notification: notification,
-        title: "Search",
-      });
-    });
-  }
 
+  }
   if (req.user.trade === "Plastics") {
     return Plastic.findAll({
       where: {
@@ -491,50 +462,45 @@ route.post("/search", async (req, res, next) => {
             },
           },
           {
-            itemToBeDelivered: {
+            customer_name: {
               [Op.like]: `%${search}%`,
             },
           },
           {
-            pickupaddress_str: {
+            commodity: {
               [Op.like]: `%${search}%`,
             },
           },
           {
-            pickupaddress_area: {
+            commodity_size: {
               [Op.like]: `%${search}%`,
             },
           },
           {
-            consignee: {
+            commodity_color: {
               [Op.like]: `%${search}%`,
             },
           },
           {
-            c_phone_number: {
+            sales_date: {
               [Op.like]: `%${search}%`,
             },
           },
           {
-            c_deliveryAddress_str: {
+            sales_cost: {
               [Op.like]: `%${search}%`,
             },
           },
           {
-            mode_of_pay: {
-              [Op.like]: `%${search}%`,
-            },
-          },
-          {
-            rider: {
+            delivery_street: {
               [Op.like]: `%${search}%`,
             },
           },
         ],
       },
-    }).then((logistics) => {
-      return res.status(200).render("../logistics/search", {
-        listItem: logistics,
+    }).then((commodity) => {
+      return res.status(200).render("../commodities/search", {
+        listItem: commodity,
         user: req.user,
         notification: notification,
         title: "Search",

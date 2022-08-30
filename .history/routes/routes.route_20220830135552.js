@@ -338,14 +338,44 @@ route.post("/search", async (req, res, next) => {
             },
           },
           {
-            to_time: {
+            initial_content: {
               [Op.like]: `%${search}%`,
             },
-          }
+          },
+          {
+            zone: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            retrieved_from: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            plastic_size: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            tonnage: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            volume_of_plastics: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            date: {
+              [Op.like]: `%${search}%`,
+            },
+          },
         ],
       },
     }).then((wemabod) => {
-      return res.status(200).render("../wemabod/search", {
+      return res.status(200).render("../plastics/search", {
         listItem: wemabod,
         user: req.user,
         notification: notification,

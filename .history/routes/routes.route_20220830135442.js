@@ -11,7 +11,6 @@ const Notification = require("../model/notification.model");
 const Commodity = require("../model/commodity.model");
 const Logistic = require("../model/logistics.model");
 const Plastic = require("../model/plastic.model");
-const Wemabod = require("../model/wembod.model");
 
 route.get("/", isAuthenticated, async (req, res, next) => {
   if (req.user.trade === "Logistics") {
@@ -324,11 +323,46 @@ route.post("/search", async (req, res, next) => {
   });
   const { search } = req.body;
   if (req.user.trade === "Wemabod") {
-    return Wemabod.findAll({
+    return We.findAll({
       where: {
         [Op.or]: [
           {
-            from_time: {
+            product: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            manufacturer: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            initial_content: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            zone: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            retrieved_from: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            plastic_size: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            tonnage: {
+              [Op.like]: `%${search}%`,
+            },
+          },
+          {
+            volume_of_plastics: {
               [Op.like]: `%${search}%`,
             },
           },
@@ -337,16 +371,11 @@ route.post("/search", async (req, res, next) => {
               [Op.like]: `%${search}%`,
             },
           },
-          {
-            to_time: {
-              [Op.like]: `%${search}%`,
-            },
-          }
         ],
       },
-    }).then((wemabod) => {
-      return res.status(200).render("../wemabod/search", {
-        listItem: wemabod,
+    }).then((plastic) => {
+      return res.status(200).render("../plastics/search", {
+        listItem: plastic,
         user: req.user,
         notification: notification,
         title: "Search",

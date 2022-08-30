@@ -345,7 +345,7 @@ route.post("/search", async (req, res, next) => {
         ],
       },
     }).then((wemabod) => {
-      return res.status(200).render("../wemabod/search", {
+      return res.status(200).render("../plastics/search", {
         listItem: wemabod,
         user: req.user,
         notification: notification,
