@@ -1,0 +1,211 @@
+<%- include('../includes/header.ejs') %>
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- DATA TABLE -->
+                        <h3 class="title-5 m-b-35">data table</h3>
+                        <div class="table-data__tool">
+                            <div class="table-data__tool-left">
+                                <div class="rs-select2--light rs-select2--md">
+                                    <select class="js-select2" name="property">
+                                        <option selected="selected">Check</option>
+                                        <option value="">CONSIGNOR</option>
+                                        <option value="">ORDER</option>
+                                        <option value="">DELIVERED</option>
+                                        <option value="">STREET</option>
+                                        <option value="">AREA</option>
+                                        <option value="">PIKUP</option>
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                                <div class="rs-select2--light rs-select2--sm">
+                                    <select class="js-select2" name="time">
+                                        <option selected="selected">Today</option>
+                                        <option value="">3 Days</option>
+                                        <option value="">1 Week</option>
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                                <button class="au-btn-filter">
+                                    <i class="zmdi zmdi-filter-list"></i>filters</button>
+                            </div>
+                            <div class="table-data__tool-right">
+                                <a href="/add"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                        <i class="zmdi zmdi-plus"></i>add item</button></a>
+                                <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                    <select class="js-select2" name="type" onchange="myFunction(this.selectedIndex);">
+                                        <option selected="selected">Export</option>
+                                        <option value=" ">CSV</option>
+                                    </select>
+                                    <div class="dropDownSelect2 "></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-overflow">
+                            <div class="table-responsive table-responsive-data2 ">
+                                <table class="table table-data2 ">
+                                    <thead>
+                                        <tr>
+                                            <!-- <th>
+                                                <label class="au-checkbox ">
+                                                    <input type="checkbox ">
+                                                    <span class="au-checkmark "></span>
+                                                </label>
+                                            </th> -->
+                                            <th>CONSIGNOR</th>
+                                            <th>PHONE NUMBER</th>
+                                            <th>ITEM TO BE DELIVERED</th>
+                                            <th>DATE OF ORDER</th>
+                                            <th>PICKUP STREET</th>
+                                            <th>PICKUP AREA </th>
+                                            <th>PICKUP TIME</th>
+                                            <th>CONSIGNEE</th>
+                                            <th>PHONE NUMBER</th>
+                                            <th>DELIVERY STREET</th>
+                                            <th>DELIVERY AREA</th>
+                                            <th>DELIVERY TIME</th>
+                                            <th>PAYMENT METHOD</th>
+                                            <th>STATUS</th>
+                                            <th>RIDER</th>
+                                            <th>AMOUNT PAID</th>
+                                            <th>PAYMENT STATUS</th>
+                                            <th>ACTION</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% listItem.forEach(function(e) { %>
+                                            <tr class="tr-shadow ">
+                                                <!-- <td>
+                                                    <label class="au-checkbox ">
+                                                        <input type="checkbox ">
+                                                        <span class="au-checkmark "></span>
+                                                    </label>
+                                                </td> -->
+                                                <td>
+                                                    <%= e.consignor %>
+                                                </td>
+                                                <td>
+                                                    <%= e.phone_number %>
+                                                </td>
+                                                <td>
+                                                    <%= e.itemToBeDelivered %>
+                                                </td>
+                                                <td>
+                                                    <%= e.dateOfOrder %>
+                                                </td>
+
+                                                <td>
+                                                    <%= e.pickupaddress_str %>
+                                                </td>
+                                                <td>
+                                                    <%= e.pickupaddress_area %>
+                                                </td>
+                                                <td>
+                                                    <%= e.pickup_time %>
+                                                </td>
+                                                <td>
+                                                    <%= e.consignee %>
+                                                </td>
+                                                <td>
+                                                    <%= e.c_phone_number %>
+                                                </td>
+                                                <td>
+                                                    <%= e.c_deliveryAddress_str %>
+                                                </td>
+                                                <td>
+                                                    <%= e.c_deliveryAddress_area %>
+                                                </td>
+                                                <td>
+                                                    <%= e.c_deliveryTime %>
+                                                </td>
+                                                <td>
+                                                    <%= e.mode_of_pay %>
+                                                </td>
+                                                <td>
+                                                    <span class="status--process ">
+                                                        <%= e.status %>
+                                                    </span>
+                                                </td>
+
+                                                <td>
+                                                    <%= e.rider %>
+                                                </td>
+                                                <td>
+                                                    <%= e.amount_paid %>
+                                                </td>
+                                                <td>
+                                                    <span class="status--process ">
+                                                        <%= e.payment_status %>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <div class="table-data-feature ">
+
+                                                        <a href='/details/<%= e.id %>'><button class="item "
+                                                                data-toggle="tooltip " data-placement="top "
+                                                                title="Edit ">
+                                                                <i class="zmdi zmdi-edit "></i>
+                                                            </button></a>
+                                                        <a href='/delete/<%= e.id %>'><button class="item "
+                                                                data-toggle="tooltip " data-placement="top "
+                                                                title="Delete ">
+                                                                <i class="zmdi zmdi-delete "></i>
+                                                            </button></a>
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <% }); %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--===================================================================-->
+                        <center>
+                            <div class="containerdesign">
+                                <% if(page> 1) { %>
+                                    <a class="btn btn-primary btn__primary" href="/table?page=<%=page - 1%>"><< /a>
+                                <%}%>
+                                <% for (var i=iterator; i <=endingLink; i++) { %>
+                                    <% if(i===page) {%>
+                                        <a class="btn btn-primary btn__primary" href="/table?page=<%=i%>"><%=i%></a>
+                                        <% continue; %>
+                                    <%}%>
+                                    <% if(page > 0) { %>
+                                        <a class="nos" href="/table?page=<%=i%>"><%=i%></a>
+                                    <%}%>
+                                                                <%}%>
+                                                                    <% if(page < numbersOfPage) { %>
+                                                                        <a class="btn btn-primary btn__primary"
+                                                                            href="/table?page=<%=page + 1%>">></a>
+                                                                        <%}%>
+                            </div>
+                        </center>
+
+                        <!--===================================================================-->
+                        <!-- END DATA TABLE -->
+                    </div>
+                </div>
+
+                <div class="row ">
+                    <div class="col-md-12 ">
+                        <div class="copyright ">
+                            <p>Copyright © 2022. All rights reserved. <a href="https://dechconsult.com ">Dech Consult
+                                    Limited</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript'>
+        function myFunction(selected) {
+            window.location = '/recent/2';
+        }
+    </script>
+
+    <%- include('../includes/footer.ejs') %>
