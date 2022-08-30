@@ -1,0 +1,347 @@
+<%- include('../includes/index_header.ejs') %>
+    <!-- STATISTIC-->
+    <!-- STATISTIC-->
+    <section class="statistic statistic2">
+        <div class="container" id="ContainerData">
+            <div class="row">
+                <div id="Container" style="overflow:hidden; width: 100%; height: 373;">
+                    <iframe width="100%" height="373.5"
+                        src= <%= user.chart2 %>
+                        frameborder="0" allowFullScreen="false"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END STATISTIC-->
+
+    <!-- STATISTIC CHART-->
+    <section class="statistic-chart">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="title-5 m-b-35">Analysis</h3>
+                </div>
+            </div>
+            <div class="row">
+                <% if(user.chart2==='') { %>
+                <div id="Container" style="overflow:hidden; width: 100%; height: 373;">
+                    <iframe width="100%" height="373.5"
+                        src= <%= user.chart1 %>
+                        frameborder="0" allowFullScreen="false"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- END STATISTIC CHART-->
+
+    <center>
+        <a href="/chart">
+            <button class="au-btn au-btn-icon au-btn--green au-btn--small"> more analysis</button>
+        </a>
+    </center>
+
+    <!-- DATA TABLE-->
+    <section class="p-t-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="title-5 m-b-35">data table</h3>
+                    <div class="table-data__tool">
+                        <div class="table-data__tool-left">
+                            <div class="rs-select2--light rs-select2--md">
+                                <select class="js-select2" name="property" onchange="myFunction(this.selectedIndex);">
+                                    <option selected="selected" value="all">All</option>
+                                    <option value="purchase_date">Purchased Date</option>
+                                    <option value="purchase_cost">Purchased Cost</option>
+                                    <option value="customer_name">Customer Name</option>
+                                    <option value="phone_number">Phone Number</option>
+                                </select>
+                                <div class="dropDownSelect2"></div>
+                            </div>
+
+                            <div class="rs-select2--light rs-select2--sm">
+                                <input style="padding: 7px;" type="date" name="dateFilter" id="dateFilter">
+                            </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+                            <button class="au-btn-filter" id="filterBtn" onclick="myClickFunction();"><i
+                                class="zmdi zmdi-filter-list"></i>filters</button>
+                        </div>
+                        <div class="table-data__tool-right">
+                            <a href="/add"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                    <i class="zmdi zmdi-plus"></i>add item</button></a>
+                            <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                <select class="js-select2" name="type" onchange="myFunctionExport(this.selectedIndex);">
+                                    <option selected="selected">Export</option>
+                                    <option value="csv">CSV</option>
+                                </select>
+                                <div class="dropDownSelect2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive table-responsive-data2">
+                        <table class="table table-data2" id="allFilter">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label class="au-checkbox">
+                                            <input type="checkbox">
+                                            <span class="au-checkmark"></span>
+                                        </label>
+                                    </th>
+                                    <th>Purchased Date</th>
+                                    <th>Purchased Cost</th>
+                                    <th>Customer Name </th>
+                                    <th>Phone Number</th>
+                                    <th>Commodity</th>
+                                    <th>Commodity Size</th>
+                                    <th>Commodity Color</th>
+                                    <th>Sales Date</th>
+                                    <th>Sales Cost</th>
+                                    <th>Purchasing Gender</th>
+                                    <th>Mode of Payment</th>
+                                    <th>Delivery Location</th>
+                                    <th>Mode of Transaction</th>
+                                    <th>Advertising Medium</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% data.tableLimit.forEach(function(e) { %>
+                                    <tr class="tr-shadow">
+                                        <td>
+                                            <label class="au-checkbox">
+                                                <input type="checkbox">
+                                                <span class="au-checkmark"></span>
+                                            </label>
+                                        </td>
+                                        <td>
+                                            <%= e.purchased_date %>
+                                        </td>
+                                        <td>
+                                            <%= e.purchased_cost %>
+                                        </td>
+                                        <td>
+                                            <&= e.customer_name %>
+                                        </td>
+                                        <td>
+                                            <%= e.phone_no %>
+                                        </td>
+                                        <td>
+                                            <%= e.commodity %>
+                                        </td>
+                                        <td>
+                                            <%= e.commodity_size %>
+                                        </td>
+                                        <td>
+                                            <%= e.commodity_color %>
+                                        </td>
+                                        <td>
+                                            <%= e.sales_date %>
+                                        </td>
+                                        <td>
+                                            <%= e.sales_cost %>
+                                        </td>
+                                        <td>
+                                            <%= e.purchasing_gender %>
+                                        </td>
+                                        <td>
+                                            <%= e.mode_payment %>
+                                        </td>
+                                        <td>
+                                            <%= e.delivery_location %>
+                                        </td>
+                                        <td>
+                                            <%= e.mode_transaction %>
+                                        </td>
+                                        <td>
+                                            <%= e.advertising_medium %>
+                                        </td>
+
+                                        <td>
+                                            <span class="status--process">
+                                                <%= e.status %>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="table-data-feature ">
+
+                                                <a href='/details/<%= e.id %>'><button class="item "
+                                                        data-toggle="tooltip " data-placement="top " title="Edit ">
+                                                        <i class="zmdi zmdi-edit "></i>
+                                                    </button></a>
+                                                <a href='/delete/<%= e.id %>'><button class="item "
+                                                        data-toggle="tooltip " data-placement="top " title="Delete ">
+                                                        <i class="zmdi zmdi-delete "></i>
+                                                    </button></a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <% }); %>
+                            </tbody>
+                        </table>
+                        <table class="table table-data2" id="retrieved_from">
+                            <thead id="retrieved_from_hearder">
+                                <tr>
+                                    <th id="headerName">Purrchase Date</th>
+                                    <th>Date</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody id="retrieved_from_body">
+                                <tr class="tr-shadow"></tr>
+                                <tr class="spacer"></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END DATA TABLE-->
+    <script>
+
+        document.getElementById("allFilter").style.visibility = "visible";
+        document.getElementById("retrieved_from").style.visibility = "collapse";
+        var selected;
+
+        function myFunction(value) {
+            selected = value;
+        }
+
+        function myClickFunction() {
+            const list = ['all', 'purchase_date', 'purchase_cost', 'customer_name', 'phone_number'];
+            var inputDate = document.getElementById("dateFilter").value
+            // const [year, month, day] = inputDate.split("/");
+            // const dateChange = `${year}-${month}-${day}`;
+        
+
+            if (list[selected] === 'all') {
+                document.getElementById("allFilter").style.visibility = "visible";
+                document.getElementById("retrieved_from").style.visibility = "collapse";
+
+            } else if (list[selected] === 'purchase_date') {
+
+                const table = document.getElementById("retrieved_from_body");
+                document.getElementById("retrieved_from").style.visibility = "visible";
+                document.getElementById("allFilter").style.visibility = "collapse";
+                document.getElementById("headerName").innerText = 'Purchase Date';
+
+                var tablist = <%- JSON.stringify(data.tableLimit) %>;
+                var newList = tablist.filter((element) => element.purchase_date.includes(inputDate));
+
+                $("#retrieved_from_body").empty();
+                newList.forEach((element) => {
+                    let row = table.insertRow();
+                    let retrieved_from = row.insertCell(0);
+                    retrieved_from.innerHTML = element.purchase_date;
+                    let action = row.insertCell(1);
+                    action.innerHTML = `<div class="table-data-feature ">
+
+                                                <a href='/details/${element.id}'><button class="item "
+                                                        data-toggle="tooltip " data-placement="top " title="Edit ">
+                                                        <i class="zmdi zmdi-edit "></i>
+                                                    </button></a>
+                                                <a href='/delete/${element.id}'><button class="item "
+                                                        data-toggle="tooltip " data-placement="top " title="Delete ">
+                                                        <i class="zmdi zmdi-delete "></i>
+                                                    </button></a>
+
+                                            </div>`;
+                })
+            }else if (list[selected] === 'purchase_cost') {
+
+                const table = document.getElementById("retrieved_from_body");
+                document.getElementById("retrieved_from").style.visibility = "visible";
+                document.getElementById("allFilter").style.visibility = "collapse";
+                document.getElementById("headerName").innerText = 'Purchase Cost';
+
+                var tablist = <%- JSON.stringify(data.tableLimit) %>;
+                var newList = tablist.filter((element) => element.purchase_cost.includes(inputDate));
+
+                $("#retrieved_from_body").empty();
+                newList.forEach((element) => {
+                    let row = table.insertRow();
+                    let retrieved_from = row.insertCell(0);
+                    retrieved_from.innerHTML = element.purchase_cost;
+                    let action = row.insertCell(1);
+                    action.innerHTML = `<div class="table-data-feature ">
+
+                                                <a href='/details/${element.id}'><button class="item "
+                                                        data-toggle="tooltip " data-placement="top " title="Edit ">
+                                                        <i class="zmdi zmdi-edit "></i>
+                                                    </button></a>
+                                                <a href='/delete/${element.id}'><button class="item "
+                                                        data-toggle="tooltip " data-placement="top " title="Delete ">
+                                                        <i class="zmdi zmdi-delete "></i>
+                                                    </button></a>
+
+                                            </div>`;
+                })
+            }else if (list[selected] === 'phone_number') {
+
+            const table = document.getElementById("retrieved_from_body");
+            document.getElementById("retrieved_from").style.visibility = "visible";
+            document.getElementById("allFilter").style.visibility = "collapse";
+            document.getElementById("headerName").innerText = 'Phone Number';
+
+            var tablist = <%- JSON.stringify(data.tableLimit) %>;
+            var newList = tablist.filter((element) => element.purchase_date.includes(inputDate));
+
+            $("#retrieved_from_body").empty();
+            newList.forEach((element) => {
+                let row = table.insertRow();
+                let retrieved_from = row.insertCell(0);
+                retrieved_from.innerHTML = element.phone_number;
+                let action = row.insertCell(1);
+                action.innerHTML = `<div class="table-data-feature ">
+
+                                            <a href='/details/${element.id}'><button class="item "
+                                                    data-toggle="tooltip " data-placement="top " title="Edit ">
+                                                    <i class="zmdi zmdi-edit "></i>
+                                                </button></a>
+                                            <a href='/delete/${element.id}'><button class="item "
+                                                    data-toggle="tooltip " data-placement="top " title="Delete ">
+                                                    <i class="zmdi zmdi-delete "></i>
+                                                </button></a>
+
+                                        </div>`;
+            })
+            }else if (list[selected] === 'customer_name') {
+
+const table = document.getElementById("retrieved_from_body");
+document.getElementById("retrieved_from").style.visibility = "visible";
+document.getElementById("allFilter").style.visibility = "collapse";
+document.getElementById("headerName").innerText = 'Customer Name';
+
+var tablist = <%- JSON.stringify(data.tableLimit) %>;
+var newList = tablist.filter((element) => element.purchase_date.includes(inputDate));
+
+$("#retrieved_from_body").empty();
+newList.forEach((element) => {
+    let row = table.insertRow();
+    let retrieved_from = row.insertCell(0);
+    retrieved_from.innerHTML = element.customer_name;
+    let action = row.insertCell(1);
+    action.innerHTML = `<div class="table-data-feature ">
+
+                                <a href='/details/${element.id}'><button class="item "
+                                        data-toggle="tooltip " data-placement="top " title="Edit ">
+                                        <i class="zmdi zmdi-edit "></i>
+                                    </button></a>
+                                <a href='/delete/${element.id}'><button class="item "
+                                        data-toggle="tooltip " data-placement="top " title="Delete ">
+                                        <i class="zmdi zmdi-delete "></i>
+                                    </button></a>
+
+                            </div>`;
+})
+}
+        }
+
+        function myFunctionExport(selected) {
+            window.location = '/recent/2';
+        }
+    </script>
+    <%- include('../includes/index_footer.ejs') %>
