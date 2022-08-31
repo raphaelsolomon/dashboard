@@ -53,7 +53,7 @@
                                 <div class="col-md-12">
                                     <h3 class="title-5 m-b-35">data table</h3>
                                     <div class="table-data__tool">
-                                        <!-- <div class="table-data__tool-left">
+                                        <div class="table-data__tool-left">
                                             <div class="rs-select2--light rs-select2--md">
                                                 <select class="js-select2" name="property">
                                                     <option selected="selected">Check</option>
@@ -76,14 +76,13 @@
 
                                             <button class="au-btn-filter"><i
                                                     class="zmdi zmdi-filter-list"></i>filters</button>
-                                        </div> -->
+                                        </div>
                                         <div class="table-data__tool-right">
-                                            <a href="/add"><button
+                                            <a href="form.html"><button
                                                     class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                                    <i class="zmdi zmdi-plus"></i>Add Record</button></a>
+                                                    <i class="zmdi zmdi-plus"></i>add plastic</button></a>
                                             <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
-                                                <select class="js-select2" name="type"
-                                                    onchange="myFunctionExport(this.selectedIndex);">
+                                                <select class="js-select2" name="type">
                                                     <option selected="selected">Export</option>
                                                     <option value="">CSV</option>
                                                 </select>
@@ -127,86 +126,8 @@
                                                 </thead>
 
                                                 <tbody>
-                                                    <% listItem.forEach(function(e) { %>
-                                                        <tr class="tr-shadow">
+                                                    
 
-                                                            <td>
-                                                                <%= e.date %>
-                                                            </td>
-                                                            <td>
-                                                                <%= e.from_time %>
-                                                            </td>
-                                                            <td>
-                                                                <%= e.to_time %>
-                                                            </td>
-                                                            <td>
-                                                                <%= e.movement_by_vehicle_resident %>
-                                                            </td>
-                                                            <td>
-                                                                <%= e.movement_by_vehicle_staff %>
-                                                            </td>
-                                                            <td>
-                                                                <%= e.movement_by_vehicle_visitor %>
-                                                            </td>
-                                                            <td>
-                                                                <%= e.movement_by_vehicle_cab_service %>
-                                                            </td>
-                                                            <td>
-                                                                <%= e.movement_by_vehicle_delivery %>
-                                                            </td>
-
-                                                            <td>
-                                                                <%= e.police_matters_all_npf %>
-                                                            </td>
-                                                            <td>
-                                                                <%= e.man_matters %>
-                                                            </td>
-                                                            <td>
-                                                                <%= e.hospital_matters %>
-                                                            </td>
-                                                            <td>
-                                                                <%= e.street_visited_adeojo %>
-                                                            </td>
-                                                            <td>
-                                                                <%= e.street_visited_eleruwa %>
-                                                            </td>
-                                                            <td>
-                                                                <%= e.street_visited_olorunnimbe %>
-                                                            </td>
-                                                            <td>
-                                                                <%= e.street_visited_ojora %>
-                                                            </td>
-                                                            <td>
-                                                                <%= e.street_visited_eric_moore %>
-                                                            </td>
-                                                            <td>
-                                                                <%= e.movement_by_ped_staff %>
-                                                            </td>
-                                                            <td>
-                                                                <%= e.movement_by_ped_visitor %>
-                                                            </td>
-                                                            <td>
-                                                                <%= e.movement_by_ped_resident %>
-                                                            </td>
-
-                                                            <td>
-                                                                <div class="table-data-feature ">
-                                                                    <a href='/details?id=<%= e.id %>'><button
-                                                                            class="item " data-toggle="tooltip "
-                                                                            data-placement="top " title="Edit ">
-                                                                            <i class="zmdi zmdi-edit "></i>
-                                                                        </button></a>
-                                                                    <a href='/delete/<%= e.id %>'><button class="item "
-                                                                            data-toggle="tooltip " data-placement="top "
-                                                                            title="Delete ">
-                                                                            <i class="zmdi zmdi-delete "></i>
-                                                                        </button></a>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr class="spacer"></tr>
-                                                        <% }); %>
-                                                </tbody>
                                         </div>
 
                                     </div>
@@ -215,9 +136,4 @@
                         </div>
                         </div>
                     </section>
-                    <script type="text/javascript">
-                        function myFunctionExport(selected) {
-                            window.location = '/recent/2';
-                        }
-                    </script>
                     <%- include('../includes/index_footer.ejs') %>

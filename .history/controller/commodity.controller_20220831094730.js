@@ -145,7 +145,7 @@ exports.recentId = async (req, res, next) => {
 exports.getEdit = async (req, res, next) => {
   const notification = await req.user.getNotifications({ where: { isseen: false } });
   const commodity = await Commodity.findOne({ where: { id: req.query.id } });
-  return res.status(200).render("../commodities/edit", { user: req.user, notification: notification, commodity, title: 'Edit Record' });
+  return res.status(200).render("../commo/edit", { user: req.user, notification: notification, commodity, title: 'Edit Record' });
 }
 
 exports.update = async (req, res, next) => {
