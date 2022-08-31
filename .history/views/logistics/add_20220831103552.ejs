@@ -87,7 +87,7 @@
 
                                     <div class="form-group">
                                         <label for="amount paid" class="control-label mb-1">Amount Paid</label>
-                                        <input id="amount_paid" name="amount_paid" type="text" pattern="[0-9]*" class="form-control" aria-required="true" aria-invalid="false">
+                                        <input id="amount_paid" name="amount_paid" type="text" pattern="" class="form-control" aria-required="true" aria-invalid="false">
                                     </div>
 
                                     <div class="form-group">
@@ -122,12 +122,5 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        document.getElementById("amount_paid").onblur = function () {
-            this.value = parseFloat(this.value.replace(/,/g, ""))
-                .toFixed(2)
-                .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-    </script>
+
     <%- include('../includes/footer.ejs') %>
