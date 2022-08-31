@@ -83,7 +83,7 @@ exports.getTable = async (req, res, next) => {
         user: req.user,
         title: "Tables",
         notification: notification,
-        isData: true
+        isData: t
       });
     }
   } else {
