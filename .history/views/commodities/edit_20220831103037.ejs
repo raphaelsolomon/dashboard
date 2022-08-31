@@ -23,7 +23,7 @@
     
                                         <div class="form-group">
                                             <label for="purchased Cost" class="control-label mb-1">Purchased Cost</label>
-                                            <input id="purchased_cost" name="purchased_cost" type="text" pattern="[0-9]*" value="<%= commodity.purchased_cost %>"
+                                            <input id="purchased_cost" name="purchased_cost" type="number" value="<%= commodity.purchased_cost %>"
                                                 class="form-control" aria-required="true" aria-invalid="false">
                                         </div>
     
@@ -73,7 +73,7 @@
     
                                         <div class="form-group">
                                             <label for="sales cost" class="control-label mb-1">Sales Cost</label>
-                                            <input id="sales_cost" name="sales_cost" type="text" pattern="[0-9]*" class="form-control" value="<%= commodity.sales_cost %>"
+                                            <input id="sales_cost" name="sales_cost" type="number" pattern="" class="form-control" value="<%= commodity.sales_cost %>"
                                                 aria-required="true" aria-invalid="false">
                                         </div>
     

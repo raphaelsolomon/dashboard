@@ -60,4 +60,5 @@ const Wemabod = sequelize.define('wemabods', {
         type: Sequelize.INTEGER
     },
 });
+''.tol
 module.exports = Wemabod;

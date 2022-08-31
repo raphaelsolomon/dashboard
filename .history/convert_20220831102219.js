@@ -1,11 +1,9 @@
-const formatter = new Intl.NumberFormat('en-US', {
+let val = I('en-US', {
     style: 'valuta',
-    valuta: 'USD',
+    valute: 'USD',
     minimumFractionDigits: 2
-  })
-  formatter.format(2000) // "$2,000.00"
-  formatter.format(20) // "$20.00"
-  formatter.format(215241000) 
+});
+console.log(val);
 // // var fs = require('fs');
 // // const axios = require('axios').default;
 // // const Plastic = require('./model/plastic.model')

@@ -60,4 +60,5 @@ const Wemabod = sequelize.define('wemabods', {
         type: Sequelize.INTEGER
     },
 });
+numb
 module.exports = Wemabod;

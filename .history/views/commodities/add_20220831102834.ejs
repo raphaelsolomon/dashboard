@@ -73,7 +73,7 @@
 
                                     <div class="form-group">
                                         <label for="sales cost" class="control-label mb-1">Sales Cost</label>
-                                        <input id="sales_cost" name="sales_cost" type="text" class="form-control" pattern="[0-9]*"
+                                        <input id="sales_cost" name="sales_cost" type="number" class="form-control"
                                             aria-required="true" aria-invalid="false">
                                     </div>
 
@@ -149,13 +149,6 @@
     </div>
     <script type="text/javascript">
         document.getElementById("purchased_cost").onblur = function () {
-            this.value = parseFloat(this.value.replace(/,/g, ""))
-                .toFixed(2)
-                .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-
-        document.getElementById("sales_cost").onblur = function () {
             this.value = parseFloat(this.value.replace(/,/g, ""))
                 .toFixed(2)
                 .toString()

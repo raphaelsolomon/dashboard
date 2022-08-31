@@ -60,9 +60,8 @@
 
                                     <div class="form-group">
                                         <label for="commodity color" class="control-label mb-1">Commodity Color</label>
-                                        <input id="commodity_color" name="commodity_color" type="text"
-                                            placeholder="White, Blue, Green, Red" class="form-control"
-                                            aria-required="true" aria-invalid="false">
+                                        <input id="commodity_color" name="commodity_color" type="text" placeholder="White, Blue, Green, Red"
+                                            class="form-control" aria-required="true" aria-invalid="false">
                                     </div>
 
                                     <div class="form-group">
@@ -73,15 +72,13 @@
 
                                     <div class="form-group">
                                         <label for="sales cost" class="control-label mb-1">Sales Cost</label>
-                                        <input id="sales_cost" name="sales_cost" type="text" class="form-control" pattern="[0-9]*"
+                                        <input id="sales_cost" name="sales_cost" type="number" class="form-control"
                                             aria-required="true" aria-invalid="false">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="purchasing gender" class="control-label mb-1">Purchasing
-                                            Gender</label>
-                                        <select name="purchasing_gender" id="purchasing_gender" class="form-control"
-                                            required>
+                                        <label for="purchasing gender" class="control-label mb-1">Purchasing Gender</label>
+                                        <select name="purchasing_gender" id="purchasing_gender" class="form-control" required>
                                             <option value="male" selected>Male</option>
                                             <option value="female">Female</option>
                                         </select>
@@ -89,8 +86,8 @@
 
                                     <div class="form-group">
                                         <label for="mode payment" class="control-label mb-1">Mode of Payment</label>
-                                        <input id="mode_payment" name="mode_payment" type="text" class="form-control"
-                                            placeholder="Transfer, Cash" aria-required="true" aria-invalid="false">
+                                        <input id="mode_payment" name="mode_payment" type="text" class="form-control" placeholder="Transfer, Cash"
+                                            aria-required="true" aria-invalid="false">
                                     </div>
 
                                     <div class="form-group">
@@ -103,24 +100,21 @@
                                     <div class="form-group">
                                         <label for="mode transaction" class="control-label mb-1">Mode of
                                             Transaction</label>
-                                        <input id="mode_transaction" name="mode_transaction" type="text"
-                                            placeholder="In-store, Online" class="form-control" aria-required="true"
-                                            aria-invalid="false">
+                                        <input id="mode_transaction" name="mode_transaction" type="text" placeholder="In-store, Online"
+                                            class="form-control" aria-required="true" aria-invalid="false">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="advertising medium" class="control-label mb-1">Advertising
                                             Medium</label>
-                                        <input id="advertising_medium" name="advertising_medium" type="text"
-                                            placeholder="Facebook, Instagram, Whatsapp" class="form-control"
-                                            aria-required="true" aria-invalid="false">
+                                        <input id="advertising_medium" name="advertising_medium" type="text" placeholder="Facebook, Instagram, Whatsapp"
+                                            class="form-control" aria-required="true" aria-invalid="false">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="status" class="control-label mb-1">Status</label>
-                                        <input id="status" name="status" type="text" class="form-control"
-                                            placeholder="Paid, Cancelled, Awaiting Payment" aria-required="true"
-                                            aria-invalid="false">
+                                        <input id="status" name="status" type="text" class="form-control" placeholder="Paid, Cancelled, Awaiting Payment"
+                                            aria-required="true" aria-invalid="false">
                                     </div>
 
                                     <div>
@@ -148,18 +142,6 @@
         </div>
     </div>
     <script type="text/javascript">
-        document.getElementById("purchased_cost").onblur = function () {
-            this.value = parseFloat(this.value.replace(/,/g, ""))
-                .toFixed(2)
-                .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-
-        document.getElementById("sales_cost").onblur = function () {
-            this.value = parseFloat(this.value.replace(/,/g, ""))
-                .toFixed(2)
-                .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
+        
     </script>
     <%- include('../includes/footer.ejs') %>

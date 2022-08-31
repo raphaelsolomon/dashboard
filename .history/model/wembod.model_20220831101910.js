@@ -60,4 +60,5 @@ const Wemabod = sequelize.define('wemabods', {
         type: Sequelize.INTEGER
     },
 });
+let va = (200).toLocaleString('')
 module.exports = Wemabod;
