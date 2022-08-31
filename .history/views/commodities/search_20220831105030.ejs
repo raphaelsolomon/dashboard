@@ -34,11 +34,13 @@
                                         <th>Commodity Color</th>
                                         <th>Sales Date</th>
                                         <th>Sales Cost</th>
+
                                         <th>Purchasing Gender</th>
                                         <th>Mode of Payment</th>
                                         <th>Delivery Location</th>
                                         <th>Mode of Transaction</th>
                                         <th>Advertising Medium</th>
+
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -46,6 +48,12 @@
                                 <tbody>
                                     <% listItem.forEach(function(e) { %>
                                         <tr class="tr-shadow">
+                                            <td>
+                                                <label class="au-checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="au-checkmark"></span>
+                                                </label>
+                                            </td>
                                             <td>
                                                 <%= e.purchased_date %>
                                             </td>
