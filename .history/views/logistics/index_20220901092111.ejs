@@ -1,7 +1,7 @@
 <%- include('../includes/index_header.ejs') %>
 
     <!-- STATISTIC-->
-    <% if(user.chart2 !== '' && user.chart2 !== null) { %>
+    <% if(user.chart2 !== '') { %>
         <section class="statistic statistic2">
             <div class="container">
                 <div class="row">
@@ -20,7 +20,7 @@
 
 
     <!-- STATISTIC CHART-->
-    <% if(user.chart1 !== '' && user.chart1 !== null) { %>
+    <% if(user.chart1 !== '' && user.chart2 !== null) { %>
         <section class="statistic-chart">
             <div class="container">
                 <div class="row">

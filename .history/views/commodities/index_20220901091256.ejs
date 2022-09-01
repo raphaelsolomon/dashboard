@@ -1,8 +1,9 @@
 <%- include('../includes/index_header.ejs') %>
     <!-- STATISTIC-->
-    <% if(user.chart2 !== '' && user.chart2 !== null) { %>
+    <% if(user.chart2 !== '') { %>
         <section class="statistic statistic2">
             <div class="container">
+                <div><%= </div>
                 <div class="row">
                         <div id="Container" style="overflow:hidden; width: 100%; height: 373;">
                             <iframe width="100%" height="373.5"
@@ -15,7 +16,7 @@
         <% } %>
     <!-- END STATISTIC-->
 
-    <% if(user.chart1 !== '' && user.chart1 !== null) { %>
+    <% if(user.chart1 !== '' ) { %>
         <section class="statistic-chart">
             <div class="container">
                 <div class="row">

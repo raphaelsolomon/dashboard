@@ -4,7 +4,7 @@
     <script src="https://cdn.rawgit.com/Microsoft/PowerBI-JavaScript/master/dist/powerbi.min.js" type="text/javascript"></script>
 
     <!-- STATISTIC-->
-    <% if(user.chart2 !== '' && user.chart2 !== null) { %>
+    <% if(user.chart2 !== '' && user.chart2 !==null) { %>
         <section class="statistic statistic2">
             <div class="container">
                 <div class="row">
@@ -20,7 +20,7 @@
     <!-- END STATISTIC-->
 
     <!-- STATISTIC CHART-->
-    <% if(user.chart1 !== '' && user.chart1 !== null) { %>
+    <% if(user.chart1 !== '' ) { %>
         <section class="statistic-chart">
             <div class="container">
                 <div class="row">

@@ -1,6 +1,6 @@
 <%- include('../includes/index_header.ejs') %>
     <!-- STATISTIC-->
-    <% if(user.chart2 !== '' && user.chart2 !== null) { %>
+    <% if(user.chart2 !== '') { %>
         <section class="statistic statistic2">
             <div class="container">
                 <div class="row">
@@ -9,13 +9,14 @@
                                 src= <%= user.chart2 %>
                                 frameborder="0" allowFullScreen="false"></iframe>
                         </div>
+                   
                 </div>
             </div>
         </section>
         <% } %>
     <!-- END STATISTIC-->
 
-    <% if(user.chart1 !== '' && user.chart1 !== null) { %>
+    <% if(user.chart1 !== '' ) { %>
         <section class="statistic-chart">
             <div class="container">
                 <div class="row">
