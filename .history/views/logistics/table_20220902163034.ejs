@@ -1,102 +1,60 @@
-<%- include('../includes/index_header.ejs') %>
-
-    <!-- STATISTIC-->
-    <% if(user.chart2 !== '' && user.chart2 !== null) { %>
-        <section class="statistic statistic2">
-            <div class="container">
-                <div class="row">
-                   
-                        <div id="Container" style="overflow:hidden; width: 100%; height: 373;">
-                            <iframe width="100%" height="373.5"
-                                src= <%= user.chart2 %>
-                                frameborder="0" allowFullScreen="false"></iframe>
-                        </div>
-                   
-                </div>
-            </div>
-        </section>
-        <% } %>
-    <!-- END STATISTIC-->
-
-
-    <!-- STATISTIC CHART-->
-    <% if(user.chart1 !== '' && user.chart1 !== null) { %>
-        <section class="statistic-chart">
-            <div class="container">
+<%- include('../includes/header.ejs') %>
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="title-5 m-b-35">Analysis</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div id="Container" style="overflow:hidden; width: 100%; height: 373;">
-                        <iframe width="100%" height="373.5" src=<%=user.chart1 %>
-                            frameborder="0" allowFullScreen="false"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- END STATISTIC CHART-->
-        <center>
-            <a href="/chart">
-                <button class="au-btn au-btn-icon au-btn--green au-btn--small"> more analysis</button>
-            </a>
-        </center>
-        <% } %>
-            <!-- DATA TABLE-->
-            <section class="p-t-20">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3 class="title-5 m-b-35">data table</h3>
-                            <div class="table-data__tool">
-                                <!-- <div class="table-data__tool-left">
-                                    <div class="rs-select2--light rs-select2--md">
-                                        <select class="js-select2" name="property">
-                                            <option selected="selected">Check</option>
-                                            <option value="">CONSIGNOR</option>
-                                            <option value="">ORDER</option>
-                                            <option value="">DELIVERED</option>
-                                            <option value="">STREET</option>
-                                            <option value="">AREA</option>
-                                            <option value="">PIKUP</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-                                    <div class="rs-select2--light rs-select2--sm">
-                                        <select class="js-select2" name="time">
-                                            <option selected="selected">Today</option>
-                                            <option value="">3 Days</option>
-                                            <option value="">1 Week</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-                                    <button class="au-btn-filter">
-                                        <i class="zmdi zmdi-filter-list"></i>filters</button>
-                                </div> -->
-                                <div class="table-data__tool-right">
-                                    <a href="/add"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                            <i class="zmdi zmdi-plus"></i>Add Data</button></a>
-                                    <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
-                                        <select class="js-select2" name="type"
-                                            onchange="myFunction(this.selectedIndex);">
-                                            <option selected="selected">Export</option>
-                                            <option value="csv">CSV</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
+                        <!-- DATA TABLE -->
+                        <h3 class="title-5 m-b-35">data table</h3>
+                        <div class="table-data__tool">
+                            <!-- <div class="table-data__tool-left">
+                                <div class="rs-select2--light rs-select2--md">
+                                    <select class="js-select2" name="property">
+                                        <option selected="selected">Check</option>
+                                        <option value="">CONSIGNOR</option>
+                                        <option value="">ORDER</option>
+                                        <option value="">DELIVERED</option>
+                                        <option value="">STREET</option>
+                                        <option value="">AREA</option>
+                                        <option value="">PIKUP</option>
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                                <div class="rs-select2--light rs-select2--sm">
+                                    <select class="js-select2" name="time">
+                                        <option selected="selected">Today</option>
+                                        <option value="">3 Days</option>
+                                        <option value="">1 Week</option>
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                                <button class="au-btn-filter">
+                                    <i class="zmdi zmdi-filter-list"></i>filters</button>
+                            </div> -->
+                            <div class="table-data__tool-right">
+                                <a href="/add"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                        <i class="zmdi zmdi-plus"></i>Add data</button></a>
+                                <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                    <select class="js-select2" name="type" onchange="myFunction(this.selectedIndex);">
+                                        <option selected="selected">Export</option>
+                                        <option value=" ">CSV</option>
+                                    </select>
+                                    <div class="dropDownSelect2 "></div>
                                 </div>
                             </div>
-                            <div class="table-responsive table-responsive-data2">
-                                <table class="table table-data2">
+                        </div>
+                        <div class="table-overflow">
+                            <div class="table-responsive table-responsive-data2 ">
+                                <table class="table table-data2 ">
                                     <thead>
                                         <tr>
-                                            <th>
-                                                <label class="au-checkbox">
-                                                    <input type="checkbox">
-                                                    <span class="au-checkmark"></span>
+                                            <!-- <th>
+                                                <label class="au-checkbox ">
+                                                    <input type="checkbox ">
+                                                    <span class="au-checkmark "></span>
                                                 </label>
-                                            </th>
+                                            </th> -->
                                             <th>CONSIGNOR</th>
                                             <th>PHONE NUMBER</th>
                                             <th>ITEM TO BE DELIVERED</th>
@@ -118,14 +76,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <% data.tableLimit.forEach(function(e) { %>
-                                            <tr class="tr-shadow">
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
+                                        <% listItem.forEach(function(e) { %>
+                                            <tr class="tr-shadow ">
+                                                <!-- <td>
+                                                    <label class="au-checkbox ">
+                                                        <input type="checkbox ">
+                                                        <span class="au-checkmark "></span>
                                                     </label>
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                     <%= e.consignor %>
                                                 </td>
@@ -167,7 +125,7 @@
                                                     <%= e.mode_of_pay %>
                                                 </td>
                                                 <td>
-                                                    <span class="status--process">
+                                                    <span class="status--process ">
                                                         <%= e.status %>
                                                     </span>
                                                 </td>
@@ -179,12 +137,12 @@
                                                     <%= e.amount_paid %>
                                                 </td>
                                                 <td>
-                                                    <span class="status--process">
+                                                    <span class="status--process ">
                                                         <%= e.payment_status %>
                                                     </span>
                                                 </td>
                                                 <td>
-                                                    <div class="table-data-feature">
+                                                    <div class="table-data-feature ">
                                                         <a href='/details?id=<%= e.id %>'><button class="item "
                                                             data-toggle="tooltip " data-placement="top "
                                                             title="Edit ">
@@ -203,9 +161,50 @@
                                 </table>
                             </div>
                         </div>
+                        <!--===================================================================-->
+                        <br/>
+                        <% if(isData) {%>
+                        <center>
+                            <div class="containerdesign">
+                                <% if(page> 1) { %>
+                                    <a class="btn btn-primary btn__primary" href="/table?page=<%=page - 1%>"><</a>
+                                <%}%>
+                                <% for (var i=iterator; i <=endingLink; i++) { %>
+                                    <% if(i===page) {%>
+                                        <a class="btn btn-primary btn__primary" href="/table?page=<%=i%>"><%=i%></a>
+                                        <% continue; %>
+                                    <%}%>
+                                    <% if(page > 1) { %>
+                                        <a class="nos" href="/table?page=<%=i%>"><%=i%></a>
+                                    <%}%>
+                                <%}%>
+                                 <% if(page < numbersOfPage) { %>
+                                    <a class="btn btn-primary btn__primary" href="/table?page=<%=page + 1%>">></a>
+                                <%}%>
+                            </div>
+                        </center>
+                        <% } %>
+                        <!--===================================================================-->
+                        <!-- END DATA TABLE -->
                     </div>
                 </div>
-            </section>
-            <!-- END DATA TABLE-->
 
-            <%- include('../includes/index_footer.ejs') %>
+                <div class="row ">
+                    <div class="col-md-12 ">
+                        <div class="copyright ">
+                            <p>Copyright © 2022. All rights reserved. <a href="https://dechconsult.com ">Dech Consult
+                                    Limited</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript'>
+        function myFunction(selected) {
+            window.location = '/recent/2';
+        }
+    </script>
+
+    <%- include('../includes/footer.ejs') %>
