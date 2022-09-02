@@ -262,7 +262,7 @@ route.get("/login", (req, res, next) => {
 
 route.post("/login", passport.authenticate("local", {
   failureRedirect: "/login",
-  successRedirect: '/home',
+  successRedirect: '/',
   failureFlash: true,
 }));
 

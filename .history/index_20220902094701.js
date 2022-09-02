@@ -16,6 +16,8 @@ const Notification = require('./model/notification.model');
 const Wemabod = require('./model/wembod.model')
 var SequelizeStore = require("connect-session-sequelize")(session.Store);
 require('dotenv').config();
+const https = require('https');
+const http = require('http');
 const { options } = require('./utils/helper.util');
 
 require('./config/passport.config');
@@ -53,7 +55,8 @@ app.use(express.json());
 app.set('views', [
     path.join(__dirname, 'views'),
     path.join(__dirname, 'views/includes'),
-    path.join(__dirname, 'views/started'),
+    path.join(__dirname, 'views/includes'),
+
     path.join(__dirname, 'views/logistics'),
     path.join(__dirname, 'views/plastics'),
     path.join(__dirname, 'views/auths'),

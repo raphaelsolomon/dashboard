@@ -12,10 +12,9 @@ const Commodity = require("../model/commodity.model");
 const Logistic = require("../model/logistics.model");
 const Plastic = require("../model/plastic.model");
 const Wemabod = require("../model/wembod.model");
-const path = require('path');
 
 route.get('/', async(req, res, next)=> {
-  return res.status(200).render('../started/index');
+  return res.status
 })
 
 route.get("/home", isAuthenticated, async (req, res, next) => {
@@ -262,7 +261,7 @@ route.get("/login", (req, res, next) => {
 
 route.post("/login", passport.authenticate("local", {
   failureRedirect: "/login",
-  successRedirect: '/home',
+  successRedirect: '/',
   failureFlash: true,
 }));
 
