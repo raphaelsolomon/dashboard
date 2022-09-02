@@ -15,9 +15,7 @@ const Wemabod = require("../model/wembod.model");
 const path = require('path');
 
 route.get('/', async(req, res, next)=> {
-  if(req.protocol === 'http'){
-    return res.status(200).redirect('https://dechdash.net/')
-  }
+  if()
   return res.status(200).render('../started/index');
 })
 

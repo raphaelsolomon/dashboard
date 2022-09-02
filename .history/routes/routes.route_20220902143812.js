@@ -16,7 +16,7 @@ const path = require('path');
 
 route.get('/', async(req, res, next)=> {
   if(req.protocol === 'http'){
-    return res.status(200).redirect('https://dechdash.net/')
+    
   }
   return res.status(200).render('../started/index');
 })
