@@ -240,8 +240,10 @@ route.post("/register", async (req, res, next) => {
     return User.create(req.body)
       .then((user) => {
         if (user) {
-          user.createNotification({ message: `Welcome to the Dechdash Platform!\nWe're so glad to have you here.\nRegards` });
-          user.createNotification({ message: `Start inputting your data.\nThanks for choosing Dechdash.\nKindly proceed to input your data by clicking on “Add Data”\nRegards` });
+          user.createNotification({ message: 'Welcome to the Dechdash Platform!
+          We're so glad to have you here.
+          Regards' });
+          user.createNotification({ message: 'Start inputting your business data with Dechdash...' });
           req.flash("success", 'Your account has been successfully created, please sign in');
           return res.status(200).redirect("/login");
         }
