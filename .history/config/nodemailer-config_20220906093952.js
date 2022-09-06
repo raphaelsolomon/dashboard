@@ -69,9 +69,10 @@ exports.sendRegisterLink = (email) => {
       </html>`, // plain text body
   }, function(err) {
       if (err) {
-          return console.log(err)
+          return console.log)
       }
-      return console.log('done');
+      console.log('done');
+      return true;
   });
 }
 
@@ -104,8 +105,8 @@ exports.sendWelcomeLink = (email) => {
       </html>`, // plain text body
   }, function(err) {
       if (err) {
-          return console.log(err)
+          return false;
       }
-      return console.log('done');
+      console.log('done');
   });
 }

@@ -106,6 +106,6 @@ exports.sendWelcomeLink = (email) => {
       if (err) {
           return console.log(err)
       }
-      return console.log('done');
+      console.log('done');
   });
 }

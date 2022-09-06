@@ -5,7 +5,7 @@ const User = require("../model/user.model");
 const bcrypt = require("bcrypt");
 const { uuid } = require("uuidv4");
 const { isAuthenticated } = require("../utils/helper.util");
-const { sendLink, sendRegisterLink } = require("../config/nodemailer-config");
+const { sendLink } = require("../config/nodemailer-config");
 const { Op } = require("sequelize");
 const Notification = require("../model/notification.model");
 const Commodity = require("../model/commodity.model");
@@ -243,8 +243,7 @@ route.post("/register", async (req, res, next) => {
           user.createNotification({ message: `Welcome to the Dechdash Platform!\nWe're so glad to have you here.\nRegards` });
           user.createNotification({ message: `Start inputting your data.\nThanks for choosing Dechdash.\nKindly proceed to input your data by clicking on “Add Data”\nRegards` });
           req.flash("success", 'Your account has been successfully created, please sign in');
-          sendRegisterLink(`${user.email}`);
-          sendWelcomeLink(`${user.email}`);
+          
           return res.status(200).redirect("/login");
         }
         return res.status(404).redirect("/404");

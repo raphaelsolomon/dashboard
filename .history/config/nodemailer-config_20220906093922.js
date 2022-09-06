@@ -69,9 +69,10 @@ exports.sendRegisterLink = (email) => {
       </html>`, // plain text body
   }, function(err) {
       if (err) {
-          return console.log(err)
+          return false;
       }
-      return console.log('done');
+      console.log('done');
+      return true;
   });
 }
 
@@ -85,7 +86,7 @@ exports.sendWelcomeLink = (email) => {
       },
   });
 
-   transporter.sendMail({
+  return transporter.sendMail({
       from: `${process.env.NODEMAILERUSER}`, // sender address
       to: `${email}`, // list of receivers
       subject: `Password Reset Link`, // Subject line
@@ -104,8 +105,8 @@ exports.sendWelcomeLink = (email) => {
       </html>`, // plain text body
   }, function(err) {
       if (err) {
-          return console.log(err)
+          return false;
       }
-      return console.log('done');
+      console.log('done');
   });
 }

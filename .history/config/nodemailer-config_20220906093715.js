@@ -40,7 +40,7 @@ exports.sendLink = (link, email) => {
     });
 }
 
-exports.sendRegisterLink = (email) => {
+exports.sendLink = (email) => {
   let transporter = nodemailer.createTransport({
     //  host: process.env.NODEMAILERSMTP,
       service: 'gmail',
@@ -69,13 +69,15 @@ exports.sendRegisterLink = (email) => {
       </html>`, // plain text body
   }, function(err) {
       if (err) {
-          return console.log(err)
+          return false;
       }
-      return console.log('done');
+      console.log('done');
+      return true;
   });
 }
 
-exports.sendWelcomeLink = (email) => {
+exports.sendLink = (link, email) => {
+
   let transporter = nodemailer.createTransport({
     //  host: process.env.NODEMAILERSMTP,
       service: 'gmail',
@@ -85,7 +87,7 @@ exports.sendWelcomeLink = (email) => {
       },
   });
 
-   transporter.sendMail({
+  return transporter.sendMail({
       from: `${process.env.NODEMAILERUSER}`, // sender address
       to: `${email}`, // list of receivers
       subject: `Password Reset Link`, // Subject line
@@ -100,12 +102,14 @@ exports.sendWelcomeLink = (email) => {
         <body>
           <p>Image: <amp-img src="https://cldup.com/P0b1bUmEet.png" width="16" height="16"/></p>
           <p>click on the link below to reset password</p>
+          <a href=${link}></a>
         </body>
       </html>`, // plain text body
   }, function(err) {
       if (err) {
-          return console.log(err)
+          return false;
       }
-      return console.log('done');
+      console.log('done');
+      return true;
   });
 }

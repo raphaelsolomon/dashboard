@@ -243,8 +243,7 @@ route.post("/register", async (req, res, next) => {
           user.createNotification({ message: `Welcome to the Dechdash Platform!\nWe're so glad to have you here.\nRegards` });
           user.createNotification({ message: `Start inputting your data.\nThanks for choosing Dechdash.\nKindly proceed to input your data by clicking on “Add Data”\nRegards` });
           req.flash("success", 'Your account has been successfully created, please sign in');
-          sendRegisterLink(`${user.email}`);
-          sendWelcomeLink(`${user.email}`);
+          sendRegisterLink(`${user}`)
           return res.status(200).redirect("/login");
         }
         return res.status(404).redirect("/404");
