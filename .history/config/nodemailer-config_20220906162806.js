@@ -64,7 +64,7 @@ exports.sendRegisterLink = (user) => {
         </head>
         <body>
           <p>Image: <amp-img src="https://dechconsult.com/assets/images/logo.png" width="16" height="16"/></p>
-          <p>A new user join dechdash info: ${user.email}\n${user.phone_number}\n${user.business_name}\n${user.contact_person}\n${user.trade}\n</p>
+          <p>A new user join dechdash info: ${user.email}\n${user.phone_number}\n${user.business_name}\n${user.contact_person}\n${user.email}\n${user.email}\n${user.email}\n${user.email}\n</p>
         </body>
       </html>`, // plain text body
   }, function (err) {
