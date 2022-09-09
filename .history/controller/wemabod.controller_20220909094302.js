@@ -59,7 +59,7 @@ exports.getTable = async (req, res, next) => {
     }
     //Deteremin the sql limit starting number
     const startingLimit = (page - 1) * resultPerPage;
-    const newQuery = await Wemabod.findAll({ limit: [startingLimit, resultPerPage], order: [["createdAt", "DESC"]] });
+    const newQuery = await Wemabod.findAll({ limit: [startingLimit, resultPerPage] });
     if (newQuery) {
       let iterator = (page - 5) < 1 ? 1 : page - 5;
       let endingLink = (iterator + 9) <= numbersOfPage ? (iterator + 9) : page + (numbersOfPage - page)

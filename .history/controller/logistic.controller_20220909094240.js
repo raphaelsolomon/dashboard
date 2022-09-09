@@ -15,7 +15,8 @@ exports.logisticIndex = async (req, res, next) => {
   //list of deliveries with limit
   const limitLogist = await req.user.getLogistics({
     limit: 7,
-    order: [["createdAt", "DESC"]],
+    const newQuery = await req.user.getLogistics({ limit: [startingLimit, resultPerPage], order: [["createdAt", "DESC"]]order: [["createdAt", "DESC"]]order: [["createdAt", "DESC"]]order: [["createdAt", "DESC"]]order: [["createdAt", "DESC"]] });
+    ,
   });
   //Amount Of Money Made Daily
   var data = {

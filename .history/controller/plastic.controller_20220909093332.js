@@ -1,33 +1,37 @@
-const { Op } = require("sequelize");
+
 var XLSX = require("xlsx");
+const sequelize = require("../config/database.config");
 const {
   PLASTIC_HEADER,
   PLASTIC_ATTRIBUTE,
 } = require("../constant/value.const");
-const Wemabod = require("../model/wembod.model");
+const Plastics = require("../model/plastic.model");
 const date = require("date-and-time");
+const Plastic = require("../model/plastic.model");
 const path = require("path");
-const resultPerPage = 30;
+const resultPerPage = 20;
 
-exports.wemabodIndex = async (req, res, next) => {
-  const limitPlastic = await req.user.getWemabods({
+exports.plasticIndex = async (req, res, next) => {
+  const limitPlastic = await req.user.getPlastics({
     limit: 7,
-    order: [["createdAt", "DESC"]],
+    order: [["date", "DESC"]],
   });
+
+
   var data = {
     tableLimit: limitPlastic,
   };
-
   const notification = await req.user.getNotifications({
     where: { isseen: false },
   });
-  // return res.status(200).sendFile(path.join(__dirname, '../views/wemabod/index.html'))
-  return res.status(200).render("../wemabod/index", {
-    data: data,
-    user: req.user,
-    title: "Tables",
-    notification: notification,
-  });
+  return res
+    .status(200)
+    .render("../plastics/index", {
+      user: req.user,
+      data: data,
+      title: "Plastics",
+      notification: notification,
+    });
 };
 
 exports.addItem = async (req, res, next) => {
@@ -35,11 +39,14 @@ exports.addItem = async (req, res, next) => {
     where: { isseen: false },
     raw: true,
   });
-  return res.status(200).render("../wemabod/add", {
-    user: req.user,
-    title: "Add Items",
-    notification: notification,
-  });
+  return res
+    .status(200)
+    .render("../plastics/add", {
+      title: "Plastics",
+      user: req.user,
+      title: "Add Items",
+      notification: notification
+    });
 };
 
 exports.getTable = async (req, res, next) => {
@@ -47,7 +54,7 @@ exports.getTable = async (req, res, next) => {
     where: { isseen: false },
     raw: true,
   });
-  const count = await Wemabod.count({ where: { userId: req.user.id } });
+  const count = await Plastics.count({ where: { userId: req.user.id } });
   if (count > 0) {
     const totalResults = count;
     const numbersOfPage = Math.ceil(totalResults / resultPerPage);
@@ -59,7 +66,7 @@ exports.getTable = async (req, res, next) => {
     }
     //Deteremin the sql limit starting number
     const startingLimit = (page - 1) * resultPerPage;
-    const newQuery = await Wemabod.findAll({ limit: [startingLimit, resultPerPage], order: [["createdAt", "DESC"]] });
+    const newQuery = await req.user.getPlastics({ limit: [startingLimit, resultPerPage],   order: [["createdAT", "ASC"]],});
     if (newQuery) {
       let iterator = (page - 5) < 1 ? 1 : page - 5;
       let endingLink = (iterator + 9) <= numbersOfPage ? (iterator + 9) : page + (numbersOfPage - page)
@@ -67,7 +74,7 @@ exports.getTable = async (req, res, next) => {
       if (endingLink < (page + 4)) {
         iterator -= (page + 4) - numbersOfPage;
       }
-      return res.status(200).render("../wemabod/table", {
+      return res.status(200).render("../plastics/table", {
         listItem: newQuery,
         page,
         iterator,
@@ -96,17 +103,17 @@ exports.getTable = async (req, res, next) => {
 };
 
 exports.recentId = async (req, res, next) => {
-  var wemabod = [];
+  var plastics = [];
   if (req.params.id === 1) {
-    wemabod = await req.user.getWemabods({
+    plastics = await req.user.getPlastics({
       limit: 7,
       order: [["createdAt", "DESC"]],
-      attributes: WEMABODS_ATTRIBUTE,
+      attributes: PLASTIC_ATTRIBUTE,
       raw: true,
     });
   } else {
-    wemabod = await req.user.getWemabods({
-      attributes: WEMABODS_ATTRIBUTE,
+    plastics = await req.user.getPlastics({
+      attributes: PLASTIC_ATTRIBUTE,
       raw: true,
     });
   }
@@ -116,16 +123,16 @@ exports.recentId = async (req, res, next) => {
     origin: "A2",
     skipHeader: true,
   });
-  XLSX.utils.sheet_add_aoa(ws, [WEMABODS_HEADER]);
-  XLSX.utils.book_append_sheet(wb, ws, "Wemabod");
+  XLSX.utils.sheet_add_aoa(ws, [PLASTIC_HEADER]);
+  XLSX.utils.book_append_sheet(wb, ws, "Plastics");
   const buffer = XLSX.write(wb, { bookType: "csv", type: "buffer" });
-  res.attachment(`wemabod_${Date.now()}.csv`);
+  res.attachment(`plastic_${Date.now()}.csv`);
 
   return res.send(buffer);
 };
 
 exports.deleteItem = async (req, res, next) => {
-  return Wemabod.destroy({ where: { id: req.params.id } })
+  return Plastics.destroy({ where: { id: req.params.id } })
     .then((_) => {
       return res.status(200).redirect("/table");
     })
@@ -137,22 +144,26 @@ exports.getCharts = async (req, res, next) => {
     where: { isseen: false },
     raw: true,
   });
-  return res.status(200).render("../wemabod/chart", {
-    title: "Charts",
-    user: req.user,
-    notification: notification,
-  });
+
+  return res
+    .status(200)
+    .render("../plastics/chart", {
+      title: "Charts",
+      user: req.user,
+      notification: notification
+    });
 };
 
 exports.getEdit = async (req, res, next) => {
   const notification = await req.user.getNotifications({ where: { isseen: false } });
-  const wemabod = await Wemabod.findOne({ where: { id: req.query.id } });
-  return res.status(200).render("../wemabod/edit", { user: req.user, notification: notification, wemabod, title: 'Edit Record' });
+  const plastic = await Plastic.findOne({ where: { id: req.query.id } });
+  return res.status(200).render("../plastics/edit", { user: req.user, notification: notification, plastic, title: 'Edit Plastics' });
+
 }
 
 exports.update = async (req, res, next) => {
-  const wemabod = await Wemabod.findOne({ where: { id: req.params.id } });
-  await wemabod.update(req.body);
-  await wemabod.save();
+  const plastic = await Plastic.findOne({ where: { id: req.params.id } });
+  await plastic.update(req.body);
+  await plastic.save();
   return res.status(200).redirect(`/table`);
 }

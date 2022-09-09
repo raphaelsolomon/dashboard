@@ -91,7 +91,7 @@ exports.getTable = async (req, res, next) => {
     }
     //Determine the sql limit starting number
     var startingLimit = (page - 1) * resultPerPage;
-    const newQuery = await req.user.getLogistics({ limit: [startingLimit, resultPerPage], order: [["createdAt", "DESC"]] });
+    const newQuery = await req.user.getLogistics({ limit: [startingLimit, resultPerPage], order: [["createdAt", "DESC"]]order: [["createdAt", "DESC"]]order: [["createdAt", "DESC"]] });
     if (newQuery) {
       let iterator = (page - 5) < 1 ? 1 : page - 5;
       let endingLink = (iterator + 9) <= numbersOfPage ? (iterator + 9) : page + (numbersOfPage - page)
