@@ -279,7 +279,11 @@ route.post("/forget-password", async (req, res, next) => {
   if (user) {
     user.token = `${token}`;
     user.save();
-    return sendLink(`https://dechdash.net/reset-password?id=${token}}`, email, req, res);
+    return sendLink(`http://dechdash.net/reset-password?id=${token}}`, email, req);
+    if (sentEmail) {
+      return res.status(202).redirect("/login");
+    }
+    return res.status(404).redirect("/404");
   }
   return res.status(404).redirect("/404");
 });

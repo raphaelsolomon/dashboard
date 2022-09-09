@@ -275,7 +275,7 @@ route.get("/forget-password", (req, res, next) => {
 route.post("/forget-password", async (req, res, next) => {
   const { email } = req.body;
   const token = uuid();
-  let user = await User.findOne(req.body);
+  let user = await User.findOne('req.body);
   if (user) {
     user.token = `${token}`;
     user.save();

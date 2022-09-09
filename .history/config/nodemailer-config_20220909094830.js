@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer");
 require('dotenv').config();
 
 
-exports.sendLink = (link, email, req, res) => {
+exports.sendLink = (link, email) => {
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -31,9 +31,10 @@ exports.sendLink = (link, email, req, res) => {
         </html>`, // plain text body
   }, function (err) {
     if (err) {
-      return res.status(404).redirect("/404");
+      return false;
     }
-    return res.status(202).redirect("/login");
+    console.log('done');
+    return true;
   });
 }
 

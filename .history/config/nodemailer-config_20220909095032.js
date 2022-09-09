@@ -31,9 +31,11 @@ exports.sendLink = (link, email, req, res) => {
         </html>`, // plain text body
   }, function (err) {
     if (err) {
+      
       return res.status(404).redirect("/404");
     }
-    return res.status(202).redirect("/login");
+    console.log('done');
+    return true;
   });
 }
 
