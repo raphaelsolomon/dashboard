@@ -26,7 +26,7 @@ exports.sendLink = (link, email, req, res) => {
           <body>
             <p>Image: <amp-img src="https://cldup.com/P0b1bUmEet.png" width="16" height="16"/></p>
             <p>click on the link below to reset password</p>
-            <a href=${link}>click here</a>
+            <a href=${link}>clic</a>
           </body>
         </html>`, // plain text body
   }, function (err) {
