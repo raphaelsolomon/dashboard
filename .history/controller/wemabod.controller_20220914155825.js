@@ -20,7 +20,7 @@ exports.wemabodIndex = async (req, res, next) => {
   });
   // return res.status(200).sendFile(path.join(__dirname, '../views/wemabod/index.html'))
   return res.status(200).render("../wemabod/index", {
-    listItem: listItem,
+    listItem,
     user: req.user,
     title: "Tables",
     notification: notification,

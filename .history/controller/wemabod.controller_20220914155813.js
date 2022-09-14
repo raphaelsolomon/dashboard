@@ -14,13 +14,13 @@ exports.wemabodIndex = async (req, res, next) => {
     limit: 7,
     order: [["createdAt", "DESC"]],
   });
-  
+  v
   const notification = await req.user.getNotifications({
     where: { isseen: false },
   });
   // return res.status(200).sendFile(path.join(__dirname, '../views/wemabod/index.html'))
   return res.status(200).render("../wemabod/index", {
-    listItem: listItem,
+    data: data,
     user: req.user,
     title: "Tables",
     notification: notification,
