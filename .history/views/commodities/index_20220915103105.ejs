@@ -7,7 +7,7 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="statistic__item statistic__item--green">
                             <center>
-                                <h2 class="number"><%= data.completedTrans %></h2>
+                                <h2 class="number">72</h2>
                                 <span class="desc">Total Completed Transaction</span>
                             </center>
                             <div class="icon">
@@ -18,7 +18,7 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="statistic__item statistic__item--orange">
                             <center>
-                                <h2 class="number"><%= data.mostSold %></h2>
+                                <h2 class="number">200</h2>
                                 <span class="desc">Most Sold Comodity</span>
                             </center>
                             <div class="icon">
@@ -29,8 +29,8 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="statistic__item statistic__item--blue">
                             <center>
-                                <h2 class="number"><%= data.totalCount %></h2>
-                                <span class="desc">Total Count Of Sales</span>
+                                <h2 class="number">120</h2>
+                                <span class="desc"></span>
                             </center>
                             <div class="icon">
                                 <i class="zmdi zmdi-calendar-note"></i>
@@ -40,8 +40,8 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="statistic__item statistic__item--red">
                             <center>
-                                <h2 class="number"><%= data.advertMedium %></h2>
-                                <span class="desc">Most Effective Advertising Platform</span>
+                                <h2 class="number">60</h2>
+                                <span class="desc">Days with the highest retrieval</span>
                             </center>
                             <div class="icon">
                                 <i class="zmdi zmdi-money"></i>
@@ -53,7 +53,29 @@
         </section>
             <!-- END STATISTIC-->
 
-           
+            <% if(user.chart1 !=='' && user.chart1 !==null) { %>
+                <section class="statistic-chart">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="title-5 m-b-35">Analysis</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div id="Container" style="overflow:hidden; width: 100%; height: 373;">
+                                <iframe width="100%" height="373.5" src=<%=user.chart1 %>
+                                    frameborder="0" allowFullScreen="false"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- END STATISTIC CHART-->
+                <center>
+                    <a href="/chart">
+                        <button class="au-btn au-btn-icon au-btn--green au-btn--small"> more analysis</button>
+                    </a>
+                </center>
+                <% } %>
                     <!-- END STATISTIC CHART-->
 
                     <!-- DATA TABLE-->

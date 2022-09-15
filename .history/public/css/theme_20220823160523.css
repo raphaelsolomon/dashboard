@@ -4955,7 +4955,7 @@ section {
 }
 
 .statistic__item h2 {
-    font-size: 36px;
+    font-size: 16px;
     font-weight: 300;
     color: #4272d7;
 }
@@ -4967,7 +4967,7 @@ section {
 }
 
 .statistic__item .desc {
-    font-size: 18px;
+    font-size: 13px;
     text-transform: uppercase;
     font-weight: 300;
     color: rgba(128, 128, 128, 0.6);

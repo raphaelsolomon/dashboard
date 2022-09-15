@@ -4,7 +4,6 @@ const {
   COMMODITY_HEADER,
   COMMODITY_ATTRIBUTE,
 } = require("../constant/value.const");
-const sequelize = require("../config/database.config");
 const resultPerPage = 30;
 
 exports.commodityIndex = async (req, res, next) => {
@@ -12,19 +11,11 @@ exports.commodityIndex = async (req, res, next) => {
     limit: 7,
     order: [["createdAt", "DESC"]],
   });
-
-  const completedTrans = await sequelize.query(`SELECT status, COUNT(*) AS magnitude FROM commodities where userId=${req.user.id} GROUP BY status ORDER BY magnitude DESC LIMIT 1`)
-  const totalCount = await sequelize.query(`SELECT COUNT(*) as total FROM commodities where userId=${req.user.id}`);
-  const mostSold = await sequelize.query(`SELECT commodity, COUNT(*) AS magnitude FROM commodities WHERE userId=${req.user.id} GROUP BY commodity ORDER BY magnitude DESC LIMIT 1`);
-  const advertMedium = await sequelize.query(`SELECT advertising_medium, COUNT(*) AS magnitude FROM commodities WHERE userId=${req.user.id} GROUP BY advertising_medium ORDER BY magnitude DESC LIMIT 1`);
-
   var data = {
     tableLimit: limitPlastic,
-    completedTrans: completedTrans[0][0] === undefined ? 0 : completedTrans[0][0].magnitude,
-    totalCount: totalCount[0][0].total === undefined ? 0 : totalCount[0][0].total,
-    mostSold: mostSold[0][0] === undefined ? 'None' : mostSold[0][0].commodity,
-    advertMedium: advertMedium[0][0] === undefined ? 'None' : advertMedium[0][0].advertising_medium
   };
+
+  const 
 
   const notification = await req.user.getNotifications({
     where: { isseen: false },
