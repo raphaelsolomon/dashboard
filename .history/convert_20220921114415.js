@@ -69,53 +69,54 @@
 //   getToken();
 
 
-const Wemabod = require('./model/wembod.model');
-const axios = require('axios').default;
-var data = [];
+//const Wemabod = require('./model/wembod.model');
+// const axios = require('axios').default;
+// const Wemabod = require('./model/wembod.model')
+// var data = [];
 
-axios.get('https://s5.aconvert.com/convert/p3r68-cdx67/rbvvu-re0op.json')
-.then(function (response) {
-    response.data.forEach((e) => {
-        if (`${e['DAY AND TIME']}` !== 'DATE') {
+// axios.get('https://s43.aconvert.com/convert/p3r68-cdx67/pvcqk-06tm6.json')
+// .then(function (response) {
+//     response.data.forEach((e) => {
+//         if (`${e['DAY AND TIME']}` !== 'DATE') {
 
-            const str = `${e['DAY AND TIME']}`;
-            const [month, day, year] = str.split('/');
-            const newDate = `${year}-${month}-${day}`;
+//             const str = `${e['DAY AND TIME']}`;
+//             const [month, day, year] = str.split('/');
+//             const newDate = `${year}-${month}-${day}`;
 
-            data.push({
-                date: newDate,
-                from_time: `${e['field2'].toString().split(' - ')[0]}:00`,
-                to_time: `${e['field2'].toString().split(' - ')[1]}:00`,
-                movement_by_vehicle_resident: e['MOVEMENT BY VEHICLE'],
-                movement_by_vehicle_staff: e['field4'],
-                movement_by_vehicle_visitor: e['field5'],
-                movement_by_vehicle_cab_service: e['field6'],
-                movement_by_vehicle_delivery: e['field7'],
+//             data.push({
+//                 date: newDate,
+//                 from_time: `${e['field2'].toString().split(' - ')[0]}:00`,
+//                 to_time: `${e['field2'].toString().split(' - ')[1]}:00`,
+//                 movement_by_vehicle_resident: e['MOVEMENT BY VEHICLE'],
+//                 movement_by_vehicle_staff: e['field4'],
+//                 movement_by_vehicle_visitor: e['field5'],
+//                 movement_by_vehicle_cab_service: e['field6'],
+//                 movement_by_vehicle_delivery: e['field7'],
 
-                police_matters_all_npf: e['POLICE MATTERS'],
-                man_matters: e['MAN MATTERS'],
-                hospital_matters: e['HOSPITAL MATTERS'],
+//                 police_matters_all_npf: e['POLICE MATTERS'],
+//                 man_matters: e['MAN MATTERS'],
+//                 hospital_matters: e['HOSPITAL MATTERS'],
 
-                street_visited_adeojo: e['STREETS VISITED'],
-                street_visited_eleruwa: e['field12'],
-                street_visited_olorunnimbe: e['field13'],
-                street_visited_ojora: e['field14'],
-                street_visited_eric_moore: e['field15'],
+//                 street_visited_adeojo: e['STREETS VISITED'],
+//                 street_visited_eleruwa: e['field12'],
+//                 street_visited_olorunnimbe: e['field13'],
+//                 street_visited_ojora: e['field14'],
+//                 street_visited_eric_moore: e['field15'],
 
-                movement_by_ped_staff: e['MOVEMENT BY PEDESTRIANS'],
-                movement_by_ped_visitor: e['field17'],
-                movement_by_ped_resident: e['field18'],
-            })
-        }
-    });
-    // console.log(data.length);
-    // console.log(data)
-    Wemabod.bulkCreate(data).then((data) => {
-        console.log('done');
-    })
-}).catch(function (error) {
-    console.log(error);
-});
+//                 movement_by_ped_staff: e['MOVEMENT BY PEDESTRIANS'],
+//                 movement_by_ped_visitor: e['field17'],
+//                 movement_by_ped_resident: e['field18'],
+//             })
+//         }
+//     });
+//     // console.log(data.length);
+//     // console.log(data)
+//     Wemabod.bulkCreate(data).then((data) => {
+//         console.log('done');
+//     })
+// }).catch(function (error) {
+//     console.log(error);
+// });
 
 
 // ACCESS TO TEN(10) SHORTLISTED STAFF

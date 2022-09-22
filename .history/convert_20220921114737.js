@@ -71,6 +71,7 @@
 
 const Wemabod = require('./model/wembod.model');
 const axios = require('axios').default;
+const Wemabod = require('./model/wembod.model')
 var data = [];
 
 axios.get('https://s5.aconvert.com/convert/p3r68-cdx67/rbvvu-re0op.json')

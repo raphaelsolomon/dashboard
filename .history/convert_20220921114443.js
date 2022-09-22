@@ -71,9 +71,10 @@
 
 const Wemabod = require('./model/wembod.model');
 const axios = require('axios').default;
+const Wemabod = require('./model/wembod.model')
 var data = [];
 
-axios.get('https://s5.aconvert.com/convert/p3r68-cdx67/rbvvu-re0op.json')
+axios.get('https://s43.aconvert.com/convert/p3r68-cdx67/pvcqk-06tm6.json')
 .then(function (response) {
     response.data.forEach((e) => {
         if (`${e['DAY AND TIME']}` !== 'DATE') {
