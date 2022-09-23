@@ -282,7 +282,7 @@ route.get("/register", async (req, res, next) => {
   if (user)
     return res.status(200).render("../auths/register", { alert: [], isAvailable: true });
   else
-    return res.status(200).render("../auths/register", { alert: [], isAvailable: false });
+    return res.status(200).render("../auths/register", { alert: [], isAvailable: true });
 });
 
 route.post("/register", async (req, res, next) => {

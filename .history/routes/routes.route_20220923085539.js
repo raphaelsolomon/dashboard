@@ -278,11 +278,11 @@ route.post("/details/:id", isAuthenticated, async (req, res, next) => {
 //===============================AUTHENTICATION MODE===========================================
 
 route.get("/register", async (req, res, next) => {
-  const user = await User.findOne({ where: { trade: 'Wemabod' } });
+  const user = await User.findOne({ where: { trade: 'isAvailable' } });
   if (user)
     return res.status(200).render("../auths/register", { alert: [], isAvailable: true });
   else
-    return res.status(200).render("../auths/register", { alert: [], isAvailable: false });
+    return res.status(200).render("../auths/register", { alert: [], isAvailable: true });
 });
 
 route.post("/register", async (req, res, next) => {

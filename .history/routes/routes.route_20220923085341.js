@@ -73,55 +73,53 @@ route.get("/recent/:id", isAuthenticated, async (req, res, next) => {
   }
 });
 
-route.get('/allusers', isAuthenticated, async (req, res, next) => {
+route.get('/allusers',isAuthenticated, async (req, res, next)=> {
   const users = await User.findAll({
     where: { trade: 'Commodity' }, include: [{
-      model: Commodity
+        model: Commodity
     }]
-  });
+});
   return res.status(200).render('../admin/allusers', {
     users: users
   });
 })
 
-route.get('/newusers', isAuthenticated, async (req, res, next) => {
+route.get('/newusers', isAuthenticated, async (req, res, next)=> {
   const date = new Date();
-  const fromDate = new Date(`${getPreviousDay().toISOString().substring(0, getPreviousDay().toISOString().indexOf('T'))} 00:00:00`);
-  const toDate = new Date(`${date.toISOString().substring(0, date.toISOString().indexOf('T'))} 23:59:59`);
-  const newUsers = await User.findAll({
-    where: {
-      createdAt: {
-        [Op.between]: [
-          fromDate,
-          toDate
-        ]
-      }
-    },
-    include: [{ model: Commodity }]
-  })
+    const fromDate = new Date(`${getPreviousDay().toISOString().substring(0, getPreviousDay().toISOString().indexOf('T'))} 00:00:00`);
+    const toDate = new Date(`${date.toISOString().substring(0, date.toISOString().indexOf('T'))} 23:59:59`);
+    const newUsers = await User.findAll({
+        where: {
+            createdAt: {
+                [Op.between]: [
+                   fromDate,
+                   toDate
+                ]
+            }
+        },
+        include: [{model: Commodity}]
+    })
   return res.status(200).render('../admin/newusers', {
     users: newUsers
   });
 });
 
-route.get('/activeusers', isAuthenticated, async (req, res, next) => {
+route.get('/activeusers', isAuthenticated, async (req, res, next)=> {
   const users = await User.findAll({
     where: { trade: 'Commodity' }, include: [{
-      model: Commodity
-    }]
-  });
-  const Active = users.filter((e) => e.commodities.length > 0);
-  return res.status(200).render('../admin/activeusers', { users: Active });
+        model: Commodity
+    }]});
+    const Active = users.filter((e) => e.commodities.length > 0);
+  return res.status(200).render('../admin/activeusers', {users: Active});
 });
 
-route.get('/inactiveusers', isAuthenticated, async (req, res, next) => {
+route.get('/inactiveusers', isAuthenticated, async (req, res, next)=> {
   const users = await User.findAll({
     where: { trade: 'Commodity' }, include: [{
-      model: Commodity
-    }]
-  });
-  const InActive = users.filter((e) => e.commodities.length <= 0);
-  return res.status(200).render('../admin/inactiveusers', { users: InActive });
+        model: Commodity
+    }]});
+    const InActive = users.filter((e) => e.commodities.length <= 0);
+  return res.status(200).render('../admin/inactiveusers', {users: InActive});
 });
 
 route.get("/add", isAuthenticated, (req, res, next) => {
@@ -278,11 +276,7 @@ route.post("/details/:id", isAuthenticated, async (req, res, next) => {
 //===============================AUTHENTICATION MODE===========================================
 
 route.get("/register", async (req, res, next) => {
-  const user = await User.findOne({ where: { trade: 'Wemabod' } });
-  if (user)
-    return res.status(200).render("../auths/register", { alert: [], isAvailable: true });
-  else
-    return res.status(200).render("../auths/register", { alert: [], isAvailable: false });
+  return res.status(200).render("../auths/register", { alert: [], isAvailable: false});
 });
 
 route.post("/register", async (req, res, next) => {
