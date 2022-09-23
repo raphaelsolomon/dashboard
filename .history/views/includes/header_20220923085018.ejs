@@ -121,7 +121,7 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
 
                         </li>
-                        <%if (req.user.trade !== "Wemabod") { %>
+                        <%if(req.user.trade !== "Wemabod") { %>
                         <li>
                             <a href="/add">
                                 <i class="fas fa-chart-bar"></i>Add Data</a>
@@ -130,7 +130,7 @@
                             <a href="/table">
                                 <i class="fas fa-table"></i>View Data</a>
                         </li>
-                        <% } %>
+                        <% %>
                         <li>
                             <a href="/chart">
                                 <i class="far fa-check-square"></i>Check analysis</a>

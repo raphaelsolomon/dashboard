@@ -218,7 +218,7 @@
                                 <span class="bot-line"></span></a>
 
                         </li>
-                        <%if (req.user.trade !== "Wemabod") { %>
+                        <%if(req.user.trade !== "Wemabod") {}%>
                         <li>
                             <a href="/add">
                                 <i class="fas fa-shopping-basket"></i>
@@ -229,7 +229,6 @@
                                 <i class="fas fa-eye"></i>
                                 <span class="bot-line"></span>View data</a>
                         </li>
-                        <% } %>
                         <li class="has-sub">
                             <a href="/chart">
                                 <i class="fas fa-chart-bar"></i>
