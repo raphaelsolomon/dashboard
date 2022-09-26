@@ -137,7 +137,6 @@ exports.getCharts = async (req, res, next) => {
     .render("../logistics/chart", {
       title: "Charts",
       user: req.user,
-      data: data,
       notification: notification
     });
 };
