@@ -7,15 +7,15 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
-                            <div class="card-header">Add data</div>
+                            <div class="card-header">Edit data</div>
                             <div class="card-body">
                                 <div class="card-title">
-                                    <h3 class="text-center title-2">PLASTIC DATA GATHERING</h3>
+                                    <h3 class="text-center title-2">UPDATE PLASTIC DATA</h3>
                                 </div>
                                 <hr>
-                                <form action="/edit" method="post">
+                                <form action="/details/<%=plastic.id%>" method="post">
 
-                                    <div class="row form-group">
+                                    
                                         <input name="id" type="hidden" value="<%= plastic.id %>"/>
                                         <div class="col-12 col-md-12">
                                             <div class="col col-md-3">
@@ -72,7 +72,7 @@
                                                 <option value="Gowon Estate">Gowon Estate</option>
                                                 <option value="De Genesix Lounge">De Genesix Lounge</option>
                                                 <option value="MITV, Alausa">MITV, Alausa</option>
-                                                <option value="Block 18b, The Secretariat, Alausa">Wapa, The
+                                                <option value="Bl, The Secretariat, Alausa">Wapa, The
                                                     Secretariat, Alausa</option>
                                                 <option value="Bicks Event Centre">Bicks Event Centre</option>
                                                 <option value="Even Centre, Railway Compound">Even Centre, Railway
@@ -115,7 +115,7 @@
                                                 <option value="450">450</option>
                                                 <option value="360">360</option>
                                                 <option value="350">350</option>
-                                                <option value="300">500</option>
+                                                <option value="500">500</option>
                                                 <option value="35">35</option>
                                                 <option value="45">45</option>
                                                 <option value="1.5">1.5</option>
@@ -340,8 +340,7 @@
 
                                         <div class="col-12 col-md-12">
                                             <div class="col col-md-3">
-                                                <label for="volume of plastic" class=" form-control-label">Volume of
-                                                    plastics (pcs)</label>
+                                                <label for="volume of plastic" class=" form-control-label">Volume of plastics</label>
                                             </div>
 
                                             <input id="volume_plastic" name="volume_of_plastics" type="number" value="<%= plastic.volume_of_plastics %>"
@@ -618,10 +617,8 @@
                                                 </option>
                                             </select>
                                         </div>
-                                    </div>
                                     <div>
                                         <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
-                                            <i class="fa fa-lock fa-lg"></i>&nbsp;
                                             <span id="payment-button-amount">Update Record</span>
                                             <span id="payment-button-sending" style="display:none;">Sending…</span>
                                         </button>
