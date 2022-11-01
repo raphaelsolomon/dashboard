@@ -102,6 +102,19 @@ exports.getTable = async (req, res, next) => {
   }
 };
 
+exports.getSorts = async (req, res) => {
+  const notification = await req.user.getNotifications({
+    where: { isseen: false },
+    raw: true,
+  });
+
+  return res.status(200).render("../plastics/sort", {
+    title: 'Sorting',
+    user: req.user,
+    notification: notification
+  })
+}
+
 exports.recentId = async (req, res, next) => {
   var plastics = [];
   if (req.params.id === 1) {
