@@ -1,0 +1,17 @@
+<%- include('../includes/header.ejs') %> <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <% if(user.chart3 !== '' && user.chart3 !== null) { %>
+                <div id="Container" style="padding-bottom:56.25%; position:relative; display:block; width: 100%">
+                    <iframe id="ViostreamIframe" width="100%" height="100%"
+                        src= <%= user.chart3 %>
+                        frameborder="0" allowfullscreen="" style="position:absolute; top:0; left: 0"></iframe>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+    <!-- end document-->
+    <%- include('../includes/footer.ejs') %>
