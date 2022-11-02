@@ -211,6 +211,12 @@ route.get("/chart", isAuthenticated, async (req, res, next) => {
   }
 });
 
+route.get("/sort", isAuthenticated, async (req, res, next) => {
+  if (req.user.trade === "Plastics") {
+    return require("../controller/plastic.controller").getSorts(req, res);
+  }
+});
+
 route.get("/delete/:id", isAuthenticated, async (req, res, next) => {
   if (req.user.trade === "Logistics") {
     return require("../controller/logistic.controller").deleteItem(
