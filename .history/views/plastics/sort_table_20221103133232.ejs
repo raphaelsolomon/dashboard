@@ -1,0 +1,149 @@
+<%- include('../includes/header.ejs') %>
+
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- DATA TABLE -->
+                        <h3 class="title-5 m-b-35">data table</h3>
+                        <div class="table-data__tool">
+                            <!-- <div class="table-data__tool-left">
+                                <div class="rs-select2--light rs-select2--md">
+                                    <select class="js-select2" name="property">
+                                        <option selected="selected">Check</option>
+                                        <option value="">PLASTICS RETRIEVED FROM</option>
+                                        <option value="">DATE</option>
+                                        <option value="">PLASTIC SIZE</option>
+                                        <option value="">TONNAGE</option>
+                                        <option value="">PRODUCT</option>
+                                        <option value="">VOLUME OF PLASTICS (PCS)</option>
+                                        <option value="">INITIAL CONTENT</option>
+                                        <option value="">MANUFACTURERS</option>
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                                <div class="rs-select2--light rs-select2--sm">
+                                    <input style="padding: 7px;" type="date" name="" id="">
+                                </div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+                                <button class="au-btn-filter">
+                                    <i class="zmdi zmdi-filter-list"></i>filters</button>
+                            </div> -->
+                            <div class="table-data__tool-right">
+                                <a href="/add"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                        <i class="zmdi zmdi-plus"></i>Add plastic</button></a>
+                                <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                    <select class="js-select2" name="type" onchange="myFunction(this.selectedIndex);">
+                                        <option selected="selected">Export</option>
+                                        <option value="">CSV</option>
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table-overflow">
+                            <div class="table-responsive table-responsive-data2">
+                                <table class="table table-data2">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Sorted Pet Plastic Weight</th>
+                                            <th>Sorted Data</th>
+                                            <th>Sorted Color-Caps-labels</th>
+                                            <th>Unit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% listItem.forEach(function(e) { %>
+                                            <tr class="tr-shadow">
+                                                <td>
+                                                    <%= e.date %>
+                                                </td>
+                                                <td>
+                                                    <%= e.plastic_weight === 'other' ? e.other_plastic_weight : e.plastic_weight %>
+                                                </td>
+                                                <td>
+                                                    <%= e.cap_label === '' ? e.other_cap_label : e.cap_label %>
+                                                </td>
+                                                <td>
+                                                    <%= e.plastic_color === '' ? e.other_plastic_color : e.plastic_color %>
+                                                </td>
+                                                <td>
+                                                    <%= e.unit %>
+                                                </td>
+                                                
+
+                                                <td>
+                                                    <div class="table-data-feature ">
+
+                                                        <a href='/details?id=<%= e.id %>'><button class="item "
+                                                                data-toggle="tooltip " data-placement="top "
+                                                                title="Edit ">
+                                                                <i class="zmdi zmdi-edit "></i>
+                                                            </button></a>
+                                                        <a href='/delete/<%= e.id %>'><button class="item "
+                                                                data-toggle="tooltip " data-placement="top "
+                                                                title="Delete ">
+                                                                <i class="zmdi zmdi-delete "></i>
+                                                            </button></a>
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="spacer"></tr>
+                                            <% }); %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!--===================================================================-->
+                        <br/>
+                        <% if(isData) {%>
+                        <center>
+                            <div class="containerdesign">
+                                <% if(page> 1) { %>
+                                    <a class="btn btn-primary btn__primary" href="/table?page=<%=page - 1%>"><</a>
+                                <%}%>
+                                <% for (var i=iterator; i <=endingLink; i++) { %>
+                                    <% if(i===page) {%>
+                                        <a class="btn btn-primary btn__primary" href="/table?page=<%=i%>"><%=i%></a>
+                                        <% continue; %>
+                                    <%}%>
+                                    <% if(page > 1) { %>
+                                        <a class="nos" href="/table?page=<%=i%>"><%=i%></a>
+                                    <%}%>
+                                <%}%>
+                                 <% if(page < numbersOfPage) { %>
+                                    <a class="btn btn-primary btn__primary" href="/table?page=<%=page + 1%>">></a>
+                                <%}%>
+                            </div>
+                        </center>
+                        <% } %>
+                        <!--===================================================================-->
+
+                        <!-- END DATA TABLE -->
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyright">
+                            <p>Copyright © 2022. All rights reserved. <a href="https://dechconsult.com">Dech Consult
+                                    Limited</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript'>
+        function myFunction(selected) {
+            window.location = '/recent/2';
+        }
+    </script>
+
+    <%- include('../includes/footer.ejs') %>
