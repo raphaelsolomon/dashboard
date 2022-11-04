@@ -30,7 +30,7 @@
                                         <% getTotalOfPlasticByManufactures.forEach(function(e) { %>
                                             <tr>
                                                 <td>
-                                                    <%= e.dataValues.manufacturer %>
+                                                    <%= e.dataValues.manufacturer.substring(0, 40) %>
                                                 </td>
                                                 <td>
                                                     <%= e.dataValues.total %>

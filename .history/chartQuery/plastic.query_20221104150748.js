@@ -60,7 +60,7 @@ exports.getIntialVolumeOfPlastics = async (req) => { }
 exports.getTotalOfPlasticByManufactures = async (req) => {
     const plastics = await req.user.getPlastics({
         attributes: ['manufacturer', [sequelize.fn('COUNT', sequelize.col('manufacturer')), 'total']],
-        limit: 5,
+        l
         group: 'manufacturer', order: [[sequelize.fn('COUNT', sequelize.col('manufacturer')), 'DESC']]
     });
 
@@ -105,7 +105,6 @@ exports.getCollectedPlasticsByMonths = async (req) => {
 exports.getVolumeOfPlastics = async (req) => {
     const plastics = await req.user.getPlastics({
         attributes: ['product', [sequelize.fn('COUNT', sequelize.col('volume_of_plastics')), 'total']],
-        limit: 5,
         group: 'product', order: [[sequelize.fn('COUNT', sequelize.col('volume_of_plastics')), 'DESC']]
     });
     return plastics;
