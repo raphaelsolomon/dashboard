@@ -18,12 +18,6 @@ exports.firstPage = async (req, res) => {
             [sequelize.fn('SUM', sequelize.col('police_matters_all_npf')), 'police'],
             [sequelize.fn('SUM', sequelize.col('man_matters')), 'man'],
             [sequelize.fn('SUM', sequelize.col('hospital_matters')), 'hospital'],
-
-            [sequelize.fn('SUM', sequelize.col('street_visited_adeojo')), 'adeojo'],
-            [sequelize.fn('SUM', sequelize.col('street_visited_eleruwa')), 'eleruwa'],
-            [sequelize.fn('SUM', sequelize.col('street_visited_olorunnimbe')), 'olorunnimbe'],
-            [sequelize.fn('SUM', sequelize.col('street_visited_ojora')), 'ojora'],
-            [sequelize.fn('SUM', sequelize.col('street_visited_eric_moore')), 'eric'],
         ],
         where: {}
     });
@@ -33,15 +27,6 @@ exports.firstPage = async (req, res) => {
     const others = Number.parseInt(getTotalPedestrian[0].police) + Number.parseInt(getTotalPedestrian[0].man) + Number.parseInt(getTotalPedestrian[0].hospital);
     const staffTotals = Number.parseInt(getTotalPedestrian[0].vehicle2) + Number.parseInt(getTotalPedestrian[0].ped1);
     const resTotal = Number.parseInt(getTotalPedestrian[0].ped3);
-
-    const hospital = Number.parseInt(getTotalPedestrian[0].hospital);
-    const nfs = Number.parseInt(getTotalPedestrian[0].police);
-    const man = Number.parseInt(getTotalPedestrian[0].man);
-
-    const adeojo = Number.parseInt(getTotalPedestrian[0].adeojo);
-    const eleruwa = Number.parseInt(getTotalPedestrian[0].eleruwa);
-    const olorunnimbe = Number.parseInt(getTotalPedestrian[0].olorunnimbe);
-    const ojora = Number.parseInt(getTotalPedestrian[0].ojora);
-    const eric = Number.parseInt(getTotalPedestrian[0].eric);
-    return { pedestrians: pedTotal, vehicles: vehTotal, visitors: visTotal, others: others, staffs: staffTotals, residents: resTotal, hospitals: hospital, npfs: nfs, man_center: man, adeojo: adeojo, eleruwa: eleruwa, olorunnimbe: olorunnimbe, ojora: ojora, eric: eric };
+    const hospital = Number.parseInt(getTotalPedestrian[0].h
+    return { pedestrians: pedTotal, vehicles: vehTotal, visitors: visTotal, others: others, staffs: staffTotals, residents: resTotal, hospitals:  };
 }

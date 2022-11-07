@@ -43,5 +43,5 @@ exports.firstPage = async (req, res) => {
     const olorunnimbe = Number.parseInt(getTotalPedestrian[0].olorunnimbe);
     const ojora = Number.parseInt(getTotalPedestrian[0].ojora);
     const eric = Number.parseInt(getTotalPedestrian[0].eric);
-    return { pedestrians: pedTotal, vehicles: vehTotal, visitors: visTotal, others: others, staffs: staffTotals, residents: resTotal, hospitals: hospital, npfs: nfs, man_center: man, adeojo: adeojo, eleruwa: eleruwa, olorunnimbe: olorunnimbe, ojora: ojora, eric: eric };
+    return { pedestrians: pedTotal, vehicles: vehTotal, visitors: visTotal, others: others, staffs: staffTotals, residents: resTotal, hospitals: hospital, npfs: nfs, man_center: man, adeojo: adeojo,  };
 }
