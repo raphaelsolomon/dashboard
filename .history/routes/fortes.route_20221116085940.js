@@ -8,7 +8,7 @@ route.get('/', async (req, res) => {
 
 route.post('/submit', async (req, res) => {
     return Fort.create(req.body).then((_) => {
-        return res.status(200).redirect('/fort/'); 
+        return res.status(200).redirect('successfully submitted'); 
     });
 })
 module.exports = route;  
