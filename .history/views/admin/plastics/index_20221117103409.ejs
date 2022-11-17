@@ -1,0 +1,110 @@
+<%- include('../plastics/layout/include.ejs') %>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">DECH RECYCLERS - DASHBOARD</h1>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item active">PET PLASTIC DATA</li>
+                </ol>
+                <div class="row">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-primary text-white mb-4">
+                            <div class="card-body">DAILY RETRIEVED BY LOCATION</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="allusers.html">View Details</a>
+                                <div class="small text-white"><</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-warning text-white mb-4">
+                            <div class="card-body">TOTAL RETRIEVED PER LOCATION</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="newusers.html">View Details</a>
+                                <div class="small text-white">45</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-success text-white mb-4">
+                            <div class="card-body">BRAND RETRIEVED PER LOCATION</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="activeusers.html">View Details</a>
+                                <div class="small text-white">37</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-danger text-white mb-4">
+                            <div class="card-body">TOTAL CRUSHED PLASTIC</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="inactiveusers.html">View Details</a>
+                                <div class="small text-white">5</i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table me-1"></i>
+                        Database Table
+                    </div>
+                    <div class="card-body">
+                        <table id="datatablesSimple">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>RETRIEVED FROM</th>
+                                    <th>PLASTIC SIZE</th>
+                                    <th>TONNAGE</th>
+                                    <th>PRODUCT</th>
+                                    <th>ZONE</th>
+                                    <th>PLASTIC VOLUME</th>
+                                    <th>INITIAL CONTENT</th>
+                                    <th>MANUFACTURER</th>
+                                    <th>DATE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% plastic.forEach((e)=> { %>
+                                    <tr>
+                                        <td>
+                                            <%= e.id %>
+                                        </td>
+                                        <td>
+                                            <%= e.retrieved_from %>
+                                        </td>
+                                        <td>
+                                            <%= e.plastic_size %>
+                                        </td>
+                                        <td>
+                                            <%= e.tonnage %>
+                                        </td>
+                                        <td>
+                                            <%= e.product %>
+                                        </td>
+                                        <td>
+                                            <%= e.zone %>
+                                        </td>
+                                        <td>
+                                            <%= e.volume_of_plastics %>
+                                        </td>
+                                        <td>
+                                            <%= e.initial_content %>
+                                        </td>
+                                        <td>
+                                            <%= e.manufacturer %>
+                                        </td>
+                                        <td>
+                                            <%= e.date %>
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+<%- include('../plastics/layout/footer.ejs') %>
