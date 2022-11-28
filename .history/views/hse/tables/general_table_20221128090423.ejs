@@ -1,56 +1,17 @@
-<%- include('../hse//includes/header.ejs') %>
+<%- include('../includes/header.ejs') %>
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">FORT HERMON - DASHBOARD</h1>
+            <h1 class="mt-4">FORT HERMON - DASHBBORD</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Daily HSE Report Form
                 </li>
             </ol>
-            <div class="row">
-                <div class="col-xl-3 col-md-6">
-                    <div class="card bg-primary text-white mb-4">
-                        <div class="card-body">GENERAL</div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <p class="m-0" style="font-size: 12px;">Result</p>
-                            <div class="small text-white"><%= generalCount.length %></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="card bg-warning text-white mb-4">
-                        <div class="card-body">INCIDENTS OVERVIEW</div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <p class="m-0" style="font-size: 12px;">Result</p>
-                            <div class="small text-white"><%= overview %></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="card bg-success text-white mb-4">
-                        <div class="card-body">HSE INSPECTION REPORT</div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <p class="m-0" style="font-size: 12px;">Result</p>
-                            <div class="small text-white"><%= hse_inspection %></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="card bg-danger text-white mb-4">
-                        <div class="card-body">CONTRACTOR MANAGEMENT</div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <p class="m-0" style="font-size: 12px;">Result</p>
-                            <div class="small text-white"><%= contractorCount %></i></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
 
 
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Database Table
+                    General Daily HSE Report
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
@@ -58,14 +19,14 @@
                             <tr>
                                  <th style="font-size: 11px;">ID</th>
                                  <th style="font-size: 11px;">Date</th>
-                                <th colspan="2" style="font-size: 11px;">Total Man-hours</th>
-                                <th colspan="2" style="font-size: 11px;">Number of Toolbox talk</th>
-                                <th colspan="2" style="font-size: 11px;">Number of HSE meeting</th>
-                                <th colspan="2" style="font-size: 11px;">Number of HSE induction training</th>
-                                <th colspan="2" style="font-size: 11px;">Number of Permit To Work issued</th>
-                                <th colspan="2" style="font-size: 11px;">Number of Unsafe Condition (UC)</th>
-                                <th colspan="2" style="font-size: 11px;">Number of Unsafe Act (UA)</th>
-                                <th colspan="2" style="font-size: 11px;">% of UA & UC closed out</th>
+                                 <th style="font-size: 11px;" colspan="2">Total Man-hours</th>
+                                 <th style="font-size: 11px;" colspan="2">Number of Toolbox talk</th>
+                                 <th style="font-size: 11px;" colspan="2">Number of HSE meeting</th>
+                                 <th style="font-size: 11px;" colspan="2">Number of HSE induction training</th>
+                                 <th style="font-size: 11px;" colspan="2">Number of Permit To Work issued</th>
+                                 <th style="font-size: 11px;" colspan="2">Number of Unsafe Condition (UC)</th>
+                                 <th style="font-size: 11px;" colspan="2">Number of Unsafe Act (UA)</th>
+                                 <th style="font-size: 11px;" colspan="2">% of UA & UC closed out</th>
                             </tr>
                         </thead>
                         <thead style="background-color:slategrey; color: white">

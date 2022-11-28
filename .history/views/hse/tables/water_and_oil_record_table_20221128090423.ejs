@@ -1,7 +1,7 @@
 <%- include('../includes/header.ejs') %>
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">FORT HERMON - DASHBOARD</h1>
+            <h1 class="mt-4">FORT HERMON - DASHBBORD</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Daily HSE Report Form
                 </li>
@@ -10,7 +10,7 @@
 
             <div class="card mb-4">
                 <div class="card-header">
-                    <i class="fas fa-table me-1"></i>HSE PERSONNEL ON DUTY
+                    <i class="fas fa-table me-1"></i>WATER AND OIL RECORD (RECEIVED)
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
@@ -18,20 +18,24 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Date</th>
-                                <th>Name</th>
-                                <th>Shift</th>
+                                <th>Diesel (Ltr)</th>
+                                <th>Petrol (Ltr)</th>
+                                <th>Other oil (Ltr)</th>
+                                <th>Water (Ltr)</th>
                             </tr>
                         </thead>
 
                         <tbody>
-                            <% onduty.forEach((e) => { %>
+                            <% water.forEach((e) => { %>
                             <tr>
                                 <td><%= e.id %></td>
                                 <td><%= e.date %></td>
-                                <td><%= e.name %></td>
-                                <td><%= e.shift %></td>
+                                <td><%= e.diesel %></td>
+                                <td><%= e.petrol %></td>
+                                <td><%= e.others %></td>
+                                <td><%= e.water %></td>
                             </tr>
-                            <% }) %>
+                            <% }); %>
                         </tbody>
                     </table>
                 </div>
