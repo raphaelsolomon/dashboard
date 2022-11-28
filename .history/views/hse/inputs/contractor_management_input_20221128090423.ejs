@@ -1,0 +1,63 @@
+<%- include('../includes/header.ejs') %>
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">FORT HERMON - DASHBBORD</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Daily HSE Report Form
+                </li>
+            </ol>
+
+
+            <div class="card mb-4">
+                <div class="card-header">CONTRACTOR MANAGEMENT</div>
+
+                <% if(alert !=='defined' ) {%>
+                    <% alert.forEach(function(error) { %>
+                        <div
+                            class="<%= error.err === true ? 'alert alert-danger alert-dismissible fade show m-3' : 'alert alert-success alert-dismissible fade show m-3' %>">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <strong>
+                                <%= error.err===false ? 'Success!' : 'Error' %>
+                            </strong>
+                            <%= error.msg %>
+                        </div>
+                        <% }) %>
+                            <%}%>
+
+                                <div class="card-body">
+
+                                    <form action="/input/contractor" method="post">
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Date</label>
+                                            <input type="date" class="form-control" name="date" required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Contractor Name</label>
+                                            <input type="text" class="form-control" name="contractor_name" required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Job Description</label>
+                                            <input type="text" class="form-control" name="job_desc" required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Total Manhours</label>
+                                            <input type="text" class="form-control" name="total_manhours" required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Job Status</label>
+                                            <input type="text" class="form-control" name="jobstatus" required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Comments</label>
+                                            <input type="text" class="form-control" name="comment" required>
+                                        </div>
+
+                                        <div class="col-md-8 mb-3">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('../includes/footer.ejs') %>

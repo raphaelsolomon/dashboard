@@ -1,0 +1,225 @@
+<%- include('../includes/index_header.ejs') %>
+
+    <!-- STATISTIC-->
+    <!-- STATISTIC-->
+    <section class="statistic statistic2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="statistic__item statistic__item--green">
+                        <center>
+                            <h2 class="number">0</h2>
+                            <span class="desc">Total WCustomers</span>
+                        </center>
+                        <div class="icon">
+                            <i class="zmdi zmdi-account-o"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="statistic__item statistic__item--orange">
+                        <center>
+                            <h2 class="number">0</h2>
+                            <span class="desc">Total Bottles</span>
+                        </center>
+                        <div class="icon">
+                            <i class="zmdi zmdi-shopping-cart"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="statistic__item statistic__item--blue">
+                        <center>
+                            <h2 class="number">0</h2>
+                            <span class="desc">Total Zones</span>
+                        </center>
+                        <div class="icon">
+                            <i class="zmdi zmdi-calendar-note"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="statistic__item statistic__item--red">
+                        <center>
+                            <h2 class="number">0</h2>
+                            <span class="desc">Total Products</span>
+                        </center>
+                        <div class="icon">
+                            <i class="zmdi zmdi-money"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END STATISTIC-->
+    <!-- END STATISTIC CHART-->
+    <center>
+        <a href="/chart">
+            <button class="au-btn au-btn-icon au-btn--green au-btn--small"> more analysis</button>
+        </a>
+    </center>
+        <!-- DATA TABLE-->
+        <section class="p-t-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="title-5 m-b-35">data table</h3>
+                        <div class="table-data__tool">
+                            <!-- <div class="table-data__tool-left">
+                                    <div class="rs-select2--light rs-select2--md">
+                                        <select class="js-select2" name="property">
+                                            <option selected="selected">Check</option>
+                                            <option value="">CONSIGNOR</option>
+                                            <option value="">ORDER</option>
+                                            <option value="">DELIVERED</option>
+                                            <option value="">STREET</option>
+                                            <option value="">AREA</option>
+                                            <option value="">PIKUP</option>
+                                        </select>
+                                        <div class="dropDownSelect2"></div>
+                                    </div>
+                                    <div class="rs-select2--light rs-select2--sm">
+                                        <select class="js-select2" name="time">
+                                            <option selected="selected">Today</option>
+                                            <option value="">3 Days</option>
+                                            <option value="">1 Week</option>
+                                        </select>
+                                        <div class="dropDownSelect2"></div>
+                                    </div>
+                                    <button class="au-btn-filter">
+                                        <i class="zmdi zmdi-filter-list"></i>filters</button>
+                                </div> -->
+                            <div class="table-data__tool-right">
+                                <a href="/add"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                        <i class="zmdi zmdi-plus"></i>Add Data</button></a>
+                                <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                    <select class="js-select2" name="type" onchange="myFunction(this.selectedIndex);">
+                                        <option selected="selected">Export</option>
+                                        <option value="csv">CSV</option>
+                                    </select>
+                                    <div class="dropDownSelect2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive table-responsive-data2">
+                            <table class="table table-data2">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <label class="au-checkbox">
+                                                <input type="checkbox">
+                                                <span class="au-checkmark"></span>
+                                            </label>
+                                        </th>
+                                        <th>CONSIGNOR</th>
+                                        <th>PHONE NUMBER</th>
+                                        <th>ITEM TO BE DELIVERED</th>
+                                        <th>DATE OF ORDER</th>
+                                        <th>PICKUP STREET</th>
+                                        <th>PICKUP AREA </th>
+                                        <th>PICKUP TIME</th>
+                                        <th>CONSIGNEE</th>
+                                        <th>PHONE NUMBER</th>
+                                        <th>DELIVERY STREET</th>
+                                        <th>DELIVERY AREA</th>
+                                        <th>DELIVERY TIME</th>
+                                        <th>PAYMENT METHOD</th>
+                                        <th>STATUS</th>
+                                        <th>RIDER</th>
+                                        <th>AMOUNT PAID</th>
+                                        <th>PAYMENT STATUS</th>
+                                        <th>ACTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% data.tableLimit.forEach(function(e) { %>
+                                        <tr class="tr-shadow">
+                                            <td>
+                                                <label class="au-checkbox">
+                                                    <input type="checkbox">
+                                                    <span class="au-checkmark"></span>
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <%= e.consignor %>
+                                            </td>
+                                            <td>
+                                                <%= e.phone_number %>
+                                            </td>
+                                            <td>
+                                                <%= e.itemToBeDelivered %>
+                                            </td>
+                                            <td>
+                                                <%= e.dateOfOrder %>
+                                            </td>
+
+                                            <td>
+                                                <%= e.pickupaddress_str %>
+                                            </td>
+                                            <td>
+                                                <%= e.pickupaddress_area %>
+                                            </td>
+                                            <td>
+                                                <%= e.pickup_time %>
+                                            </td>
+                                            <td>
+                                                <%= e.consignee %>
+                                            </td>
+                                            <td>
+                                                <%= e.c_phone_number %>
+                                            </td>
+                                            <td>
+                                                <%= e.c_deliveryAddress_str %>
+                                            </td>
+                                            <td>
+                                                <%= e.c_deliveryAddress_area %>
+                                            </td>
+                                            <td>
+                                                <%= e.c_deliveryTime %>
+                                            </td>
+                                            <td>
+                                                <%= e.mode_of_pay %>
+                                            </td>
+                                            <td>
+                                                <span class="status--process">
+                                                    <%= e.status %>
+                                                </span>
+                                            </td>
+
+                                            <td>
+                                                <%= e.rider %>
+                                            </td>
+                                            <td>
+                                                <%= e.amount_paid %>
+                                            </td>
+                                            <td>
+                                                <span class="status--process">
+                                                    <%= e.payment_status %>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="table-data-feature">
+                                                    <a href='/details?id=<%= e.id %>'><button class="item "
+                                                            data-toggle="tooltip " data-placement="top " title="Edit ">
+                                                            <i class="zmdi zmdi-edit "></i>
+                                                        </button></a>
+                                                    <a href='/delete/<%= e.id %>'><button class="item "
+                                                            data-toggle="tooltip " data-placement="top "
+                                                            title="Delete ">
+                                                            <i class="zmdi zmdi-delete "></i>
+                                                        </button></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <% }); %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END DATA TABLE-->
+
+        <%- include('../includes/index_footer.ejs') %>
