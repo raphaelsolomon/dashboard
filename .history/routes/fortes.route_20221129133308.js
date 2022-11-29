@@ -13,7 +13,7 @@ route.post('/submit', async (req, res) => {
 })
 
 route.get('/table', async (req, res) => {
-    const fort = await Fort.findAll();
+    const fort = Fort.findAll();
     return res.status(200).render('../fort/table', { fort: fort });
 })
 module.exports = route;  

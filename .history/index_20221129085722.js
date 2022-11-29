@@ -66,7 +66,7 @@ app.set('views', [
     path.join(__dirname, 'views/auths'),
     path.join(__dirname, 'views/commodities'),
     path.join(__dirname, 'views/wemabod'),
-    path.join(__dirname, 'views/salon'),
+    
     
     path.join(__dirname, 'views/hse/auths'),
     path.join(__dirname, 'views/hse/includes'),
