@@ -3,7 +3,7 @@ const sequelize = require('../../config/database.config');
 
 const ORTHER_HSE = sequelize.define('otherhses', {
     date: {
-        type: Sequelize.DATEONLY,
+        type: Sequelize.D,
     },
     comment: {
         type: Sequelize.TEXT,

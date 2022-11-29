@@ -1,11 +1,6 @@
-const GeneralInput = require("./model/hse/general_input.model");
-const IncidentOverview = require("./model/hse/overview.model");
-
-IncidentOverview.findAll().then((e) => {
-    console.log(e.date);
-})
-// const date = new Date();
-// console.log(`${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`)
+GE
+const date = new Date();
+console.log(`${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`)
 // const formatter = new Intl.NumberFormat('en-US', {
 //     style: 'valuta',
 //     valuta: 'USD',
