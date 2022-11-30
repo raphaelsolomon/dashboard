@@ -1,0 +1,127 @@
+<%- include('../includes/header.ejs') %>
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">FORT HERMON - DASHBOARD</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Daily HSE Report Form
+                </li>
+            </ol>
+
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Incident Overview Database Table
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple" class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th colspan="2" style="font-size: 11px;">Near Miss</th>
+                                <th colspan="2" style="font-size: 11px;">Lost Time Injury (LTI)</th>
+                                <th colspan="2" style="font-size: 11px;">Medical Treatment Case (MTC)</th>
+                                <th colspan="2" style="font-size: 11px;">First Aid Case (FAC)</th>
+                                <th colspan="2" style="font-size: 11px;">Fatality</th>
+                                <th colspan="2">Permanent Total Disability (PTD)</th>
+                                <th colspan="2">Permanent Partial Disability (PPD)</th>
+                                <th colspan="2">Road Traffic Accident (RTA)</th>
+                                <th colspan="2">Property Damage</th>
+                                <th colspan="2">Environmental Incidents</th>
+                                <th colspan="2">Other Incidents</th>
+                                <th colspan="2">Action</th>
+                            </tr>
+                        </thead>
+
+                        <thead style="background-color:slategrey; color: white">
+                            <tr>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>Daily input</th>
+                                <th>Remarks</th>
+                                <th>Daily input</th>
+                                <th>Remarks</th>
+                                <th>Daily input</th>
+                                <th>Remarks</th>
+                                <th>Daily input</th>
+                                <th>Remarks</th>
+                                <th>Daily input</th>
+                                <th>Remarks</th>
+                                <th>Daily input</th>
+                                <th>Remarks</th>
+                                <th>Daily input</th>
+                                <th>Remarks</th>
+                                <th>Daily input</th>
+                                <th>Remarks</th>
+                                <th>Daily input</th>
+                                <th>Remarks</th>
+                                <th>Daily input</th>
+                                <th>Remarks</th>
+                                <th>Daily input</th>
+                                <th>Remarks</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% overview.forEach((e)=> { %>
+                                <tr>
+                                    <td><%= e.id %></td>
+                                    <td><%= e.date %></td>
+                                    <td><%= e.near_miss %></td>
+                                    <td><%= e.near_miss_remark %></td>
+
+                                    <td><%= e.lost_time_injury %></td>
+                                    <td><%= e.lost_time_injury_remark %></td>
+
+                                    <td><%= e.medical_treatment %></td>
+                                    <td><%= e.medical_treatment_remark %></td>
+
+                                    <td><%= e.first_aid_case %></td>
+                                    <td><%= e.first_aid_case_remark %></td>
+
+                                    <td><%= e.fatality %></td>
+                                    <td><%= e.fatality_remark %></td>
+
+                                    <td><%= e.permanent_disability %></td>
+                                    <td><%= e.permanent_disability_remark %></td>
+
+                                    <td><%= e.permanent_partial_disability %></td>
+                                    <td><%= e.permanent_partial_disability_remark %></td>
+
+                                    <td><%= e.road_traffic_accident %></td>
+                                    <td><%= e.road_traffic_accident_remark %></td>
+
+                                    <td><%= e.property_damage %></td>
+                                    <td><%= e.property_damage_remark %></td>
+
+                                    <td><%= e.environmental_incident %></td>
+                                    <td><%= e.environmental_incident_remark %></td>
+
+                                    <td><%= e.other_incident %></td>
+                                    <td><%= e.other_incident_remark %></td>
+
+                                    <td>
+                                        <div class="table-data-feature ">
+    
+                                            <a href='/admin/hse/input/overview/<%= e.id %>'><button class="item " style="margin-right: 10px;"
+                                                data-toggle="tooltip " data-placement="top "
+                                                title="Edit ">
+                                                <i class="zmdi zmdi-edit "></i>
+                                            </button></a>
+                                        <a href='/admin/hse/table/overview/<%= e.id %>'><button class="item "
+                                                data-toggle="tooltip " data-placement="top "
+                                                title="Delete ">
+                                                <i class="zmdi zmdi-delete "></i>
+                                            </button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('../includes/footer.ejs') %>

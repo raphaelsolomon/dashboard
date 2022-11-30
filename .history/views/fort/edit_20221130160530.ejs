@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="Saurav" />
+    <link href="/css_/bootstrap.min.css" rel="stylesheet" />
+    <title>Fort Hermon - Data Tracking</title>
+  </head>
+
+  <body class="bg-light">
+    <div class="container">
+      <div class="py-5 text-center">
+        <img
+          class="d-block mx-auto mb-4"
+          src="/img_/fortlogo.png"
+          alt=""
+          width="250"
+          height="50"
+        />
+        <h2>GATE PASS</h2>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- <div class="row">
+        <h4 class="col-md-6 mb-3" >Reference No: FHSF-2020-4</h4>
+        <h4 class="col-md-6 mb-3" > Gate Pass: GP/0001</h4>
+      </div> -->
+
+      <div class="row">
+        <div class="col-md-12">
+          <form action="/fort/submit" method="post">
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" name="date" class="form-control" value="<%=input.date%>"  />
+            </div>
+
+            <div class="form-group">
+              <label for="ref_no">Gate Pass Ref. No</label>
+              <input type="text" name="reference" class="form-control" value="<%=input.reference%>"  />
+            </div>
+
+            <div class="form-group">
+              <label for="truck">Truck Existing</label>
+              <select class="custom-select d-block w-100" id="state" name="existing" required>
+                <option value="">Choose...</option>
+                <option value="loaded" <%= input.existing === 'loaded' ? "selected": "" %> >Loaded</option>
+                <option value="unloaded" <%= input.existing === 'loaded' ? "selected": ""%>>Unloaded</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="supplier">Supplier</label>
+              <input type="text" class="form-control" name="supplier" value="<%=input.supplier%>"  />
+            </div>
+
+            <div class="form-group">
+              <label for="plate_no">Truck Plate Number</label>
+              <input type="text" class="form-control" name="plateno" value="<%=input.plateno%>"  />
+            </div>
+
+            <div class="form-group">
+              <label for="plate_no">Description</label>
+              <textarea
+                class="form-control"
+                name="description"
+                id="exampleFormControlTextarea1"
+                value="<%=input.description%>"
+                rows="3"
+              ></textarea>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="time_in">Time In</label>
+                <input type="time" name="timeIn" class="form-control" value="<%=input.timeIn%>"  />
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="time_out">Time Out</label>
+                <input type="time" name="timeOut" class="form-control" value="<%=input.time%>" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="by">Prepared by</label>
+              <input type="text" name="preparedBy" class="form-control" required />
+            </div>
+
+            <hr class="mb-4" />
+            <div class="row">
+              <div class="col-md-8 mb-3">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+              </div>
+    
+              <div class="col-md-4 mb-3">
+               <a href="/fort/table" class="text-decoration-none btn btn-success btn-lg btn-block">Table</a> 
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2022 Fort Hermon</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<%- include('../includes/header.ejs') %>
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">FORT HERMON - DASHBOARD</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Daily HSE Report Form
+                </li>
+            </ol>
+
+
+            <div class="card mb-4">
+                <div class="card-header">HSE INSPECTION REPORT</div>
+
+                <% if(alert !=='defined' ) {%>
+                    <% alert.forEach(function(error) { %>
+                        <div
+                            class="<%= error.err === true ? 'alert alert-danger alert-dismissible fade show m-3' : 'alert alert-success alert-dismissible fade show m-3' %>">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <strong>
+                                <%= error.err===false ? 'Success!' : 'Error' %>
+                            </strong>
+                            <%= error.msg %>
+                        </div>
+                        <% }) %>
+                            <%}%>
+
+                                <div class="card-body">
+                                    <input type="hidden" value="update" name="update">
+                                    <input type="hidden" value="<%=input.id%>" name="id">
+                                    <form action="/admin/hse/input/hse_inspection" method="post">
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Date</label>
+                                            <input type="date" class="form-control" name="date" value="<%=input.id%>" required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Description of deficiencies </label>
+                                            <input type="text" class="form-control" name="descriptions" value="<%=input.id%>" required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Recommended Action</label>
+                                            <input type="text" class="form-control" name="action" value="<%=input.id%>" required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Action by </label>
+                                            <input type="text" class="form-control" name="action_by" required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Target date for close out</label>
+                                            <input type="date" class="form-control" name="close_out_date" required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Remarks</label>
+                                            <input type="text" class="form-control" name="remarks" required>
+                                        </div>
+
+                                        <div class="col-md-8 mb-3">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('../includes/footer.ejs') %>

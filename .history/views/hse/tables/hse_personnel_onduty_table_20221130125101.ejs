@@ -1,0 +1,57 @@
+<%- include('../includes/header.ejs') %>
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">FORT HERMON - DASHBOARD</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Daily HSE Report Form
+                </li>
+            </ol>
+
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>HSE PERSONNEL ON DUTY
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>Name</th>
+                                <th>Shift</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <% onduty.forEach((e) => { %>
+                            <tr>
+                                <td><%= e.id %></td>
+                                <td><%= e.date %></td>
+                                <td><%= e.name %></td>
+                                <td><%= e.shift %></td>
+                                <td>
+                                    <div class="table-data-feature ">
+
+                                        <a href='/details?id=<%= e.id %>'><button class="item " style="margin-right: 10px;"
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Edit ">
+                                            <i class="zmdi zmdi-edit "></i>
+                                        </button></a>
+                                    <a href='/admin/hse/table/hse_onduty/<%= e.id %>'><button class="item "
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Delete ">
+                                            <i class="zmdi zmdi-delete "></i>
+                                        </button></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('../includes/footer.ejs') %>

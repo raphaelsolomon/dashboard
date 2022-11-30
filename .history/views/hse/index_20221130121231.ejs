@@ -1,0 +1,140 @@
+<%- include('../hse/includes/header.ejs') %>
+<link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">FORT HERMON - DASHBOARD</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Daily HSE Report Form
+                </li>
+            </ol>
+            <div class="row">
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-primary text-white mb-4">
+                        <div class="card-body">GENERAL</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <p class="m-0" style="font-size: 12px;">Result</p>
+                            <div class="small text-white"><%= generalCount.length %></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-warning text-white mb-4">
+                        <div class="card-body">INCIDENTS OVERVIEW</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <p class="m-0" style="font-size: 12px;">Result</p>
+                            <div class="small text-white"><%= overview %></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-success text-white mb-4">
+                        <div class="card-body">HSE INSPECTION REPORT</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <p class="m-0" style="font-size: 12px;">Result</p>
+                            <div class="small text-white"><%= hse_inspection %></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-danger text-white mb-4">
+                        <div class="card-body">CONTRACTOR MANAGEMENT</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <p class="m-0" style="font-size: 12px;">Result</p>
+                            <div class="small text-white"><%= contractorCount %></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Database Table
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                 <th style="font-size: 11px;">ID</th>
+                                 <th style="font-size: 11px;">Date</th>
+                                <th colspan="2" style="font-size: 11px;">Total Man-hours</th>
+                                <th colspan="2" style="font-size: 11px;">Number of Toolbox talk</th>
+                                <th colspan="2" style="font-size: 11px;">Number of HSE meeting</th>
+                                <th colspan="2" style="font-size: 11px;">Number of HSE induction training</th>
+                                <th colspan="2" style="font-size: 11px;">Number of Permit To Work issued</th>
+                                <th colspan="2" style="font-size: 11px;">Number of Unsafe Condition (UC)</th>
+                                <th colspan="2" style="font-size: 11px;">Number of Unsafe Act (UA)</th>
+                                <th colspan="2" style="font-size: 11px;">% of UA & UC closed out</th>
+                                <th colspan="2" style="font-size: 11px;">Action</th>
+                            </tr>
+                        </thead>
+                        <thead style="background-color:slategrey; color: white">
+                            <tr>
+                                 <th style="font-size: 11px;">ID</th>
+                                 <th style="font-size: 11px;">Date</th>
+                                 <th style="font-size: 11px;">Daily input</th>
+                                 <th style="font-size: 11px;">Remarks</th>
+                                 <th style="font-size: 11px;">Daily input</th>
+                                 <th style="font-size: 11px;">Remarks</th>
+                                 <th style="font-size: 11px;">Daily input</th>
+                                 <th style="font-size: 11px;">Remarks</th>
+                                 <th style="font-size: 11px;">Daily input</th>
+                                 <th style="font-size: 11px;">Remarks</th>
+                                 <th style="font-size: 11px;">Daily input</th>
+                                 <th style="font-size: 11px;">Remarks</th>
+                                 <th style="font-size: 11px;">Daily input</th>
+                                 <th style="font-size: 11px;">Remarks</th>
+                                 <th style="font-size: 11px;">Daily input</th>
+                                 <th style="font-size: 11px;">Remarks</th>
+                                 <th style="font-size: 11px;">Daily input</th>
+                                 <th style="font-size: 11px;">Remarks</th>
+                                 <th style="font-size: 11px;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% generalCount.forEach((e) => { %>
+                            <tr>
+                                <td style="font-size: 11px;"><%= e.id %></td>
+                                 <td style="font-size: 11px;"><%= e.date %></td>
+                                 <td style="font-size: 11px;"><%= e.man_hours %></td>
+                                 <td style="font-size: 11px;"><%= e.man_hours_remark  %></td>
+                                 <td style="font-size: 11px;"><%= e.toolbox_talk %></td>
+                                 <td style="font-size: 11px;"><%= e.toolbox_talk_remark %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_hse_meeting %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_hse_meeting_remark %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_hse_induction_training %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_hse_induction_training_remark %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_permit_issue %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_permit_issue_remark %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_uc %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_uc_remark %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_ua %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_ua_remark %></td>
+                                 <td style="font-size: 11px;"><%= e.percent_of_ua_uc %></td>
+                                 <td style="font-size: 11px;"><%= e.percent_of_ua_uc_remark %></td>
+                                 <td>
+                                    <div class="table-data-feature ">
+
+                                        <a href='/details?id=<%= e.id %>'><button class="item"
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Edit ">
+                                            <i class="zmdi zmdi-edit "></i>
+                                        </button></a>
+                                    <a href='/delete/<%= e.id %>'><button class="item "
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Delete ">
+                                            <i class="zmdi zmdi-delete "></i>
+                                        </button></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('../hse/includes/footer.ejs') %>

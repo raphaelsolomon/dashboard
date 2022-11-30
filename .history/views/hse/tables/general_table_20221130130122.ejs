@@ -1,0 +1,100 @@
+<%- include('../includes/header.ejs') %>
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">FORT HERMON - DASHBOARD</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Daily HSE Report Form
+                </li>
+            </ol>
+
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    General Daily HSE Report
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                 <th style="font-size: 11px;">ID</th>
+                                 <th style="font-size: 11px;">Date</th>
+                                 <th style="font-size: 11px;" colspan="2">Total Man-hours</th>
+                                 <th style="font-size: 11px;" colspan="2">Number of Toolbox talk</th>
+                                 <th style="font-size: 11px;" colspan="2">Number of HSE meeting</th>
+                                 <th style="font-size: 11px;" colspan="2">Number of HSE induction training</th>
+                                 <th style="font-size: 11px;" colspan="2">Number of Permit To Work issued</th>
+                                 <th style="font-size: 11px;" colspan="2">Number of Unsafe Condition (UC)</th>
+                                 <th style="font-size: 11px;" colspan="2">Number of Unsafe Act (UA)</th>
+                                 <th style="font-size: 11px;" colspan="2">% of UA & UC closed out</th>
+                                 <th colspan="2" style="font-size: 11px;">Action</th>
+                            </tr>
+                        </thead>
+                        <thead style="background-color:slategrey; color: white">
+                            <tr>
+                                 <th style="font-size: 11px;">ID</th>
+                                 <th style="font-size: 11px;">Date</th>
+                                 <th style="font-size: 11px;">Daily input</th>
+                                 <th style="font-size: 11px;">Remarks</th>
+                                 <th style="font-size: 11px;">Daily input</th>
+                                 <th style="font-size: 11px;">Remarks</th>
+                                 <th style="font-size: 11px;">Daily input</th>
+                                 <th style="font-size: 11px;">Remarks</th>
+                                 <th style="font-size: 11px;">Daily input</th>
+                                 <th style="font-size: 11px;">Remarks</th>
+                                 <th style="font-size: 11px;">Daily input</th>
+                                 <th style="font-size: 11px;">Remarks</th>
+                                 <th style="font-size: 11px;">Daily input</th>
+                                 <th style="font-size: 11px;">Remarks</th>
+                                 <th style="font-size: 11px;">Daily input</th>
+                                 <th style="font-size: 11px;">Remarks</th>
+                                 <th style="font-size: 11px;">Daily input</th>
+                                 <th style="font-size: 11px;">Remarks</th>
+                                 <th style="font-size: 11px;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% generalCount.forEach((e) => { %>
+                            <tr>
+                                <td style="font-size: 11px;"><%= e.id %></td>
+                                 <td style="font-size: 11px;"><%= e.date %></td>
+                                 <td style="font-size: 11px;"><%= e.man_hours %></td>
+                                 <td style="font-size: 11px;"><%= e.man_hours_remark  %></td>
+                                 <td style="font-size: 11px;"><%= e.toolbox_talk %></td>
+                                 <td style="font-size: 11px;"><%= e.toolbox_talk_remark %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_hse_meeting %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_hse_meeting_remark %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_hse_induction_training %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_hse_induction_training_remark %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_permit_issue %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_permit_issue_remark %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_uc %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_uc_remark %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_ua %></td>
+                                 <td style="font-size: 11px;"><%= e.no_of_ua_remark %></td>
+                                 <td style="font-size: 11px;"><%= e.percent_of_ua_uc %></td>
+                                 <td style="font-size: 11px;"><%= e.percent_of_ua_uc_remark %></td>
+                                 <td>
+                                    <div class="table-data-feature ">
+
+                                        <a href='/admin/hse/input/general/details?id=<%= e.id %>'><button class="item " style="margin-right: 10px;"
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Edit ">
+                                            <i class="zmdi zmdi-edit "></i>
+                                        </button></a>
+                                    <a href='/admin/hse/table/general/<%= e.id %>'><button class="item "
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Delete ">
+                                            <i class="zmdi zmdi-delete "></i>
+                                        </button></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('../includes/footer.ejs') %>

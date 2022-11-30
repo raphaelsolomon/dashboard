@@ -1,0 +1,63 @@
+<%- include('../includes/header.ejs') %>
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">FORT HERMON - DASHBOARD</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Daily HSE Report Form
+                </li>
+            </ol>
+
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>WATER AND OIL RECORD (RECEIVED)
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Date</th>
+                                <th>Description of deficiencies</th>
+                                <th>Recommended Action</th>
+                                <th>Action by</th>
+                                <th>Target date for close out</th>
+                                <th>Remarks</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <% inspection.forEach((e)=> { %>
+                                <tr>
+                                    <td style="font-size: 11px;"><%= e.id %></td>
+                                    <td style="font-size: 11px;"><%= e.date %></td>
+                                    <td style="font-size: 11px;"><%= e.descriptions %></td>
+                                    <td style="font-size: 11px;"><%= e.action %></td>
+                                    <td style="font-size: 11px;"><%= e.action_by %></td>
+                                    <td style="font-size: 11px;"><%= e.close_out_date %></td>
+                                    <td style="font-size: 11px;"><%= e.remarks %></td>
+                                    <td style="font-size: 11px;">
+                                        <div class="table-data-feature ">
+    
+                                            <a href='/details?id=<%= e.id %>'><button class="item " style="margin-right: 10px;"
+                                                data-toggle="tooltip " data-placement="top "
+                                                title="Edit ">
+                                                <i class="zmdi zmdi-edit "></i>
+                                            </button></a>
+                                        <a href='/admin/hse/table/hse_inspection/<%= e.id %>'><button class="item "
+                                                data-toggle="tooltip " data-placement="top "
+                                                title="Delete ">
+                                                <i class="zmdi zmdi-delete "></i>
+                                            </button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('../includes/footer.ejs') %>

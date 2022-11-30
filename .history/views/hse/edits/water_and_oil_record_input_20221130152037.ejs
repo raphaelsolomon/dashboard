@@ -1,0 +1,61 @@
+<%- include('../includes/header.ejs') %>
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">FORT HERMON - DASHBOARD</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Daily HSE Report Form
+                </li>
+            </ol>
+
+
+            <div class="card mb-4">
+                <div class="card-header"> WATER AND OIL RECORD (RECEIVED) </div>
+
+                <% if(alert !=='defined' ) {%>
+                    <% alert.forEach(function(error) { %>
+                        <div
+                            class="<%= error.err === true ? 'alert alert-danger alert-dismissible fade show m-3' : 'alert alert-success alert-dismissible fade show m-3' %>">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <strong>
+                                <%= error.err===false ? 'Success!' : 'Error' %>
+                            </strong>
+                            <%= error.msg %>
+                        </div>
+                        <% }) %>
+                            <%}%>
+
+                                <div class="card-body">
+
+                                    <form action="/admin/hse/input/water_and_oil" method="post">
+                                        <input type="hidden" value="update" name="update">
+                                        <input type="hidden" value="<%=input.id%>" name="id">
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Date</label>
+                                            <input type="date" class="form-control" name="date" value="<%=input.date%>" required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Diesel (Ltr) </label>
+                                            <input type="number" class="form-control" name="diesel" required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Petrol (Ltr)</label>
+                                            <input type="number" class="form-control" name="petrol" required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Other oil (Ltr)</label>
+                                            <input type="number" class="form-control" name="others" required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Water (Ltr)</label>
+                                            <input type="number" class="form-control" name="water" required>
+                                        </div>
+                                        
+                                        <div class="col-md-8 mb-3">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('../includes/footer.ejs') %>

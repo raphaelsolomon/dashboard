@@ -1,0 +1,170 @@
+<%- include('../includes/header.ejs') %>
+  <main>
+    <div class="container-fluid px-4">
+      <h1 class="mt-4">FORT HERMON - DASHBOARD</h1>
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Daily HSE Report Form
+        </li>
+      </ol>
+
+
+      <div class="card mb-4">
+        <div class="card-header">
+          Incident Overview
+        </div>
+
+        <% if(alert !=='defined' ) {%>
+          <% alert.forEach(function(error) { %>
+            <div
+              class="<%= error.err === true ? 'alert alert-danger alert-dismissible fade show m-3' : 'alert alert-success alert-dismissible fade show m-3' %>">
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+              <strong>
+                <%= error.err===false ? 'Success!' : 'Error' %>
+              </strong>
+              <%= error.msg %>
+            </div>
+            <% }) %>
+              <%}%>
+
+                <div class="card-body">
+
+                  <form action="/admin/hse/input/overview" method="post">
+
+                    <div class="col-md-12 mb-3">
+                      <label for="">Date </label>
+                      <input type="date" class="form-control" name="date" value="<%=input.date%>" required>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-8 mb-3">
+                        <label for="">Near Miss </label>
+                        <input type="text" class="form-control" name="near_miss" value="<%=input.near_miss%>"  required>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="t">Remarks</label>
+                        <input type="text" class="form-control" name="near_miss_remark" value="<%=input.near_miss_remark%>"  required>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-8 mb-3">
+                        <label for="">Lost Time Injury (LTI)</label>
+                        <input type="text" class="form-control" name="lost_time_injury" value="<%=input.lost_time_injury%>"  required>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="">Remarks</label>
+                        <input type="text" class="form-control" name="lost_time_injury_remark" value="<%=input.lost_time_injury_remark%>"  required>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-8 mb-3">
+                        <label for="">Medical Treatment Case (MTC)</label>
+                        <input type="text" class="form-control" name="medical_treatment" value="<%=input.date%>"  required>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="">Remarks</label>
+                        <input type="text" class="form-control" name="medical_treatment_remark" value="<%=input.medical_treatment_remark%>"  required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8 mb-3">
+                        <label for="">First Aid Case (FAC)</label>
+                        <input type="text" class="form-control" name="first_aid_case" value="<%=input.date%>"  required>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="">Remarks</label>
+                        <input type="text" class="form-control" name="first_aid_case_remark" value="<%=input.date%>"  required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8 mb-3">
+                        <label for="">Fatality</label>
+                        <input type="text" class="form-control" name="fatality" value="<%=input.date%>"  required>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="">Remarks</label>
+                        <input type="text" class="form-control" name="fatality_remark" value="<%=input.date%>"  required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8 mb-3">
+                        <label for="">Permanent Total Disability (PTD)</label>
+                        <input type="text" class="form-control" name="permanent_disability" value="<%=input.date%>"  required>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="">Remarks</label>
+                        <input type="text" class="form-control" name="permanent_disability_remark" value="<%=input.date%>"  required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8 mb-3">
+                        <label for="">Permanent Partial Disability (PPD)</label>
+                        <input type="text" class="form-control" name="permanent_partial_disability" value="<%=input.date%>"  required>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="">Remarks</label>
+                        <input type="text" class="form-control" name="permanent_partial_disability_remark" value="<%=input.date%>"  required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8 mb-3">
+                        <label for="">Road Traffic Accident (RTA)</label>
+                        <input type="text" class="form-control" name="road_traffic_accident" value="<%=input.date%>"  required>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="">Remarks</label>
+                        <input type="text" class="form-control" name="road_traffic_accident_remark" value="<%=input.date%>"  required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8 mb-3">
+                        <label for="">Property Damage</label>
+                        <input type="text" class="form-control" name="property_damage" value="<%=input.date%>"  required>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="">Remarks</label>
+                        <input type="text" class="form-control" name="property_damage_remark" value="<%=input.date%>"  required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8 mb-3">
+                        <label for="">Environmental Incidents</label>
+                        <input type="text" class="form-control" name="environmental_incident" value="<%=input.date%>"  required>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="">Remarks</label>
+                        <input type="text" class="form-control" name="environmental_incident_remark" value="<%=input.date%>"  required>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8 mb-3">
+                        <label for="">Other Incidents</label>
+                        <input type="text" class="form-control" name="other_incident" value="<%=input.date%>"  required>
+                      </div>
+
+                      <div class="col-md-4 mb-3">
+                        <label for="">Remarks</label>
+                        <input type="text" class="form-control" name="other_incident_remark" value="<%=input.date%>"  required>
+                      </div>
+                    </div>
+
+                    <div class="col-md-8 mb-3">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+      </div>
+    </div>
+  </main>
+  <%- include('../includes/footer.ejs') %>

@@ -1,0 +1,146 @@
+<%- include('../includes/header.ejs') %>
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">FORT HERMON - DASHBOARD</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Daily HSE Report Form
+                </li>
+            </ol>
+
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    General Daily HSE Report Database Table
+                </div>
+
+                <% if(alert !=='defined' ) {%>
+                    <% alert.forEach(function(error) { %>
+                        <div
+                            class="<%= error.err === true ? 'alert alert-danger alert-dismissible fade show m-3' : 'alert alert-success alert-dismissible fade show m-3' %>">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <strong>
+                                <%= error.err===false ? 'Success!' : 'Error' %>
+                            </strong>
+                            <%= error.msg %>
+                        </div>
+                        <% }) %>
+                            <%}%>
+
+                                <div class="card-body">
+
+                                    <form action="/admin/hse/input/general" method="post">
+                                        <div class="col-md-12 mb-3">
+                                            <label for="">Date </label>
+                                            <input type="date" class="form-control" name="date" value="<%=input.date%>" required>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-8 mb-3">
+                                                <label for="">Total Man-hours</label>
+                                                <input type="text" class="form-control" name="man_hours" value="<%=input.man_hours%>" required>
+                                            </div>
+
+                                            <div class="col-md-4 mb-3">
+                                                <label for="t">Remarks</label>
+                                                <input type="text" class="form-control" name="man_hours_remark" value="<%=input.man_hours_remark%>"
+                                                    required>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-8 mb-3">
+                                                <label for="">Number of Toolbox talk</label>
+                                                <input type="text" class="form-control" name="toolbox_talk" value="<%=input.toolbox_talk%>" required>
+                                            </div>
+
+                                            <div class="col-md-4 mb-3">
+                                                <label for="">Remarks</label>
+                                                <input type="text" class="form-control" name="toolbox_talk_remark" value="<%=input.toolbox_talk_remark%>"
+                                                    required>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-8 mb-3">
+                                                <label for="">Number of HSE meeting</label>
+                                                <input type="text" class="form-control" name="no_of_hse_meeting" value="<%%>"
+                                                    required>
+                                            </div>
+
+                                            <div class="col-md-4 mb-3">
+                                                <label for="">Remarks</label>
+                                                <input type="text" class="form-control" name="no_of_hse_meeting_remark"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8 mb-3">
+                                                <label for="">Number of HSE induction training </label>
+                                                <input type="text" class="form-control"
+                                                    name="no_of_hse_induction_training" required>
+                                            </div>
+
+                                            <div class="col-md-4 mb-3">
+                                                <label for="">Remarks</label>
+                                                <input type="text" class="form-control"
+                                                    name="no_of_hse_induction_training_remark" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8 mb-3">
+                                                <label for="">Number of Permit To Work issued </label>
+                                                <input type="text" class="form-control" name="no_of_permit_issue"
+                                                    required>
+                                            </div>
+
+                                            <div class="col-md-4 mb-3">
+                                                <label for="">Remarks</label>
+                                                <input type="text" class="form-control" name="no_of_permit_issue_remark"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8 mb-3">
+                                                <label for="">Number of Unsafe Condition (UC)</label>
+                                                <input type="text" class="form-control" name="no_of_uc" required>
+                                            </div>
+
+                                            <div class="col-md-4 mb-3">
+                                                <label for="">Remarks</label>
+                                                <input type="text" class="form-control" name="no_of_uc_remark" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8 mb-3">
+                                                <label for="">Number of Unsafe Act (UA)</label>
+                                                <input type="text" class="form-control" name="no_of_ua" required>
+                                            </div>
+
+                                            <div class="col-md-4 mb-3">
+                                                <label for="">Remarks</label>
+                                                <input type="text" class="form-control" name="no_of_ua_remark" required>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8 mb-3">
+                                                <label for="">% of UA & UC closed out</label>
+                                                <input type="text" class="form-control" name="percent_of_ua_uc"
+                                                    required>
+                                            </div>
+
+                                            <div class="col-md-4 mb-3">
+                                                <label for="">Remarks</label>
+                                                <input type="text" class="form-control" name="percent_of_ua_uc_remark"
+                                                    required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-8 mb-3">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('../includes/footer.ejs') %>

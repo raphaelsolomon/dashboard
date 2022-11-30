@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css_/bootstrap.min.css" rel="stylesheet">
+    <title>Fort Hermon - Data Tracking</title>
+</head>
+
+<body class="bg-light">
+
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+
+                <table class="table table-hover mt-5 table-bordered">
+                    <thead class="thead-dark text-center">
+                        <tr>
+                            <th scope="col" style="font-size: 11px;">>#</th>
+                            <th scope="col" style="font-size: 11px;"> class="col-sm-2">Date</th>
+                            <th scope="col" style="font-size: 11px;">>Gate Pass</th>
+                            <th scope="col" style="font-size: 11px;">>Truck Existing</th>
+                            <th scope="col" style="font-size: 11px;">>Supplier</th>
+                            <th scope="col" style="font-size: 11px;">>Truck Plate Number</th>
+                            <th scope="col" style="font-size: 11px;">>Description</th>
+                            <th scope="col" style="font-size: 11px;">>Time In</th>
+                            <th scope="col" style="font-size: 11px;">>Time Out</th>
+                            <th scope="col" style="font-size: 11px;">>Prepared by</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% fort.forEach((e)=> { %>
+                            <tr>
+                                <th scope="row"><%= e.id %></th>
+                                <td><%= e.date %></td>
+                                <td><%= e.reference %></td>
+                                <td><%= e.existing %></td>
+                                <td><%= e.supplier %></td>
+                                <td><%= e.plateno %></td>
+                                <td><%= e.description %></td>
+                                <td><%= e.timeIn %></td>
+                                <td><%= e.timeOut %></td>
+                                <td><%= e.preparedBy %></td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
