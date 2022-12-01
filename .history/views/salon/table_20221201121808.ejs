@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>DATASET FOR SALOON</title>
+
+</head>
+
+<body class="bg-light">
+
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+
+                <table class="table table-hover mt-5 table-bordered">
+                    <thead class="thead-dark text-center">
+                        <tr>
+                            <th style="font-size: 10px;" scope="col">ID</th>
+                            <th style="font-size: 10px;" class="col-sm-1">Date</th>
+                            <th style="font-size: 10px;" scope="col">Saloon Name</th>
+                            <th style="font-size: 10px;" scope="col">Saloon Owner</th>
+                            <th style="font-size: 10px;" scope="col">Owner Phone Number</th>
+                            <th style="font-size: 10px;" scope="col">Address</th>
+                            <th style="font-size: 10px;" scope="col">Email</th>
+                            <th style="font-size: 10px;" scope="col">Saloon Type</th>
+                            <th style="font-size: 10px;" scope="col">Services Offered</th>
+                            <th style="font-size: 10px;" scope="col">Opening Hours</th>
+                            <th style="font-size: 10px;" scope="col">Closing Hours</th>
+                            <th style="font-size: 10px;" scope="col">Operational Days</th>
+                            <th style="font-size: 10px;" scope="col">No. of Staff</th>
+                            <th style="font-size: 10px;" scope="col">Brand of Attachment Used</th>
+                            <th style="font-size: 10px;" scope="col">Brand of Weavon Used</th>
+                            <th style="font-size: 10px;" scope="col">Brand of Hair Relaxer Used</th>
+                            <th style="font-size: 10px;" scope="col">Brand of Clipper Used</th>
+                            <th style="font-size: 10px;" scope="col">Brand of Hair Equipment Used</th>
+                            <th style="font-size: 10px;" scope="col">Is There an Air Conditoner in the saloon?</th>
+                            <th style="font-size: 10px;" scope="col">Make of Air Conditioner</th>
+                            <th style="font-size: 10px;" scope="col">Horsepower of Airconditioner</th>
+                            <th style="font-size: 11px;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% input.forEach(function(e) { %>
+                            <tr>
+                                <td style="font-size: 10px;" scope="row"><%=''%></td>
+                                <td style="font-size: 10px;"><%=input.id%></td>
+                                <td style="font-size: 10px;"><%=input.salon_name%></td>
+                                <td style="font-size: 10px;"><%=input.salon_owner%></td>
+                                <td style="font-size: 10px;"><%=input.contact%></td>
+                                <td style="font-size: 10px;"><%=input.address%></td>
+                                <td style="font-size: 10px;"><%=input.email%></td>
+                                <td style="font-size: 10px;"><%=input.salon_type%></td>
+
+                                <td style="font-size: 10px;"><%=input.all_of_the_above %></td>
+
+                                <td style="font-size: 10px;"><%=input.opening_hours%></td>
+                                <td style="font-size: 10px;"><%=input.closing_hours%></td>
+                                <td style="font-size: 10px;"><%=input.operational_days%></td>
+                                <td style="font-size: 10px;"><%=input.staff_numbers%></td>
+                                <td style="font-size: 10px;"><%=input.brand_attachment_used%></td>
+                                <td style="font-size: 10px;"><%=input.brand_weavon_used%></td>
+                                <td style="font-size: 10px;"><%=input.brand_relaxer_used%></td>
+                                <td style="font-size: 10px;"><%=input.brand_clipper_used%></td>
+                                <td style="font-size: 10px;"><%=input.brand_equipment_used%></td>
+                                <td style="font-size: 10px;"><%=input.is_airconditioner%></td>
+                                <td style="font-size: 10px;"><%=input.make_air_condition%></td>
+                                <td style="font-size: 10px;"><%=input.horsepower_air_conditioner%></td>
+                                <td style="font-size: 10px;">
+                                    <button class="btn btn-success btn-sm btn-block">Edit</button>
+                                    <button class="btn btn-danger btn-sm btn-block">Delete</button>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
