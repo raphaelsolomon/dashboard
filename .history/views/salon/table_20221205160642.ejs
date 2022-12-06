@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <title>DATASET FOR SALOON</title>
+
+</head>
+
+<body class="bg-light">
+
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+
+                <table class="table table-hover mt-5 table-bordered">
+                    <thead class="thead-dark text-center">
+                        <tr>
+                            <th style="font-size: 10px;" scope="col">ID</th>
+                            <th style="font-size: 10px;" scope="col">Saloon Name</th>
+                            <th style="font-size: 10px;" scope="col">Saloon Owner</th>
+                            <th style="font-size: 10px;" scope="col">Owner Phone Number</th>
+                            <th style="font-size: 10px;" scope="col">Address</th>
+                            <th style="font-size: 10px;" scope="col">Email</th>
+                            <th style="font-size: 10px;" scope="col">Saloon Type</th>
+                            <th style="font-size: 10px;" scope="col">Services Offered</th>
+                            <th style="font-size: 10px;" scope="col">Opening Hours</th>
+                            <th style="font-size: 10px;" scope="col">Closing Hours</th>
+                            <th style="font-size: 10px;" scope="col">Operational Days</th>
+                            <th style="font-size: 10px;" scope="col">No. of Staff</th>
+                            <th style="font-size: 10px;" scope="col">Brand of Extension Used</th>
+                            <th style="font-size: 10px;" scope="col">Brand of Weavon Used</th>
+                            <th style="font-size: 10px;" scope="col">Brand of Hair Relaxer Used</th>
+                            <th style="font-size: 10px;" scope="col">Brand of Clipper Used</th>
+                            <th style="font-size: 10px;" scope="col">Brand of Hair Equipment Used</th>
+                            <th style="font-size: 10px;" scope="col">Is There an Air Conditoner in the saloon?</th>
+                            <th style="font-size: 10px;" scope="col">Make of Air Conditioner</th>
+                            <th style="font-size: 10px;" scope="col">Horsepower of Airconditioner</th>
+                            <th style="font-size: 10px;" scope="col">Operating Officer</th>
+                            <th style="font-size: 11px;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0; i <=input.length - 1; i++ ) { %>
+                            <tr>
+                                <td style="font-size: 10px;" scope="row"><%=i + 1%></td>
+                                <td style="font-size: 10px;"><%=input[i].salon_name%></td>
+                                <td style="font-size: 10px;"><%=input[i].salon_owner%></td>
+                                <td style="font-size: 10px;"><%=input[i].contact%></td>
+                                <td style="font-size: 10px;"><%=input[i].address%></td>
+                                <td style="font-size: 10px;"><%=input[i].email%></td>
+                                <td style="font-size: 10px;"><%=input[i].salon_type%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].service_type%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].opening_hours%></td>
+                                <td style="font-size: 10px;"><%=input[i].closing_hours%></td>
+                                <td style="font-size: 10px;"><%=input[i].operational_days%></td>
+                                <td style="font-size: 10px;"><%=input[i].staff_numbers%></td>
+                                <td style="font-size: 10px;"><%=input[i].brand_extent_used%></td>
+                                <td style="font-size: 10px;"><%=input[i].brand_cream_used%></td>
+                                <td style="font-size: 10px;"><%=input[i].brand_relaxer_used%></td>
+                                <td style="font-size: 10px;"><%=input[i].brand_clipper_used%></td>
+                                <td style="font-size: 10px;"><%=input[i].brand_extension_used%></td>
+                                <td style="font-size: 10px;"><%=input[i].is_airconditioner%></td>
+                                <td style="font-size: 10px;"><%=input[i].make_air_condition%></td>
+                                <td style="font-size: 10px;"><%=input[i].horsepower_air_conditioner%></td>
+                                <td style="font-size: 10px;"><%=input[i].officer%></td>
+                                <td>
+                                    <div class="table-data-feature ">
+                                        <a href='/salon/<%= input[i].id %>'><button class="item " style="margin-right: 10px;"
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Edit ">
+                                            <i class="zmdi zmdi-edit "></i>
+                                        </button></a>
+                                    <a href='/salon/delete/<%= input[i].id %>'><button class="item "
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Delete ">
+                                            <i class="zmdi zmdi-delete "></i>
+                                        </button></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
