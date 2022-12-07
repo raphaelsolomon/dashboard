@@ -35,26 +35,24 @@ route.post('/', (req, res) => {
     var days = [];
     const { hair_styling, manicure, pedicure, lash, brows, micro, make_up, spa, hair_cut, hair_lock, hair_cuts, all_of_the_above } = req.body;
     const { monday, tuesday, wednesday, thursday, friday } = req.body;
-    //===================================================
     if (monday === 'on') {
-        days.push('Monday');
+        days.push('monday');
     }
     if (tuesday === 'on') {
-        days.push('Tuesday');
+        days.push('tuesday');
     }
     if (wednesday === 'on') {
-        days.push('Wednesday');
+        days.push('wednesday');
     }
     if (thursday === 'on') {
-        days.push('Thursday');
+        days.push('thursday');
     }
     if (friday === 'on') {
-        days.push('Friday');
+        days.push('friday');
     }
-    //=====================================================
+    //================
     if (all_of_the_above === 'on') {
         req.body.service_type = 'all of the above';
-        req.body.operational_days = days.join(', ')
     } else {
         if (hair_styling === 'on')
             services.push('hair styling');
@@ -79,7 +77,6 @@ route.post('/', (req, res) => {
         if (micro === 'on')
             services.push('micro blading');
         req.body.service_type = services.join(', ');
-        req.body.operational_days = days.join(', ')
     }
     return Saloon.findAll({
         attributes: [
@@ -118,7 +115,7 @@ route.post('/', (req, res) => {
 });
 
 route.get('/table', async (req, res) => {
-    const salon = await Saloon.findAll({order: [['createdAt', 'DESC']]});
+    const salon = await Saloon.findAll({});
     res.status(200).render('../salon/table', { input: salon });
 });
 

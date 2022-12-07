@@ -49,7 +49,7 @@ route.post('/', (req, res) => {
         days.push('Thursday');
     }
     if (friday === 'on') {
-        days.push('Friday');
+        days.push('friday');
     }
     //=====================================================
     if (all_of_the_above === 'on') {
@@ -118,7 +118,7 @@ route.post('/', (req, res) => {
 });
 
 route.get('/table', async (req, res) => {
-    const salon = await Saloon.findAll({order: [['createdAt', 'DESC']]});
+    const salon = await Saloon.findAll({});
     res.status(200).render('../salon/table', { input: salon });
 });
 

@@ -118,7 +118,7 @@ route.post('/', (req, res) => {
 });
 
 route.get('/table', async (req, res) => {
-    const salon = await Saloon.findAll({order: [['createdAt', 'DESC']]});
+    const salon = await Saloon.findAll({order: ['cra']});
     res.status(200).render('../salon/table', { input: salon });
 });
 

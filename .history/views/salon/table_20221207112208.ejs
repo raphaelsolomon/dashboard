@@ -23,7 +23,7 @@
                     <thead class="thead-dark text-center">
                         <tr>
                             <th style="font-size: 10px;" scope="col">ID</th>
-                            <th style="font-size: 10px;" scope="col">Date</th>
+                            <th style="font-size: 10px;" scope="col">D</th>
                             <th style="font-size: 10px;" scope="col">Saloon Name</th>
                             <th style="font-size: 10px;" scope="col">Saloon Owner</th>
                             <th style="font-size: 10px;" scope="col">Owner Phone Number</th>
@@ -51,7 +51,6 @@
                         <% for(var i = 0; i <=input.length - 1; i++ ) { %>
                             <tr>
                                 <td style="font-size: 10px;" scope="row"><%=i + 1%></td>
-                                <td style="font-size: 10px;" scope="row"><%=input[i].createdAt%></td>
                                 <td style="font-size: 10px;"><%=input[i].salon_name%></td>
                                 <td style="font-size: 10px;"><%=input[i].salon_owner%></td>
                                 <td style="font-size: 10px;"><%=input[i].contact%></td>
