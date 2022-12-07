@@ -27,6 +27,8 @@ route.get('/', async (req, res) => {
             [Sequelize.fn('DISTINCT', Sequelize.col('officer')), 'officer']],
         raw: true,
     });
+
+    console.log();
     res.status(200).render('../salon/index', { alert: [], officers: officers.map((e) => e.officer).join(', ') });
 });
 
@@ -107,13 +109,9 @@ route.get('/delete/:id', async (req, res) => {
 });
 
 route.get('/:id', async (req, res) => {
-    const officers = await Saloon.findAll({
-        attributes: [
-            [Sequelize.fn('DISTINCT', Sequelize.col('officer')), 'officer']],
-        raw: true,
-    });
+    
     const salon = await Saloon.findOne({ where: { id: req.params.id } });
-    res.status(200).render('../salon/edit', { input: salon, alert: [],  officers: officers.map((e) => e.officer).join(', ') });
+    res.status(200).render('../salon/edit', { input: salon, alert: [] });
 });
 
 module.exports = route;

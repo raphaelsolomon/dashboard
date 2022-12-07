@@ -113,7 +113,7 @@ route.get('/:id', async (req, res) => {
         raw: true,
     });
     const salon = await Saloon.findOne({ where: { id: req.params.id } });
-    res.status(200).render('../salon/edit', { input: salon, alert: [],  officers: officers.map((e) => e.officer).join(', ') });
+    res.status(200).render('../salon/edit', { input: salon, alert: [],  });
 });
 
 module.exports = route;
