@@ -51,12 +51,7 @@ route.post('/', (req, res) => {
     if (friday === 'on') {
         days.push('Friday');
     }
-    if (saturday === 'on') {
-        days.push('Saturday');
-    }
-    if (sunday === 'on') {
-        days.push('Sunday');
-    }
+    
     //=====================================================
     if (all_of_the_above === 'on') {
         req.body.service_type = 'all of the above';

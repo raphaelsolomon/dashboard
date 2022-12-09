@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
     <!-- Title Page-->
     <title>DATASET FOR SALOON</title>
 
@@ -52,20 +51,22 @@
 
                                 <div class="card-body">
                                     <form method="POST" action="/salon/">
+                                        <input type="hidden" name="id" value="<%=input.id%>" />
                                         <div class="form-row m-b-55">
                                             <div class="name">Name</div>
                                             <div class="value">
                                                 <div class="row row-space">
                                                     <div class="col-6">
                                                         <div class="input-group-desc">
-                                                            <input class="input--style-5" type="text" name="salon_name">
+                                                            <input class="input--style-5" type="text" name="salon_name"
+                                                                value="<%=input.salon_name%>">
                                                             <label class="label--desc">Saloon Name </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="input-group-desc">
-                                                            <input class="input--style-5" type="text"
-                                                                name="salon_owner">
+                                                            <input class="input--style-5" type="text" name="salon_owner"
+                                                                value="<%=input.salon_owner%>">
                                                             <label class="label--desc">Saloon Owner</label>
                                                         </div>
                                                     </div>
@@ -77,7 +78,8 @@
                                             <div class="name">Owner Phone Number</div>
                                             <div class="value">
                                                 <div class="input-group">
-                                                    <input class="input--style-5" type="number" name="contact">
+                                                    <input class="input--style-5" type="text" name="contact"
+                                                        value="<%=input.contact%>">
                                                 </div>
                                             </div>
                                         </div>
@@ -104,7 +106,8 @@
                                             <div class="name">Address</div>
                                             <div class="value">
                                                 <div class="input-group">
-                                                    <input class="input--style-5" type="text" name="address">
+                                                    <input class="input--style-5" type="text" name="address"
+                                                        value="<%=input.address%>">
                                                 </div>
                                             </div>
                                         </div>
@@ -113,7 +116,8 @@
                                             <div class="name">Email</div>
                                             <div class="value">
                                                 <div class="input-group">
-                                                    <input class="input--style-5" type="email" name="email">
+                                                    <input class="input--style-5" type="email" name="email"
+                                                        value="<%=input.email%>">
                                                 </div>
                                             </div>
                                         </div>
@@ -123,11 +127,15 @@
                                             <div class="value">
                                                 <div class="input-group">
                                                     <div class="rs-select2 js-select-simple select--no-search">
-                                                        <select name="salon_type" onchange="saloonType(this.selectedIndex);" required>
-                                                            <option disabled="disabled" selected="selected">Choose option</option>
-                                                            <option value="male">Male</option>
-                                                            <option value="female">Female</option>
-                                                            <option value="unisex">Unisex</option>
+                                                        <select name="salon_type">
+                                                            <option disabled="disabled" selected="selected">Choose
+                                                                option</option>
+                                                            <option value="male" <%=input.salon_type=='male'
+                                                                ? "selected" : "" %>>Male</option>
+                                                            <option value="female" <%=input.salon_type=='female'
+                                                                ? "selected" : "" %>>Female</option>
+                                                            <option value="unisex" <%=input.salon_type=='unisex'
+                                                                ? "selected" : "" %>>Unisex</option>
                                                         </select>
                                                         <div class="select-dropdown"></div>
                                                     </div>
@@ -158,53 +166,75 @@
                                 </div>
                             </div>
                         </div> -->
-                                        <div id="allOffer" class="col-sm-12">
-                                            <div class="form-row">
-                                                <div class="name"> Services Offered </div>
-                                                <div class="value">
-                                                    <div class="optionSaloon">
-                                                        <div class="boxSaloon">
-                                                            <div id="hair_styling"><input type="checkbox" name="hair_styling"><span>Hair Styling</span></div>
-                                                            <div id="manicure"><input type="checkbox" name="manicure"><span>Manicure</span></div>
-                                                            <div id="pedicure"><input type="checkbox" name="pedicure"><span>Pedicure</span></div>
-                                                        </div>
+                                        <div class="form-row">
+                                            <div class="name"> Services Offered </div>
+                                            <div class="value">
+                                                <div class="optionSaloon">
+                                                    <div class="boxSaloon">
+                                                        <input type="checkbox" name="hair_styling"
+                                                            <%=input.service_type.includes('hair styling') ? "checked"
+                                                            : "" %>> <span>Hair Styling</span>
+                                                        <input type="checkbox" name="manicure"
+                                                            <%=input.service_type.includes('manicure') ? "checked" : ""
+                                                            %>> <span>Manicure</span>
+                                                        <input type="checkbox" name="pedicure"
+                                                            <%=input.service_type.includes('pedicure') ? "checked" : ""
+                                                            %>> <span>Pedicure</span>
                                                     </div>
                                                 </div>
-                                                <div class="form-row">
-                                                    <div class="name"> </div>
-                                                    <div class="value">
-                                                        <div class="optionSaloon1">
-                                                            <div class="boxSaloon1">
-                                                                <div id="lash"><input type="checkbox" name="lash"><span>Lash</span></div>
-                                                                <div id="brows"><input type="checkbox" name="brows"><span>Brows</span></div>
-                                                                <div id="micro"><input type="checkbox" name="micro"><span>Micro Blading</span></div>
-                                                            </div>
-                                                        </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="name"> </div>
+                                            <div class="value">
+                                                <div class="optionSaloon">
+                                                    <div class="boxSaloon">
+                                                        <input type="checkbox" name="lash"
+                                                            <%=input.service_type.includes('lash') ? "checked" : "" %>>
+                                                        <span>Lash</span>
+                                                        <input type="checkbox" name="brows"
+                                                            <%=input.service_type.includes('brows') ? "checked" : "" %>>
+                                                        <span>Brows</span>
+                                                        <input type="checkbox" name="micro"
+                                                            <%=input.service_type.includes('micro blading') ? "checked"
+                                                            : "" %>> <span>Micro Blading</span>
                                                     </div>
                                                 </div>
-                                                <div class="form-row">
-                                                    <div class="name"> </div>
-                                                    <div class="value">
-                                                        <div class="optionSaloon">
-                                                            <div class="boxSaloon">
-                                                                <div id="make_up"><input type="checkbox" name="make_up"><span>Make-up</span></div>
-                                                                <div id="spa"><input type="checkbox" name="spa"><span>Spa</span></div>
-                                                                <div id="hair_cut"><input type="checkbox" name="hair_cut"><span>Hair Cut</span></div>
-                                                            </div>
-                                                        </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="name"> </div>
+                                            <div class="value">
+                                                <div class="optionSaloon">
+                                                    <div class="boxSaloon">
+                                                        <input type="checkbox" name="make_up"
+                                                            <%=input.service_type.includes('make up') ? "checked" : ""
+                                                            %>> <span>Make-up</span>
+                                                        <input type="checkbox" name="spa"
+                                                            <%=input.service_type.includes('spa') ? "checked" : "" %>>
+                                                        <span>Spa</span>
+                                                        <input type="checkbox" name="hair_cut"
+                                                            <%=input.service_type.includes('hair cut') ? "checked" : ""
+                                                            %>> <span>Hair Cut</span>
                                                     </div>
                                                 </div>
-    
-                                                <div class="form-row">
-                                                    <div class="name"> </div>
-                                                    <div class="value">
-                                                        <div class="optionSaloon">
-                                                            <div class="boxSaloon">
-                                                                <div id="hair_lock"><input type="checkbox" name="hair_lock"><span>Hair Locks(Dreads)</span></div>
-                                                                <div id="hair_cuts"><input type="checkbox" name="hair_cuts"><span>Hair Cut</span></div>
-                                                                <div id="all_of_the_above"><input type="checkbox" name="all_of_the_above"><span>All of the above</span></div>
-                                                            </div>
-                                                        </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="name"> </div>
+                                            <div class="value">
+                                                <div class="optionSaloon">
+                                                    <div class="boxSaloon">
+                                                        <input type="checkbox" name="hair_lock"
+                                                            <%=input.service_type.includes('hair lock') ? "checked" : ""
+                                                            %>> <span>Hair Locks (Dreads)</span>
+                                                        <input type="checkbox" name="hair_cuts"
+                                                            <%=input.service_type.includes('hair cuts') ? "checked" : ""
+                                                            %>> <span>Hair Cut</span>
+                                                        <input type="checkbox" name="all_of_the_above"
+                                                            <%=input.service_type.includes('all of the above')
+                                                            ? "checked" : "" %>> <span>All of the above</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -214,7 +244,8 @@
                                             <div class="name">Opening Hours </div>
                                             <div class="value">
                                                 <div class="input-group">
-                                                    <input class="input--style-5" type="time" name="opening_hours">
+                                                    <input class="input--style-5" type="time" name="opening_hours"
+                                                        value="<%=input.opening_hours%>">
                                                 </div>
                                             </div>
                                         </div>
@@ -222,20 +253,30 @@
                                             <div class="name">Closing Hours </div>
                                             <div class="value">
                                                 <div class="input-group">
-                                                    <input class="input--style-5" type="time" name="closing_hours">
+                                                    <input class="input--style-5" type="time" name="closing_hours"
+                                                        value="<%=input.closing_hours%>">
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- <div class="form-row">
+                                            <div class="name">Operational Days</div>
+                                            <div class="value">
+                                                <div class="input-group">
+                                                    <input class="input--style-5" type="day" name="operational_days"
+                                                        value="<%=input.operational_days%>">
+                                                </div>
+                                            </div>
+                                        </div> -->
                                         <div class="form-row">
                                             <div class="name">Working days </div>
                                             <div class="value">
                                                 <div class="optionSaloon">                                
                                                     <div class="boxSaloon">  
-                                                        <input type="checkbox" name="monday"> <span>Monday</span>
-                                                        <input type="checkbox" name="tuesday"> <span>Tuesday</span>
-                                                        <input type="checkbox" name="wednesday"> <span>Wednesday</span>
-                                                        <input type="checkbox" name="thursday"> <span>Thursday</span>
-                                                        <input type="checkbox" name="friday"> <span>Friday</span>
+                                                        <input type="checkbox" name="monday" value="<%=input.operational_days.includes('Monday') ? 'checked' : ''%>"> <span>Monday</span>
+                                                        <input type="checkbox" name="tuesday" value="<%=input.operational_days.includes('Tuesday') ? 'checked' : ''%>"> <span>Tuesday</span>
+                                                        <input type="checkbox" name="wednesday" value="<%=input.operational_days.includes('Wednesday') ? 'checked' : ''%>"> <span>Wednesday</span>
+                                                        <input type="checkbox" name="thursday" value="<%=input.operational_days.includes('Thursday') ? 'checked' : ''%>"> <span>Thursday</span>
+                                                        <input type="checkbox" name="friday" value="<%=input.operational_days.includes('Friday') ? 'checked' : ''%>"> <span>Friday</span>
                                                         <input type="checkbox" name="saturday"> <span>Saturday</span>
                                                         <input type="checkbox" name="sunday"> <span>Sunday</span>
                                                     </div>
@@ -249,10 +290,10 @@
                                                 <div class="input-group">
                                                     <div class="rs-select2 js-select-simple select--no-search">
                                                         <select name="staff_numbers">
-                                                            <option disabled="disabled" selected="selected">Choose
-                                                                option</option>
+                                                            <option disabled="disabled">Choose Option</option>
                                                             <% for (var i=1; i <=30; i++) { %>
-                                                                <option value="<%=i%>">
+                                                                <option value="<%=i%>"
+                                                                    <%=input.staff_numbers===`${i}`? 'selected' : '' %>>
                                                                     <%=i%>
                                                                 </option>
                                                                 <% } %>
@@ -264,11 +305,12 @@
                                         </div>
                                         <div id="female_hair">
                                             <div class="form-row">
-                                                <div class="name">Brand of Hair Extension Used </div>
+                                                <div class="name">Brand of Extension Used </div>
                                                 <div class="value">
                                                     <div class="input-group">
                                                         <input class="input--style-5" type="day"
-                                                            name="brand_extension_used">
+                                                            name="brand_attachment_used"
+                                                            value="<%=input.brand_extension_used%>">
                                                     </div>
                                                 </div>
                                             </div>
@@ -276,18 +318,18 @@
                                                 <div class="name">Brand of Hair Relaxer Used</div>
                                                 <div class="value">
                                                     <div class="input-group">
-                                                        <input class="input--style-5" type="day" name="brand_relaxer_used">
+                                                        <input class="input--style-5" type="day" name="brand_relaxer_used"
+                                                            value="<%=input.brand_relaxer_used%>">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="male">
-                                            <div class="form-row">
-                                                <div class="name">Brand of Clipper Used</div>
-                                                <div class="value">
-                                                    <div class="input-group">
-                                                        <input class="input--style-5" type="day" name="brand_clipper_used">
-                                                    </div>
+                                        <div class="form-row">
+                                            <div class="name">Brand of Clipper Used</div>
+                                            <div class="value">
+                                                <div class="input-group">
+                                                    <input class="input--style-5" type="day" name="brand_clipper_used"
+                                                        value="<%=input.brand_clipper_used%>">
                                                 </div>
                                             </div>
                                         </div>
@@ -295,7 +337,7 @@
                                             <div class="name">Brand of Hair Cream Used</div>
                                             <div class="value">
                                                 <div class="input-group">
-                                                    <input class="input--style-5" type="day" name="brand_cream_used">
+                                                    <input class="input--style-5" type="day" name="brand_cream_used" value="<%=input.brand_cream_used%>">
                                                 </div>
                                             </div>
                                         </div>
@@ -303,8 +345,8 @@
                                             <div class="name">Brand of Hair Equipment Used </div>
                                             <div class="value">
                                                 <div class="input-group">
-                                                    <input class="input--style-5" type="day"
-                                                        name="brand_equipment_used">
+                                                    <input class="input--style-5" type="day" name="brand_equipment_used"
+                                                        value="<%=input.brand_equipment_used%>">
                                                 </div>
                                             </div>
                                         </div>
@@ -316,8 +358,10 @@
                                                         <select name="is_airconditioner">
                                                             <option disabled="disabled" selected="selected">Choose
                                                                 option</option>
-                                                            <option value="true">Yes</option>
-                                                            <option value="false">No</option>
+                                                            <option value="true" <%=input.is_airconditioner===true
+                                                                ? 'selected' : '' %>>Yes</option>
+                                                            <option value="false" <%=input.is_airconditioner===false
+                                                                ? 'selected' : '' %>>No</option>
                                                         </select>
                                                         <div class="select-dropdown"></div>
                                                     </div>
@@ -328,7 +372,8 @@
                                             <div class="name">Make of Air Conditioner </div>
                                             <div class="value">
                                                 <div class="input-group">
-                                                    <input class="input--style-5" type="text" name="make_air_condition">
+                                                    <input class="input--style-5" type="text" name="make_air_condition"
+                                                        value="<%=input.make_air_condition%>">
                                                 </div>
                                             </div>
                                         </div>
@@ -337,16 +382,18 @@
                                             <div class="value">
                                                 <div class="input-group">
                                                     <input class="input--style-5" type="text"
-                                                        name="horsepower_air_conditioner">
+                                                        name="horsepower_air_conditioner"
+                                                        value="<%=input.horsepower_air_conditioner%>">
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="form-row">
                                             <div class="name">Operational Officer</div>
                                             <div class="value">
                                                 <div class="input-group autocomplete">
                                                     <input class="input--style-5" type="text" name="officer"
-                                                        id="officer">
+                                                        value="<%=input.officer%>" id="officer">
                                                 </div>
                                             </div>
                                         </div>
@@ -356,7 +403,8 @@
                                             <div>
                                                 <button class="btn btn--radius-2 btn--green"
                                                     type="submit">Submit</button>
-
+                                                <a href="/salon/table" target="_blank"
+                                                    class="btn btn--radius-2 btn--blue">Table</a>
                                             </div>
                                         </center>
                                     </form>
@@ -378,67 +426,6 @@
     <script>
         var countries = "<%=officers%>".split(', ');
         autocomplete(document.getElementById("officer"), countries);
-
-        var element = [
-            document.getElementById("allOffer"),
-
-            document.getElementById("hair_styling"),
-            document.getElementById("manicure"),
-            document.getElementById("pedicure"),
-
-            document.getElementById("make_up"),
-            document.getElementById("spa"),
-            document.getElementById("hair_cut"),
-
-            document.getElementById("lash"),
-            document.getElementById("brows"),
-            document.getElementById("micro"),
-
-            document.getElementById("hair_lock"),
-            document.getElementById("hair_cuts"),
-            document.getElementById("all_of_the_above")
-        ];
-        for (var i = 0; i < element.length; i++) {
-            element[i].style.display = "none";
-        }
-
-        //===================================================
-        document.getElementById("female_hair").style.display = "none";
-        document.getElementById("male").style.display = "none";
-
-        function saloonType(index) {
-            if (index == 1) {
-                for (var i = 0; i < element.length; i++) {
-                    if (i === 11 || i === 10) {
-                        element[11].style.display = 'block';
-                        element[10].style.display = 'block';
-                    } else {
-                        element[i].style.display = 'none';
-                    }
-                }
-                document.getElementById("female_hair").style.display = "none";
-                document.getElementById("male").style.display = "block";
-            } else if (index == 2) {
-                for (var i = 0; i < element.length; i++) {
-                    if (i === 12 || i === 10 || i === 11) {
-                        element[12].style.display = 'none';
-                        element[10].style.display = 'none';
-                        element[11].style.display = 'none';
-                    } else {
-                        element[i].style.display = 'block';
-                    }
-                }
-                document.getElementById("female_hair").style.display = "block";
-                document.getElementById("male").style.display = "none";
-            } else {
-                for (var i = 0; i < element.length; i++) {
-                    element[i].style.display = "block";
-                }
-                document.getElementById("female_hair").style.display = "block";
-                document.getElementById("male").style.display = "block";
-            }
-            element[0].style.display = 'block';
-        }
     </script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->

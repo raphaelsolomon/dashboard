@@ -52,10 +52,10 @@ route.post('/', (req, res) => {
         days.push('Friday');
     }
     if (saturday === 'on') {
-        days.push('Saturday');
+        days.push('Thursday');
     }
-    if (sunday === 'on') {
-        days.push('Sunday');
+    if (friday === 'on') {
+        days.push('Friday');
     }
     //=====================================================
     if (all_of_the_above === 'on') {

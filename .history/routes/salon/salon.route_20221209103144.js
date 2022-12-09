@@ -54,8 +54,8 @@ route.post('/', (req, res) => {
     if (saturday === 'on') {
         days.push('Saturday');
     }
-    if (sunday === 'on') {
-        days.push('Sunday');
+    if (friday === 'on') {
+        days.push('Friday');
     }
     //=====================================================
     if (all_of_the_above === 'on') {
