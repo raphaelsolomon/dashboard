@@ -76,7 +76,7 @@ app.set('views', [
     path.join(__dirname, 'views/hse/inputs'),
     path.join(__dirname, 'views/hse/tables'),
     path.join(__dirname, 'views/hse/edits'),
-    path.join(__dirname, 'views/survey'),
+    path.join(__dirname, 'views/'),
 ]);
 app.set('view engine', 'ejs');
 app.use(flash());
@@ -93,7 +93,6 @@ app.use('/admin/hse', require('./routes/hse/auth.route'));
 app.use('/admin/hse/input', require('./routes/hse/input.route'));
 app.use('/admin/hse/table', require('./routes/hse/table.route'));
 app.use('/salon', require('./routes/salon/salon.route'));
-app.use('/survey', require('./routes/survey/survey.route'));
 app.use((req, res, next) => {
     return res.status(404).render('../auths/404');
 })

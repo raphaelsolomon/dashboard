@@ -93,7 +93,7 @@ app.use('/admin/hse', require('./routes/hse/auth.route'));
 app.use('/admin/hse/input', require('./routes/hse/input.route'));
 app.use('/admin/hse/table', require('./routes/hse/table.route'));
 app.use('/salon', require('./routes/salon/salon.route'));
-app.use('/survey', require('./routes/survey/survey.route'));
+
 app.use((req, res, next) => {
     return res.status(404).render('../auths/404');
 })

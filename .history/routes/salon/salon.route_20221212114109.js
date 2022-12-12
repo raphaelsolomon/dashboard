@@ -34,7 +34,7 @@ route.post('/', (req, res) => {
     var services = [];
     var days = [];
     const { hair_styling, manicure, pedicure, lash, brows, micro, make_up, spa, hair_cut, hair_lock, hair_cuts, all_of_the_above } = req.body;
-    const { monday, tuesday, wednesday, thursday, friday, saturday, sunday } = req.body;
+    const { monday, tuesday, wednesday, thursday, friday, saturday } = req.body;
     //===================================================
     if (monday === 'on') {
         days.push('Monday');
