@@ -21,9 +21,7 @@ route.get('/table', (req, res) => {
 })
 
 route.get('/delete/:id', (req, res) => {
-    return Survey.destroy({ where: { id: req.params.id }}).then((_) => {
-        return res.status(200).redirect('/OSHsurvey/table');
-    })
+    return Survey.destroy()
 })
 
 module.exports = route;

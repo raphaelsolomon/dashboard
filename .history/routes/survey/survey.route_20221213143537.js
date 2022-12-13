@@ -7,6 +7,7 @@ route.get('/', (req, res) => {
 })
 
 route.post('/submit', (req, res) => {
+    const alert = [];
     return Survey.create(req.body).then((survey) => {
         return res.status(200).json({ msg: 'survey submitted successfully', err: false });
     }).catch((error) => {
@@ -15,15 +16,9 @@ route.post('/submit', (req, res) => {
 })
 
 route.get('/table', (req, res) => {
-    return Survey.findAll().then((survey) => {
-        return res.status(200).render('../survey/table', { listItems: survey });
+    return Survey.create(req.body).then((survey) => {
+        return res.status(200).render('../survey/table', { listItems: survey});
     });
-})
-
-route.get('/delete/:id', (req, res) => {
-    return Survey.destroy({ where: { id: req.params.id }}).then((_) => {
-        return res.status(200).redirect('/OSHsurvey/table');
-    })
 })
 
 module.exports = route;

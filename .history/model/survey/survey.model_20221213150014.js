@@ -2,12 +2,7 @@ const Sequelize = require('sequelize');
 const sequelize = require('../../config/database.config');
 
 const Survey = sequelize.define('surveys', {
-    id: {
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
-        allowNull: false,
-        primaryKey: true
-    },
+    
     first_name: {
         type: Sequelize.STRING,
     },

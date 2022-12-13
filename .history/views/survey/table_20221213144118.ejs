@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Dech - survey</title>
+</head>
+<body class="bg-light">
+    <div class="container">
+        <div class="row">
+        <div class="table-responsive">
+                <table class="table table-hover mt-5 table-bordered">
+                    <thead class="thead-dark text-center">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th class="col-sm-1">Date</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Country of Origin </th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Date of birth</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Employment Status</th>
+                        <th scope="col">Qualification</th>
+                        <th scope="col">Course of Study</th>
+                        <th scope="col">OSH Qualification</th>
+                        <th scope="col">No. of Staff</th>
+                        <th scope="col">Years of Experience</th>
+                        <th scope="col">OSH Field of Expertise</th>
+                        <th scope="col">Other Competency Field</th>
+                        <th scope="col">Core Skills</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0; i <= listItem.length - 1; i ++)%>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>---------</td>
+                        <td>---------</td>
+                        <td>---------</td>
+                        <td>---------</td>
+                        <td>---------</td>
+                        <td>---------</td>
+                        <td>---------</td>
+                        <td>---------</td>
+                        <td>---------</td>
+                        <td>---------</td>
+                        <td>---------</td>
+                        <td>---------</td>
+                        <td>---------</td>
+                        <td>---------</td>
+                        <td>---------</td>
+                        <td>---------</td>
+                        <td>
+                                <button class="btn btn-success btn-sm btn-block" >Edit</button>
+                                <button class="btn btn-danger btn-sm btn-block">Delete</button>
+                        </td>
+                    </tr>
+                    <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

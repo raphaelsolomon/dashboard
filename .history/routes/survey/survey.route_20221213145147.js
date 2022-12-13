@@ -15,15 +15,10 @@ route.post('/submit', (req, res) => {
 })
 
 route.get('/table', (req, res) => {
+    console.log('gjofiifdoisofijiodf')
     return Survey.findAll().then((survey) => {
-        return res.status(200).render('../survey/table', { listItems: survey });
+        return res.status(200).render('../survey/table.ejs', { listItems: survey });
     });
-})
-
-route.get('/delete/:id', (req, res) => {
-    return Survey.destroy({ where: { id: req.params.id }}).then((_) => {
-        return res.status(200).redirect('/OSHsurvey/table');
-    })
 })
 
 module.exports = route;
