@@ -1,0 +1,1986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="colorlib.com" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dech - survey</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/survey/fonts/material-icon/css/material-design-iconic-font.min.css" />
+    <link rel="stylesheet" href="/survey/vendor/nouislider/nouislider.min.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/survey/css/style.css" />
+</head>
+
+<body>
+    <center>
+        <select class="lang">
+            <option lang="en" value="english" selected>English</option>
+            <option lang="po" value="portuguese">Português</option>
+            <option lang="fr" value="francais">Français</option>
+            <option lang="ar" value="arabic">العربية</option>
+            <!-- other language options -->
+        </select>
+    </center>
+
+    <div class="main">
+        <div class="container">
+            <form method="POST" id="signup-form" class="signup-form" action="/survey/submit">
+                <div>
+                    <h3>About the survey</h3>
+                    <fieldset>
+                        <h2>
+                            Profiling of Occupational Health and Safety Professionals in
+                            Africa
+                        </h2>
+                        <h4 class="desc">Survey Objective</h4>
+                        <div class="fieldset-content">
+                            <hr />
+
+                            <p>
+                                The objective of this survey is to profile Occupational Health
+                                and Safety (OSH) Professionals across Africa. <br />
+                                <br />
+
+                                There are a good number of OSH resources in Africa but it is
+                                difficult to identify them, the cities and countries where
+                                that practice, their specific areas of expertise, and their
+                                availability. This survey will help us know for instance the
+                                number of trainer Ergonomists or Hygienists we have in Africa
+                                and where they are. <br />
+                                <br />
+                                We should be able to foster collaborations amongst
+                                Practitioners in projects, if the resources are here, why call
+                                for external resources from outside Africa to conduct projects
+                                that Africa has the expertise to execute? <br />
+                                <br />
+
+                                We need to know you, where you are, your set skills, and how
+                                available you are to commit to projects within your areas of
+                                expertise.
+                            </p>
+                        </div>
+                    </fieldset>
+
+                    <h3>Personal info</h3>
+                    <fieldset>
+                        <h2>Personal information</h2>
+                        <p class="desc">
+                            Please enter your infomation and proceed to next step
+                        </p>
+                        <div class="fieldset-content">
+                            <div class="form-row">
+                                <label class="form-label">Name</label>
+                                <div class="form-flex">
+                                    <div class="form-group">
+                                        <input type="text" name="first_name_" id="first_name" />
+                                        <span class="text-input">First</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="last_name_" id="last_name" />
+                                        <span class="text-input">Last</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" name="email_" id="email" />
+                                <!-- <span class="text-input">Example  :<span>  Jeff@gmail.com</span></span> -->
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-flex">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Country of Origin</label>
+                                        <select name="country" id="countrys">
+                                            <option value="" disabled selected hidden>
+                                                Select country
+                                            </option>
+                                            <option value="Nigeria">Nigeria</option>
+                                            <option value="Ethiopia">Ethiopia</option>
+                                            <option value="Egypt">Egypt</option>
+                                            <option value="Congo">Congo</option>
+                                            <option value="Tanzania">Tanzania</option>
+                                            <option value="South Africa">South Africa</option>
+                                            <option value="Kenya">Kenya</option>
+                                            <option value="Uganda">Uganda</option>
+                                            <option value="Sudan">Sudan</option>
+                                            <option value="Algeria">Algeria</option>
+                                            <option value="Morocco">Morocco</option>
+                                            <option value="Angola">Angola</option>
+                                            <option value="Mozambique">Mozambique</option>
+                                            <option value="Ghana">Ghana</option>
+                                            <option value="Madagascar">Madagascar</option>
+                                            <option value="Cameroon">Cameroon</option>
+                                            <option value="Ivory Coast">Ivory Coast</option>
+                                            <option value="Niger">Niger</option>
+                                            <option value="Burkina Faso">Burkina Faso</option>
+                                            <option value="Mali">Mali</option>
+                                            <option value="Malawi">Malawi</option>
+                                            <option value="Zambia">Zambia</option>
+                                            <option value="Senegal">Senegal</option>
+                                            <option value="Chad">Chad</option>
+                                            <option value="Somalia">Somalia</option>
+                                            <option value="Zimbabwe">Zimbabwe</option>
+                                            <option value="Guinea">Guinea</option>
+                                            <option value="Rwanda">Rwanda</option>
+                                            <option value="Benin">Benin</option>
+                                            <option value="Burundi">Burundi</option>
+                                            <option value="Tunisia">Tunisia</option>
+                                            <option value="South Sudan">South Sudan</option>
+                                            <option value="Togo">Togo</option>
+                                            <option value="Sierra Leone">Sierra Leone</option>
+                                            <option value="Libya">Libya</option>
+                                            <option value="Republic of the Congo">
+                                                Republic of the Congo
+                                            </option>
+                                            <option value="Liberia">Liberia</option>
+                                            <option value="Central African Republic">
+                                                Central African Republic
+                                            </option>
+                                            <option value="Mauritania">Mauritania</option>
+                                            <option value="Eritrea">Eritrea</option>
+                                            <option value="Namibia">Namibia</option>
+                                            <option value="Gambia">Gambia</option>
+                                            <option value="Botswana">Botswana</option>
+                                            <option value="Gabon">Gabon</option>
+                                            <option value="Lesotho">Lesotho</option>
+                                            <option value="Guinea-Bissau">Guinea-Bissau</option>
+                                            <option value="Equatorial Guinea">
+                                                Equatorial Guinea
+                                            </option>
+                                            <option value="Mauritius">Mauritius</option>
+                                            <option value="Eswatini">Eswatini</option>
+                                            <option value="Djibouti">Djibouti</option>
+                                            <option value="Comoros">Comoros</option>
+                                            <option value="Sahrawi Arab Democratic Republic">
+                                                Sahrawi Arab Democratic Republic
+                                            </option>
+                                            <option value="Cape Verde">Cape Verde</option>
+                                            <option value="São Tomé and Príncipe">
+                                                São Tomé and Príncipe
+                                            </option>
+                                            <option value="Seychelles">Seychelles</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="phone" class="form-label">Phone</label>
+                                        <input type="text" name="phones" id="phone" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-date">
+                                <label for="birth_date" class="form-label">Date of birth</label>
+                                <input type="date" name="date_of_birth_" id="date_of_birth" />
+
+                                <!-- <div class="form-date-group">
+                                    <div class="form-date-item">
+                                        <select id="birth_month" name="birth_month"></select>
+                                        <span class="text-input">MM</span>
+                                    </div>
+                                    <div class="form-date-item">
+                                        <select id="birth_date" name="birth_date"></select>
+                                        <span class="text-input">DD</span>
+                                    </div>
+                                    <div class="form-date-item">
+                                        <select id="birth_year" name="birth_year"></select>
+                                        <span class="text-input">YYYY</span>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="form-group">
+                                <label for="ssn" class="form-label">Gender</label>
+                                <select name="gender_" id="gender">
+                                    <option value="" disabled selected hidden>Select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <h3>Questionaire</h3>
+                    <fieldset>
+                        <h2>Survey Questions</h2>
+                        <p class="desc">
+                            Please enter your infomation and proceed to submit
+                        </p>
+                        <div class="fieldset-content">
+                            <div id="alert_dialog" class="alert alert-success alert-dismissible fade show mb-3">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                <strong> Submitted successfully! </strong>
+                            </div>
+
+                            <div id="alert_dialog_failed" class="alert alert-danger alert-dismissible fade show mb-3">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                <strong> Record failed to subit! </strong>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-flex">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Employment Status</label>
+                                        <select name="emp_stat" id="emp_status" onchange="em_other(this.selectedIndex)">
+                                            <option value="" disabled selected hidden>
+                                                Select
+                                            </option>
+                                            <option value="Employee">Employee</option>
+                                            <option value="Consultant">Consultant</option>
+                                            <option value="Employer">Employer</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <input type="text" name="" id="em_status">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Qualification</label>
+                                        <select name="emp_qualifications" id="emp_qualification"
+                                            onchange="ed_other(this.selectedIndex)">
+                                            <option value="" disabled selected hidden>
+                                                Select
+                                            </option>
+                                            <option value="B.Sc">B.Sc</option>
+                                            <option value="M.Sc">MSc/MPhil</option>
+                                            <option value="Ph.D.">Ph.D</option>
+                                            <option value="Ph.D.">Professor</option>
+                                            <option value="iplom">Diploma</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-flex">
+                                    <div class="form-group">
+                                        <label for="course_studys" class="form-label">Course of Study</label>
+                                        <select name="" id="course_studied" onchange="cs_other(this.selectedIndex)">
+                                            <option value="" disabled selected hidden>
+                                                Select
+                                            </option>
+                                            <option value="Accountancy/Accounting">
+                                                Accountancy/Accounting
+                                            </option>
+                                            <option value="Actuarial Science">
+                                                Actuarial Science
+                                            </option>
+                                            <option value="Banking, Finance and Insurance">
+                                                Banking, Finance and Insurance
+                                            </option>
+                                            <option value="Business Administration">
+                                                Business Administration
+                                            </option>
+                                            <option value="Business Management">
+                                                Business Management
+                                            </option>
+                                            <option value="Business Economics">
+                                                Business Economics
+                                            </option>
+                                            <option value="Cooperative and Rural Development">
+                                                Cooperative and Rural Development
+                                            </option>
+                                            <option value="Cooperative Economics and Management">
+                                                Cooperative Economics and Management
+                                            </option>
+                                            <option value="Economics">Economics</option>
+                                            <option value="Entrepreneurship">
+                                                Entrepreneurship
+                                            </option>
+                                            <option value="Film and Video Studies">
+                                                Film and Video Studies
+                                            </option>
+                                            <option value="Finance">Finance</option>
+                                            <option value="Human Resources Management">
+                                                Human Resources Management
+                                            </option>
+                                            <option value="Hotel Tourism Management">
+                                                Hotel Tourism Management
+                                            </option>
+                                            <option value="Industrial Relations and Personnel Management">
+                                                Industrial Relations and Personnel Management
+                                            </option>
+                                            <option value="Insurance">Insurance</option>
+                                            <option value="Insurance and Risk Management">
+                                                Insurance and Risk Management
+                                            </option>
+                                            <option value="International Relations">
+                                                International Relations
+                                            </option>
+                                            <option value="International Relations and Strategic Studies">
+                                                International Relations and Strategic Studies
+                                            </option>
+                                            <option value="Local Government Administration">
+                                                Local Government Administration
+                                            </option>
+                                            <option value="Mass Communication">
+                                                Mass Communication
+                                            </option>
+                                            <option value="Media Studies and Mass Communication">
+                                                Media Studies and Mass Communication
+                                            </option>
+                                            <option value="Management Studies">
+                                                Management Studies
+                                            </option>
+                                            <option value="Marketing">Marketing</option>
+                                            <option value="Office Management Technology">
+                                                Office Management Technology
+                                            </option>
+                                            <option value="Public Administration">
+                                                Public Administration
+                                            </option>
+                                            <option value="Public Relations and Advertising">
+                                                Public Relations and Advertising
+                                            </option>
+                                            <option value="Secretarial Administration">
+                                                Secretarial Administration
+                                            </option>
+                                            <option value="Transport and Tourism">
+                                                Transport and Tourism
+                                            </option>
+                                            <option value="Agriculture">Agriculture</option>
+                                            <option value="Agricultural Administration">
+                                                Agricultural Administration
+                                            </option>
+                                            <option value="Fisheries Management">
+                                                Fisheries Management
+                                            </option>
+                                            <option value="Fisheries">Fisheries</option>
+                                            <option value="Fisheries and Aquatic Resources Management">
+                                                Fisheries and Aquatic Resources Management
+                                            </option>
+                                            <option value="Fisheries Technology">
+                                                Fisheries Technology
+                                            </option>
+                                            <option value="Agricultural Cooperative Management">
+                                                Agricultural Cooperative Management
+                                            </option>
+                                            <option value="Fisheries and Agriculture">
+                                                Fisheries and Agriculture
+                                            </option>
+                                            <option value="Fisheries and Aquatic Environmental Management">
+                                                Fisheries and Aquatic Environmental Management
+                                            </option>
+                                            <option value="Agricultural Economics">
+                                                Agricultural Economics
+                                            </option>
+                                            <option value="Agricultural Economics and Farm Management">
+                                                Agricultural Economics and Farm Management
+                                            </option>
+                                            <option value="Agricultural Administration">
+                                                Agricultural Administration
+                                            </option>
+                                            <option value="Agricultural Economics and Extension">
+                                                Agricultural Economics and Extension
+                                            </option>
+                                            <option value="Agricultural Extension and Rural Sociology">
+                                                Agricultural Extension and Rural Sociology
+                                            </option>
+                                            <option value="Agricultural Extension and Management">
+                                                Agricultural Extension and Management
+                                            </option>
+                                            <option value="Agricultural Extension">
+                                                Agricultural Extension
+                                            </option>
+                                            <option value="Agricultural Extension Service">
+                                                Agricultural Extension Service
+                                            </option>
+                                            <option value="Agricultural Extension and Rural Development">
+                                                Agricultural Extension and Rural Development
+                                            </option>
+                                            <option value="Agricultural Extension and Communication Technology">
+                                                Agricultural Extension and Communication Technology
+                                            </option>
+                                            <option value="Agricultural Extension and Social Engineering">
+                                                Agricultural Extension and Social Engineering
+                                            </option>
+                                            <option value="Agronomy">Agronomy</option>
+                                            <option value="Animal Production and Health Services">
+                                                Animal Production and Health Services
+                                            </option>
+                                            <option value="Animal Production and Health">
+                                                Animal Production and Health
+                                            </option>
+                                            <option value="Animal Production">
+                                                Animal Production
+                                            </option>
+                                            <option value="Animal Production and Fisheries">
+                                                Animal Production and Fisheries
+                                            </option>
+                                            <option value="Livestock Production TechnologyPasture and Range Management">
+                                                Livestock Production TechnologyPasture and Range
+                                                Management
+                                            </option>
+                                            <option value="Pasture and Range Management">
+                                                Pasture and Range Management
+                                            </option>
+                                            <option value="Animal NutritionAnimal Nutrition and Biotechnology">
+                                                Animal NutritionAnimal Nutrition and Biotechnology
+                                            </option>
+                                            <option value="Animal Nutrition and Biotechnology">
+                                                Animal Nutrition and Biotechnology
+                                            </option>
+                                            <option value="Animal Science and Range Management">
+                                                Animal Science and Range Management
+                                            </option>
+                                            <option value="Animal Science">Animal Science</option>
+                                            <option value="Animal Science and Fisheries Management">
+                                                Animal Science and Fisheries Management
+                                            </option>
+                                            <option value="Animal Science and Technology">
+                                                Animal Science and Technology
+                                            </option>
+                                            <option value="Animal Physiology">
+                                                Animal Physiology
+                                            </option>
+                                            <option value="Animal Breeding and Genetics">
+                                                Animal Breeding and Genetics
+                                            </option>
+                                            <option value="Animal Science and Fisheries">
+                                                Animal Science and Fisheries
+                                            </option>
+                                            <option value="Crop ProductionCrop, Soil and Pest Management">
+                                                Crop ProductionCrop, Soil and Pest Management
+                                            </option>
+                                            <option value="Crop, Soil and Pest Management">
+                                                Crop, Soil and Pest Management
+                                            </option>
+                                            <option value="Crop Production and Landscape Management">
+                                                Crop Production and Landscape Management
+                                            </option>
+                                            <option value="Crop Production and Horticulture">
+                                                Crop Production and Horticulture
+                                            </option>
+                                            <option value="Crop Production and Protection">
+                                                Crop Production and Protection
+                                            </option>
+                                            <option value="Crop Protection">Crop Protection</option>
+                                            <option value="Crop Science">Crop Science</option>
+                                            <option value="Crop Science/Soil Science">
+                                                Crop Science/Soil Science
+                                            </option>
+                                            <option value="Crop Science and Horticulture">
+                                                Crop Science and Horticulture
+                                            </option>
+                                            <option value="Crop and Environmental Protection">
+                                                Crop and Environmental Protection
+                                            </option>
+                                            <option value="Plant Breeding and Seed Technology">
+                                                Plant Breeding and Seed Technology
+                                            </option>
+                                            <option value="Crop Production and Soil Science">
+                                                Crop Production and Soil Science
+                                            </option>
+                                            <option value="Crop Production Technology">
+                                                Crop Production Technology
+                                            </option>
+                                            <option value="Crop Science and Technology">
+                                                Crop Science and Technology
+                                            </option>
+                                            <option value="African and Asian Studies">
+                                                African and Asian Studies
+                                            </option>
+                                            <option value="Archaeology">Archaeology</option>
+                                            <option value="Anthropology">Anthropology</option>
+                                            <option value="Arabic Studies">Arabic Studies</option>
+                                            <option value="Arabic Language and Literature">
+                                                Arabic Language and Literature
+                                            </option>
+                                            <option value="Arabic and IS">Arabic and IS</option>
+                                            <option value="Arts (Combined)">Arts (Combined)</option>
+                                            <option value="Christian Religious Knowledge/Studies">
+                                                Christian Religious Knowledge/Studies
+                                            </option>
+                                            <option value="Christian Studies">
+                                                Christian Studies
+                                            </option>
+                                            <option value="Classical Studies">
+                                                Classical Studies
+                                            </option>
+                                            <option value="Communication Arts">
+                                                Communication Arts
+                                            </option>
+                                            <option value="Communication and Language Arts">
+                                                Communication and Language Arts
+                                            </option>
+                                            <option value="Comparative Religious Studies">
+                                                Comparative Religious Studies
+                                            </option>
+                                            <option value="Counselling and Psychology">
+                                                Counselling and Psychology
+                                            </option>
+                                            <option value="Creative Arts">Creative Arts</option>
+                                            <option value="Drama, Dramatic Arts, Theatre Arts and Performing Arts">
+                                                Drama, Dramatic Arts, Theatre Arts and Performing Arts
+                                            </option>
+                                            <option value="Afik-Ibibio">Afik-Ibibio</option>
+                                            <option value="English Language">
+                                                English Language
+                                            </option>
+                                            <option value="English Language and Literature">
+                                                English Language and Literature
+                                            </option>
+                                            <option value="English Studies">English Studies</option>
+                                            <option value="English and Literary Studies">
+                                                English and Literary Studies
+                                            </option>
+                                            <option value="English and International Studies">
+                                                English and International Studies
+                                            </option>
+                                            <option value="Economics">Economics</option>
+                                            <option value="Fine Arts/Fine and Applied Arts">
+                                                Fine Arts/Fine and Applied Arts
+                                            </option>
+                                            <option value="Foreign Language and Literature">
+                                                Foreign Language and Literature
+                                            </option>
+                                            <option value="French">French</option>
+                                            <option value="French and International Relations">
+                                                French and International Relations
+                                            </option>
+                                            <option value="French and German/Russian">
+                                                French and German/Russian
+                                            </option>
+                                            <option value="Fulfude">Fulfude</option>
+                                            <option value="Geography and Environmental Studies">
+                                                Geography and Environmental Studies
+                                            </option>
+                                            <option value="German">German</option>
+                                            <option value="Hausa">Hausa</option>
+                                            <option value="History">History</option>
+                                            <option value="History and Archeology">
+                                                History and Archeology
+                                            </option>
+                                            <option value="History/International Studies">
+                                                History/International Studies
+                                            </option>
+                                            <option value="History and Diplomacy">
+                                                History and Diplomacy
+                                            </option>
+                                            <option value="History and Diplomatic Studies">
+                                                History and Diplomatic Studies
+                                            </option>
+                                            <option value="History and Strategic Studies">
+                                                History and Strategic Studies
+                                            </option>
+                                            <option value="History and Political Studies">
+                                                History and Political Studies
+                                            </option>
+                                            <option value="Igbo">Igbo</option>
+                                            <option value="Igbo/Linguistics">
+                                                Igbo/Linguistics
+                                            </option>
+                                            <option value="International Studies and Diplomacy">
+                                                International Studies and Diplomacy
+                                            </option>
+                                            <option value="International and Comparative Politics">
+                                                International and Comparative Politics
+                                            </option>
+                                            <option value="IS">IS</option>
+                                            <option value="Kanuri">Kanuri</option>
+                                            <option value="Kiswahili">Kiswahili</option>
+                                            <option value="Languages">Languages</option>
+                                            <option value="Languages Arts">Languages Arts</option>
+                                            <option value="Language Arts and Yoruba">
+                                                Language Arts and Yoruba
+                                            </option>
+                                            <option value="Language and Linguistics">
+                                                Language and Linguistics
+                                            </option>
+                                            <option value="Language and Literature">
+                                                Language and Literature
+                                            </option>
+                                            <option value="Linguistics">Linguistics</option>
+                                            <option value="Linguistics/Yoruba">
+                                                Linguistics/Yoruba
+                                            </option>
+                                            <option value="Linguistics/Edl">Linguistics/Edl</option>
+                                            <option value="Linguistics/Urhobo">
+                                                Linguistics/Urhobo
+                                            </option>
+                                            <option value="Literature in English">
+                                                Literature in English
+                                            </option>
+                                            <option value="Mass Communication">
+                                                Mass Communication
+                                            </option>
+                                            <option value="Modern European Languages">
+                                                Modern European Languages
+                                            </option>
+                                            <option value="Modern Language and Translation">
+                                                Modern Language and Translation
+                                            </option>
+                                            <option value="Music">Music</option>
+                                            <option value="Peace Studies">Peace Studies</option>
+                                            <option value="Philosophy">Philosophy</option>
+                                            <option value="Philosophy and Religious Studies">
+                                                Philosophy and Religious Studies
+                                            </option>
+                                            <option value="Political Science and Conflict Resolution">
+                                                Political Science and Conflict Resolution
+                                            </option>
+                                            <option value="Psychology and Human Development">
+                                                Psychology and Human Development
+                                            </option>
+                                            <option value="Portuguese">Portuguese</option>
+                                            <option value="Portuguese/English">
+                                                Portuguese/English
+                                            </option>
+                                            <option value="Religion and Philosophy">
+                                                Religion and Philosophy
+                                            </option>
+                                            <option value="Religion and Science">
+                                                Religion and Science
+                                            </option>
+                                            <option value="Religious Studies">
+                                                Religious Studies
+                                            </option>
+                                            <option value="Religious Studies/Theology">
+                                                Religious Studies/Theology
+                                            </option>
+                                            <option value="Russian with French/German">
+                                                Russian with French/German
+                                            </option>
+                                            <option value="Sociology">Sociology</option>
+                                            <option value="Theology">Theology</option>
+                                            <option value="Yoruba">Yoruba</option>
+                                            <option value="Yoruba and Communication">
+                                                Yoruba and Communication
+                                            </option>
+                                            <option value="Agricultural Engineering">
+                                                Agricultural Engineering
+                                            </option>
+                                            <option value="Agricultural and Environmental Engineering">
+                                                Agricultural and Environmental Engineering
+                                            </option>
+                                            <option value="Agricultural and Bio-Resources Engineering">
+                                                Agricultural and Bio-Resources Engineering
+                                            </option>
+                                            <option value="Architecture">Architecture</option>
+                                            <option value="Biomedical Engineering">
+                                                Biomedical Engineering
+                                            </option>
+                                            <option value="Building">Building</option>
+                                            <option value="Chemical Engineering">
+                                                Chemical Engineering
+                                            </option>
+                                            <option value="Chemical/Petroleum/Petrochemical Engineering">
+                                                Chemical/Petroleum/Petrochemical Engineering
+                                            </option>
+                                            <option value="Civil Engineering">
+                                                Civil Engineering
+                                            </option>
+                                            <option value="Civil Engineering/Hydrology">
+                                                Civil Engineering/Hydrology
+                                            </option>
+                                            <option value="Computer Engineering">
+                                                Computer Engineering
+                                            </option>
+                                            <option value="Computer Science">
+                                                Computer Science
+                                            </option>
+                                            <option value="Computer Science and Engineering">
+                                                Computer Science and Engineering
+                                            </option>
+                                            <option value="Computer Science with (Economics) (Mathematics)">
+                                                Computer Science with (Economics) (Mathematics)
+                                            </option>
+                                            <option value="Computer and Information Science">
+                                                Computer and Information Science
+                                            </option>
+                                            <option value="Communication Technology">
+                                                Communication Technology
+                                            </option>
+                                            <option value="Communication and Multimedia Advertising">
+                                                Communication and Multimedia Advertising
+                                            </option>
+                                            <option value="Communication and Multimedia Printing Journalism">
+                                                Communication and Multimedia Printing Journalism
+                                            </option>
+                                            <option value="Communication and Multimedia Television/Filming">
+                                                Communication and Multimedia Television/Filming
+                                            </option>
+                                            <option value="Communication and Multimedia Design">
+                                                Communication and Multimedia Design
+                                            </option>
+                                            <option value="Electrical Engineering">
+                                                Electrical Engineering
+                                            </option>
+                                            <option value="Electronics Engineering">
+                                                Electronics Engineering
+                                            </option>
+                                            <option value="Electrical/Electronics/Computer Engineering">
+                                                Electrical/Electronics/Computer Engineering
+                                            </option>
+                                            <option value="Electrical/Electronic Engineering">
+                                                Electrical/Electronic Engineering
+                                            </option>
+                                            <option value="Environmental Management">
+                                                Environmental Management
+                                            </option>
+                                            <option value="Environmental Engineering">
+                                                Environmental Engineering
+                                            </option>
+                                            <option value="Environmental Technology">
+                                                Environmental Technology
+                                            </option>
+                                            <option value="Environmental Management Technology">
+                                                Environmental Management Technology
+                                            </option>
+                                            <option value="Estate Management">
+                                                Estate Management
+                                            </option>
+                                            <option value="Fine Art">Fine Art</option>
+                                            <option value="Fine and Applied Arts">
+                                                Fine and Applied Arts
+                                            </option>
+                                            <option value="Food Engineering">
+                                                Food Engineering
+                                            </option>
+                                            <option value="Food Science and Technology/Engineering">
+                                                Food Science and Technology/Engineering
+                                            </option>
+                                            <option value="Food Science and Engineering">
+                                                Food Science and Engineering
+                                            </option>
+                                            <option value="Food Technology">Food Technology</option>
+                                            <option value="Gas Engineering">Gas Engineering</option>
+                                            <option value="Geography">Geography</option>
+                                            <option value="Geography and Regional Planning">
+                                                Geography and Regional Planning
+                                            </option>
+                                            <option value="Geography and Meteorology">
+                                                Geography and Meteorology
+                                            </option>
+                                            <option value="Geography and Planning">
+                                                Geography and Planning
+                                            </option>
+                                            <option value="Hotel Management and Tourism">
+                                                Hotel Management and Tourism
+                                            </option>
+                                            <option value="Home Economics and Food Management">
+                                                Home Economics and Food Management
+                                            </option>
+                                            <option value="ICT Engineering">ICT Engineering</option>
+                                            <option value="Irrigation Engineering">
+                                                Irrigation Engineering
+                                            </option>
+                                            <option value="Industrial Arts">Industrial Arts</option>
+                                            <option value="Industrial Design">
+                                                Industrial Design
+                                            </option>
+                                            <option value="Industrial Production and Engineering">
+                                                Industrial Production and Engineering
+                                            </option>
+                                            <option value="Information Technology">
+                                                Information Technology
+                                            </option>
+                                            <option value="Land Surveying">Land Surveying</option>
+                                            <option value="Management Technology">
+                                                Management Technology
+                                            </option>
+                                            <option value="Marine Engineering">
+                                                Marine Engineering
+                                            </option>
+                                            <option value="Marine Management Technology">
+                                                Marine Management Technology
+                                            </option>
+                                            <option value="Materials and Production Engineering">
+                                                Materials and Production Engineering
+                                            </option>
+                                            <option value="Mechanical Engineering">
+                                                Mechanical Engineering
+                                            </option>
+                                            <option value="Mechatronics Engineering">
+                                                Mechatronics Engineering
+                                            </option>
+                                            <option value="Mechanical and Production Engineering">
+                                                Mechanical and Production Engineering
+                                            </option>
+                                            <option value="Metallurgical & Material Engineering">
+                                                Metallurgical & Material Engineering
+                                            </option>
+                                            <option value="Metallurgical Engineering">
+                                                Metallurgical Engineering
+                                            </option>
+                                            <option value="Meteorology">Meteorology</option>
+                                            <option value="Mining Engineering">
+                                                Mining Engineering
+                                            </option>
+                                            <option value="Naval Architecture">
+                                                Naval Architecture
+                                            </option>
+                                            <option value="Nutrition and Dietetics">
+                                                Nutrition and Dietetics
+                                            </option>
+                                            <option value="Petroleum Engineering">
+                                                Petroleum Engineering
+                                            </option>
+                                            <option value="Petroleum and Gas Engineering">
+                                                Petroleum and Gas Engineering
+                                            </option>
+                                            <option value="Polymer and Textile Engineering">
+                                                Polymer and Textile Engineering
+                                            </option>
+                                            <option value="Production Engineering">
+                                                Production Engineering
+                                            </option>
+                                            <option value="Project Management Technology">
+                                                Project Management Technology
+                                            </option>
+                                            <option value="Quantity Surveying">
+                                                Quantity Surveying
+                                            </option>
+                                            <option value="Software Engineering">
+                                                Software Engineering
+                                            </option>
+                                            <option value="Surveying">Surveying</option>
+                                            <option value="Surveying and Geo-Informatics">
+                                                Surveying and Geo-Informatics
+                                            </option>
+                                            <option value="Systems Engineering">
+                                                Systems Engineering
+                                            </option>
+                                            <option value="Statistics">Statistics</option>
+                                            <option value="Transportation and Management Technology">
+                                                Transportation and Management Technology
+                                            </option>
+                                            <option value="Technological Management">
+                                                Technological Management
+                                            </option>
+                                            <option value="Urban and Regional Planning">
+                                                Urban and Regional Planning
+                                            </option>
+                                            <option value="Visual Arts technology">
+                                                Visual Arts technology
+                                            </option>
+                                            <option value="Water Resources and Environmental Engineering">
+                                                Water Resources and Environmental Engineering
+                                            </option>
+                                            <option value="Education Administration and Supervision">
+                                                Education Administration and Supervision
+                                            </option>
+                                            <option value="Adult Education">Adult Education</option>
+                                            <option value="Adult Education/English Literature">
+                                                Adult Education/English Literature
+                                            </option>
+                                            <option value="Adult Education/Economics and Statistics">
+                                                Adult Education/Economics and Statistics
+                                            </option>
+                                            <option value="Adult and Community Education">
+                                                Adult and Community Education
+                                            </option>
+                                            <option value="Adult Education and Non-Formal Education">
+                                                Adult Education and Non-Formal Education
+                                            </option>
+                                            <option value="Adult Education/Political Science and Public Administration">
+                                                Adult Education/Political Science and Public
+                                                Administration
+                                            </option>
+                                            <option value="Adult Education/Geography and Regional Planning">
+                                                Adult Education/Geography and Regional Planning
+                                            </option>
+                                            <option value="Curriculum and Teaching">
+                                                Curriculum and Teaching
+                                            </option>
+                                            <option value="Curriculum and Instruction">
+                                                Curriculum and Instruction
+                                            </option>
+                                            <option value="Curriculum Studies">
+                                                Curriculum Studies
+                                            </option>
+                                            <option value="Educational Administration">
+                                                Educational Administration
+                                            </option>
+                                            <option value="Education Foundation and Administration">
+                                                Education Foundation and Administration
+                                            </option>
+                                            <option value="Educational Foundation">
+                                                Educational Foundation
+                                            </option>
+                                            <option value="Education Foundation and Management">
+                                                Education Foundation and Management
+                                            </option>
+                                            <option value="Education Psychology, Guidance and Counselling">
+                                                Education Psychology, Guidance and Counselling
+                                            </option>
+                                            <option value="Education Management">
+                                                Education Management
+                                            </option>
+                                            <option value="Industrial and Labour Relations">
+                                                Industrial and Labour Relations
+                                            </option>
+                                            <option value="Library Science">Library Science</option>
+                                            <option value="Library and Information Science">
+                                                Library and Information Science
+                                            </option>
+                                            <option value="Library Studies">Library Studies</option>
+                                            <option value="Library and Information Science">
+                                                Library and Information Science
+                                            </option>
+                                            <option value="Library Studies">Library Studies</option>
+                                            <option value="Nursery and Primary EducationPre-Primary Education">
+                                                Nursery and Primary EducationPre-Primary Education
+                                            </option>
+                                            <option value="Pre-Primary Education">
+                                                Pre-Primary Education
+                                            </option>
+                                            <option value="Primary Education">
+                                                Primary Education
+                                            </option>
+                                            <option value="Philosophy Education">
+                                                Philosophy Education
+                                            </option>
+                                            <option value="Psychology Education">
+                                                Psychology Education
+                                            </option>
+                                            <option value="Psychology Education">
+                                                Psychology Education
+                                            </option>
+                                            <option value="Science and Computer Education">
+                                                Science and Computer Education
+                                            </option>
+                                            <option value="Science Education">
+                                                Science Education
+                                            </option>
+                                            <option value="Special Education (Visual Handicaps)">
+                                                Special Education (Visual Handicaps)
+                                            </option>
+                                            <option value="Sport Management">
+                                                Sport Management
+                                            </option>
+                                            <option value="Teacher Education">
+                                                Teacher Education
+                                            </option>
+                                            <option value="Arts and Social Science Education">
+                                                Arts and Social Science Education
+                                            </option>
+                                            <option value="Arts Education">Arts Education</option>
+                                            <option value="Education/Arabic">
+                                                Education/Arabic
+                                            </option>
+                                            <option value="Education/Arts">Education/Arts</option>
+                                            <option value="Education/Arts and Social Sciences">
+                                                Education/Arts and Social Sciences
+                                            </option>
+                                            <option value="Education/Christian Religious Studies">
+                                                Education/Christian Religious Studies
+                                            </option>
+                                            <option value="Education/Edo Language">
+                                                Education/Edo Language
+                                            </option>
+                                            <option value="Education/English Language">
+                                                Education/English Language
+                                            </option>
+                                            <option value="Education/Fine and Applied Arts">
+                                                Education/Fine and Applied Arts
+                                            </option>
+                                            <option value="Education/French">
+                                                Education/French
+                                            </option>
+                                            <option value="Education/Geography">
+                                                Education/Geography
+                                            </option>
+                                            <option value="Education/Hausa">Education/Hausa</option>
+                                            <option value="Education/History">
+                                                Education/History
+                                            </option>
+                                            <option value="Education/Igbo">Education/Igbo</option>
+                                            <option value="Education/Igbo/Linguistics">
+                                                Education/Igbo/Linguistics
+                                            </option>
+                                            <option value="Education/Language Arts">
+                                                Education/Language Arts
+                                            </option>
+                                            <option value="Education/Language and French">
+                                                Education/Language and French
+                                            </option>
+                                            <option value="Education/Language/English">
+                                                Education/Language/English
+                                            </option>
+                                            <option value="Education/Linguistics">
+                                                Education/Linguistics
+                                            </option>
+                                            <option value="Education/Linguistics">
+                                                Education/Linguistics
+                                            </option>
+                                            <option value="Education/Islamic Studies">
+                                                Education/Islamic Studies
+                                            </option>
+                                            <option value="Education and Religious Studies">
+                                                Education and Religious Studies
+                                            </option>
+                                            <option value="Education and Yoruba">
+                                                Education and Yoruba
+                                            </option>
+                                            <option value="History and Diplomatic Studies">
+                                                History and Diplomatic Studies
+                                            </option>
+                                            <option value="Mass Communication">
+                                                Mass Communication
+                                            </option>
+                                            <option value="Nigerian Languages">
+                                                Nigerian Languages
+                                            </option>
+                                            <option value="Education and Music">
+                                                Education and Music
+                                            </option>
+                                            <option value="Agricultural Education">
+                                                Agricultural Education
+                                            </option>
+                                            <option value="Automobil Technology Education">
+                                                Automobil Technology Education
+                                            </option>
+                                            <option value="Building Education">
+                                                Building Education
+                                            </option>
+                                            <option value="Computer Education">
+                                                Computer Education
+                                            </option>
+                                            <option value="Computer and Information Technology">
+                                                Computer and Information Technology
+                                            </option>
+                                            <option value="Geography and Environmental Management (Gem)">
+                                                Geography and Environmental Management (Gem)
+                                            </option>
+                                            <option value="Education/Chemistry">
+                                                Education/Chemistry
+                                            </option>
+                                            <option value="Education and Computer Science">
+                                                Education and Computer Science
+                                            </option>
+                                            <option value="Education/Mathematics">
+                                                Education/Mathematics
+                                            </option>
+                                            <option value="Education/Science">
+                                                Education/Science
+                                            </option>
+                                            <option value="Education/Technology/Introductory Education">
+                                                Education/Technology/Introductory Education
+                                            </option>
+                                            <option value="Mathematics Education Technology">
+                                                Mathematics Education Technology
+                                            </option>
+                                            <option value="Electrical/Electronics Technology">
+                                                Other
+                                            </option>
+                                            <option value="Human Kinetics Education">
+                                                Human Kinetics Education
+                                            </option>
+                                            <option value="Human Kinetics and Health Education">
+                                                Human Kinetics and Health Education
+                                            </option>
+                                            <option value="Industrial Chemistry">
+                                                Industrial Chemistry
+                                            </option>
+                                            <option value="Industrial Technical Education">
+                                                Industrial Technical Education
+                                            </option>
+                                            <option value="Mathematics/Statistics Education">
+                                                Mathematics/Statistics Education
+                                            </option>
+                                            <option value="Metal Technology Education">
+                                                Metal Technology Education
+                                            </option>
+                                            <option value="Petroleum and Petro-Chemical Sciences">
+                                                Petroleum and Petro-Chemical Sciences
+                                            </option>
+                                            <option value="Physical and Health Education">
+                                                Physical and Health Education
+                                            </option>
+                                            <option value="Physical Education">
+                                                Physical Education
+                                            </option>
+                                            <option value="Physical Education and Recreation">
+                                                Physical Education and Recreation
+                                            </option>
+                                            <option value="Statistics">Statistics</option>
+                                            <option value="Sport Science">Sport Science</option>
+                                            <option value="Technical Education">
+                                                Technical Education
+                                            </option>
+                                            <option value="Telecommunication and Information Technology">
+                                                Telecommunication and Information Technology
+                                            </option>
+                                            <option value="Transport Planning and Management (TPM)">
+                                                Transport Planning and Management (TPM)
+                                            </option>
+                                            <option value="Theatre Arts">Theatre Arts</option>
+                                            <option value="Technology Education">
+                                                Technology Education
+                                            </option>
+                                            <option value="Technology and Vocation Education">
+                                                Technology and Vocation Education
+                                            </option>
+                                            <option value="Education/Integrated Science Education/Physics">
+                                                Education/Integrated Science Education/Physics
+                                            </option>
+                                            <option value="Home Economics Education">
+                                                Home Economics Education
+                                            </option>
+                                            <option value="Home Economics and Hotel Management">
+                                                Home Economics and Hotel Management
+                                            </option>
+                                            <option value="Intercultural Education">
+                                                Intercultural Education
+                                            </option>
+                                            <option value="Education/Political Science">
+                                                Education/Political Science
+                                            </option>
+                                            <option value="Education/Social Science">
+                                                Education/Social Science
+                                            </option>
+                                            <option value="Education/Social Studies">
+                                                Education/Social Studies
+                                            </option>
+                                            <option value="Education/Sociology">
+                                                Education/Sociology
+                                            </option>
+                                            <option value="Education/Accountancy">
+                                                Education/Accountancy
+                                            </option>
+                                            <option value="Economics/Geography">
+                                                Economics/Geography
+                                            </option>
+                                            <option value="Education and Busines Administration">
+                                                Education and Busines Administration
+                                            </option>
+                                            <option value="Business Education">
+                                                Business Education
+                                            </option>
+                                            <option value="Interculture Education">
+                                                Interculture Education
+                                            </option>
+                                            <option value="Secretarial Education">
+                                                Secretarial Education
+                                            </option>
+                                            <option value="Social Work and Community Development">
+                                                Social Work and Community Development
+                                            </option>
+                                            <option value="Vocational Education">
+                                                Vocational Education
+                                            </option>
+                                            <option value="Vocational Education and Technical Education">
+                                                Vocational Education and Technical Education
+                                            </option>
+                                            <option value="Civil Law">Civil Law</option>
+                                            <option value="Common and Islamic Law">
+                                                Common and Islamic Law
+                                            </option>
+                                            <option value="International Law and Jurisprudence">
+                                                International Law and Jurisprudence
+                                            </option>
+                                            <option value="Islamic Law/Sharia Law">
+                                                Islamic Law/Sharia Law
+                                            </option>
+                                            <option value="Private and Islamic Law">
+                                                Private and Islamic Law
+                                            </option>
+                                            <option value="Public and Internationa Law">
+                                                Public and Internationa Law
+                                            </option>
+                                            <option value="Law">Law</option>
+                                            <option value="Common Law">Common Law</option>
+                                            <option value="Anatomy">Anatomy</option>
+                                            <option value="Biochemistry">Biochemistry</option>
+                                            <option value="Dentistry and Dental Technology">
+                                                Dentistry and Dental Technology
+                                            </option>
+                                            <option value="Human Nutrition and Dietetics">
+                                                Human Nutrition and Dietetics
+                                            </option>
+                                            <option value="Medical Biochemistry">
+                                                Medical Biochemistry
+                                            </option>
+                                            <option value="Medical Rehabilitation">
+                                                Medical Rehabilitation
+                                            </option>
+                                            <option value="Medical Laboratory Technology/Science">
+                                                Medical Laboratory Technology/Science
+                                            </option>
+                                            <option value="Medicine and Surgery (Human Medicine)">
+                                                Medicine and Surgery (Human Medicine)
+                                            </option>
+                                            <option value="Nursing/Nursing Science">
+                                                Nursing/Nursing Science
+                                            </option>
+                                            <option value="Optometry">Optometry</option>
+                                            <option value="Pharmacy">Pharmacy</option>
+                                            <option value="Pharmacology">Pharmacology</option>
+                                            <option value="Physiology">Physiology</option>
+                                            <option value="Physiotherapy">Physiotherapy</option>
+                                            <option value="Prosthesis and Orthopaedic Technology">
+                                                Prosthesis and Orthopaedic Technology
+                                            </option>
+                                            <option value="Public Health Technology">
+                                                Public Health Technology
+                                            </option>
+                                            <option value="Radiography">Radiography</option>
+                                            <option value="Veterinary Medicine">
+                                                Veterinary Medicine
+                                            </option>
+                                            <option value="Animal and Environmental Biology">
+                                                Animal and Environmental Biology
+                                            </option>
+                                            <option value="Anthropology">Anthropology</option>
+                                            <option value="Applied Botany">Applied Botany</option>
+                                            <option value="Applied Biology">Applied Biology</option>
+                                            <option value="Biochemistry">Biochemistry</option>
+                                            <option value="Biochemistry and Molecular Biology">
+                                                Biochemistry and Molecular Biology
+                                            </option>
+                                            <option value="Forensic Science">
+                                                Forensic Science
+                                            </option>
+                                            <option value="Biological Science(s)">
+                                                Biological Science(s)
+                                            </option>
+                                            <option value="Physics">Physics</option>
+                                            <option value="Microbiology">Microbiology</option>
+                                            <option value="Plant Science and Biotechnology">
+                                                Plant Science and Biotechnology
+                                            </option>
+                                            <option value="Electronics">Electronics</option>
+                                            <option value="Physics and Electronics">
+                                                Physics and Electronics
+                                            </option>
+                                            <option value="Physics and Computer Electronic">
+                                                Physics and Computer Electronic
+                                            </option>
+                                            <option value="Electrons">Electrons</option>
+                                            <option value="Physics and Solar Energy">
+                                                Physics and Solar Energy
+                                            </option>
+                                            <option value="Physics and Energy Studies">
+                                                Physics and Energy Studies
+                                            </option>
+                                            <option value="Physics/Industrial Physics">
+                                                Physics/Industrial Physics
+                                            </option>
+                                            <option value="Physics with Computational Modeling">
+                                                Physics with Computational Modeling
+                                            </option>
+                                            <option value="Physics/Astrology">
+                                                Physics/Astrology
+                                            </option>
+                                            <option value="Physical Sciences">
+                                                Physical Sciences
+                                            </option>
+                                            <option value="Energy Studies">Energy Studies</option>
+                                            <option value="Physics and Applied Physics">
+                                                Physics and Applied Physics
+                                            </option>
+                                            <option value="Industrial Physics">
+                                                Industrial Physics
+                                            </option>
+                                            <option value="Pure and Applied Physics">
+                                                Pure and Applied Physics
+                                            </option>
+                                            <option value="Applied Physics">Applied Physics</option>
+                                            <option value="Pure and Indurstrial Physics">
+                                                Pure and Indurstrial Physics
+                                            </option>
+                                            <option value="Pure Physics">Pure Physics</option>
+                                            <option value="Industrial Physics an Renewable Energy">
+                                                Industrial Physics an Renewable Energy
+                                            </option>
+                                            <option value="Industrial Physics with Electronics and its Application">
+                                                Industrial Physics with Electronics and its
+                                                Application
+                                            </option>
+                                            <option value="Applied Biochemistry">
+                                                Applied Biochemistry
+                                            </option>
+                                            <option value="Industrial Mathematics">
+                                                Industrial Mathematics
+                                            </option>
+                                            <option value="Industrial Mathematics/Applied Statistics">
+                                                Industrial Mathematics/Applied Statistics
+                                            </option>
+                                            <option value="Applied Mathematics and Statistics">
+                                                Applied Mathematics and Statistics
+                                            </option>
+                                            <option value="Applied Statistics">
+                                                Applied Statistics
+                                            </option>
+                                            <option value="Industrial Mathematics/Computer">
+                                                Industrial Mathematics/Computer
+                                            </option>
+                                            <option value="Chemistry">Chemistry</option>
+                                            <option value="Chemistry and Industrial Chemistry">
+                                                Chemistry and Industrial Chemistry
+                                            </option>
+                                            <option value="Industrila Chemistry and Chemical Entrepreneurship">
+                                                Industrila Chemistry and Chemical Entrepreneurship
+                                            </option>
+                                            <option value="Pure Chemistry">Pure Chemistry</option>
+                                            <option value="Pure and Applied Chemistry">
+                                                Pure and Applied Chemistry
+                                            </option>
+                                            <option value="Chemical Scineces">
+                                                Chemical Scineces
+                                            </option>
+                                            <option value="Petroleum Chemistry">
+                                                Petroleum Chemistry
+                                            </option>
+                                            <option value="Industrial and Environmental Chemistry">
+                                                Industrial and Environmental Chemistry
+                                            </option>
+                                            <option value="Applied Chemistry">
+                                                Applied Chemistry
+                                            </option>
+                                            <option value="Food Science and Technology">
+                                                Food Science and Technology
+                                            </option>
+                                            <option value="Industrial Chemistry">
+                                                Industrial Chemistry
+                                            </option>
+                                            <option value="Pure and Industrial Chemistry">
+                                                Pure and Industrial Chemistry
+                                            </option>
+                                            <option value="Fisheries">Fisheries</option>
+                                            <option value="Geology">Geology</option>
+                                            <option value="Geological Scienes">
+                                                Geological Scienes
+                                            </option>
+                                            <option value="Geology and Mineral">
+                                                Geology and Mineral
+                                            </option>
+                                            <option value="Geology and Geophysics">
+                                                Geology and Geophysics
+                                            </option>
+                                            <option value="Geology and Mining">
+                                                Geology and Mining
+                                            </option>
+                                            <option value="Geology and Petroleum Resources">
+                                                Geology and Petroleum Resources
+                                            </option>
+                                            <option value="Applied Geology">Applied Geology</option>
+                                            <option value="Geology and Mineeral Science">
+                                                Geology and Mineeral Science
+                                            </option>
+                                            <option value="Marine Geology">Marine Geology</option>
+                                            <option value="Geography and Regonal Planning">
+                                                Geography and Regonal Planning
+                                            </option>
+                                            <option value="Geography">Geography</option>
+                                            <option value="Geography and Environmental Management">
+                                                Geography and Environmental Management
+                                            </option>
+                                            <option value="Surveying and Geoinformatics">
+                                                Surveying and Geoinformatics
+                                            </option>
+                                            <option value="Building Technology">
+                                                Building Technology
+                                            </option>
+                                            <option value="Statistics">Statistics</option>
+                                            <option value="Biostatistics">Biostatistics</option>
+                                            <option value="Statistics and Data Sciences">
+                                                Statistics and Data Sciences
+                                            </option>
+                                            <option value="Digital Entrepreneuship">
+                                                Digital Entrepreneuship
+                                            </option>
+                                            <option value="Botany and Ecological Studies">
+                                                Botany and Ecological Studies
+                                            </option>
+                                            <option value="Plant Biology and Biotechnology">
+                                                Plant Biology and Biotechnology
+                                            </option>
+                                            <option value="Plant Sciene and Forestry">
+                                                Plant Sciene and Forestry
+                                            </option>
+                                            <option value="Plant Science and Microbiology">
+                                                Plant Science and Microbiology
+                                            </option>
+                                            <option value="Plant Biology">Plant Biology</option>
+                                            <option value="Plant Science">Plant Science</option>
+                                            <option value="Biotechnology">Biotechnology</option>
+                                            <option value="Genetics and Biotechnology">
+                                                Genetics and Biotechnology
+                                            </option>
+                                            <option value="Ecology">Ecology</option>
+                                            <option value="Applied Ecology">Applied Ecology</option>
+                                            <option value="Ecology and Environmental Studies">
+                                                Ecology and Environmental Studies
+                                            </option>
+                                            <option value="Zoology">Zoology</option>
+                                            <option value="Zoology and Aqaculture">
+                                                Zoology and Aqaculture
+                                            </option>
+                                            <option value="Applied Zoology">Applied Zoology</option>
+                                            <option value="Animal Biology and Environment">
+                                                Animal Biology and Environment
+                                            </option>
+                                            <option value="Zoology and Environmental Biology">
+                                                Zoology and Environmental Biology
+                                            </option>
+                                            <option value="Conversation Biology">
+                                                Conversation Biology
+                                            </option>
+                                            <option value="Environmenatal Science and Technology">
+                                                Environmenatal Science and Technology
+                                            </option>
+                                            <option value="Environmtal Biology">
+                                                Environmtal Biology
+                                            </option>
+                                            <option value="Environmenatal Biology and Fisheries">
+                                                Environmenatal Biology and Fisheries
+                                            </option>
+                                            <option value="Marine Science and Technology">
+                                                Marine Science and Technology
+                                            </option>
+                                            <option value="Marine Science">Marine Science</option>
+                                            <option value="Mathematics">Mathematics</option>
+                                            <option value="Mathematics with Computer Science">
+                                                Mathematics with Computer Science
+                                            </option>
+                                            <option value="Applied Geophysics">
+                                                Applied Geophysics
+                                            </option>
+                                            <option value="Geophysics">Geophysics</option>
+                                            <option value="Geoscience">Geoscience</option>
+                                            <option value="Geography and Geosciences">
+                                                Geography and Geosciences
+                                            </option>
+                                            <option value="Earth Science">Earth Science</option>
+                                            <option value="Sport Science">Sport Science</option>
+                                            <option value="Microbiology">Microbiology</option>
+                                            <option value="Microbiology and Biotechnology">
+                                                Microbiology and Biotechnology
+                                            </option>
+                                            <option value="Microbiology/Parsitology">
+                                                Microbiology/Parsitology
+                                            </option>
+                                            <option value="Biology/Biotechnology">
+                                                Biology/Biotechnology
+                                            </option>
+                                            <option value="Molecular Biology">
+                                                Molecular Biology
+                                            </option>
+                                            <option value="Microbiology and Indurstrial Biotechnology">
+                                                Microbiology and Indurstrial Biotechnology
+                                            </option>
+                                            <option value="Industrial Microbiology">
+                                                Industrial Microbiology
+                                            </option>
+                                            <option value="Science Laboratory Technology">
+                                                Science Laboratory Technology
+                                            </option>
+                                            <option value="Natural and Environmenatal Health Science">
+                                                Natural and Environmenatal Health Science
+                                            </option>
+                                            <option value="Environmentl Health Science">
+                                                Environmentl Health Science
+                                            </option>
+                                            <option value="Environmental Management">
+                                                Environmental Management
+                                            </option>
+                                            <option value="Environmental Management and Toxicology">
+                                                Environmental Management and Toxicology
+                                            </option>
+                                            <option value="Engergy and Petroleum Resources">
+                                                Engergy and Petroleum Resources
+                                            </option>
+                                            <option value="Parisology and Entymology">
+                                                Parisology and Entymology
+                                            </option>
+                                            <option value="Pure and Applied Mathematics">
+                                                Pure and Applied Mathematics
+                                            </option>
+                                            <option value="Mathematics and Economics">
+                                                Mathematics and Economics
+                                            </option>
+                                            <option value="Mathematics with Economics">
+                                                Mathematics with Economics
+                                            </option>
+                                            <option value="Applied Microbiology and Brewing">
+                                                Applied Microbiology and Brewing
+                                            </option>
+                                            <option value="Applied Microbiology">
+                                                Applied Microbiology
+                                            </option>
+                                            <option value="Mathematics with Statistics">
+                                                Mathematics with Statistics
+                                            </option>
+                                            <option value="Mathematics and Statistics">
+                                                Mathematics and Statistics
+                                            </option>
+                                            <option value="Optometry">Optometry</option>
+                                            <option value="Computer Science">
+                                                Computer Science
+                                            </option>
+                                            <option value="Computer, Informtion and Communication Science">
+                                                Computer, Informtion and Communication Science
+                                            </option>
+                                            <option value="Computer Science and Informatics">
+                                                Computer Science and Informatics
+                                            </option>
+                                            <option value="Computer Science and Information Technology">
+                                                Computer Science and Information Technology
+                                            </option>
+                                            <option value="Computer Science and Information Science">
+                                                Computer Science and Information Science
+                                            </option>
+                                            <option value="Computer with Electronics">
+                                                Computer with Electronics
+                                            </option>
+                                            <option value="Software Engineering">
+                                                Software Engineering
+                                            </option>
+                                            <option value="Software Engineering and Digital Entrepreneurship">
+                                                Software Engineering and Digital Entrepreneurship
+                                            </option>
+                                            <option value="Information Technology">
+                                                Information Technology
+                                            </option>
+                                            <option value="Data Management">Data Management</option>
+                                            <option value="Management Information System">
+                                                Management Information System
+                                            </option>
+                                            <option value="Information Communication Technology">
+                                                Information Communication Technology
+                                            </option>
+                                            <option value="Information and Communication Science">
+                                                Information and Communication Science
+                                            </option>
+                                            <option value="Information Systems">
+                                                Information Systems
+                                            </option>
+                                            <option value="Information Systems and Technology">
+                                                Information Systems and Technology
+                                            </option>
+                                            <option value="Computer Science with Economics">
+                                                Computer Science with Economics
+                                            </option>
+                                            <option value="Communication and Wireless Technology">
+                                                Communication and Wireless Technology
+                                            </option>
+                                            <option value="Telecommunication Management">
+                                                Telecommunication Management
+                                            </option>
+                                            <option value="Telecommunication Science">
+                                                Telecommunication Science
+                                            </option>
+                                            <option value="Cyber Security Science">
+                                                Cyber Security Science
+                                            </option>
+                                            <option value="Cyber Computer Science">
+                                                Cyber Computer Science
+                                            </option>
+                                            <option value="Cyber Security">Cyber Security</option>
+                                            <option value="Communications Technology">
+                                                Communications Technology
+                                            </option>
+                                            <option value="Library and Information Science">
+                                                Library and Information Science
+                                            </option>
+                                            <option value="Information Science and Media Studies">
+                                                Information Science and Media Studies
+                                            </option>
+                                            <option value="Information Media Technology">
+                                                Information Media Technology
+                                            </option>
+                                            <option value="Information Media Sciences">
+                                                Information Media Sciences
+                                            </option>
+                                            <option value="Mathematical Sciences">
+                                                Mathematical Sciences
+                                            </option>
+                                            <option value="Computer Science and Mathematics">
+                                                Computer Science and Mathematics
+                                            </option>
+                                            <option value="Computer Science with Mathematics">
+                                                Computer Scince with Mathematics
+                                            </option>
+                                            <option value="Computer with Statistics">
+                                                Computer with Statistics
+                                            </option>
+                                            <option value="Electronics and Computer Technology">
+                                                Electronics and Computer Technology
+                                            </option>
+                                            <option value="Archeaology">Archeaology</option>
+                                            <option value="Biology">Biology</option>
+                                            <option value="Human Biology">Human Biology</option>
+                                            <option value="Pure and Applied Biology">
+                                                Pure and Applied Biology
+                                            </option>
+                                            <option value="Applied Botany">Applied Botany</option>
+                                            <option value="Applied Biology">Applied Biology</option>
+                                            <option value="Applied Biology and Genetics">
+                                                Applied Biology and Genetics
+                                            </option>
+                                            <option value="Applied Biology and Biotechnology">
+                                                Applied Biology and Biotechnology
+                                            </option>
+                                            <option value="Cell Biology and Genetics">
+                                                Cell Biology and Genetics
+                                            </option>
+                                            <option value="Operational Research">
+                                                Operational Research
+                                            </option>
+                                            <option value="Engineering Physics">
+                                                Engineering Physics
+                                            </option>
+                                            <option value="Bioinformatics">Bioinformatics</option>
+                                            <option value="Anthroplolgy (Biological)">
+                                                Anthroplolgy (Biological)
+                                            </option>
+                                            <option value="Marine Biology and Fisheries">
+                                                Marine Biology and Fisheries
+                                            </option>
+                                            <option value="Marine Biology">Marine Biology</option>
+                                            <option value="Fisheries and Aquaculture">
+                                                Fisheries and Aquaculture
+                                            </option>
+                                            <option value="Ocenography">Ocenography</option>
+                                            <option value="Accountancy/Finance/Accounting">
+                                                Accountancy/Finance/Accounting
+                                            </option>
+                                            <option value="Accounting Management 8 Finance">
+                                                Accounting Management 8 Finance
+                                            </option>
+                                            <option value="Anthroplogy">Anthroplogy</option>
+                                            <option value="Actuarial Science">
+                                                Actuarial Science
+                                            </option>
+                                            <option value="Arabic and Islamic Religious Studies">
+                                                Arabic and Islamic Religious Studies
+                                            </option>
+                                            <option value="Banking and Finance">
+                                                Banking and Finance
+                                            </option>
+                                            <option value="Business Mangemnt/Mangement Sciences">
+                                                Business Mangemnt/Mangement Sciences
+                                            </option>
+                                            <option value="Business Adminsistration">
+                                                Business Adminsistration
+                                            </option>
+                                            <option value="Business and Entreprenerual Studies">
+                                                Business and Entreprenerual Studies
+                                            </option>
+                                            <option value="Criminology">Criminology</option>
+                                            <option value="Crimnology and Penology">
+                                                Crimnology and Penology
+                                            </option>
+                                            <option value="Criminology and Security Studies">
+                                                Criminology and Security Studies
+                                            </option>
+                                            <option value="Demography and Social Statistics">
+                                                Demography and Social Statistics
+                                            </option>
+                                            <option value="Economics">Economics</option>
+                                            <option value="Entrepreneurship">
+                                                Entrepreneurship
+                                            </option>
+                                            <option value="Entrepreneural Studies">
+                                                Entrepreneural Studies
+                                            </option>
+                                            <option value="Entrepreneurship Studies and innovation">
+                                                Entrepreneurship Studies and innovation
+                                            </option>
+                                            <option value="Economics and Development Studies">
+                                                Economics and Development Studies
+                                            </option>
+                                            <option value="Econmics and Operation Research">
+                                                Econmics and Operation Research
+                                            </option>
+                                            <option value="Economics and Statistics">
+                                                Economics and Statistics
+                                            </option>
+                                            <option value="Environmental Protection and Resources Management">
+                                                Environmental Protection and Resources Management
+                                            </option>
+                                            <option value="Film and Video Studies">
+                                                Film and Video Studies
+                                            </option>
+                                            <option value="Finance">Finance</option>
+                                            <option value="Geography">Geography</option>
+                                            <option value="Geography and Environmental Mangement">
+                                                Geography and Environmental Mangement
+                                            </option>
+                                            <option value="Geography and Meteorology">
+                                                Geography and Meteorology
+                                            </option>
+                                            <option value="Geography and Regional Planning">
+                                                Geography and Regional Planning
+                                            </option>
+                                            <option value="Geography and Planning">
+                                                Geography and Planning
+                                            </option>
+                                            <option value="Government and Public Administration">
+                                                Government and Public Administration
+                                            </option>
+                                            <option value="Hospitality and Toursm">
+                                                Hospitality and Toursm
+                                            </option>
+                                            <option value="Hospitality and Toursim Management">
+                                                Hospitality and Toursim Management
+                                            </option>
+                                            <option value="Hotel Managemtn and TOursim">
+                                                Hotel Managemtn and TOursim
+                                            </option>
+                                            <option value="Human Resources Management">
+                                                Human Resources Management
+                                            </option>
+                                            <option value="Industrial Relations and Personnel Management">
+                                                Industrial Relations and Personnel Management
+                                            </option>
+                                            <option value="Intelligence and Security Studies">
+                                                Intelligence and Security Studies
+                                            </option>
+                                            <option value="Insurance">Insurance</option>
+                                            <option value="Internationl Relations">
+                                                Internationl Relations
+                                            </option>
+                                            <option value="International Relations nd Diplomacy">
+                                                International Relations nd Diplomacy
+                                            </option>
+                                            <option value="International Relationship and Strategic Studies">
+                                                International Relationship and Strategic Studies
+                                            </option>
+                                            <option value="International Studies">
+                                                International Studies
+                                            </option>
+                                            <option value="International Studies and Diplomacy">
+                                                International Studies and Diplomacy
+                                            </option>
+                                            <option value="International and Comparative Politics">
+                                                International and Comparative Politics
+                                            </option>
+                                            <option value="Library and Information Science">
+                                                Library and Information Science
+                                            </option>
+                                            <option value="Library Science">Library Science</option>
+                                            <option value="Management and Entrepreneruship">
+                                                Management and Entrepreneruship
+                                            </option>
+                                            <option value="Marketing">Marketing</option>
+                                            <option value="Marketing and Advertising">
+                                                Marketing and Advertising
+                                            </option>
+                                            <option value="Mass Communication">
+                                                Mass Communication
+                                            </option>
+                                            <option value="Mass Communication and Media Technology">
+                                                Mass Communication and Media Technology
+                                            </option>
+                                            <option value="Media and Communication Studies">
+                                                Media and Communication Studies
+                                            </option>
+                                            <option value="Office and Informtion Mangement">
+                                                Office and Informtion Mangement
+                                            </option>
+                                            <option value="Peace and Development Studies">
+                                                Peace and Development Studies
+                                            </option>
+                                            <option value="Peace and Conflict Studies">
+                                                Peace and Conflict Studies
+                                            </option>
+                                            <option value="Peace Studies and Conflict Resolution">
+                                                Peace Studies and Conflict Resolution
+                                            </option>
+                                            <option value="Philosophy">Philosophy</option>
+                                            <option value="Polictical Science">
+                                                Polictical Science
+                                            </option>
+                                            <option value="Polictical Science and Diplomacy">
+                                                Polictical Science and Diplomacy
+                                            </option>
+                                            <option value="Polictical Science/International Law and Diplomacy">
+                                                Polictical Science/International Law and Diplomacy
+                                            </option>
+                                            <option value="Polictical Science and Administrative Studies">
+                                                Polictical Science and Administrative Studies
+                                            </option>
+                                            <option value="Polictical Science and International Relations">
+                                                Polictical Science and International Relations
+                                            </option>
+                                            <option value="Polictical Science and Conflict Resolution">
+                                                Polictical Science and Conflict Resolution
+                                            </option>
+                                            <option value="Polictical Science and Defence Studies">
+                                                Polictical Science and Defence Studies
+                                            </option>
+                                            <option value="Policy and Strategic Studies">
+                                                Policy and Strategic Studies
+                                            </option>
+                                            <option value="Policy and Administrative Studies">
+                                                Policy and Administrative Studies
+                                            </option>
+                                            <option value="Population Studies">
+                                                Population Studies
+                                            </option>
+                                            <option value="Psychology">Psychology</option>
+                                            <option value="Public Adminstation">
+                                                Public Adminstation
+                                            </option>
+                                            <option value="Public Adminstation and Local Government">
+                                                Public Adminstation and Local Government
+                                            </option>
+                                            <option value="Religious Studies">
+                                                Religious Studies
+                                            </option>
+                                            <option value="Social Justice">Social Justice</option>
+                                            <option value="Social Work">Social Work</option>
+                                            <option value="Sociology">Sociology</option>
+                                            <option value="Sociology and Anthropology">
+                                                Sociology and Anthropology
+                                            </option>
+                                            <option value="Transport Management">
+                                                Transport Management
+                                            </option>
+                                            <option value="Transport Planning and Mangement">
+                                                Transport Planning and Mangement
+                                            </option>
+                                            <option value="Taxation">Taxation</option>
+                                            <option value="Taxation and Event Mangement">
+                                                Taxation and Event Mangement
+                                            </option>
+                                            <option value="Toursim Studies">Toursim Studies</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <input type="text" name="" id="course_study_other">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">OSH Qualification</label>
+                                        <select name="osh_qualification" id="osh_qualifications">
+                                            <option value="" disabled selected hidden>
+                                                Select
+                                            </option>
+                                            <option value="CSHM">CSHM</option>
+                                            <option value="NEBOSH">NEBOSH</option>
+                                            <option value="CSP">CSP</option>
+                                            <option value="NCFE IOSH">NCFE IOSH</option>
+                                            <option value="NVQ">NVQ</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-flex">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Years of Experience</label>
+                                        <select name="years_of_experience" id="years_of_experiences">
+                                            <option value="" disabled selected hidden>
+                                                Select
+                                            </option>
+                                            <option value="1 - 5 years">1 - 5 years</option>
+                                            <option value="6 - 10 years">6 - 10 years</option>
+                                            <option value="11 - 15 years">11 - 15 years</option>
+                                            <option value="16 - 20 years">16 - 20 years</option>
+                                            <option value="21 years and above">
+                                                21 years and above
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">OSH Field of Expertise</label>
+                                        <select name="osh_field_of_expertises" id="osh_field_of_expertise"
+                                            onchange="fd_other(this.selectedIndex)">
+                                            <option value="" disabled selected hidden>
+                                                Select
+                                            </option>
+                                            <option value="Occupational Safety and Health Specialist">
+                                                Occupational Safety and Health Specialist
+                                            </option>
+                                            <option value="Safety Engineers">
+                                                Safety Engineers
+                                            </option>
+                                            <option value="Safety Consultant">
+                                                Safety Consultant
+                                            </option>
+                                            <option value="Coordinator of Loss Control">
+                                                Coordinator of Loss Control
+                                            </option>
+                                            <option value="Safety Officer">Safety Officer</option>
+                                            <option value="Risk Manager">Risk Manager</option>
+                                            <option value="Loss Control Manager">
+                                                Loss Control Manager
+                                            </option>
+                                            <option value="Environmental Engineer">
+                                                Environmental Engineer
+                                            </option>
+                                            <option value="Safety Director">Safety Director</option>
+                                            <option value="Vice President Safety and Health">
+                                                Vice President Safety and Health
+                                            </option>
+                                            <option value="Hazard Control Specialist">
+                                                Hazard Control Specialist
+                                            </option>
+                                            <option value="Environmental Safety Engineer">
+                                                Environmental Safety Engineer
+                                            </option>
+                                            <option value="Injury Prevention Specialist">
+                                                Injury Prevention Specialist
+                                            </option>
+                                            <option value="Corporate Safety Director">
+                                                Corporate Safety Director
+                                            </option>
+                                            <option value="Safety Compliance Officer">
+                                                Safety Compliance Officer
+                                            </option>
+                                            <option value="Safety & Training Specialist">
+                                                Safety & Training Specialist
+                                            </option>
+                                            <option value="Product Safety Engineer">
+                                                Product Safety Engineer
+                                            </option>
+                                            <option value="Risk Control Specialist">
+                                                Risk Control Specialist
+                                            </option>
+                                            <option value="Labour Inspector">
+                                                Labour Inspector
+                                            </option>
+                                            <option value="Safety Advisor">Safety Advisor</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <input type="text" name="" id="fd_expertise_other">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-flex">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Other Competency Field</label>
+                                        <input type="text" name="other_competent_fields" id="other_competent_field" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Core Skills</label>
+                                        <input type="text" name="core_skills" id="core_skill" />
+                                        <span class="text-input">Example :<span>
+                                                Research,Training, Data-Management, OSH-Legislation,
+                                                Investigation, Report-writing</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //<button type="button" class="btn btn-primary">Submit</button> -->
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="/survey/vendor/jquery/jquery.min.js"></script>
+    <script src="/survey/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/survey/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="/survey/vendor/jquery-steps/jquery.steps.min.js"></script>
+    <script src="/survey/vendor/minimalist-picker/dobpicker.js"></script>
+    <script src="/survey/vendor/nouislider/nouislider.min.js"></script>
+    <script src="/survey/vendor/wnumb/wNumb.js"></script>
+    <script src="/survey/js/main.js"></script>
+</body>
+
+</html>

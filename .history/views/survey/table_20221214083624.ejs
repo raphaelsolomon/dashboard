@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <title>Dech - survey</title>
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table table-hover mt-5 table-bordered">
+                    <thead class="thead-dark text-center">
+                        <tr>
+                            <th style="font-size: 10px;" scope="col"> #</th>
+                            <th style="font-size: 10px;" scope="col"> class="col-sm-1">Date</th>
+                            <th style="font-size: 10px;" scope="col"> scope="col">Name</th>
+                            <th style="font-size: 10px;" scope="col"> scope="col">Email</th>
+                            <th style="font-size: 10px;" scope="col"> scope="col">Country of Origin </th>
+                            <th style="font-size: 10px;" scope="col"> scope="col">Phone</th>
+                            <th style="font-size: 10px;" scope="col"> scope="col">Date of birth</th>
+                            <th style="font-size: 10px;" scope="col"> scope="col">Gender</th>
+                            <th style="font-size: 10px;" scope="col"> scope="col">Employment Status</th>
+                            <th style="font-size: 10px;" scope="col"> scope="col">Qualification</th>
+                            <th style="font-size: 10px;" scope="col"> scope="col">Course of Study</th>
+                            <th style="font-size: 10px;" scope="col"> scope="col">OSH Qualification</th>
+                            <th style="font-size: 10px;" scope="col"> scope="col">Years of Experience</th>
+                            <th style="font-size: 10px;" scope="col"> scope="col">OSH Field of Expertise</th>
+                            <th style="font-size: 10px;" scope="col"> scope="col">Other Competency Field</th>
+                            <th style="font-size: 10px;" scope="col"> scope="col">Core Skills</th>
+                            <th style="font-size: 10px;" scope="col">>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0; i <=listItems.length - 1; i++ ) {%>
+                            <tr>
+                                <td style="font-size: 10px;" scope="row"><%= i + 1 %></td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].createdAt %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].first_name %>
+                                        <%= listItems[i].last_name %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].email %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].country %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].Phone %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].date_of_birth %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].gender %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].emp_status %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].emp_qualification %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].course_study %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].osh_qualifications %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].years_of_experiences %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].osh_field_of_expertise %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].other_competent_field %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].core_skill %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <!-- <button class="btn btn-success btn-sm btn-block">Edit</button> -->
+                                    <a href="/OSHsurvey/delete/<%=listItems[i].id%>" class="btn btn-danger btn-sm btn-block">Delete</a>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
