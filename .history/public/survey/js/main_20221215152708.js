@@ -192,13 +192,15 @@ function ed_other(value) {
     }
 }
 function fd_other(value) {
-    if (value === 29) {
+    alert(value)
+    if (value === 21) {
         $("#fd_expertise_other").css("display", "block")
     } else {
         $("#fd_expertise_other").css("display", "none")
     }
 }
 function cs_other(value) {
+    alert(value)
     if (value === 18) {
         $("#course_study_other").css("display", "block")
     } else {

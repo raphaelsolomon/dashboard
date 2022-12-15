@@ -192,6 +192,7 @@ function ed_other(value) {
     }
 }
 function fd_other(value) {
+    alert(value)
     if (value === 29) {
         $("#fd_expertise_other").css("display", "block")
     } else {
@@ -199,6 +200,7 @@ function fd_other(value) {
     }
 }
 function cs_other(value) {
+    alert(value)
     if (value === 18) {
         $("#course_study_other").css("display", "block")
     } else {
