@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="colorlib.com" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dech - survey</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/survey/fonts/material-icon/css/material-design-iconic-font.min.css" />
+    <link rel="stylesheet" href="/survey/vendor/nouislider/nouislider.min.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/survey/css/style.css" />
+</head>
+
+<body>
+    <div id="google_translate_element"></div>
+
+    <div class="main">
+        <div class="container">
+            <form method="POST" id="signup-form" class="signup-form" action="/survey/submit">
+                <div>
+                    <h3>About the survey</h3>
+                    <fieldset>
+                        <h2>
+                            Profiling of Occupational Health and Safety Professionals in
+                            Africa
+                        </h2>
+                        <h4 class="desc">Survey Objective</h4>
+                        <div class="fieldset-content">
+                            <hr />
+
+                            <p>
+                                The objective of this survey is to profile Occupational Health
+                                and Safety (OSH) Professionals across Africa. <br />
+                                <br />
+
+                                There are a good number of OSH resources in Africa but it is
+                                difficult to identify them, the cities and countries where
+                                that practice, their specific areas of expertise, and their
+                                availability. This survey will help us know for instance the
+                                number of trained Ergonomists or Hygienists we have in Africa
+                                and where they practice. <br />
+                                <br />
+                                We should be able to foster collaborations amongst
+                                Practitioners in projects, if the resources are here, why call
+                                for external resources from outside Africa to conduct projects
+                                that Africa has the expertise to execute? <br />
+                                <br />
+
+                                We need to know you, where you are, your set skills, and how
+                                available you are to commit to projects within your areas of
+                                expertise.
+                            </p>
+                        </div>
+                    </fieldset>
+
+                    <h3>Personal information</h3>
+                    <fieldset>
+                        <h2>Personal information</h2>
+                        <p class="desc">
+                            Please enter your information and proceed to next step
+                        </p>
+                        <div class="fieldset-content">
+                            <div class="form-row">
+                                <label class="form-label">Name</label>
+                                <div class="form-flex">
+                                    <div class="form-group">
+                                        <input type="text" name="first_name_" id="first_name" required/>
+                                        <span class="text-input">First</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="last_name_" id="last_name" required/>
+                                        <span class="text-input">Last</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" name="email_" id="email" required/>
+                                <!-- <span class="text-input">Example  :<span>  Jeff@gmail.com</span></span> -->
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-flex">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Country of Origin</label>
+                                        <select name="country" id="countrys" onchange="c_other(this.selectedIndex)" required>
+                                            <option value="" disabled selected hidden>
+                                                Select country
+                                            </option>
+                                            <option value="Nigeria">Nigeria</option>
+                                            <option value="Ethiopia">Ethiopia</option>
+                                            <option value="Egypt">Egypt</option>
+                                            <option value="Congo">Congo</option>
+                                            <option value="Tanzania">Tanzania</option>
+                                            <option value="South Africa">South Africa</option>
+                                            <option value="Kenya">Kenya</option>
+                                            <option value="Uganda">Uganda</option>
+                                            <option value="Sudan">Sudan</option>
+                                            <option value="Algeria">Algeria</option>
+                                            <option value="Morocco">Morocco</option>
+                                            <option value="Angola">Angola</option>
+                                            <option value="Mozambique">Mozambique</option>
+                                            <option value="Ghana">Ghana</option>
+                                            <option value="Madagascar">Madagascar</option>
+                                            <option value="Cameroon">Cameroon</option>
+                                            <option value="Ivory Coast">Ivory Coast</option>
+                                            <option value="Niger">Niger</option>
+                                            <option value="Burkina Faso">Burkina Faso</option>
+                                            <option value="Mali">Mali</option>
+                                            <option value="Malawi">Malawi</option>
+                                            <option value="Zambia">Zambia</option>
+                                            <option value="Senegal">Senegal</option>
+                                            <option value="Chad">Chad</option>
+                                            <option value="Somalia">Somalia</option>
+                                            <option value="Zimbabwe">Zimbabwe</option>
+                                            <option value="Guinea">Guinea</option>
+                                            <option value="Rwanda">Rwanda</option>
+                                            <option value="Benin">Benin</option>
+                                            <option value="Burundi">Burundi</option>
+                                            <option value="Tunisia">Tunisia</option>
+                                            <option value="South Sudan">South Sudan</option>
+                                            <option value="Togo">Togo</option>
+                                            <option value="Sierra Leone">Sierra Leone</option>
+                                            <option value="Libya">Libya</option>
+                                            <option value="Republic of the Congo">
+                                                Republic of the Congo
+                                            </option>
+                                            <option value="Liberia">Liberia</option>
+                                            <option value="Central African Republic">
+                                                Central African Republic
+                                            </option>
+                                            <option value="Mauritania">Mauritania</option>
+                                            <option value="Eritrea">Eritrea</option>
+                                            <option value="Namibia">Namibia</option>
+                                            <option value="Gambia">Gambia</option>
+                                            <option value="Botswana">Botswana</option>
+                                            <option value="Gabon">Gabon</option>
+                                            <option value="Lesotho">Lesotho</option>
+                                            <option value="Guinea-Bissau">Guinea-Bissau</option>
+                                            <option value="Equatorial Guinea">
+                                                Equatorial Guinea
+                                            </option>
+                                            <option value="Mauritius">Mauritius</option>
+                                            <option value="Eswatini">Eswatini</option>
+                                            <option value="Djibouti">Djibouti</option>
+                                            <option value="Comoros">Comoros</option>
+                                            <option value="Sahrawi Arab Democratic Republic">
+                                                Sahrawi Arab Democratic Republic
+                                            </option>
+                                            <option value="Cape Verde">Cape Verde</option>
+                                            <option value="São Tomé and Príncipe">
+                                                São Tomé and Príncipe
+                                            </option>
+                                            <option value="Seychelles">Seychelles</option>
+                                            <option value="Seychelles">other</option>
+                                        </select>
+
+                                        <input type="text" name="" id="country_other">
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="phone" class="form-label">Phone</label>
+                                        <input type="text" name="phones" id="phone" required/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-date">
+                                <label for="birth_date" class="form-label">Date of birth</label>
+                                <input type="date" name="date_of_birth_" id="date_of_birth" required/>
+
+                                <!-- <div class="form-date-group">
+                                    <div class="form-date-item">
+                                        <select id="birth_month" name="birth_month"></select>
+                                        <span class="text-input">MM</span>
+                                    </div>
+                                    <div class="form-date-item">
+                                        <select id="birth_date" name="birth_date"></select>
+                                        <span class="text-input">DD</span>
+                                    </div>
+                                    <div class="form-date-item">
+                                        <select id="birth_year" name="birth_year"></select>
+                                        <span class="text-input">YYYY</span>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="form-group">
+                                <label for="ssn" class="form-label">Gender</label>
+                                <select name="gender_" id="gender" required>
+                                    <option value="" disabled selected hidden>Select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <h3>Questionaire</h3>
+                    <fieldset>
+                        <h2>Survey Questions</h2>
+                        <p class="desc">
+                            Please enter your infomation and proceed to submit
+                        </p>
+                        <div class="fieldset-content">
+                            <div id="alert_dialog" class="alert alert-success alert-dismissible fade show mb-3">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                <strong> Submitted successfully! </strong>
+                            </div>
+
+                            <div id="alert_dialog_failed" class="alert alert-danger alert-dismissible fade show mb-3">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                <strong> Record failed to subit! </strong>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-flex">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Employment Status</label>
+                                        <select name="emp_stat" id="emp_status" onchange="em_other(this.selectedIndex)" required>
+                                            <option value="" disabled selected hidden>
+                                                Select
+                                            </option>
+                                            <option value="Employee">Employee</option>
+                                            <option value="Consultant">Consultant</option>
+                                            <option value="Employer">Employer</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <input type="text" name="" id="em_status_other">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Qualification</label>
+                                        <select name="emp_qualifications" id="emp_qualification"
+                                            onchange="ed_other(this.selectedIndex)" required>
+                                            <option value="" disabled selected hidden>
+                                                Select
+                                            </option>
+                                            <option value="B.Sc">B.Sc</option>
+                                            <option value="M.Sc">MSc/MPhil</option>
+                                            <option value="Ph.D.">Ph.D</option>
+                                            <option value="Ph.D.">Professor</option>
+                                            <option value="Diploma">Diploma</option>
+                                            <option value="other">other</option>
+                                        </select>
+                                        <input type="text" name="" id="ed_level_other">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-flex">
+                                    <div class="form-group">
+                                        <label for="course_studys" class="form-label">Course of Study</label>
+                                        <select name="" id="course_studied" onchange="cs_other(this.selectedIndex)" required>
+                                            <option value="" disabled selected hidden>
+                                                Select
+                                            </option>
+                                            <option value="Occupational Safety and Health Management">Occupational Safety and Health Management</option>
+                                            <option value="Medical Sciences">Medical Sciences</option>
+                                            <option value="Public Health">Public Health</option>
+                                            <option value="Engineering">Engineering</option>
+                                            <option value="Environmental Health Science">Environmental Health Science</option>
+                                            <option value="Environmental Management Sciences">Environmental Management Sciences</option>
+                                            <option value="Occupational Hygiene">Occupational Hygiene</option>
+                                            <option value="Ergonomics">Ergonomics</option>
+                                            <option value="Occupational Medicine">Occupational Medicine</option>
+                                            <option value="Emergency Management Science">Emergency Management Science</option>
+                                            <option value="Disaster Management">Disaster Management</option>
+                                            <option value="Infection Prevention and Control">Infection Prevention and Control</option>
+                                            <option value="Health and Wellbeing">Health and Wellbeing</option>
+                                            <option value="Mental Health">Mental Health</option>
+                                            <option value="Workplace Health Promotion">Workplace Health Promotion</option>
+                                            <option value="Health Communications">Health Communications</option>
+                                            <option value="Project Management">Project Management</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <input type="text" name="" id="course_study_other">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">OSH Qualification</label>
+                                        <select name="osh_qualification" id="osh_qualifications" onchange="osh_other(this.selectedIndex)" required>
+                                            <option value="" disabled selected hidden>
+                                                Select
+                                            </option>
+                                            <option value="CSHM">CSHM</option>
+                                            <option value="NEBOSH">NEBOSH</option>
+                                            <option value="CSP">CSP</option>
+                                            <option value="NCFE IOSH">NCFE IOSH</option>
+                                            <option value="NVQ">NVQ</option>
+                                            <option value="iplom">Health and Safety Level 1,2 and 3</option>
+                                            <option value="iplom">Fellowship of colleges</option>
+                                            <option value="Other">Other Certificates</option>
+                                        </select>
+                                        <input type="text" name="" id="osh_qua_other">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-flex">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Years of Experience</label>
+                                        <select name="years_of_experience" id="years_of_experiences" required>
+                                            <option value="" disabled selected hidden>
+                                                Select
+                                            </option>
+                                            <option value="1 - 5 years">1 - 5 years</option>
+                                            <option value="6 - 10 years">6 - 10 years</option>
+                                            <option value="11 - 15 years">11 - 15 years</option>
+                                            <option value="16 - 20 years">16 - 20 years</option>
+                                            <option value="21 years and above">
+                                                21 years and above
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">OSH Field of Expertise</label>
+                                        <select name="osh_field_of_expertises" id="osh_field_of_expertise"
+                                            onchange="fd_other(this.selectedIndex)" required>
+                                            <option value="" disabled selected hidden> Select
+                                            </option>
+                                            <option value="Loss Prevention and Control">
+                                                Loss Prevention and Control</option>
+                                            <option value="Rope and Rigging">
+                                                Rope and Rigging
+                                            </option>
+                                            <option value="Forklift Assessment and Inspection ">
+                                                Forklift Assessment and Inspection 
+                                            </option>
+                                            <option value="Health and Safety Auditor">
+                                                Health and Safety Auditor
+                                            </option>
+                                            <option value="OSH and Labour Inspector">OSH and Labour Inspector</option>
+                                            <option value="OSH Trainers">OSH Trainers</option>
+                                            <option value="Systems and Standards Auditor">
+                                                Systems and Standards Auditor
+                                            </option>
+                                            <option value="Food Safety Specialist">
+                                                Food Safety Specialist
+                                            </option>
+                                            <option value="Occupational Safety and Health Management">Occupational Safety and Health Management</option>
+                                            <option value="Occupational Health Assessor ">
+                                                Occupational Health Assessor
+                                            </option>
+                                            <option value="Medical Sciences">
+                                                Medical Sciences
+                                            </option>
+                                            <option value="Public Health">
+                                                Public Health
+                                            </option>
+                                            <option value="Engineering">
+                                                Engineering
+                                            </option>
+                                            <option value="Environmental Health Science">
+                                                Environmental Health Science
+                                            </option>
+                                            <option value="Environmental Management Sciences">
+                                                Environmental Management Sciences
+                                            </option>
+                                            <option value="Occupational Hygiene">
+                                                Occupational Hygiene
+                                            </option>
+                                            <option value="Ergonomics">
+                                                Ergonomics
+                                            </option>
+                                            <option value="Scaffold Specialist">
+                                                Scaffold Specialist
+                                            </option>
+                                            <option value="Occupational Medicine">
+                                                Occupational Medicine
+                                            </option>
+                                            <option value="Emergency Management Science">Emergency Management Science</option>
+
+                                            <option value="Fire Safety, Prevention and Control">Fire Safety, Prevention and Control</option>
+                                            <option value="Disaster Management">Disaster Management</option>
+                                            <option value="Infection Prevention and Control">Infection Prevention and Control</option>
+                                            <option value="Health and Wellbeing">Health and Wellbeing</option>
+                                            <option value="Mental Health in Workplaces">Mental Health in Workplaces</option>
+                                            <option value="Workplace Health Promotion">Workplace Health Promotion</option>
+                                            <option value="Health Communications">Health Communications</option>
+                                            <option value="Project Management">Project Management</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                        <input type="text" name="" id="fd_expertise_other">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-flex">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Other Competency Field</label>
+                                        <input type="text" name="other_competent_fields" id="other_competent_field" required/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Core Skills</label>
+                                        <input type="text" class="col-md" name="core_skills" id="core_skill" placeholder="Example: Research,Training, Data-Management, OSH-Legislation,
+                                            Investigation, Report-writing" required/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //<button type="button" class="btn btn-primary">Submit</button> -->
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="/survey/vendor/jquery/jquery.min.js"></script>
+    <script src="/survey/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/survey/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="/survey/vendor/jquery-steps/jquery.steps.min.js"></script>
+    <script src="/survey/vendor/minimalist-picker/dobpicker.js"></script>
+    <script src="/survey/vendor/nouislider/nouislider.min.js"></script>
+    <script src="/survey/vendor/wnumb/wNumb.js"></script>
+    <script src="/survey/js/main.js"></script>
+</body>
+
+</html>
