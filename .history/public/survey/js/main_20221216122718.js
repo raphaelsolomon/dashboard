@@ -221,10 +221,6 @@ function osh_other(value) {
     }
 }
 
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLANGUAGE: "en",
-    }, 'google_translate_element')
-}
+function googleTranslateE
 
 
