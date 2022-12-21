@@ -370,7 +370,7 @@
                                             <div class="value">
                                                 <div class="input-group">
                                                     <input class="input--style-5" type="text"
-                                                        name="brand_air_condition" id="brand_air_conditions">
+                                                        name="brand_air_condition">
                                                 </div>
                                             </div>
                                         </div>
@@ -468,7 +468,7 @@
         document.getElementById("male").style.display = "none";
 
         document.getElementById("brand_powder").style.display = "none";
-        document.getElementById("brand_air_conditions").style.display = "none";
+        document.getElementById("brand_cream").style.display = "none";
 
         function saloonType(index) {
             if (index == 1) {
@@ -483,7 +483,7 @@
                 document.getElementById("female_hair").style.display = "none";
                 document.getElementById("male").style.display = "block";
                 document.getElementById("brand_powder").style.display = "block";
-                document.getElementById("brand_air_conditions").style.display = "none";
+                document.getElementById("brand_cream").style.display = "none";
             } else if (index == 2) {
                 for (var i = 0; i < element.length; i++) {
                     if (i === 12 || i === 10 || i === 11) {
@@ -497,7 +497,7 @@
                 document.getElementById("female_hair").style.display = "block";
                 document.getElementById("male").style.display = "none";
                 document.getElementById("brand_powder").style.display = "none";
-                document.getElementById("brand_air_conditions").style.display = "block";
+                document.getElementById("brand_cream").style.display = "block";
             } else {
                 for (var i = 0; i < element.length; i++) {
                     element[i].style.display = "block";
@@ -505,7 +505,7 @@
                 document.getElementById("female_hair").style.display = "block";
                 document.getElementById("male").style.display = "block";
                 document.getElementById("brand_powder").style.display = "block";
-                document.getElementById("brand_air_conditions").style.display = "block";
+                document.getElementById("brand_cream").style.display = "block";
             }
             element[0].style.display = 'block';
         }
