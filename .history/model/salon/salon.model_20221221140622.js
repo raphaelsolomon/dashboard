@@ -66,15 +66,7 @@ const Saloon = sequelize.define('saloons', {
         type: Sequelize.BOOLEAN,
         defaultValue: false
     },
-    bussiness_fairing: {
-        type: Sequelize.STRING
-    },
-    brand_air_condition: {
-        type: Sequelize.STRING
-    },
-    brand_powder: {
-        type: Sequelize.STRING
-    },
+    bussiness_fairing: {}
     make_air_condition: {
         type: Sequelize.STRING,
     },

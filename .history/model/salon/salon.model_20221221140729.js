@@ -72,9 +72,7 @@ const Saloon = sequelize.define('saloons', {
     brand_air_condition: {
         type: Sequelize.STRING
     },
-    brand_powder: {
-        type: Sequelize.STRING
-    },
+    brand_powder: {},
     make_air_condition: {
         type: Sequelize.STRING,
     },

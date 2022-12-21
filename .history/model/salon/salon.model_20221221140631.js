@@ -67,13 +67,7 @@ const Saloon = sequelize.define('saloons', {
         defaultValue: false
     },
     bussiness_fairing: {
-        type: Sequelize.STRING
-    },
-    brand_air_condition: {
-        type: Sequelize.STRING
-    },
-    brand_powder: {
-        type: Sequelize.STRING
+        type
     },
     make_air_condition: {
         type: Sequelize.STRING,
