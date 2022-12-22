@@ -143,8 +143,9 @@ route.get('/:id', async (req, res) => {
     res.status(200).render('../salon/edit', { input: salon, alert: [], officers: officers.map((e) => e.officer).join(', ') });
 });
 
-route.get('/chart', async (req, res) => {
-    return res.status(200).redirect('/salon/analysis');
+route.get('/delete/:id', async (req, res) => {
+    const salon = await Saloon.destroy({ where: { id: req.params.id } });
+    res.status(200).redirect('/salon/table');
 });
 
 module.exports = route;

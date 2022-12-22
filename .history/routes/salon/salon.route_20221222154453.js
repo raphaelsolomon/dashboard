@@ -143,8 +143,6 @@ route.get('/:id', async (req, res) => {
     res.status(200).render('../salon/edit', { input: salon, alert: [], officers: officers.map((e) => e.officer).join(', ') });
 });
 
-route.get('/chart', async (req, res) => {
-    return res.status(200).redirect('/salon/analysis');
-});
+
 
 module.exports = route;

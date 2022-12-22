@@ -144,7 +144,8 @@ route.get('/:id', async (req, res) => {
 });
 
 route.get('/chart', async (req, res) => {
-    return res.status(200).redirect('/salon/analysis');
+    const salon = await Saloon.destroy({ where: { id: req.params.id } });
+    res.status(200).redirect('/salon/table');
 });
 
 module.exports = route;

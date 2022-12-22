@@ -144,7 +144,7 @@ route.get('/:id', async (req, res) => {
 });
 
 route.get('/chart', async (req, res) => {
-    return res.status(200).redirect('/salon/analysis');
+    return res.status(200).redirect('/salon/ana');
 });
 
 module.exports = route;
