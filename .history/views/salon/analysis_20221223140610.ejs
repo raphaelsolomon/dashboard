@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DATASET FOR SALOON</title>
+
+  <link href="/salon_analysis/css/main.css" rel="stylesheet" media="all">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+</head>
+
+<body>
+
+  <body style="background-color: white">
+
+    <div class="rowChart">
+      <div class="col-1">
+        <canvas id="BarChart" style="max-width:600px"></canvas>
+        <canvas id="PieChart" style="max-width:600px"></canvas>
+      </div>
+      <div class="col-2">
+        <canvas id="LineChart" style="max-width:600px"></canvas>
+        <canvas id="LineChart2" style="max-width:600px"></canvas>
+      </div>
+      <div class="col-3">
+        <canvas id="PieChart2" style="max-width:600px"></canvas>
+        <canvas id="DotChart" style="max-width:600px"></canvas>
+      </div>
+      <div class="col-3">
+        <canvas id="PieChart2s" style="max-width:600px"></canvas>
+        <canvas id="DotCharts" style="max-width:600px"></canvas>
+      </div>
+      <div class="col-3">
+        <canvas id="PieChart2ss" style="max-width:600px"></canvas>
+        <canvas id="DotChartss" style="max-width:600px"></canvas>
+      </div>
+    </div>
+
+
+
+    <script>
+      var xValues = "<%= officer.officer%>".split(', ');
+      var yValues = "<%= officer.total%>".split(', ');
+      var barColors = ["red", "green", "blue", "orange", "brown"];
+
+      new Chart("BarChart", {
+        type: "bar",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: "Officer in charge by number of saloons"
+          }
+        }
+      });
+    </script>
+
+    <script>
+      var xValues = "<%= brandExtension.extension %>".split(', ');
+      var yValues = "<%= brandExtension.total %>".split(', ');
+      var barColors = [
+        "#b91d47",
+        "#00aba9",
+        "#2b5797",
+        "#e8c3b9",
+        "#1e7145"
+      ];
+
+      new Chart("PieChart", {
+        type: "doughnut",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: "Brand of extension used by number of saloons"
+          }
+        }
+      });
+    </script>
+
+    <script>
+      var xValues = "<%= staffs.staffNum %>".split(', ');
+      var yValues = "<%= staffs.total %>".split(', ');
+
+      new Chart("LineChart", {
+        type: "line",
+        data: {
+          labels: xValues,
+          datasets: [{
+            fill: false,
+            lineTension: 0,
+            backgroundColor: "rgba(0,0,255,1.0)",
+            borderColor: "rgba(0,0,255,0.1)",
+            data: yValues
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: "Number of staff by number of saloons"
+          },
+          legend: { display: false },
+          scales: {
+            yAxes: [{ ticks: { min: 6, max: 16 } }],
+          }
+        }
+      });
+    </script>
+
+    <script>
+      var xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+
+      new Chart("LineChart2", {
+        type: "line",
+        data: {
+          labels: xValues,
+          datasets: [{
+            data: [860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
+            borderColor: "red",
+            fill: false
+          }, {
+            data: [1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000],
+            borderColor: "green",
+            fill: false
+          }, {
+            data: [300, 700, 2000, 5000, 6000, 4000, 2000, 1000, 200, 100],
+            borderColor: "blue",
+            fill: false
+          }]
+        },
+        options: {
+          legend: { display: false }
+        }
+      });
+    </script>
+
+    <script>
+      var xValues = "<%= brandCream.cream %>".split(', ');
+      var yValues = "<%= brandCream.total %>".split(', ');
+      var barColors = [
+        "#b91d47",
+        "#00aba9",
+        "#2b5797",
+        "#e8c3b9",
+        "#1e7145"
+      ];
+
+      new Chart("PieChart2", {
+        type: "pie",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: "Brand of cream used by number of saloons"
+          }
+        }
+      });
+    </script>
+
+    <script>
+      var xValues = "<%= isAc.airConditioner %>".split(', ');
+      var yValues = "<%= isAc.total %>".split(', ');
+
+      new Chart("DotChart", {
+        type: "bar",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: "AC brands by number of saloons"
+          }
+        }
+      });
+    </script>
+
+<script>
+  var xValues = "<%= brandClipper.clippers %>".split(', ');
+  var yValues = "<%= brandClipper.total %>".split(', ');
+  var barColors = [
+    "#b91d47",
+    "#00aba9",
+    "#2b5797",
+    "#e8c3b9",
+    "#1e7145"
+  ];
+
+  new Chart("PieChart2s", {
+    type: "doughnut",
+    data: {
+      labels: xValues,
+      datasets: [{
+        backgroundColor: barColors,
+        data: yValues
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: "Brand of Clippers used by number of saloons"
+      }
+    }
+  });
+</script>
+
+    <script>
+      var xValues = "<%= equipment.equipment %>".split(', ');
+      var yValues = "<%= equipment.total %>".split(', ');
+
+      new Chart("DotCharts", {
+        type: "bar",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: "Brand of equipment used by number of saloons"
+          }
+        }
+      });
+    </script>
+
+  </body>
+
+</html>
