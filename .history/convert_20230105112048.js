@@ -18,32 +18,42 @@
 
 
 
-function getWeeksInMonth(year, month) {
-  const weeks = [],
-    firstDate = new Date(year, month, 1),
-    lastDate = new Date(year, month + 1, 0),
-    numDays = lastDate.getDate();
+function getWeeksInMonth(year, month){
 
-  let dayOfWeekCounter = firstDate.getDay();
+  var monthStart     = moment().year(year).month(month).date(1);
+  var monthEnd       = moment().year(year).month(month).endOf('month');
+  var numDaysInMonth = moment().year(year).month(month).endOf('month').date();
 
-  for (let date = 1; date <= numDays; date++) {
-    if (dayOfWeekCounter === 0 || weeks.length === 0) {
-      weeks.push([]);
-    }
-    weeks[weeks.length - 1].push(date);
-    dayOfWeekCounter = (dayOfWeekCounter + 1) % 7;
+  //calculate weeks in given month
+  var weeks      = Math.ceil((numDaysInMonth + monthStart.day()) / 7);
+  var weekRange  = [];
+  var weekStart = moment().year(year).month(month).date(1);
+  var i=0;
+
+  while(i<weeks){
+      var weekEnd   = moment(weekStart);
+
+
+      if(weekEnd.endOf('week').date() <= numDaysInMonth && weekEnd.month() == month) {
+          weekEnd = weekEnd.endOf('week').format('LL');
+      }else{
+          weekEnd = moment(monthEnd);
+          weekEnd = weekEnd.format('LL')
+      }
+
+      weekRange.push({
+          'weekStart': weekStart.format('LL'),
+          'weekEnd': weekEnd
+      });
+
+
+      weekStart = weekStart.weekday(7);
+      i++;
   }
 
-  return weeks
-    .filter((w) => !!w.length)
-    .map((w) => ({
-      start: w[0],
-      end: w[w.length - 1],
-      dates: w,
-    }));
-}
+  return weekRange;
+} console.log(getWeeksInMonth(2016, 7))
 
-console.log(getWeeksInMonth(2023, 0))
 
 
 

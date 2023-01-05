@@ -1,53 +1,3 @@
-// function days(current) {
-//   var week = new Array();
-//   // Starting Monday not Sunday 
-//   var first = ((current.getDate() - current.getDay()) + 1);
-//   for (var i = 0; i < 7; i++) {
-//     week.push(
-//       new Date(current.setDate(first++))
-//     );
-//   }
-//   return week;
-// }
-
-// var input = new Date(2023, 1, 12);
-// console.log('input: %s', input);
-
-// var result = days(input);
-// console.log(result.map(d => d.toString()));
-
-
-
-function getWeeksInMonth(year, month) {
-  const weeks = [],
-    firstDate = new Date(year, month, 1),
-    lastDate = new Date(year, month + 1, 0),
-    numDays = lastDate.getDate();
-
-  let dayOfWeekCounter = firstDate.getDay();
-
-  for (let date = 1; date <= numDays; date++) {
-    if (dayOfWeekCounter === 0 || weeks.length === 0) {
-      weeks.push([]);
-    }
-    weeks[weeks.length - 1].push(date);
-    dayOfWeekCounter = (dayOfWeekCounter + 1) % 7;
-  }
-
-  return weeks
-    .filter((w) => !!w.length)
-    .map((w) => ({
-      start: w[0],
-      end: w[w.length - 1],
-      dates: w,
-    }));
-}
-
-console.log(getWeeksInMonth(2023, 0))
-
-
-
-
 // let promises = [];
 
 // [1, 2, 4, 5, 6, 7, 8].forEach((e) => {
@@ -63,7 +13,6 @@ console.log(getWeeksInMonth(2023, 0))
 //   console.log(results);
 //   process.exit(0);
 // });
-
 
 
 // let data = {a: 1, b : 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8};

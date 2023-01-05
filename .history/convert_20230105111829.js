@@ -17,36 +17,22 @@
 // console.log(result.map(d => d.toString()));
 
 
-
-function getWeeksInMonth(year, month) {
-  const weeks = [],
-    firstDate = new Date(year, month, 1),
-    lastDate = new Date(year, month + 1, 0),
-    numDays = lastDate.getDate();
-
-  let dayOfWeekCounter = firstDate.getDay();
-
-  for (let date = 1; date <= numDays; date++) {
-    if (dayOfWeekCounter === 0 || weeks.length === 0) {
-      weeks.push([]);
-    }
-    weeks[weeks.length - 1].push(date);
-    dayOfWeekCounter = (dayOfWeekCounter + 1) % 7;
+var weeksCount = function(year, month_number) {
+  var firstOfMonth = new Date(year, month_number - 1, 1);
+  var day = firstOfMonth.getDay() || 6;
+  day = day === 1 ? 0 : day;
+  if (day) { day-- }
+  var diff = 7 - day;
+  var lastOfMonth = new Date(year, month_number, 0);
+  var lastDate = lastOfMonth.getDate();
+  if (lastOfMonth.getDay() === 1) {
+      diff--;
   }
+  var result = Math.ceil((lastDate - diff) / 7);
+  return result + 1;
+};
 
-  return weeks
-    .filter((w) => !!w.length)
-    .map((w) => ({
-      start: w[0],
-      end: w[w.length - 1],
-      dates: w,
-    }));
-}
-
-console.log(getWeeksInMonth(2023, 0))
-
-
-
+console.log(weeksCount(2023, 1))
 
 // let promises = [];
 

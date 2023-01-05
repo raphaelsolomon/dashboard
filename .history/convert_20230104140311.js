@@ -1,68 +1,13 @@
-// function days(current) {
-//   var week = new Array();
-//   // Starting Monday not Sunday 
-//   var first = ((current.getDate() - current.getDay()) + 1);
-//   for (var i = 0; i < 7; i++) {
-//     week.push(
-//       new Date(current.setDate(first++))
-//     );
-//   }
-//   return week;
-// }
-
-// var input = new Date(2023, 1, 12);
-// console.log('input: %s', input);
-
-// var result = days(input);
-// console.log(result.map(d => d.toString()));
+Promise.
+  all([1, 2, 3].map(async() => {
+    await new Promise(resolve => console.log(resolve));
+    throw new Error('Oops!');
+  })).
+  catch(err => {
+    err.message; // Oops!
+  });
 
 
-
-function getWeeksInMonth(year, month) {
-  const weeks = [],
-    firstDate = new Date(year, month, 1),
-    lastDate = new Date(year, month + 1, 0),
-    numDays = lastDate.getDate();
-
-  let dayOfWeekCounter = firstDate.getDay();
-
-  for (let date = 1; date <= numDays; date++) {
-    if (dayOfWeekCounter === 0 || weeks.length === 0) {
-      weeks.push([]);
-    }
-    weeks[weeks.length - 1].push(date);
-    dayOfWeekCounter = (dayOfWeekCounter + 1) % 7;
-  }
-
-  return weeks
-    .filter((w) => !!w.length)
-    .map((w) => ({
-      start: w[0],
-      end: w[w.length - 1],
-      dates: w,
-    }));
-}
-
-console.log(getWeeksInMonth(2023, 0))
-
-
-
-
-// let promises = [];
-
-// [1, 2, 4, 5, 6, 7, 8].forEach((e) => {
-//   promises.push(
-//     new Promise((resolve, reject) => {
-//       e = e + 5;
-//       setTimeout(resolve(e), 1000);
-//     })
-//   );
-// });
-
-// Promise.all(promises).then((results) => {
-//   console.log(results);
-//   process.exit(0);
-// });
 
 
 
@@ -78,7 +23,7 @@ console.log(getWeeksInMonth(2023, 0))
 //   })
 //   formatter.format(2000) // "$2,000.00"
 //   formatter.format(20) // "$20.00"
-//   formatter.format(215241000)
+//   formatter.format(215241000) 
 //`SELECT * FROM users where createdAt BETWEEN '${getPreviousDay().toISOString().substring(0, getPreviousDay().toISOString().indexOf('T'))} 00:00:00' AND '${date.toISOString().substring(0, date.toISOString().indexOf('T'))} 23:59:59'`
 // function getPreviousDay(number, date = new Date()) {
 //   const previous = new Date(date.getTime());
@@ -94,6 +39,7 @@ console.log(getWeeksInMonth(2023, 0))
 // // const Plastic = require('./model/plastic.model')
 // // var data = [];
 // // const date = require('date-and-time');
+
 
 // // axios.get('')
 // //     .then(function(response) {
@@ -116,6 +62,7 @@ console.log(getWeeksInMonth(2023, 0))
 // //         Plastic.bulkCreate(data).then((data) => console.log('done'));
 // //     }).catch((error) => console.log(error));
 
+
 // // const now = new Date('04/01/2022 00:00:00');
 // // console.log(date.format(now, 'YYYY/MM/DD'));
 
@@ -132,7 +79,8 @@ console.log(getWeeksInMonth(2023, 0))
 //     );
 //     // Mimic Azure CLI`s 'az account get-access-token' to avoid spn: prefix
 //     const { refreshToken } = (await credentials.getToken());
-
+    
+    
 //         console.log(credentials)
 //   }
 
@@ -186,6 +134,7 @@ console.log(getWeeksInMonth(2023, 0))
 // }).catch(function (error) {
 //     console.log(error);
 // });
+
 
 // ACCESS TO TEN(10) SHORTLISTED STAFF
 // ACCESS TO UNLIMITED CHOICE OF CANDIDATE

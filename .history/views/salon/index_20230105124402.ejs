@@ -454,6 +454,7 @@
             document.getElementById("micro"),
 
             document.getElementById("hair_lock"),
+            document.getElementById("hair_cuts"),
             document.getElementById("all_of_the_above")
         ];
         for (var i = 0; i < element.length; i++) {
@@ -469,9 +470,10 @@
 
         function saloonType(index) {
             if (index == 1) {
+                alert(i)
                 for (var i = 0; i < element.length; i++) {
-                    if (i === 6 || i === 10) {
-                        element[6].style.display = 'block';
+                    if (i === 11 || i === 10) {
+                        element[11].style.display = 'block';
                         element[10].style.display = 'block';
                     } else {
                         element[i].style.display = 'none';

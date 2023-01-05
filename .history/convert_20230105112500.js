@@ -43,7 +43,7 @@ function getWeeksInMonth(year, month) {
     }));
 }
 
-console.log(getWeeksInMonth(2023, 0))
+console.log(getWeeksInMonth(202))
 
 
 
