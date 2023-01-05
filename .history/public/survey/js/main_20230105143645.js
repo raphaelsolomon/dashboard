@@ -91,10 +91,6 @@
                 alert('All fields are required');
                 return;
             }
-            if(emp_status == "") {
-                alert('All fields are required');
-                return;
-            }
 
             var formData = {
                 first_name: first_name,
@@ -114,23 +110,26 @@
                 core_skill: core_skill
             }
             
-            $.ajax({
-                type: "POST",
-                url: "/OSHsurvey/submit",
-                data: formData,
-                dataType: "json",
-                encode: true,
-            }).done(function (data) {
-                if (data.err === false) {
-                    $("#alert_dialog").show();
-                    $('#signup-form').trigger("reset");
-                    $(window).scrollTop(0);
-                } else {
-                    $("#alert_dialog_failed").show();
-                    $('#signup-form').trigger("reset");
-                    $(window).scrollTop(0);
-                }
-            });
+
+
+            console.log(formData);
+            // $.ajax({
+            //     type: "POST",
+            //     url: "/OSHsurvey/submit",
+            //     data: formData,
+            //     dataType: "json",
+            //     encode: true,
+            // }).done(function (data) {
+            //     if (data.err === false) {
+            //         $("#alert_dialog").show();
+            //         $('#signup-form').trigger("reset");
+            //         $(window).scrollTop(0);
+            //     } else {
+            //         $("#alert_dialog_failed").show();
+            //         $('#signup-form').trigger("reset");
+            //         $(window).scrollTop(0);
+            //     }
+            // });
         },
         onStepChanged: function (event, currentIndex, priorIndex) {
             return true;

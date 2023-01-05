@@ -76,23 +76,7 @@
             var core_skill = $("#core_skill").val();
 
             if(emp_qualification === "") {
-                alert('All fields are required');
-                return;
-            }
-            if(course_study === "") {
-                alert('All fields are required');
-                return;
-            }
-            if(osh_qualifications === "") {
-                alert('All fields are required');
-                return;
-            }
-            if(osh_field_of_expertise === "") {
-                alert('All fields are required');
-                return;
-            }
-            if(emp_status == "") {
-                alert('All fields are required');
+                a
                 return;
             }
 
@@ -114,23 +98,26 @@
                 core_skill: core_skill
             }
             
-            $.ajax({
-                type: "POST",
-                url: "/OSHsurvey/submit",
-                data: formData,
-                dataType: "json",
-                encode: true,
-            }).done(function (data) {
-                if (data.err === false) {
-                    $("#alert_dialog").show();
-                    $('#signup-form').trigger("reset");
-                    $(window).scrollTop(0);
-                } else {
-                    $("#alert_dialog_failed").show();
-                    $('#signup-form').trigger("reset");
-                    $(window).scrollTop(0);
-                }
-            });
+
+
+            console.log(formData);
+            // $.ajax({
+            //     type: "POST",
+            //     url: "/OSHsurvey/submit",
+            //     data: formData,
+            //     dataType: "json",
+            //     encode: true,
+            // }).done(function (data) {
+            //     if (data.err === false) {
+            //         $("#alert_dialog").show();
+            //         $('#signup-form').trigger("reset");
+            //         $(window).scrollTop(0);
+            //     } else {
+            //         $("#alert_dialog_failed").show();
+            //         $('#signup-form').trigger("reset");
+            //         $(window).scrollTop(0);
+            //     }
+            // });
         },
         onStepChanged: function (event, currentIndex, priorIndex) {
             return true;

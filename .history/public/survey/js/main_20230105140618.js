@@ -67,34 +67,13 @@
             var emp_qualification = $('#emp_qualification').find(":selected").val() === 'Other' ? $("#ed_level_other").val() :  $('#emp_qualification').find(":selected").val();
 
             var course_study = $('#course_studied').find(":selected").val() === 'Other' ? $("#course_study_other").val() :  $('#course_studied').find(":selected").val();
-            var osh_qualifications = $('#osh_qualifications').find(":selected").val() !== 'Other' ? $('#osh_qualifications').find(":selected").val() : $('#osh_qua_other').val();
+            var osh_qualifications = $('#osh_qualifications').find(":selected").val() !== 'Other' ? $('#osh_qualifications').find(":selected").val() : $('#osh_qua_other").val();
 
             var years_of_experiences = $('#years_of_experiences').find(":selected").val();
             var osh_field_of_expertise = $('#osh_field_of_expertise').find(":selected").val() === 'Other' ? $("#fd_expertise_other").val() :  $('#osh_field_of_expertise').find(":selected").val();
 
             var other_competent_field = $('#other_competent_field').val();
             var core_skill = $("#core_skill").val();
-
-            if(emp_qualification === "") {
-                alert('All fields are required');
-                return;
-            }
-            if(course_study === "") {
-                alert('All fields are required');
-                return;
-            }
-            if(osh_qualifications === "") {
-                alert('All fields are required');
-                return;
-            }
-            if(osh_field_of_expertise === "") {
-                alert('All fields are required');
-                return;
-            }
-            if(emp_status == "") {
-                alert('All fields are required');
-                return;
-            }
 
             var formData = {
                 first_name: first_name,
@@ -113,7 +92,6 @@
                 other_competent_field: other_competent_field,
                 core_skill: core_skill
             }
-            
             $.ajax({
                 type: "POST",
                 url: "/OSHsurvey/submit",
