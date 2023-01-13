@@ -41,8 +41,8 @@ route.post('/', (req, res) => {
     req.body.brand_equipment_used = brand_equipment_used === undefined ? '' : `${brand_equipment_used}`;
     req.body.brand_cream_used = brand_cream_used === undefined ? '' : `${brand_cream_used}`;
     req.body.brand_clipper_used = brand_clipper_used === undefined ? '' : `${brand_clipper_used}`;
-    req.body.brand_extension_used = brand_extension_used === undefined ? '' : `${brand_extension_used}`;
-    req.body.brand_relaxer_used = brand_relaxer_used === undefined ? '' : `${brand_relaxer_used}`;
+    req.body.brand_extension_used = b === undefined ? '' : `${brand_extension_used}`;
+    req.body.brand_relaxer_used = brand_cream_used === undefined ? '' : `${brand_relaxer_used}`;
 
     //============================================================================
     if (monday === 'on') {

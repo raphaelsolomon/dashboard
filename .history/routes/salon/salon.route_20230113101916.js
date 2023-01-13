@@ -5,6 +5,7 @@ const Saloon = require("../../model/salon/salon.model");
 require('../../config/google.config');
 const Sequelize = require('sequelize');
 const { isGoogleAuthenticated } = require("../../utils/helper.util");
+const { firstPage, openingClosing, staffNumbers, officeInCharge, brandExtensionUsed, brandCreamUsed, isAirconditioner, brandClipperUsed, brandEquipmentUsed, brandRelaxerUsed, operationalDays } = require("../../chartQuery/salon.query");
 
 // route.get('/auth/google', passport.authenticate('google', { scope: ['email', 'profile'] }));
 
@@ -34,8 +35,16 @@ route.post('/', (req, res) => {
     var services = [];
     var days = [];
     const { hair_styling, manicure, pedicure, lash, brows, micro, make_up, spa, hair_cut, hair_lock, hair_cuts, all_of_the_above } = req.body;
-    const { monday, tuesday, wednesday, thursday, friday,  } = req.body;
-    //===================================================
+    const { monday, tuesday, wednesday, thursday, friday, saturday, sunday, brand_extension_used, brand_powder, brand_equipment_used, brand_cream_used, brand_clipper_used, brand_relaxer_used} = req.body;
+
+    req.body.brand_powder = brand_powder === undefined ? '' : `${brand_powder}`;
+    req.body.brand_equipment_used = brand_equipment_used === undefined? '': `${brand_equipment_used}`;
+    req.body.brand_cream_used = brand_cream_used === undefined? '' `${brand_cream_used}`;
+    req.body.brand_clipper_used = `${brand_clipper_used}`;
+    req.body.brand_extension_used = `${brand_extension_used}`;
+    req.body.brand_relaxer_used = `${brand_relaxer_used}`;
+
+    //============================================================================
     if (monday === 'on') {
         days.push('Monday');
     }
@@ -87,9 +96,10 @@ route.post('/', (req, res) => {
         req.body.service_type = services.join(', ');
         req.body.operational_days = days.join(', ')
     }
+    console.log(req.body)
+
     return Saloon.findAll({
-        attributes: [
-            [Sequelize.fn('DISTINCT', Sequelize.col('officer')), 'officer']],
+        attributes: [[Sequelize.fn('DISTINCT', Sequelize.col('officer')), 'officer']],
         raw: true,
     }).then((officers) => {
         if (req.body.id !== undefined) {
@@ -107,11 +117,11 @@ route.post('/', (req, res) => {
                 });
             });
         } else {
-
             return Saloon.create(req.body).then(() => {
                 const msg = [];
                 msg.push({ msg: "Record Successfully Inserted", err: false });
                 req.body = {};
+                
                 return res.status(200).render('../salon/index', { alert: msg, officers: officers.map((e) => e.officer).join(', ') });
             }).catch((err) => {
                 const msg = [];
@@ -123,8 +133,27 @@ route.post('/', (req, res) => {
     });
 });
 
+route.get('/chart', async (req, res) => {
+    const firstpage = await firstPage();
+    const timing = await openingClosing();
+    const staffNums = await staffNumbers();
+    const officers = await officeInCharge()
+    const brandExtension = await brandExtensionUsed();
+    const brandCream = await brandCreamUsed();
+    const isAc = await isAirconditioner();
+    const brandClipper = await brandClipperUsed();
+    const equipment = await brandEquipmentUsed();
+    const relaxer = await brandRelaxerUsed();
+    const operationalDay = await operationalDays();
+    res.status(200).render('../salon/analysis', {
+        firstPage: firstpage, timing: timing, staffs: staffNums, equipment: equipment,
+        officer: officers, brandExtension: brandExtension, brandCream: brandCream, isAc: isAc, brandClipper: brandClipper,
+        relaxer: relaxer, operationalDay: operationalDay
+    });
+});
+
 route.get('/table', async (req, res) => {
-    const salon = await Saloon.findAll({order: [['createdAt', 'DESC']]});
+    const salon = await Saloon.findAll({ order: [['createdAt', 'DESC']] });
     res.status(200).render('../salon/table', { input: salon });
 });
 

@@ -35,14 +35,14 @@ route.post('/', (req, res) => {
     var services = [];
     var days = [];
     const { hair_styling, manicure, pedicure, lash, brows, micro, make_up, spa, hair_cut, hair_lock, hair_cuts, all_of_the_above } = req.body;
-    const { monday, tuesday, wednesday, thursday, friday, saturday, sunday, brand_extension_used, brand_powder, brand_equipment_used, brand_cream_used, brand_clipper_used, brand_relaxer_used } = req.body;
+    const { monday, tuesday, wednesday, thursday, friday, saturday, sunday, brand_extension_used, brand_powder, brand_equipment_used, brand_cream_used, brand_clipper_used, brand_relaxer_used} = req.body;
 
     req.body.brand_powder = brand_powder === undefined ? '' : `${brand_powder}`;
-    req.body.brand_equipment_used = brand_equipment_used === undefined ? '' : `${brand_equipment_used}`;
-    req.body.brand_cream_used = brand_cream_used === undefined ? '' : `${brand_cream_used}`;
-    req.body.brand_clipper_used = brand_clipper_used === undefined ? '' : `${brand_clipper_used}`;
-    req.body.brand_extension_used = brand_extension_used === undefined ? '' : `${brand_extension_used}`;
-    req.body.brand_relaxer_used = brand_relaxer_used === undefined ? '' : `${brand_relaxer_used}`;
+    req.body.brand_equipment_used = brand_equipment_used === undefined? '': `${brand_equipment_used}`;
+    req.body.brand_cream_used = brand_cream_used === undefined? '': `${brand_cream_used}`;
+    req.body.brand_clipper_used = `${brand_clipper_used}`;
+    req.body.brand_extension_used = `${brand_extension_used}`;
+    req.body.brand_relaxer_used = `${brand_relaxer_used}`;
 
     //============================================================================
     if (monday === 'on') {
@@ -121,7 +121,7 @@ route.post('/', (req, res) => {
                 const msg = [];
                 msg.push({ msg: "Record Successfully Inserted", err: false });
                 req.body = {};
-
+                
                 return res.status(200).render('../salon/index', { alert: msg, officers: officers.map((e) => e.officer).join(', ') });
             }).catch((err) => {
                 const msg = [];
