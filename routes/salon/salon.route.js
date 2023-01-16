@@ -128,18 +128,18 @@ route.post('/', (req, res) => {
                 msg.push({ msg: "Record Successfully Inserted", err: false });
                 req.body = {};
 
-                if (brand_powder)
-                    executePowder(brand_powder, 'powder');
-                if (brand_relaxer_used)
-                    executePowder(brand_relaxer_used, 'relaxer');
-                if (brand_cream_used)
-                    executePowder(brand_cream_used, 'cream');
-                if (brand_equipment_used)
-                    executePowder(brand_equipment_used, 'equipment');
-                if (brand_extension_used)
-                    executePowder(brand_extension_used, 'extension');
-                if (brand_clipper_used)
-                    executePowder(brand_clipper_used, 'clipper');
+                // if (brand_powder)
+                //     executePowder(brand_powder, 'powder');
+                // if (brand_relaxer_used)
+                //     executePowder(brand_relaxer_used, 'relaxer');
+                // if (brand_cream_used)
+                //     executePowder(brand_cream_used, 'cream');
+                // if (brand_equipment_used)
+                //     executePowder(brand_equipment_used, 'equipment');
+                // if (brand_extension_used)
+                //     executePowder(brand_extension_used, 'extension');
+                // if (brand_clipper_used)
+                //     executePowder(brand_clipper_used, 'clipper');
 
                 return res.status(200).render('../salon/index', { alert: msg, officers: officers.map((e) => e.officer).join(', ') });
             }).catch((err) => {
