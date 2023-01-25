@@ -96,7 +96,7 @@ app.use('/admin/hse/input', require('./routes/hse/input.route'));
 app.use('/admin/hse/table', require('./routes/hse/table.route'));
 app.use('/salon', require('./routes/salon/salon.route'));
 app.use('/OSHsurvey', require('./routes/survey/survey.route'));
-app.use('/health', require('./routes/health/health.route'));
+app.use('/ealt'
 app.use((req, res, next) => {
     return res.status(404).render('../auths/404');
 })
