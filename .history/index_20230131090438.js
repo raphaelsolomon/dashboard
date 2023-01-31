@@ -98,7 +98,7 @@ app.use('/admin/hse/input', require('./routes/hse/input.route'));
 app.use('/admin/hse/table', require('./routes/hse/table.route'));
 app.use('/salon', require('./routes/salon/salon.route'));
 app.use('/OSHsurvey', require('./routes/survey/survey.route'));
-app.use('/summit/reg', require('./routes/health/health.route'));
+app.use('/summit/health', require('./routes/health/health.route'));
 app.use('/survey/sweeper', require('./routes/sweeper/sweeper.route'));
 app.use('/survey/recycling', require('./routes/recycling/recycling.route'));
 app.use((req, res, next) => {
