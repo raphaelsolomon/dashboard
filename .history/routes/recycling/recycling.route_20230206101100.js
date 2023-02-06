@@ -3,7 +3,7 @@ const Recycling = require("../../model/recycling/recycling.model");
 const route = express.Router();
 
 route.get('/', (req, res) => {
-    res.status(200).render('../recycling/index', { alert: [] })
+    res.status(200).render('../recycling/index', alert: [])
 });
 
 route.post('/', (req, res) => {

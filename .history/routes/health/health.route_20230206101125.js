@@ -3,7 +3,7 @@ const Health = require("../../model/health/health.model");
 const route = express.Router();
 
 route.get('/', (req, res) => {
-    res.status(200).render('../health/index', { alert: [] })
+    res.status(200).render('../health/index', {})
 });
 
 route.post('/', (req, res) => {
@@ -13,7 +13,10 @@ route.post('/', (req, res) => {
         msg[0] = { msg: `Unable to insert record ${err}`, err: true };
         return res.status(500).render('../health/index', { alert: msg })
     });
+
 });
+
+
 
 
 module.exports = route;

@@ -13,7 +13,10 @@ route.post('/', (req, res) => {
         msg[0] = { msg: `Unable to insert record ${err}`, err: true };
         return res.status(500).render('../health/index', { alert: msg })
     });
+
 });
+
+
 
 
 module.exports = route;
