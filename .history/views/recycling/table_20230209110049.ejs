@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <title>DATASET FOR SALOON</title>
+
+</head>
+
+<body class="bg-light">
+
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+
+                <table class="table table-hover mt-5 table-bordered">
+                    <thead class="thead-dark text-center">
+                        <tr>
+                            <th style="font-size: 10px;" scope="col">ID</th>
+                            <th style="font-size: 10px;" scope="col">Date</th>
+                            <th style="font-size: 10px;" scope="col">Firstname</th>
+                            <th style="font-size: 10px;" scope="col">Lastname</th>
+                            <th style="font-size: 10px;" scope="col">Mobile Number</th>
+                            <th style="font-size: 10px;" scope="col">Email Address</th>
+                            <th style="font-size: 10px;" scope="col">Address</th>
+                            <th style="font-size: 10px;" scope="col">Age Group</th>
+                            <th style="font-size: 10px;" scope="col">Education</th>
+                            <th style="font-size: 10px;" scope="col">Occupation</th>
+                            <th style="font-size: 10px;" scope="col">Gender</th>
+                            <th style="font-size: 10px;" scope="col">Do you recycle plastic items?</th>
+                            <th style="font-size: 10px;" scope="col">What is the reason for not disposing of plastic items properly?</th>
+                            <th style="font-size: 10px;" scope="col">How do you dispose of your plastic items?</th>
+                            <th style="font-size: 10px;" scope="col">Are you provided with materials for packing plastics?</th>
+                            <th style="font-size: 10px;" scope="col">Brand of Hair Relaxer Used</th>
+                            <th style="font-size: 10px;" scope="col">Business Fairing</th>
+                            <th style="font-size: 10px;" scope="col">Brand of Hair Conditioner Used</th>
+                            <th style="font-size: 10px;" scope="col">Brand Powder Used</th>
+                            <th style="font-size: 10px;" scope="col">Brand of Clipper Used</th>
+                            <th style="font-size: 10px;" scope="col">Brand of Hair Equipment Used</th>
+                            <th style="font-size: 10px;" scope="col">Is There an Air Conditoner in the saloon?</th>
+                            <th style="font-size: 10px;" scope="col">Make of Air Conditioner</th>
+                            <th style="font-size: 10px;" scope="col">Horsepower of Airconditioner</th>
+                            <th style="font-size: 10px;" scope="col">Operating Officer</th>
+                            <th style="font-size: 11px;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0; i <=input.length - 1; i++ ) { %>
+                            <tr>
+                                <td style="font-size: 10px;" scope="row"><%=i + 1%></td>
+                                <td style="font-size: 10px;" scope="row"><%=input[i].createdAt%></td>
+                                <td style="font-size: 10px;"><%=input[i].firstname%></td>
+                                <td style="font-size: 10px;"><%=input[i].lastname%></td>
+                                <td style="font-size: 10px;"><%=input[i].phone%></td>
+                                
+                                <td style="font-size: 10px;"><%=input[i].email%></td>
+                                <td style="font-size: 10px;"><%=input[i].address%></td>
+                                <td style="font-size: 10px;"><%=input[i].age_group%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].education%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].occupation%></td>
+                                <td style="font-size: 10px;"><%=input[i].gender%></td>
+                                <td style="font-size: 10px;"><%=input[i].recycle_plastic%></td>
+                                <td style="font-size: 10px;"><%=input[i].improper_disposal%></td>
+                                <td style="font-size: 10px;"><%=input[i].disposal_method%></td>
+                                <td style="font-size: 10px;"><%=input[i].brand_cream_used%></td>
+                                <td style="font-size: 10px;"><%=input[i].brand_relaxer_used%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].business_fairing%></td>
+                                <td style="font-size: 10px;"><%=input[i].brand_air_condition%></td>
+                                <td style="font-size: 10px;"><%=input[i].brand_powder%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].brand_clipper_used%></td>
+                                <td style="font-size: 10px;"><%=input[i].brand_equipment_used%></td>
+                                <td style="font-size: 10px;"><%=input[i].is_airconditioner%></td>
+                                <td style="font-size: 10px;"><%=input[i].make_air_condition%></td>
+                                <td style="font-size: 10px;"><%=input[i].horsepower_air_conditioner%></td>
+                                <td style="font-size: 10px;"><%=input[i].officer%></td>
+                                <td>
+                                    <div class="table-data-feature ">
+                                        <!-- <a href='/salon/<%= input[i].id %>'><button class="item " style="margin-right: 10px;"
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Edit ">
+                                            <i class="zmdi zmdi-edit "></i>
+                                        </button></a> -->
+                                    <a href='/salon/delete/<%= input[i].id %>'><button class="item "
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Delete ">
+                                            <i class="zmdi zmdi-delete "></i>
+                                        </button></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

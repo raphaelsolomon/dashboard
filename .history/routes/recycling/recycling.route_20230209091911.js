@@ -15,8 +15,9 @@ route.post('/', (req, res) => {
     });
 });
 
-route.get('/table', (req, res) => {
-    return Recycling.findAll().then((result) => res.status(200).render('../recycling/table', { alert: [], input: result }));
-}); 
+route.get('/', (req, res) => {
+    res.status(200).render('../recycling/index', { alert: [] })
+});
+
 
 module.exports = route;
