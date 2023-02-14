@@ -138,9 +138,9 @@ route.post('/', (req, res) => {
                 if (brand_equipment_used)
                     executePowder(`${brand_equipment_used}`, 'equipment');
                 if (brand_extension_used)
-                    executePowder(`${brand_extension_used}`, 'extension');
+                    executePowder(`brand_extension_used`, 'extension');
                 if (brand_clipper_used)
-                    executePowder(`${brand_clipper_used}`, 'clipper');
+                    executePowder(brand_clipper_used, 'clipper');
 
                 return res.status(200).render('../salon/index', { alert: msg, officers: officers.map((e) => e.officer).join(', ') });
             }).catch((err) => {
@@ -279,7 +279,7 @@ function queryPromise(powderName, type) {
 
 async function executePowder(items, type) {
     await Promise.all(
-        items.split(',').map((item, i) => {
+        items.map((item, i) => {
             return queryPromise(item, type);
         })
     );

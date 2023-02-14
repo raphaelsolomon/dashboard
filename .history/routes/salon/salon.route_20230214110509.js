@@ -279,7 +279,7 @@ function queryPromise(powderName, type) {
 
 async function executePowder(items, type) {
     await Promise.all(
-        items.split(',').map((item, i) => {
+        items..split(',').map((item, i) => {
             return queryPromise(item, type);
         })
     );

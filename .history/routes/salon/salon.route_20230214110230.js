@@ -130,17 +130,17 @@ route.post('/', (req, res) => {
                 req.body = {};
 
                 if (brand_powder)
-                    executePowder(`${brand_powder}`, 'powder');
+                    executePowder('brand_powder', 'powder');
                 if (brand_relaxer_used)
                     executePowder(`${brand_relaxer_used}`, 'relaxer');
                 if (brand_cream_used)
-                    executePowder(`${brand_cream_used}`, 'cream');
+                    executePowder(brand_cream_used, 'cream');
                 if (brand_equipment_used)
-                    executePowder(`${brand_equipment_used}`, 'equipment');
+                    executePowder(brand_equipment_used, 'equipment');
                 if (brand_extension_used)
-                    executePowder(`${brand_extension_used}`, 'extension');
+                    executePowder(brand_extension_used, 'extension');
                 if (brand_clipper_used)
-                    executePowder(`${brand_clipper_used}`, 'clipper');
+                    executePowder(brand_clipper_used, 'clipper');
 
                 return res.status(200).render('../salon/index', { alert: msg, officers: officers.map((e) => e.officer).join(', ') });
             }).catch((err) => {
@@ -279,7 +279,7 @@ function queryPromise(powderName, type) {
 
 async function executePowder(items, type) {
     await Promise.all(
-        items.split(',').map((item, i) => {
+        items.map((item, i) => {
             return queryPromise(item, type);
         })
     );

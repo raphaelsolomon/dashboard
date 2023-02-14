@@ -15,7 +15,7 @@
 
 // var result = days(input);
 // console.log(result.map(d => d.toString()));
-const lapo = 'kjdjjksd';
+const lapo = ['kjdjjksd', 'ddsfdsa'];
 
 console.log(`${lapo}`.split(','))
 

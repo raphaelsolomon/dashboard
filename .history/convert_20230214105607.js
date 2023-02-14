@@ -17,7 +17,7 @@
 // console.log(result.map(d => d.toString()));
 const lapo = 'kjdjjksd';
 
-console.log(`${lapo}`.split(','))
+console.log(lapo.split
 
 
 
