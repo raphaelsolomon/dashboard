@@ -82,7 +82,6 @@ app.set('views', [
     path.join(__dirname, 'views/sweepers'),
     path.join(__dirname, 'views/recycling'),
     path.join(__dirname, 'views/vulcanizer'),
-    path.join(__dirname, 'views/voters'),
 ]);
 app.set('view engine', 'ejs');
 app.use(flash());
@@ -104,7 +103,7 @@ app.use('/summit/reg', require('./routes/health/health.route'));
 app.use('/survey/sweeper', require('./routes/sweeper/sweeper.route'));
 app.use('/survey/recycling', require('./routes/recycling/recycling.route'));
 app.use('/survey/vulcanizer', require('./routes/vulcanizer/vulcanizer.route'));
-app.use('/survey/voters', require('./routes/voters/voter.route'));
+app.use('/survey/voters', require('./routes/v'));
 app.use((req, res, next) => {
     return res.status(404).render('../auths/404');
 })

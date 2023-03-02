@@ -82,7 +82,6 @@ app.set('views', [
     path.join(__dirname, 'views/sweepers'),
     path.join(__dirname, 'views/recycling'),
     path.join(__dirname, 'views/vulcanizer'),
-    path.join(__dirname, 'views/voters'),
 ]);
 app.set('view engine', 'ejs');
 app.use(flash());
