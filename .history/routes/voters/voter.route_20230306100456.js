@@ -14,8 +14,8 @@ route.post('/', (req, res) => {
 })
 
 route.post('/table', (req, res) => {
-    return Voter.findAll().then((voters) =>
-        res.status(200).render('../voters/table', { input: voters })).then((err) => console.log(err));
+    return Voter.create(req.body).then((voter) =>
+        res.status(200).render('../voters/index', { alert: msg })).then((err) => console.log(err));
 })
 
 

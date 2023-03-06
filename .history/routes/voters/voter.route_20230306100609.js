@@ -15,7 +15,7 @@ route.post('/', (req, res) => {
 
 route.post('/table', (req, res) => {
     return Voter.findAll().then((voters) =>
-        res.status(200).render('../voters/table', { input: voters })).then((err) => console.log(err));
+        res.status(200).render('../voters/table', { input: msg })).then((err) => console.log(err));
 })
 
 

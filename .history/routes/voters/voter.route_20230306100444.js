@@ -13,9 +13,11 @@ route.post('/', (req, res) => {
         res.status(200).render('../voters/index', { alert: msg })).then((err) => console.log(err));
 })
 
-route.post('/table', (req, res) => {
-    return Voter.findAll().then((voters) =>
-        res.status(200).render('../voters/table', { input: voters })).then((err) => console.log(err));
+route.post('/', (req, res) => {
+    const msg = [];
+    msg.push({ msg: "Record Successfully Inserted", err: false });
+    return Voter.create(req.body).then((voter) =>
+        res.status(200).render('../voters/index', { alert: msg })).then((err) => console.log(err));
 })
 
 

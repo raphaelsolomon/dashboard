@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <title>DATASET FOR RECYCLING</title>
+
+</head>
+
+<body class="bg-light">
+
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+
+                <table class="table table-hover mt-5 table-bordered">
+                    <thead class="thead-dark text-center">
+                        <tr>
+                            <th style="font-size: 10px;" scope="col">ID</th>
+                            <th style="font-size: 10px;" scope="col">Date</th>
+                            <th style="font-size: 10px;" scope="col">Address</th>
+                            <th style="font-size: 10px;" scope="col">Age Group</th>
+                            <th style="font-size: 10px;" scope="col">Education</th>
+                            <th style="font-size: 10px;" scope="col">Occupation</th>
+                            <th style="font-size: 10px;" scope="col">Gender</th>
+                            <th style="font-size: 10px;" scope="col">Are you a registered voter in Nigeria?</th>
+                            <th style="font-size: 10px;" scope="col">What is the reason for not disposing of plastic items properly?</th>
+                            <th style="font-size: 10px;" scope="col">How do you dispose of your plastic items?</th>
+                            <th style="font-size: 10px;" scope="col">Are you provided with materials for packing plastics?</th>
+                            <th style="font-size: 10px;" scope="col">Have you ever seen plastic waste blocking a drainage system? Wat was it caused by?</th>
+                            <th style="font-size: 10px;" scope="col">Do you think removing plastic waste from drainage systems can help avoid future blockages?</th>
+                            <th style="font-size: 10px;" scope="col">Do you think about the potential consequences of improperly disposing of plastic waste?</th>
+                            <th style="font-size: 10px;" scope="col">Have you ever had a plastic waste-blocking drain?</th>
+                            <th style="font-size: 10px;" scope="col">What motivates you to recycle plastic waste responsibly?</th>
+                            <th style="font-size: 10px;" scope="col">What can be done to improve the proper disposal of plastic waste in your area, according to you?</th>
+                            <th style="font-size: 10px;" scope="col">Where do you currently receive most of the information concerning plastic recycling?</th>
+                            <th style="font-size: 10px;" scope="col">Do you think that removing plastic waste from drains and waterways can reduce the chance of future blockages?</th>
+                            <th style="font-size: 10px;" scope="col">Have you ever participated in a community clean-up campaign to remove plastic waste from drains or waterways?</th>
+                            <th style="font-size: 10px;" scope="col">Do you have any suggestions that can improve the recycling of plastic waste in communities?</th>
+                            <th style="font-size: 10px;" scope="col">Do you think that recycling plastic waste and properly disposing of it will help reduce blocked drains in your neighborhood?</th>
+                            <th style="font-size: 11px;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0; i <=input.length - 1; i++ ) { %>
+                            <tr>
+                                <td style="font-size: 10px;" scope="row"><%=i + 1%></td>
+                                <td style="font-size: 10px;" scope="row"><%=input[i].createdAt%></td>
+                               
+                                <td style="font-size: 10px;"><%=input[i].address%></td>
+                                <td style="font-size: 10px;"><%=input[i].age_group%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].education%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].occupation%></td>
+                                <td style="font-size: 10px;"><%=input[i].gender%></td>
+                                <td style="font-size: 10px;"><%=input[i].registered_nigerian%></td>
+                                <td style="font-size: 10px;"><%=input[i].did_participate_in_preidential%></td>
+                                <td style="font-size: 10px;"><%=input[i].supported_party%></td>
+                                <td style="font-size: 10px;"><%=input[i].issues_in_election%></td>
+                                <td style="font-size: 10px;"><%=input[i].rate_current_democracy%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].offered_money_for_voting%></td>
+                                <td style="font-size: 10px;"><%=input[i].believe_in_free_and_fair%></td>
+                                <td style="font-size: 10px;"><%=input[i].witness_electoral_malpratice%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].suggestion_for_free_and_fair%></td>
+                                <td style="font-size: 10px;"><%=input[i].vote_countin_election%></td>
+                                <td>
+                                    <div class="table-data-feature ">
+                                        <!-- <a href='/salon/<%= input[i].id %>'><button class="item " style="margin-right: 10px;"
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Edit ">
+                                            <i class="zmdi zmdi-edit "></i>
+                                        </button></a> -->
+                                    <a href='/salon/delete/<%= input[i].id %>'><button class="item "
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Delete ">
+                                            <i class="zmdi zmdi-delete "></i>
+                                        </button></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -13,10 +13,7 @@ route.post('/', (req, res) => {
         res.status(200).render('../voters/index', { alert: msg })).then((err) => console.log(err));
 })
 
-route.post('/table', (req, res) => {
-    return Voter.findAll().then((voters) =>
-        res.status(200).render('../voters/table', { input: voters })).then((err) => console.log(err));
-})
+
 
 
 module.exports = route;
