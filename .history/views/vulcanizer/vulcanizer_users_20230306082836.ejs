@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vulcanizer Survey Questions</title>
+  <title>Vulcanizer Survey Questions users</title>
 </head>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -96,9 +96,9 @@
           <% }) %>
             <%}%>
 
-      <form action="/survey/vulcanizer/" method="POST">
+      <form action="/survey/vulcanizer/users" method="POST">
         <div class="formbold-form-title">
-          <h2 class="">Survey Questions for Vulcanizers</h2>
+          <h2 class="">Survey Questions for Vulcanizers users</h2>
           <p>
           We are conducting a survey to gather information about the services offered by vulcanizers in your area. 
           Vulcanizers are professionals who specialize in repairing and maintaining vehicle tires to ensure they are safe and roadworthy for their customers.  <br> <br>
@@ -132,6 +132,29 @@
           </p>
         </div>
 
+        <div class="formbold-input-flex">
+          <div>
+            <label for="firstname" class="formbold-form-label">First name  </label>
+            <input type="text" name="firstname" id="firstname" class="formbold-form-input" />
+          </div>
+          <div>
+            <label for="lastname" class="formbold-form-label"> Last name </label>
+            <input type="text" name="lastname" id="lastname" class="formbold-form-input" />
+          </div>
+        </div>
+
+        <div class="formbold-input-flex">
+          <div>
+            <label for="email" class="formbold-form-label"> Email </label>
+            <input type="email" name="email" id="email" class="formbold-form-input" />
+          </div>
+
+          <div>
+            <label for="phone" class="formbold-form-label"> Phone number </label>
+            <input type="text" name="phone" id="phone" class="formbold-form-input" />
+          </div>
+        </div>
+
         <div class="formbold-mb-3">
           <label for="address" class="formbold-form-label">Location</label>
           <input type="text" name="address" id="address" class="formbold-form-input" />
@@ -141,7 +164,7 @@
           <div class="formbold-input-group">
             <label class="formbold-form-label">Age Group</label>
     
-            <select class="formbold-form-select" name="age_group" id="age_group">
+            <select class="formbold-form-select" name="age_group" id="occupation">
               <option value="Less than 30">Less than 30</option>
               <option value="31 – 39"> 31 – 39</option>
               <option value="40 – 49">  40 – 49</option>
@@ -182,33 +205,30 @@
             </select>
           </div>
         </div> <br>
-
-        <div class="formbold-form-title">
-          <h2 class="">QUESTIONS FOR VULCANIZERS </h2>  <hr>
-        </div>
+ 
 
         <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>How long have you been working as a vulcanizer?</b></label>
+          <label for="ans" class="formbold-form-label"><b>How often do you need to have your tires repaired or replaced?</b></label>
   
           <div class="formbold-radio-flex">
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="vulcanizer_experience" type="radio" value="Less than a year" id="ans" />Less than a year<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" value="Less than a year" type="radio" name="tires_repaires_or_replaced" id="ans" />Less than a year<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="vulcanizer_experience" type="radio" value="1-5 years" id="ans" />1-5 years<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" value="Once a year" type="radio" name="tires_repaires_or_replaced" id="ans" />Once a year<span class="formbold-radio-checkmark"></span></label>
             </div>
 
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="vulcanizer_experience" type="radio" value="5-10 years" id="ans" />5-10 years<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" value="More than once a year" type="radio" name="tires_repaires_or_replaced" id="ans" />More than once a year<span class="formbold-radio-checkmark"></span></label>
             </div>
 
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="vulcanizer_experience" type="radio" value="10 years above" id="ans" />10 years above<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" value="Never" type="radio" name="tires_repaires_or_replaced" id="ans" />Never<span class="formbold-radio-checkmark"></span></label>
             </div>
    
           </div>
@@ -216,128 +236,54 @@
 
 
         <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>What types of tire services do you offer?</b></label>
+          <label for="ans" class="formbold-form-label"><b>What type of vehicle do you typically use your vulcanizer for?</b></label>
   
           <div class="formbold-radio-flex">
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="tires_offered" type="radio" value="Puncture repair" id="ans" />Puncture repair<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" value="Passenger carb" type="radio" name="vehicle_typically_repaired" id="ans" />Passenger carb<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio"  name="tires_offered" type="radio" value="Tire replacement" id="ans" />Tire replacement<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" value="SUV or truck" type="radio" name="vehicle_typically_repaired" id="ans" />SUV or truck<span class="formbold-radio-checkmark"></span></label>
             </div>
 
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="tires_offered" type="radio" value="Tire Balancing" id="ans" />Tire balancing<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" value="Motobike" type="radio" name="vehicle_typically_repaired" id="ans" />Motorbike<span class="formbold-radio-checkmark"></span></label>
             </div>
 
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="tires_offered" type="radio" value="All of the above" id="ans" />All of the above<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" value="Others" type="radio" name="vehicle_typically_repaired" id="ans" />Other<span class="formbold-radio-checkmark"></span></label>
             </div>
-   
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" type="radio" name="ans" id="ans" />None of the above<span class="formbold-radio-checkmark"></span></label>
-            </div>
-   
+     
           </div>
         </div>
 
         <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>How do you determine the best course of action for repairing a tire?</b></label>
+          <label for="ans" class="formbold-form-label"><b>How did you find your current vulcanizer?</b></label>
   
           <div class="formbold-radio-flex">
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="course_of_actions_in_repairing" type="radio" value="Visual inspection" id="ans" />Visual inspection<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" value="Through word of mouth" type="radio" name="find_current_vulcanizer" id="ans" />Through word of mouth<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="course_of_actions_in_repairing" type="radio" value="Checking air pressure" id="ans" />Checking air pressure<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" value="Online search" type="radio" name="find_current_vulcanizer" id="ans" />Online search<span class="formbold-radio-checkmark"></span></label>
+            </div>
+
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label"> 
+                <input class="formbold-input-radio" value="Saw their shop while driving by." type="radio" name="find_current_vulcanizer" id="ans" />Saw their shop while driving by.<span class="formbold-radio-checkmark"></span></label>
             </div>
 
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="course_of_actions_in_repairing" type="radio" value="Running diagnostic tests." id="ans" />Running diagnostic tests.<span class="formbold-radio-checkmark"></span></label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="course_of_actions_in_repairing" type="radio" value="All of the above" id="ans" />All of the above<span class="formbold-radio-checkmark"></span></label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="course_of_actions_in_repairing" type="radio" value="None of the above" id="ans" />None of the above<span class="formbold-radio-checkmark"></span></label>
-            </div>
-   
-          </div>
-        </div>
-
-        <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>How do you ensure that tires are balanced correctly after repair?</b></label>
-  
-          <div class="formbold-radio-flex">
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="balanced_correctly_after_repair" type="radio" value="By using a computerized balancing machine." id="ans" />By using a computerized balancing machine.<span class="formbold-radio-checkmark"></span></label>
-            </div>
-  
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="balanced_correctly_after_repair" type="radio" value="By using a manual balancing machine." id="ans" />By using a manual balancing machine.<span class="formbold-radio-checkmark"></span></label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="balanced_correctly_after_repair" type="radio" value="By using weights and other tools." id="ans" />By using weights and other tools.<span class="formbold-radio-checkmark"></span></label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="balanced_correctly_after_repair" type="radio" value="All of the above" id="ans" />All of the above<span class="formbold-radio-checkmark"></span></label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="balanced_correctly_after_repair" type="radio" value="None of the abovee" id="ans" />None of the above<span class="formbold-radio-checkmark"></span></label>
-            </div>
-   
-          </div>
-        </div>
-
-        <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>What is your typical turnaround time for repairing a tire?</b></label>
-  
-          <div class="formbold-radio-flex">
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="typical_turnaround_time" type="radio" value="Less than 30 minutes" id="ans" />Less than 30 minutes<span class="formbold-radio-checkmark"></span></label>
-            </div>
-  
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="typical_turnaround_time" type="radio" value="30-60 minutes" id="ans" />30-60 minutes<span class="formbold-radio-checkmark"></span></label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="typical_turnaround_time" type="radio" value="1-2 hours" id="ans" />1-2 hours<span class="formbold-radio-checkmark"></span></label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="typical_turnaround_time" type="radio" value="2-4 hours" id="ans" />2-4 hours<span class="formbold-radio-checkmark"></span></label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" name="typical_turnaround_time" type="radio" value="More than 4 hours" id="ans" />More than 4 hours<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" value="Other" type="radio" name="find_current_vulcanizer" id="ans" />Other<span class="formbold-radio-checkmark"></span></label>
             </div>
  
    
@@ -345,167 +291,239 @@
         </div>
 
         <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>Do you sell new or used tires?</b></label>
+          <label for="ans" class="formbold-form-label"><b>How satisfied are you with the service provided by your current vulcanizer?</b></label>
   
           <div class="formbold-radio-flex">
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="New tires only" type="radio" name="sell_used_old_tires" id="ans" />New tires only<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="satisfactory_with_current_vulcanizer" value="Satisfied" />Satisfied<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Used tires only." type="radio" name="sell_used_old_tires" id="ans" />Used tires only.<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="satisfactory_with_current_vulcanizer" value="Very satisfied" />Very satisfied<span class="formbold-radio-checkmark"></span></label>
             </div>
-  
+
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Both new and used tires." type="radio" name="sell_used_old_tires" id="ans" />Both new and used tires.<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="satisfactory_with_current_vulcanizer" value="Neutral" />Neutral<span class="formbold-radio-checkmark"></span></label>
             </div>
-  
+
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Neither new nor used tires." type="radio" name="sell_used_old_tires" id="ans" />Neither new nor used tires.<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="satisfactory_with_current_vulcanizer" value="Somewhat dissatisfied" />Somewhat dissatisfied<span class="formbold-radio-checkmark"></span></label>
+            </div>
+
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="satisfactory_with_current_vulcanizer" value="Very dissatisfied" />Very dissatisfied<span class="formbold-radio-checkmark"></span></label>
             </div>
    
           </div>
         </div>
 
         <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>How do you keep up to date with new tire technologies and repair techniques?</b></label>
+          <label for="ans" class="formbold-form-label"><b>Have you ever had to return to your vulcanizer for the same issue on a tire that they repaired or replaced?</b></label>
   
           <div class="formbold-radio-flex">
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Attend training seminars and conferences"  type="radio" name="new_tire_tech_and_repair_technique" id="ans" />Attend training seminars and conferences<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="issue_repetition" id="ans" />Less than 30 minutes<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Read industry publications." type="radio" name="new_tire_tech_and_repair_technique" id="ans" />Read industry publications.<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="issue_repetition" id="ans" />Yes, multiple times<span class="formbold-radio-checkmark"></span></label>
+            </div>
+
+
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" value="Yes" type="radio" name="issue_repetition" id="ans" />Yes, once<span class="formbold-radio-checkmark"></span></label>
+            </div>
+
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" value="No" type="radio" name="issue_repetition" id="ans" />No<span class="formbold-radio-checkmark"></span></label>
+            </div>
+ 
+   
+          </div>
+        </div>
+
+        <div class="formbold-input-radio-wrapper">
+          <label for="ans" class="formbold-form-label"><b>How do you feel about the cost of services provided by your vulcanizer?</b></label>
+  
+          <div class="formbold-radio-flex">
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="cost_of_services" value="Very affordable" />Very affordable<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Participate in online forums." type="radio" name="new_tire_tech_and_repair_technique" id="ans" />Participate in online forums.<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="cost_of_services" value="Somewhat affordable" />Somewhat affordable<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="All of the above" type="radio" name="new_tire_tech_and_repair_technique" id="ans" />All of the above<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="cost_of_services" value="Neutral" />Neutral<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="None of the above" type="radio" name="new_tire_tech_and_repair_technique" id="ans" />None of the above<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="cost_of_services" value="Somewhat expensive" />Somewhat expensive<span class="formbold-radio-checkmark"></span></label>
+            </div>
+   
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="cost_of_services" value="Very expensive" />Very expensive<span class="formbold-radio-checkmark"></span></label>
             </div>
    
           </div>
         </div>
 
         <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>Have you ever had to deal with a difficult customer, and how did you handle the situation?</b></label>
+          <label for="ans" class="formbold-form-label"><b>How long does it typically take for your vulcanizer to complete the service you need?</b></label>
   
           <div class="formbold-radio-flex">
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Yes, and we were able to resolve the issue to the customer's satisfaction" type="radio" name="deal_difficult_customer" id="ans" />Yes, and we were able to resolve the issue to the customer's satisfaction<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="completion_of_services" value="Less than 30 minutes" />Less than 30 minutes<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Yes, and the situation was not resolved to the customer's satisfaction" type="radio" name="deal_difficult_customer" id="ans" />Yes, and the situation was not resolved to the customer's satisfaction<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="completion_of_services" value="30-60 minutes" />30-60 minutes<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="No, we have not had to deal with a difficult customer." type="radio" name="deal_difficult_customer" id="ans" />No, we have not had to deal with a difficult customer.<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="completion_of_services" value="1-2 hours" />1-2 hours<span class="formbold-radio-checkmark"></span></label>
+            </div>
+  
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="completion_of_services" value="2-4 hours" />2-4 hours<span class="formbold-radio-checkmark"></span></label>
+            </div>
+  
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="completion_of_services" value="More than 4 hours" />More than 4 hours<span class="formbold-radio-checkmark"></span></label>
             </div>
    
           </div>
         </div>
 
         <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>What steps do you take to ensure the safety of your customers and their vehicles while you are working on their tires?</b></label>
+          <label for="ans" class="formbold-form-label"><b>How would you rate the customer service provided by your vulcanizer?</b></label>
   
           <div class="formbold-radio-flex">
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Follow all safety protocols and guidelines." type="radio" name="customer_safety" id="ans" />Follow all safety protocols and guidelines.<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="customer_service_by_vulcanizer" value="Excellent" />Excellent<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Use personal protective equipment (PPE)" type="radio" name="customer_safety" id="ans" />Use personal protective equipment (PPE)<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="ans" value="Good" />Good<span class="formbold-radio-checkmark"></span></label>
+            </div>
+  
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="ans" value="Neutral" />Neutral<span class="formbold-radio-checkmark"></span></label>
+            </div>
+  
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="ans" value="Poor" />Poor<span class="formbold-radio-checkmark"></span></label>
+            </div>
+  
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="ans" value="Very poor" />Very poor<span class="formbold-radio-checkmark"></span></label>
+            </div>
+   
+          </div>
+        </div>
+
+        <div class="formbold-input-radio-wrapper">
+          <label for="ans" class="formbold-form-label"><b>Have you ever experienced any issues with the quality of work provided by your vulcanizer?</b></label>
+  
+          <div class="formbold-radio-flex">
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="issue_with_the_quality_of_work" value="Yes, multiple times" />Yes, multiple times<span class="formbold-radio-checkmark"></span></label>
+            </div>
+  
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="issue_with_the_quality_of_work" value="Yes, once" />Yes, once<span class="formbold-radio-checkmark"></span></label>
             </div>
 
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Ensure that the vehicle is stable and secure while working on the tires" type="radio" name="customer_safety" id="ans" />Ensure that the vehicle is stable and secure while working on the tires<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="issue_with_the_quality_of_work" value="No" />No<span class="formbold-radio-checkmark"></span></label>
             </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="All of the above" type="radio" name="customer_safety" id="ans" />All of the above <span class="formbold-radio-checkmark"></span></label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="None of the above" type="radio" name="customer_safety" id="ans" />None of the above <span class="formbold-radio-checkmark"></span></label>
-            </div>
+ 
           </div>
         </div>
  
 
         <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>Do you always wear safety gear while working?</b></label>
+          <label for="ans" class="formbold-form-label"><b>Would you recommend your vulcanizer to a friend or family member?</b></label>
   
           <div class="formbold-radio-flex">
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Always" type="radio" name="safety_gear" id="ans" />Always<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="vulcanizer_recommendation" value="Yes, highly recommend it" />Yes, highly recommend it.<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio"  value="Sometimes" type="radio" name="safety_gear" id="ans" />Sometimes<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="vulcanizer_recommendation" value="Yes, somewhat recommend it" />Yes, somewhat recommend it.<span class="formbold-radio-checkmark"></span></label>
             </div>
 
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio"  value="Rarely" type="radio" name="safety_gear" id="ans" />Rarely<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="vulcanizer_recommendation" value="Neutral" />Neutral<span class="formbold-radio-checkmark"></span></label>
             </div>
 
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio"  value="Never" type="radio" name="safety_gear" id="ans" />Never<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="vulcanizer_recommendation" value="No, somewhat not recommend it" />No, somewhat not recommend it.<span class="formbold-radio-checkmark"></span></label>
+            </div>
+
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="vulcanizer_recommendation" value="No, highly do not recommend it" />No, highly do not recommend it.<span class="formbold-radio-checkmark"></span></label>
             </div>
 
           </div>
         </div>
 
         <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>Have you ever received safety training?</b></label>
+          <label for="ans" class="formbold-form-label"><b>Do you always inspect your tires before taking them to the vulcanizer?</b></label>
   
           <div class="formbold-radio-flex">
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Yes, regularly" type="radio" name="safety_training" id="ans" />Yes, regularly<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="tires_inspections" value="Always" />Always<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Yes, but not regularly" type="radio" name="safety_training" id="ans" />Yes, but not regularly<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="tires_inspections" value="Sometimes" />Sometimes<span class="formbold-radio-checkmark"></span></label>
             </div>
 
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="No, but I would like to" type="radio" name="safety_training" id="ans" />No, but I would like to<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="tires_inspections" value="Rarely" />Rarely<span class="formbold-radio-checkmark"></span></label>
             </div>
 
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="No, and I am not interested." type="radio" name="safety_training" id="ans" />No, and I am not interested.<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="tires_inspections" value="Never" />Never<span class="formbold-radio-checkmark"></span></label>
             </div>
  
           </div>
@@ -513,17 +531,22 @@
 
 
         <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>Do you have a fire extinguisher in your workspace?</b></label>
+          <label for="ans" class="formbold-form-label"><b>Do you always ask the vulcanizer if they have proper safety gear?</b></label>
   
           <div class="formbold-radio-flex">
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Yes" type="radio" name="fire_extinguisher" id="ans" />Yes<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="ask_for_proper_gears" value="Always" />Always<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="No" type="radio" name="fire_extinguisher" id="ans" />No<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="ask_for_proper_gears" value="Sometimes" />Sometimes<span class="formbold-radio-checkmark"></span></label>
+            </div>
+  
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="ask_for_proper_gears" value="Never" />Never<span class="formbold-radio-checkmark"></span></label>
             </div>
    
           </div>
@@ -535,162 +558,139 @@
           <div class="formbold-radio-flex">
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio"  value="Yes" type="radio" name="first_aid_kit" id="ans" />Yes<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="first_aid_kit" value="Yes" />Yes<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio"  value="No" type="radio" name="first_aid_kit" id="ans" />No<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="first_aid_kit" value="No" />No<span class="formbold-radio-checkmark"></span></label>
             </div>
    
           </div>
         </div>
 
         <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>Do you have a proper ventilation system in your workspace?</b></label>
+          <label for="ans" class="formbold-form-label"><b>Have you ever seen a vulcanizer use a fire extinguisher?</b></label>
   
           <div class="formbold-radio-flex">
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio"  value="Yes" type="radio" name="proper_ventilation_system" id="ans" />Yes<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio"  type="radio" name="fire_extinguisher" value="Yes" />Yes<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio"  value="No" type="radio" name="proper_ventilation_system" id="ans" />No<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="fire_extinguisher" value="No" />No<span class="formbold-radio-checkmark"></span></label>
             </div>
    
           </div>
         </div>
 
         <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>Do you always check the condition of the tires before working on them?</b></label>
+          <label for="ans" class="formbold-form-label"><b>Have you ever seen a vulcanizer use a torque wrench to ensure proper tightening of lug nuts?</b></label>
   
           <div class="formbold-radio-flex">
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Always" type="radio" name="condition_of_tire_before_working" id="ans" />Always<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="use_torque_wrench" value="Yes" />Yes<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Sometimes" type="radio" name="condition_of_tire_before_working" id="ans" />Sometimes<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="use_torque_wrench" value="No" />No<span class="formbold-radio-checkmark"></span></label>
+            </div>
+   
+          </div>
+        </div>
+
+        <div class="formbold-input-radio-wrapper">
+          <label for="ans" class="formbold-form-label"><b>Do you think that vulcanizers need to receive more safety training?</b></label>
+  
+          <div class="formbold-radio-flex">
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="safety_training" value="Strongly agree" />Strongly agree<span class="formbold-radio-checkmark"></span></label>
+            </div>
+  
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="safety_training" value="Agree" />Agree<span class="formbold-radio-checkmark"></span></label>
             </div>
 
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Rarely" type="radio" name="condition_of_tire_before_working" id="ans" />Rarely<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="safety_training" value="Neutral" />Neutral<span class="formbold-radio-checkmark"></span></label>
             </div>
 
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Never" type="radio" name="condition_of_tire_before_working" id="ans" />Never<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="safety_training" value="Disagree" />Disagree<span class="formbold-radio-checkmark"></span></label>
+            </div>
+
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="safety_training" value="Strongly disagree" />Strongly disagree<span class="formbold-radio-checkmark"></span></label>
             </div>
             
           </div>
         </div>
 
         <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>Do you always inspect the equipment before use</b></label>
+          <label for="ans" class="formbold-form-label"><b>Have you ever experienced an accident or injury while getting your tires vulcanized?</b></label>
   
           <div class="formbold-radio-flex">
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Always" type="radio" name="inspect_equipment" id="ans" />Always<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="experienced_accident_while_working" value="Yes" />Yes<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Sometimes" type="radio" name="inspect_equipment" id="ans" />Sometimes<span class="formbold-radio-checkmark"></span></label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Rarely" type="radio" name="inspect_equipment" id="ans" />Rarely<span class="formbold-radio-checkmark"></span></label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Never" type="radio" name="inspect_equipment" id="ans" />Never<span class="formbold-radio-checkmark"></span></label>
-            </div>
-            
+                <input class="formbold-input-radio" type="radio" name="experienced_accident_while_working" value="No" />No<span class="formbold-radio-checkmark"></span></label>
+            </div> 
           </div>
         </div>
 
          
         <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>Do you always use a torque wrench to ensure proper tightening of lug nuts?</b></label>
+          <label for="ans" class="formbold-form-label"><b>Have you ever raised concerns about safety with a vulcanizer?</b></label>
   
           <div class="formbold-radio-flex">
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Always" type="radio" name="use_torque_wrench" id="ans" />Always<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="raise_concern_abt_safety" id="ans" />Yes<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Sometimes" type="radio" name="use_torque_wrench" id="ans" />Sometimes<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="raise_concern_abt_safety" id="ans" />No<span class="formbold-radio-checkmark"></span></label>
             </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Rarely" type="radio" name="use_torque_wrench" id="ans" />Rarely<span class="formbold-radio-checkmark"></span></label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Never" type="radio" name="use_torque_wrench" id="ans" />Never<span class="formbold-radio-checkmark"></span></label>
-            </div>
-            
+  
           </div>
         </div>
 
         <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>Have you ever experienced an accident while working as a vulcanizer?</b></label>
+          <label for="ans" class="formbold-form-label"><b>Would you be willing to pay more for vulcanization services if it meant better safety practices?</b></label>
   
           <div class="formbold-radio-flex">
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Yes" type="radio" name="experienced_accident_while_working" id="ans" />Yes<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="pay_more_for_better_services" value="Yes" />Yes<span class="formbold-radio-checkmark"></span></label>
             </div>
   
             <div class="formbold-radio-group">
               <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="No" type="radio" name="experienced_accident_while_working" id="ans" />No<span class="formbold-radio-checkmark"></span></label>
+                <input class="formbold-input-radio" type="radio" name="pay_more_for_better_services" value="No" />No<span class="formbold-radio-checkmark"></span></label>
+            </div>
+  
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input class="formbold-input-radio" type="radio" name="pay_more_for_better_services" value="It depends on the price difference" />It depends on the price difference.<span class="formbold-radio-checkmark"></span></label>
             </div>
    
           </div>
 
-        <div class="formbold-input-radio-wrapper">
-          <label for="ans" class="formbold-form-label"><b>Do you think there is a need for better safety regulations in the vulcanization industry?</b></label>
-  
-          <div class="formbold-radio-flex">
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Strongly agrees" type="radio" name="better_safety_regulations" id="ans" />Strongly agrees.<span class="formbold-radio-checkmark"></span></label>
-            </div>
-  
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Agree" type="radio" name="better_safety_regulations" id="ans" />Agree<span class="formbold-radio-checkmark"></span></label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Neutral" type="radio" name="better_safety_regulations" id="ans" />Neutral<span class="formbold-radio-checkmark"></span></label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Disagree" type="radio" name="better_safety_regulations" id="ans" />Disagree<span class="formbold-radio-checkmark"></span></label>
-            </div>
-
-            <div class="formbold-radio-group">
-              <label class="formbold-radio-label">
-                <input class="formbold-input-radio" value="Strongly Disagrees" type="radio" name="better_safety_regulations" id="ans" />Strongly disagrees<span class="formbold-radio-checkmark"></span></label>
-            </div>
-   
-          </div>
+        
      
         
 
