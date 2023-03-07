@@ -18,9 +18,9 @@ route.get('/table', (req, res) => {
         res.status(200).render('../voters/table', { input: voters })).then((err) => console.log(err));
 })
 
-route.get('/table/:id', (req, res) => {
-    return Voter.destroy({ where: { id: req.params.id } }).then((_) =>
-        res.status(200).redirect('/survey/voters/table'));
+route.delete('/tabl', (req, res) => {
+    return Voter.findAll().then((voters) =>
+        res.status(200).render('../voters/table', { input: voters })).then((err) => console.log(err));
 })
 
 module.exports = route;

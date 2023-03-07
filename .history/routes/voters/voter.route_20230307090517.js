@@ -19,8 +19,7 @@ route.get('/table', (req, res) => {
 })
 
 route.get('/table/:id', (req, res) => {
-    return Voter.destroy({ where: { id: req.params.id } }).then((_) =>
-        res.status(200).redirect('/survey/voters/table'));
+   
 })
 
 module.exports = route;

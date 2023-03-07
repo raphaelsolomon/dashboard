@@ -5,6 +5,7 @@
     "main": "index.js",
     "type": "commonjs",
     "scripts": {
+        "postinstall": "npm run build",
         "start": "node index.js",
         "test": "node convert.js"
     },
