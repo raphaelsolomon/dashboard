@@ -1,0 +1,149 @@
+<%- include('../includes/header.ejs') %>
+
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Sorting</div>
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h3 class="text-center title-2">PLASTIC DATA SORTING</h3>
+                                </div>
+                                <hr>
+                                <form action="/crush" method="post">
+
+                                    <div class="col-12 col-md-12">
+                                        <div class="col col-md-3">
+                                            <label for="date" class=" form-control-label">Date</label>
+                                        </div>
+
+                                        <input id="date" name="date" type="date" class="form-control"
+                                            aria-required="true" aria-invalid="false"> 
+                                    </div>
+
+                                    <div class="col-12 col-md-12">
+                                        <div class="col col-md-3">
+                                            <label for="machine" class=" form-control-label">Machine</label>
+                                        </div>
+
+                                        <input id="text" name="machine" type="text" class="form-control"
+                                            aria-required="true" aria-invalid="false"> <br>
+                                    </div>
+
+                                    <div class="col-12 col-md-12">
+                                        <div class="col col-md-3">
+                                            <label for="flakes" class=" form-control-label">Flakes</label>
+                                        </div>
+
+                                        <select name="flakes" id="select" class="form-control" required>
+                                            <option value="White Flakes">White Flakes</option>
+                                            <option value="Blue Flakes">Blue Flakes</option>
+                                            <option value="Yellow Caps">Yellow Caps</option>
+                                            <option value="Black Caps">Black Caps</option>
+                                            <option value="Blue Caps">Blue Caps</option>
+                                            <option value="Green Flakes">Green Flakes</option>
+
+                                            <option value="Orange Caps">Orange Caps</option>
+                                            <option value="Red Caps">Red Caps</option>
+                                            <option value="White Caps">White Caps</option>
+                                            <option value="Light Blue Caps">Light Blue Caps</option>
+                                        </select> <br>
+                                    </div>
+
+
+                                    <div class="col-12 col-md-12">
+                                        <div class="col col-md-3">
+                                            <label for="qty/kg" class=" form-control-label">QTY/KG</label>
+                                        </div>
+
+                                        <input id="text" name="qty" type="text" class="form-control"
+                                            aria-required="true" aria-invalid="false"> <br>
+                                    </div>
+
+                                    <div class="col-12 col-md-12">
+                                        <div class="col col-md-3">
+                                            <label for="operator" class=" form-control-label">Operator</label>
+                                        </div>
+
+                                        <input id="text" name="operator" type="text" class="form-control"
+                                            aria-required="true" aria-invalid="false"> <br>
+                                    </div>
+
+                                    <div>
+                                        <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                            <span id="payment-button-amount">Crush</span>
+                                            <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyright">
+                            <p>Copyright © 2022. All rights reserved. <a href="https://dechconsult.com">Dech Consult
+                                    Limited</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+     
+        #sc_other{
+            display: none;
+            margin-top: 2px;
+        }
+        #sw_other{
+            display: none;
+            margin-top: 2px;
+        }
+        #color_other{
+            display: none;
+            margin-top: 2px;
+        }
+       
+    </style>
+
+<script>
+    function sc_other_select(value) {
+        if (value === 4) {
+            document.getElementById("sc_other").style.display = 'block';
+        }else{
+            document.getElementById("sc_other").style.display = 'none';
+        }
+    }
+
+    function sw_other_select(value) {
+        if (value === 5) {
+            document.getElementById("sw_other").style.display = 'block';
+        }else{
+            document.getElementById("sw_other").style.display = 'none';
+        }
+    }
+    function color_other_select(value) {
+        if (value === 5) {
+            document.getElementById("color_other").style.display = 'block';
+        }else{
+            document.getElementById("color_other").style.display = 'none';
+        }
+    }
+   
+
+
+
+</script>
+    
+
+
+
+
+    <%- include('../includes/footer.ejs') %>

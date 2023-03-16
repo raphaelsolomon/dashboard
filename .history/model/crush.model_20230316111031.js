@@ -1,0 +1,23 @@
+const Sequelize = require('sequelize');
+const sequelize = require('../config/database.config');
+
+const Crushing = sequelize.define('sorts', {
+    date: {
+        type: Sequelize.DATEONLY,
+    },
+    machine: {
+        type: Sequelize.STRING,
+    },
+    flakes: {
+        type: Sequelize.STRING,
+        defaultValue: 'null'
+    },
+    qty: {
+        type: Sequelize.STRING,
+    },
+    operator: {
+        type: Sequelize.STRING,
+        defaultValue: 'null'
+    }
+});
+module.exports = Crushing;
