@@ -1,0 +1,312 @@
+[
+  {
+  "S/N": "1",
+  "Start Time": "15:10 PM",
+  "Concluded Time": "16:50 PM",
+  "collected": "10/02/2023",
+  "machine": "DR1",
+  "flakes": "Blue Caps",
+  "qty": "20.55",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "2",
+  "Start Time": "15:10 PM",
+  "Concluded Time": "16:50 PM",
+  "collected": "10/02/2023",
+  "machine": "DR1",
+  "flakes": "Blue Caps",
+  "qty": "22.2",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "3",
+  "Start Time": "15:10 PM",
+  "Concluded Time": "16:50 PM",
+  "collected": "10/02/2023",
+  "machine": "DR1",
+  "flakes": "Blue Caps",
+  "qty": "22.15",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "4",
+  "Start Time": "08:40:00 AM",
+  "Concluded Time": "11:20:00 AM",
+  "collected": "14/2/2023",
+  "machine": "DR1",
+  "flakes": "Blue Caps",
+  "qty": "25.25",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "5",
+  "Start Time": "08:40:00 AM",
+  "Concluded Time": "11:20:00 AM",
+  "collected": "14/2/2023",
+  "machine": "DR1",
+  "flakes": "Blue Caps",
+  "qty": "24.65",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "6",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "20/2/2023",
+  "machine": "DR1",
+  "flakes": "Blue Caps",
+  "qty": "22.25",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "7",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "24/2/2023",
+  "machine": "DR1",
+  "flakes": "Blue Caps",
+  "qty": "22.4",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "8",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "25/2/2023",
+  "machine": "DR1",
+  "flakes": "Blue Caps",
+  "qty": "29.35",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "9",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "26/2/2023",
+  "machine": "DR1",
+  "flakes": "Blue Caps",
+  "qty": "21.4",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "10",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "26/2/2023",
+  "machine": "DR1",
+  "flakes": "Blue Caps",
+  "qty": "26.3",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "11",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "27/2/2023",
+  "machine": "DR1",
+  "flakes": "Yellow Caps",
+  "qty": "20.55",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "12",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "27/2/2023",
+  "machine": "DR1",
+  "flakes": "Red Caps",
+  "qty": "21.75",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "13",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "28/2/2023",
+  "machine": "DR1",
+  "flakes": "Green Caps",
+  "qty": "22.45",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "14",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "28/2/2023",
+  "machine": "DR1",
+  "flakes": "Blue Caps",
+  "qty": "23.85",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "15",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "28/2/2023",
+  "machine": "DR1",
+  "flakes": "Blue Caps",
+  "qty": "19.3",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "16",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "28/2/2023",
+  "machine": "DR1",
+  "flakes": "Red Caps",
+  "qty": "29.8",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "17",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "06/03/2023",
+  "machine": "DR1",
+  "flakes": "Black Caps",
+  "qty": "27.35",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "18",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "06/03/2023",
+  "machine": "DR1",
+  "flakes": "Blue Caps",
+  "qty": "21.9",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "19",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "06/03/2023",
+  "machine": "DR1",
+  "flakes": "Blue Caps",
+  "qty": "25.25",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "20",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "06/03/2023",
+  "machine": "DR1",
+  "flakes": "Blue Caps",
+  "qty": "23.3",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "21",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "06/03/2023",
+  "machine": "DR1",
+  "flakes": "Blue Caps",
+  "qty": "21.85",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "22",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "07/03/2023",
+  "machine": "DR1",
+  "flakes": "Yellow Caps",
+  "qty": "22.05",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "23",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "07/03/2023",
+  "machine": "DR1",
+  "flakes": "Orange Caps",
+  "qty": "25.9",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "24",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "07/03/2023",
+  "machine": "DR1",
+  "flakes": "Red Caps",
+  "qty": "27.6",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "25",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "07/03/2023",
+  "machine": "DR1",
+  "flakes": "Black Caps",
+  "qty": "23.85",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "26",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "08/03/2023",
+  "machine": "DR1",
+  "flakes": "Orange Caps",
+  "qty": "27.15",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "27",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "08/03/2023",
+  "machine": "DR1",
+  "flakes": "White Caps",
+  "qty": "21.4",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "28",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "08/03/2023",
+  "machine": "DR1",
+  "flakes": "White Caps",
+  "qty": "21.05",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "29",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "08/03/2023",
+  "machine": "DR1",
+  "flakes": "Orange Caps",
+  "qty": "23.05",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "30",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "08/03/2023",
+  "machine": "DR1",
+  "flakes": "Light Blue Caps",
+  "qty": "22",
+  "operator": "Tunde"
+  },
+  {
+  "S/N": "31",
+  "Start Time": "",
+  "Concluded Time": "",
+  "collected": "08/03/2023",
+  "machine": "DR1",
+  "flakes": "Green Caps",
+  "qty": "22.65",
+  "operator": "Tunde"
+  }
+  ]

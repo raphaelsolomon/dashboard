@@ -1,5 +1,0 @@
-
-
-exports.getmostAdvertising = async (req) => {
-
-}

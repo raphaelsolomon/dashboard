@@ -1,0 +1,412 @@
+[
+  {
+    "S/N": "1",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "10/03/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "16.25",
+    "operator": "Tunde"
+  },
+  {
+    "S/N": "2",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "10/03/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "17.3",
+    "operator": "Tunde"
+  },
+  {
+    "S/N": "3",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "10/03/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "15.8",
+    "operator": "Tunde"
+  },
+  {
+    "S/N": "4",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "10/03/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "12.56",
+    "operator": "Tunde"
+  },
+  {
+    "S/N": "5",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "10/03/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "10.15",
+    "operator": "Tunde"
+  },
+  {
+    "S/N": "6",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "10/03/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "11.65",
+    "operator": "Tunde"
+  },
+  {
+    "S/N": "7",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "10/03/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "17.05",
+    "operator": "Tunde"
+  },
+  {
+    "S/N": "8",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "10/03/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "13.65",
+    "operator": "Tunde"
+  },
+  {
+    "S/N": "9",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "10/03/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "17.45",
+    "operator": "Tunde"
+  },
+  {
+    "S/N": "10",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "10/03/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "16.1",
+    "operator": "Tunde"
+  },
+  {
+    "S/N": "11",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "11/03/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "17",
+    "operator": "Tunde"
+  },
+  {
+    "S/N": "12",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "11/03/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "15.6",
+    "operator": "Tunde"
+  },
+  {
+    "S/N": "13",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "11/03/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "12.8",
+    "operator": "Tunde"
+  },
+  {
+    "S/N": "14",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "11/03/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "17.55",
+    "operator": "Tunde"
+  },
+  {
+    "S/N": "15",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "13/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "14.7",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "16",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "13/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "15",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "17",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "13/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "14.5",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "18",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "13/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "13.7",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "19",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "13/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "18.25",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "20",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "13/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "16.65",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "21",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "13/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "16.9",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "22",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "13/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "16.8",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "23",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "13/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "19.85",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "24",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "13/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "17.45",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "25",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "13/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "16.85",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "26",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "13/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "17.65",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "27",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "13/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "16.6",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "28",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "14/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "16.5",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "29",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "14/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "16.6",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "30",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "14/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "18.1",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "31",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "14/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "16.7",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "32",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "14/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "17.15",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "33",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "14/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "17.3",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "34",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "14/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "17.55",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "35",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "14/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "15.65",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "36",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "14/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "14.7",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "37",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "14/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "16.4",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "38",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "14/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "15.45",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "39",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "15/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "16.8",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "40",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "15/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "15.65",
+    "operator": "Tunde & Malik"
+  },
+  {
+    "S/N": "41",
+    "Start Time": "",
+    "Concluded Time": "",
+    "collected": "15/3/2023",
+    "machine": "DR1",
+    "flakes": "Blue",
+    "qty": "15.76",
+    "operator": "Tunde & Malik"
+  }
+]
