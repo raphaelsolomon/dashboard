@@ -233,22 +233,22 @@ exports.getCrushCapsWithBarChart = async () => {
 }
 
 
-// exports.getDynamicTesting = async () => {
-//     let flakes = [];
-//     let totals = [];
-//     const weight = await Crushing.findAll({
-//         where: {
-//             flakes: {
-//                 [Op.like]: '%Caps%'
-//             }
-//         },
-//         attributes: [[Sequelize.fn('DISTINCT', Sequelize.col('flakes')) ,'flakes'], [sequelize.fn('SUM', sequelize.col('qty')), 'total']],
-//         group: 'flakes',
-//         raw: true
-//     });
-//     weight.forEach((e) => {
-//         flakes.push(e.flakes);
-//         totals.push(e.total);
-//     })
-//     return { flakes: flakes.join(', '), totals: totals.join(', ') };
-// }
+exports.getDynamicTesting = async () => {
+    let flakes = [];
+    let totals = [];
+    const weight = await Crushing.findAll({
+        where: {
+            flakes: {
+                [Op.like]: '%Caps%'
+            }
+        },
+        attributes: [[Sequelize.fn('DISTINCT', Sequelize.col('flakes')) ,'flakes'], [sequelize.fn('SUM', sequelize.col('qty')), 'total']],
+        group: 'flakes',
+        raw: true
+    });
+    weight.forEach((e) => {
+        flakes.push(e.flakes);
+        totals.push(e.total);
+    })
+    return { flakes: flakes.join(', '), totals: totals.join(', ') };
+}

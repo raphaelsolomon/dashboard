@@ -10,7 +10,7 @@
 //   return week;
 // }
 
-const { getCrushFlakesWithBarChart, getCrushCapsWithBarChart, getDynamicTesting } = require("./chartQuery/plastic.query");
+const { getCrushFlakesWithBarChart, getCrushCapsWithBarChart } = require("./chartQuery/plastic.query");
 
 // const { getTotalCrushWeight } = require("./chartQuery/plastic.query");
 

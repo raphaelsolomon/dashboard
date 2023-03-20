@@ -577,10 +577,11 @@
             labels: "<%= flakesAnalysis.flakes %>".split(", "),
             datasets: [
               {
-                label: "Dataset",
+                label: "My First dataset",
                 data: "<%= flakesAnalysis.totals %>".split(", "),
+                borderColor: "rgba(0, 123, 255, 0.9)",
                 borderWidth: "0",
-                backgroundColor: ["#1de9b6","#ff8300", "#03a9f5", "#fa4251"]
+                backgroundColor: "rgba(0, 123, 255, 0.5)",
               },
             ],
           },
@@ -626,10 +627,11 @@
             labels: "<%= capAnalysis.flakes %>".split(", "),
             datasets: [
               {
-                label: "Dataset",
+                label: "dataset",
                 data: "<%= capAnalysis.totals %>".split(", "),
+                borderColor: "rgba(0, 123, 255, 0.9)",
                 borderWidth: "0",
-                backgroundColor: ["#1de9b6","#ff8300", "#03a9f5", "#fa4251"]
+                backgroundColor: "rgba(0, 123, 255, 0.5)",
               },
             ],
           },
