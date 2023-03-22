@@ -21,8 +21,8 @@ exports.plasticIndex = async (req, res, next) => {
   const totalBottle = await require('./../chartQuery/plastic.query').getTotalBottles(req);
   const totalZone = await require('./../chartQuery/plastic.query').getTotalZone(req);
   const totalProduct = await require('./../chartQuery/plastic.query').getTotalProducts(req);
-  const totalCrushWeight = await require('./../chartQuery/plastic.query').getTotalCrushWeight(req);
-  const totalCrushFlakeshWeight = await require('./../chartQuery/plastic.query').getTotalCrushFlakesWeight(req);
+  const totalCrushWeight = await require('./../chartQuery/plastic.query').getTotalCrushWeight();
+  const totalCrushFlakeshWeight = await require('./../chartQuery/plastic.query').getTotalCrushFlakesWeight();
   const totalCrushCapsWeight = await require('./../chartQuery/plastic.query').getTotalCrushCapsWeight(req);
   const totalSortsWeight = await require('./../chartQuery/plastic.query').getTotalSortsWeight(req);
   const flakesAnalysis = await require('./../chartQuery/plastic.query').getCrushFlakesWithBarChart(req);

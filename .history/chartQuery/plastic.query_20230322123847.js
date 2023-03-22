@@ -142,16 +142,16 @@ exports.initialContentByVolumn = async (req) => {
     return { keys: Object.keys(map).join(', '), values: Object.values(map).join(', ') };
 }
 
-exports.getTotalCrushWeight = async (req) => {
+exports.getTotalCrushWeight = async () => {
     var total = 0.0;
-    const weight = await Crushing.findAll({ where: { userId: req.user.id } });
+    const weight = await Crushing.findAll({where: {}});
     weight.forEach((e) => {
         total = total + Number.parseInt(`${e.qty}`);
     })
     return total;
 }
 
-exports.getTotalCrushFlakesWeight = async (req) => {
+exports.getTotalCrushFlakesWeight = async () => {
     var total = 0.0;
     const weight = await Crushing.findAll({
         where: {
@@ -167,7 +167,7 @@ exports.getTotalCrushFlakesWeight = async (req) => {
     return total;
 }
 
-exports.getTotalCrushCapsWeight = async (req) => {
+exports.getTotalCrushCapsWeight = async () => {
     var total = 0.0;
     const weight = await Crushing.findAll({
         userId: req.user.id,
@@ -183,14 +183,10 @@ exports.getTotalCrushCapsWeight = async (req) => {
     return total;
 }
 
-exports.getTotalSortsWeight = async (req) => {
+exports.getTotalSortsWeight = async () => {
     var total = 0.0;
     var other_cap_label = 0.0;
-    const weight = await Sorting.findAll({
-        where: {
-            userId: req.user.id,
-        }
-    });
+    const weight = await Sorting.findAll();
     weight.forEach((e) => {
         total = total + Number.parseInt(`${e.plastic_weight}`);
         other_cap_label = other_cap_label + Number.parseInt(`${e.other_plastic_weight}`);
@@ -198,7 +194,7 @@ exports.getTotalSortsWeight = async (req) => {
     return total + other_cap_label;
 }
 
-exports.getCrushFlakesWithBarChart = async (req) => {
+exports.getCrushFlakesWithBarChart = async () => {
     let flakes = [];
     let totals = [];
     const weight = await Crushing.findAll({
@@ -208,7 +204,7 @@ exports.getCrushFlakesWithBarChart = async (req) => {
                 [Op.like]: '%Flakes%'
             }
         },
-        attributes: [[Sequelize.fn('DISTINCT', Sequelize.col('flakes')), 'flakes'], [sequelize.fn('SUM', sequelize.col('qty')), 'total']],
+        attributes: [[Sequelize.fn('DISTINCT', Sequelize.col('flakes')) ,'flakes'], [sequelize.fn('SUM', sequelize.col('qty')), 'total']],
         group: 'flakes',
         raw: true
     });
@@ -229,7 +225,7 @@ exports.getCrushCapsWithBarChart = async (req) => {
                 [Op.like]: '%Caps%'
             }
         },
-        attributes: [[Sequelize.fn('DISTINCT', Sequelize.col('flakes')), 'flakes'], [sequelize.fn('SUM', sequelize.col('qty')), 'total']],
+        attributes: [[Sequelize.fn('DISTINCT', Sequelize.col('flakes')) ,'flakes'], [sequelize.fn('SUM', sequelize.col('qty')), 'total']],
         group: 'flakes',
         raw: true
     });

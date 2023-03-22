@@ -183,7 +183,7 @@ exports.getTotalCrushCapsWeight = async (req) => {
     return total;
 }
 
-exports.getTotalSortsWeight = async (req) => {
+exports.getTotalSortsWeight = async () => {
     var total = 0.0;
     var other_cap_label = 0.0;
     const weight = await Sorting.findAll({

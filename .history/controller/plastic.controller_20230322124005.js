@@ -24,7 +24,7 @@ exports.plasticIndex = async (req, res, next) => {
   const totalCrushWeight = await require('./../chartQuery/plastic.query').getTotalCrushWeight(req);
   const totalCrushFlakeshWeight = await require('./../chartQuery/plastic.query').getTotalCrushFlakesWeight(req);
   const totalCrushCapsWeight = await require('./../chartQuery/plastic.query').getTotalCrushCapsWeight(req);
-  const totalSortsWeight = await require('./../chartQuery/plastic.query').getTotalSortsWeight(req);
+  const totalSortsWeight = await require('./../chartQuery/plastic.query').getTotalSortsWeight();
   const flakesAnalysis = await require('./../chartQuery/plastic.query').getCrushFlakesWithBarChart(req);
   const capAnalysis = await require('./../chartQuery/plastic.query').getCrushCapsWithBarChart(req);
   //=================================PHASE TWO==============================================

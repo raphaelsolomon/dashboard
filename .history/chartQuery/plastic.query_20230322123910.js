@@ -151,7 +151,7 @@ exports.getTotalCrushWeight = async (req) => {
     return total;
 }
 
-exports.getTotalCrushFlakesWeight = async (req) => {
+exports.getTotalCrushFlakesWeight = async () => {
     var total = 0.0;
     const weight = await Crushing.findAll({
         where: {
@@ -167,7 +167,7 @@ exports.getTotalCrushFlakesWeight = async (req) => {
     return total;
 }
 
-exports.getTotalCrushCapsWeight = async (req) => {
+exports.getTotalCrushCapsWeight = async () => {
     var total = 0.0;
     const weight = await Crushing.findAll({
         userId: req.user.id,
@@ -183,14 +183,10 @@ exports.getTotalCrushCapsWeight = async (req) => {
     return total;
 }
 
-exports.getTotalSortsWeight = async (req) => {
+exports.getTotalSortsWeight = async () => {
     var total = 0.0;
     var other_cap_label = 0.0;
-    const weight = await Sorting.findAll({
-        where: {
-            userId: req.user.id,
-        }
-    });
+    const weight = await Sorting.findAll();
     weight.forEach((e) => {
         total = total + Number.parseInt(`${e.plastic_weight}`);
         other_cap_label = other_cap_label + Number.parseInt(`${e.other_plastic_weight}`);
@@ -198,7 +194,7 @@ exports.getTotalSortsWeight = async (req) => {
     return total + other_cap_label;
 }
 
-exports.getCrushFlakesWithBarChart = async (req) => {
+exports.getCrushFlakesWithBarChart = async () => {
     let flakes = [];
     let totals = [];
     const weight = await Crushing.findAll({
