@@ -242,18 +242,19 @@ route.post("/crush", isAuthenticated, async (req, res, next) => {
   return res.status(200).redirect("/crush-table");
 });
 
-route.get("/crush/details/:id", isAuthenticated, async (req, res, next) => {
-  const notification = await req.user.getNotifications({ where: { isseen: false } });
-  const data = await Crushing.findOne({ where: { id: req.params.id, userId: req.user.id } });
-  return res.status(200).render("../plastics/edit_crush", { user: req.user, notification: notification, data: data, title: 'Edit Crush', isUsed: true, });
-});
-
-route.post("/crush/details/:id", isAuthenticated, async (req, res, next) => {
-  const notification = await req.user.getNotifications({ where: { isseen: false } });
-  return Crushing.findOne({ where: { id: req.params.id, userId: req.user.id}}).then(async (result) => {
-    const data = await result.update(req.body);
-    return res.status(200).render("../plastics/crush_table", { user: req.user, notification: notification, data: data, title: 'Edit Crush', isUsed: true, status: true });
-  })
+route.post("/details/:id", isAuthenticated, async (req, res, next) => {
+  if (req.user.trade === "Logistics") {
+    return require("../controller/logistic.controller").update(req, res);
+  }
+  if (req.user.trade === "Plastics") {
+    return require("../controller/plastic.controller").update(req, res);
+  }
+  if (req.user.trade === "Wemabod") {
+    return require("../controller/wemabod.controller").update(req, res);
+  }
+  if (req.user.trade === "Commodity") {
+    return require("../controller/commodity.controller").update(req, res);
+  }
 });
 
 route.post("/sort", isAuthenticated, async (req, res, next) => {

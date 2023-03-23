@@ -244,16 +244,8 @@ route.post("/crush", isAuthenticated, async (req, res, next) => {
 
 route.get("/crush/details/:id", isAuthenticated, async (req, res, next) => {
   const notification = await req.user.getNotifications({ where: { isseen: false } });
-  const data = await Crushing.findOne({ where: { id: req.params.id, userId: req.user.id } });
-  return res.status(200).render("../plastics/edit_crush", { user: req.user, notification: notification, data: data, title: 'Edit Crush', isUsed: true, });
-});
-
-route.post("/crush/details/:id", isAuthenticated, async (req, res, next) => {
-  const notification = await req.user.getNotifications({ where: { isseen: false } });
-  return Crushing.findOne({ where: { id: req.params.id, userId: req.user.id}}).then(async (result) => {
-    const data = await result.update(req.body);
-    return res.status(200).render("../plastics/crush_table", { user: req.user, notification: notification, data: data, title: 'Edit Crush', isUsed: true, status: true });
-  })
+  const data = await Sorting.findOne({ where: { id: req.params.id, userId:  } });
+  return res.status(200).render("../plastics/edit_crush", { user: req.user, notification: notification, data: data, title: 'Edit Sort', isUsed: true, });
 });
 
 route.post("/sort", isAuthenticated, async (req, res, next) => {

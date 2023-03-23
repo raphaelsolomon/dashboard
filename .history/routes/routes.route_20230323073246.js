@@ -13,7 +13,6 @@ const Logistic = require("../model/logistics.model");
 const Plastic = require("../model/plastic.model");
 const Wemabod = require("../model/wembod.model");
 const Sorting = require("../model/sorting.model");
-const Crushing = require("../model/crush.model");
 
 route.get('/', async (req, res, next) => {
   return res.status(200).render('../started/index', { isUsed: true, });
@@ -242,20 +241,6 @@ route.post("/crush", isAuthenticated, async (req, res, next) => {
   return res.status(200).redirect("/crush-table");
 });
 
-route.get("/crush/details/:id", isAuthenticated, async (req, res, next) => {
-  const notification = await req.user.getNotifications({ where: { isseen: false } });
-  const data = await Crushing.findOne({ where: { id: req.params.id, userId: req.user.id } });
-  return res.status(200).render("../plastics/edit_crush", { user: req.user, notification: notification, data: data, title: 'Edit Crush', isUsed: true, });
-});
-
-route.post("/crush/details/:id", isAuthenticated, async (req, res, next) => {
-  const notification = await req.user.getNotifications({ where: { isseen: false } });
-  return Crushing.findOne({ where: { id: req.params.id, userId: req.user.id}}).then(async (result) => {
-    const data = await result.update(req.body);
-    return res.status(200).render("../plastics/crush_table", { user: req.user, notification: notification, data: data, title: 'Edit Crush', isUsed: true, status: true });
-  })
-});
-
 route.post("/sort", isAuthenticated, async (req, res, next) => {
   if (req.user.trade === "Plastics") {
     req.user.createSort(req.body);
@@ -291,11 +276,7 @@ route.post('/sort-update', isAuthenticated, (req, res) => {
   return require('../controller/plastic.controller').updateSort(req, res);
 })
 
-route.get("/crush/delete/:id", isAuthenticated, async (req, res, next) => {
-  return Crushing.destroy({ where: { id: req.params.id, userId: req.user.id } }).then((_) => {
-    return res.status(200).redirect('/crush-table');
-  })
-});
+route.get("/delete/:id", isAuthenticated, async (req, res, next) => {});
 
 route.get("/delete/:id", isAuthenticated, async (req, res, next) => {
   if (req.user.trade === "Logistics") {

@@ -250,6 +250,7 @@ route.get("/crush/details/:id", isAuthenticated, async (req, res, next) => {
 
 route.post("/crush/details/:id", isAuthenticated, async (req, res, next) => {
   const notification = await req.user.getNotifications({ where: { isseen: false } });
+  console.log(req.body);
   return Crushing.findOne({ where: { id: req.params.id, userId: req.user.id}}).then(async (result) => {
     const data = await result.update(req.body);
     return res.status(200).render("../plastics/crush_table", { user: req.user, notification: notification, data: data, title: 'Edit Crush', isUsed: true, status: true });
