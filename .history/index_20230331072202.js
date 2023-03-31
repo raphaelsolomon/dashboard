@@ -107,7 +107,7 @@ app.use('/survey/sweeper', require('./routes/sweeper/sweeper.route'));
 app.use('/survey/recycling', require('./routes/recycling/recycling.route'));
 app.use('/survey/vulcanizer', require('./routes/vulcanizer/vulcanizer.route'));
 app.use('/survey/voters', require('./routes/voters/voter.route'));
-app.use('/survey/old', require('./routes/old/old.route'));
+app.use('/survey/voters', require('./routes/voters/voter.route'));
 app.use((req, res, next) => {
     return res.status(404).render('../auths/404');
 })

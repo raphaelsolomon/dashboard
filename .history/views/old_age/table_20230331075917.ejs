@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <title>DATASET FOR RECYCLING</title>
+
+</head>
+
+<body class="bg-light">
+
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+
+                <table class="table table-hover mt-5 table-bordered">
+                    <thead class="thead-dark text-center">
+                        <tr>
+                            <th style="font-size: 10px;" scope="col">ID</th>
+                            <th style="font-size: 10px;" scope="col">Date</th>
+                            <th style="font-size: 10px;" scope="col">Address</th>
+                            <th style="font-size: 10px;" scope="col">Age Group</th>
+                            <th style="font-size: 10px;" scope="col">Education</th>
+                            <th style="font-size: 10px;" scope="col">Occupation</th>
+                            <th style="font-size: 10px;" scope="col">Gender</th>
+                            <th style="font-size: 10px;" scope="col">Are you a registered voter in Nigeria?</th>
+                            <th style="font-size: 10px;" scope="col">Did you vote for the just concluded presidential election in Nigeria?</th>
+                            <th style="font-size: 10px;" scope="col">Which political party do you support in Nigeria?</th>
+                            <th style="font-size: 10px;" scope="col">What is the most important issue for you in this election?</th>
+                            <th style="font-size: 10px;" scope="col">How would you rate the current state of democracy in Nigeria?</th>
+                            <th style="font-size: 10px;" scope="col">Were you ever offered money or other incentives in exchange for your vote in the just concluded election?</th>
+                            <th style="font-size: 10px;" scope="col">Do you believe that the election process in Nigeria is free and fair?</th>
+                            <th style="font-size: 10px;" scope="col">Did you witness any form of electoral malpractice in Nigeria?</th>
+                            <th style="font-size: 10px;" scope="col">What measures do you think should be put in place to ensure a free and fair election in Nigeria?</th>
+                            <th style="font-size: 10px;" scope="col">How confident are you that your vote counts in the just concluded election in Nigeria?</th>
+                            <th style="font-size: 11px;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0; i <=input.length - 1; i++ ) { %>
+                            <tr>
+                                <td style="font-size: 10px;" scope="row"><%=i + 1%></td>
+                                <td style="font-size: 10px;" scope="row"><%=input[i].createdAt%></td>
+                               
+                                <td style="font-size: 10px;"><%=input[i].address%></td>
+                                <td style="font-size: 10px;"><%=input[i].age_group%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].physical_activity%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].activity_types%></td>
+                                <td style="font-size: 10px;"><%=input[i].balance_diet%></td>
+                                <td style="font-size: 10px;"><%=input[i].social_activities%></td>
+                                <td style="font-size: 10px;"><%=input[i].community_involvement%></td>
+                                <td style="font-size: 10px;"><%=input[i].cognitive_activity%></td>
+                                <td style="font-size: 10px;"><%=input[i].stress_reducing_activity%></td>
+                                <td style="font-size: 10px;"><%=input[i].hours_per_night%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].change_in_lifestyle%></td>
+                                <td style="font-size: 10px;"><%=input[i].factor_considered%></td>
+                                <td style="font-size: 10px;"><%=input[i].suggestions%></td>
+
+                                <td>
+                                    <div class="table-data-feature ">
+                                        <!-- <a href='/salon/<%= input[i].id %>'><button class="item " style="margin-right: 10px;"
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Edit ">
+                                            <i class="zmdi zmdi-edit "></i>
+                                        </button></a> -->
+                                    <a href='/survey/voters/table/<%= input[i].id %>'><button class="item "
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Delete ">
+                                            <i class="zmdi zmdi-delete "></i>
+                                        </button></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
