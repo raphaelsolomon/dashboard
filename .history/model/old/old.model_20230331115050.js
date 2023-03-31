@@ -12,8 +12,8 @@ const Older = sequelize.define('olders', {
         type: Sequelize.TEXT,
     },
     gender: {
-        type: Sequelize.STRING
-    },
+        
+    }
     age_group: {
         type: Sequelize.STRING,
     },
