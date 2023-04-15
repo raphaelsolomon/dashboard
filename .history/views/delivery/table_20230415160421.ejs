@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <title>DATASET FOR RECYCLING</title>
+
+</head>
+
+<body class="bg-light">
+
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+
+                <table class="table table-hover mt-5 table-bordered">
+                    <thead class="thead-dark text-center">
+                        <tr>
+                            <th style="font-size: 10px;" scope="col">ID</th>
+                            <th style="font-size: 10px;" scope="col">Date</th>
+                            <th style="font-size: 10px;" scope="col">Gender</th>
+                            <th style="font-size: 10px;" scope="col">Address</th>
+                            <th style="font-size: 10px;" scope="col">Age Group</th>
+                            <th style="font-size: 10px;" scope="col">What is your Employment status</th>
+                            <th style="font-size: 10px;" scope="col">What is your primary reason for using the delivery service?</th>
+                            <th style="font-size: 10px;" scope="col">How often do you use the delivery service?</th>
+                            <th style="font-size: 10px;" scope="col">How satisfied are you with the delivery service provider's compliance with regulations regarding safety and transportation?</th>
+                            <th style="font-size: 10px;" scope="col">How often does your delivery arrive within the estimated delivery window provided by the service provider?</th>
+                            <th style="font-size: 10px;" scope="col">How satisfied are you with the accuracy of your deliveries, such as the correct items and quantities being delivered?</th>
+                            <th style="font-size: 10px;" scope="col">How often have you experience delivery delays or cancellations with the service provider?</th>
+                            <th style="font-size: 10px;" scope="col">How likely are you to continue using the delivery service provider in the future?</th>
+                            <th style="font-size: 10px;" scope="col">Have you experienced any difficulties with the delivery service's website or mobile app?</th>
+                            <th style="font-size: 10px;" scope="col">How often do you receive updates or notifications about the status of your delivery?</th>
+                            <th style="font-size: 10px;" scope="col">How easy was it to place an order with the delivery service?</th>
+
+                            <th style="font-size: 10px;" scope="col">How satisfied are you with the condition of the goods upon delivery?</th>
+                            <th style="font-size: 10px;" scope="col">How often have you received damaged or broken items due to delivery?</th>
+                            <th style="font-size: 10px;" scope="col">How often have you received incorrect orders?</th>
+                            <th style="font-size: 10px;" scope="col">How satisfied are you with the packaging of the items delivered?</th>
+
+                            <th style="font-size: 10px;" scope="col">How easy was it to track the status of your delivery?</th>
+                            <th style="font-size: 10px;" scope="col">How would you rate the affordability of the delivery service?</th>
+                            <th style="font-size: 10px;" scope="col">How often do you compare the prices of the delivery service with other competitors?</th>
+                            <th style="font-size: 10px;" scope="col">How likely are you to recommend the delivery service to a friend or colleague?</th>
+
+                            <th style="font-size: 10px;" scope="col">How satisfied are you with the delivery service's response to your concerns or complaints?</th>
+                            <th style="font-size: 10px;" scope="col">Have you ever encountered a situation where the current delivery options did not meet your needs?</th>
+                            <th style="font-size: 10px;" scope="col">If yes, what delivery option was missing that would have better met your needs?</th>
+                            <th style="font-size: 10px;" scope="col">How important is environmental sustainability in your choice of delivery service?</th>
+                            
+                            <th style="font-size: 10px;" scope="col">Would you be willing to pay extra for environmentally sustainable delivery options?</th>
+                            <th style="font-size: 10px;" scope="col">How would you rate the value for money of the delivery service?</th>
+                            <th style="font-size: 10px;" scope="col">Did the delivery service meet your expectations?</th>
+                            <th style="font-size: 10px;" scope="col">What factors influenced your decision to use this delivery service over others?</th>
+
+                            <th style="font-size: 10px;" scope="col">How would you describe the delivery service's brand in terms of trustworthiness?</th>
+                            <th style="font-size: 10px;" scope="col">What factors influenced your decision to use this delivery service over others?</th>
+                            <th style="font-size: 11px;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0; i <=input.length - 1; i++ ) { %>
+                            <tr>
+                                <td style="font-size: 10px;" scope="row"><%=i + 1%></td>
+                                <td style="font-size: 10px;" scope="row"><%=input[i].createdAt%></td>
+                                <td style="font-size: 10px;"><%=input[i].gender%></td>
+                                <td style="font-size: 10px;"><%=input[i].address%></td>
+                                <td style="font-size: 10px;"><%=input[i].age_group%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].primary_reason%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].how_often%></td>
+                                <td style="font-size: 10px;"><%=input[i].satisfaction%></td>
+                                <td style="font-size: 10px;"><%=input[i].delivery_arrival%></td>
+                                <td style="font-size: 10px;"><%=input[i].accuracy_of_delivery%></td>
+                                <td style="font-size: 10px;"><%=input[i].experience_delay%></td>
+                                <td style="font-size: 10px;"><%=input[i].continue_using_provider%></td>
+                                <td style="font-size: 10px;"><%=input[i].difficulties_in_application%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].notification_updates%></td>
+                                <td style="font-size: 10px;"><%=input[i].application_friendly%></td>
+                                <td style="font-size: 10px;"><%=input[i].how_satisfied%></td>
+
+
+                                <td style="font-size: 10px;"><%=input[i].damage_items%></td>
+                                <td style="font-size: 10px;"><%=input[i].incorrect_order%></td>
+                                <td style="font-size: 10px;"><%=input[i].satisfaction_of_item_deliveried%></td>
+                                <td style="font-size: 10px;"><%=input[i].tracking_status%></td>
+                                <td style="font-size: 10px;"><%=input[i].affordability_of_delivery%></td>
+                                <td style="font-size: 10px;"><%=input[i].compare_delivery_price%></td>
+                                <td style="font-size: 10px;"><%=input[i].recommend_the_delivery%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].service_response%></td>
+                                <td style="font-size: 10px;"><%=input[i].encounter_situation%></td>
+                                <td style="font-size: 10px;"><%=input[i].encounter_situation_if_yes%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].environmental_sustainability%></td>
+                                <td style="font-size: 10px;"><%=input[i].extra_environmental_sustainability%></td>
+                                <td style="font-size: 10px;"><%=input[i].value_for_money%></td>
+                                <td style="font-size: 10px;"><%=input[i].expectations_meet%></td>
+                                <td style="font-size: 10px;"><%=input[i].factors_influenced%></td>
+                                <td style="font-size: 10px;"><%=input[i].describe_delivery_services%></td>
+                                <td style="font-size: 10px;"><%=input[i].terms_of_innovations%></td>
+
+                                <td>
+                                    <div class="table-data-feature ">
+                                        <!-- <a href='/salon/<%= input[i].id %>'><button class="item " style="margin-right: 10px;"
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Edit ">
+                                            <i class="zmdi zmdi-edit "></i>
+                                        </button></a> -->
+                                    <a href='/survey/delivery/table/<%= input[i].id %>'><button class="item "
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Delete ">
+                                            <i class="zmdi zmdi-delete "></i>
+                                        </button></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

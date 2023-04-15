@@ -133,7 +133,7 @@ Crushing.belongsTo(User, { constraints: true, onDelete: "CASCADE" })
 
 app.listen(PORT, () => {
     console.log('listening on port ' + PORT);
-    sequelize.sync({ alter: true }).catch((err) => console.log(err))
+
 });
 
 

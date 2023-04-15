@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <title>DATASET FOR RECYCLING</title>
+
+</head>
+
+<body class="bg-light">
+
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+
+                <table class="table table-hover mt-5 table-bordered">
+                    <thead class="thead-dark text-center">
+                        <tr>
+                            <th style="font-size: 10px;" scope="col">ID</th>
+                            <th style="font-size: 10px;" scope="col">Date</th>
+                            <th style="font-size: 10px;" scope="col">Gender</th>
+                            <th style="font-size: 10px;" scope="col">Address</th>
+                            <th style="font-size: 10px;" scope="col">Age Group</th>
+                            <th style="font-size: 10px;" scope="col">How often do you engage in physical activity</th>
+                            <th style="font-size: 10px;" scope="col">What types of physical activities do you engage in regularly?</th>
+                            <th style="font-size: 10px;" scope="col">Do you eat a balanced and healthy diet?</th>
+                            <th style="font-size: 10px;" scope="col">How often do you engage in social activities, such as spending time with friends and family, attending community events, or participating in clubs or organizations?</th>
+                            <th style="font-size: 10px;" scope="col">Do you engage in volunteer work or other forms of community involvement?</th>
+                            <th style="font-size: 10px;" scope="col">How often do you engage in cognitive activities such as reading, doing puzzles, or learning new skills?</th>
+                            <th style="font-size: 10px;" scope="col">Do you engage in stress-reducing activities, such as meditation, yoga, or relaxation techniques?</th>
+                            <th style="font-size: 10px;" scope="col">How many hours of sleep do you typically get per night?</th>
+                            <th style="font-size: 10px;" scope="col">Have you made any changes to your lifestyle or habits to age well?</th>
+                            <th style="font-size: 10px;" scope="col">What factors do you consider most important for aging well?</th>
+                            <th style="font-size: 10px;" scope="col">Do you have any suggestions or advice for others who want to age well?</th>
+                            <th style="font-size: 11px;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i = 0; i <=input.length - 1; i++ ) { %>
+                            <tr>
+                                <td style="font-size: 10px;" scope="row"><%=i + 1%></td>
+                                <td style="font-size: 10px;" scope="row"><%=input[i].createdAt%></td>
+                                <td style="font-size: 10px;"><%=input[i].gender%></td>
+                                <td style="font-size: 10px;"><%=input[i].address%></td>
+                                <td style="font-size: 10px;"><%=input[i].age_group%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].primary_reason%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].how_often%></td>
+                                <td style="font-size: 10px;"><%=input[i].satisfaction%></td>
+                                <td style="font-size: 10px;"><%=input[i].delivery_arrival%></td>
+                                <td style="font-size: 10px;"><%=input[i].accuracy_of_delivery%></td>
+                                <td style="font-size: 10px;"><%=input[i].experience_delay%></td>
+                                <td style="font-size: 10px;"><%=input[i].continue_using_provider%></td>
+                                <td style="font-size: 10px;"><%=input[i].difficulties_in_application%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].notification_updates%></td>
+                                <td style="font-size: 10px;"><%=input[i].application_friendly%></td>
+                                <td style="font-size: 10px;"><%=input[i].how_satisfied%></td>
+
+
+                                <td style="font-size: 10px;"><%=input[i].damage_items%></td>
+                                <td style="font-size: 10px;"><%=input[i].satisfaction%></td>
+                                <td style="font-size: 10px;"><%=input[i].delivery_arrival%></td>
+                                <td style="font-size: 10px;"><%=input[i].accuracy_of_delivery%></td>
+                                <td style="font-size: 10px;"><%=input[i].experience_delay%></td>
+                                <td style="font-size: 10px;"><%=input[i].continue_using_provider%></td>
+                                <td style="font-size: 10px;"><%=input[i].difficulties_in_application%></td>
+
+                                <td style="font-size: 10px;"><%=input[i].notification_updates%></td>
+                                <td style="font-size: 10px;"><%=input[i].application_friendly%></td>
+                                <td style="font-size: 10px;"><%=input[i].how_satisfied%></td>
+
+                                <td>
+                                    <div class="table-data-feature ">
+                                        <!-- <a href='/salon/<%= input[i].id %>'><button class="item " style="margin-right: 10px;"
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Edit ">
+                                            <i class="zmdi zmdi-edit "></i>
+                                        </button></a> -->
+                                    <a href='/survey/old/table/<%= input[i].id %>'><button class="item "
+                                            data-toggle="tooltip " data-placement="top "
+                                            title="Delete ">
+                                            <i class="zmdi zmdi-delete "></i>
+                                        </button></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
