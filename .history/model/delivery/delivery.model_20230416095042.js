@@ -105,7 +105,7 @@ const Delivery = sequelize.define('deliveries', {
         type: Sequelize.STRING,
     },
     team: {
-        type: Sequelize.STRING,
+        type
     }
 
 });

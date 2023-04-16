@@ -104,9 +104,7 @@ const Delivery = sequelize.define('deliveries', {
     terms_of_innovations: {
         type: Sequelize.STRING,
     },
-    team: {
-        type: Sequelize.STRING,
-    }
+    tea
 
 });
 module.exports = Delivery;
