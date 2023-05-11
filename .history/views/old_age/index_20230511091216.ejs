@@ -96,21 +96,21 @@
           <% }) %>
             <%}%>
 
-              <form action="/survey/voters/" method="POST">
+              <form action="/survey/old/" method="POST">
                 <div class="formbold-form-title">
-                  <h2 class="">Survey Questions On How Older People Make Effort To Age Well</h2>
+                  <h2 class="">Survey Questions On How Older People Make Effort To Age Well</h2><br>
                   1. The types of activities and behaviors that older people engage in to maintain their physical,
-                  mental, and emotional well-being.
+                  mental, and emotional well-being.<br><br>
 
                   2. The challenges that older people face in trying to age well, such as access to healthcare or social
-                  support.
+                  support.<br><br>
 
-                  3. The attitudes and beliefs that older people hold about aging and what it means to age well.
+                  3. The attitudes and beliefs that older people hold about aging and what it means to age well.<br><br>
 
                   4. The factors that motivate older people to make efforts to age well, such as a desire to remain
-                  independent or to stay active and engaged with the world around them.
+                  independent or to stay active and engaged with the world around them.<br><br>
 
-                  5. The role that family, friends, and community play in supporting older people's efforts to age well.
+                  5. The role that family, friends, and community play in supporting older people's efforts to age well.<br><br>
 
                   </p>
                 </div>
@@ -122,14 +122,25 @@
 
                 <div class="formbold-mb-3">
                   <div class="formbold-input-group">
+                    <label for="gender" class="formbold-form-label">Gender</label>
+
+                    <select class="formbold-form-select" name="gender" id="gender">
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                    </select>
+                  </div>
+                </div> <br>
+
+                <div class="formbold-mb-3">
+                  <div class="formbold-input-group">
                     <label class="formbold-form-label">How old are you?</label>
 
                     <select class="formbold-form-select" name="age_group" id="age_group">
-                      <option value="Less than 30">Less than 30</option>
-                      <option value="50-59 years old">50-59 years old</option>
-                      <option value="60-69 years old">60-69 years old</option>
-                      <option value="70-79 years old">70 – 79 years old</option>
-                      <option value="80 years old or older">80 years old or older</option>
+                      <option value="Under 18">Under 18</option>
+                      <option value="18-29 years old">18-29 years old</option>
+                      <option value="30-49 years old">30-49 years old</option
+                      <option value="50-59 years old">50 – 59 years old</option>
+                      <option value="60 years old or older">60 years old or older</option>
                     </select>
                   </div>
                 </div>
@@ -162,7 +173,6 @@
                       <option value="Yoga or Pilates">Yoga or Pilates</option>
                       <option value="Strength training or weight lifting">Strength training or weight lifting</option>
                       <option value="Dancing">Dancing</option>
-                      <option value="Other (please specify)">Other (please specify)</option>
                       <option value="None">None</option>
                     </select>
                   </div>
@@ -182,12 +192,100 @@
 
                 <div class="formbold-mb-3">
                   <div class="formbold-input-group">
-                    <label for="balance_diet" class="formbold-form-label">How often do you engage in social activities, such as spending time with friends and family, attending community events, or participating in clubs or organizations?</label>
+                    <label for="social_activities" class="formbold-form-label">How often do you engage in social activities, such as spending time with friends and family, attending community events, or participating in clubs or organizations?</label>
 
-                    <select class="formbold-form-select" name="balance_diet" id="balance_diet">
+                    <select class="formbold-form-select" name="social_activities" id="social_activities">
                       <option value="Less than once a week">Less than once a week</option>
                       <option value="1-2 times a week">1-2 times a week</option>
-                      <option value="No, my diet is not very healthy">No, my diet is not very healthy</option>
+                      <option value="3-4 times a week">3-4 times a week</option>
+                      <option value="5 or more times a week">5 or more times a week</option>
+                    </select>
+                  </div>
+                </div> <br>
+
+                <div class="formbold-mb-3">
+                  <div class="formbold-input-group">
+                    <label for="community_involvement" class="formbold-form-label">Do you engage in volunteer work or other forms of community involvement?</label>
+
+                    <select class="formbold-form-select" name="community_involvement" id="community_involvement">
+                      <option value="Yes, I regularly volunteer or participate in community activities">Yes, I regularly volunteer or participate in community activities</option>
+                      <option value="Occasionally, I volunteer or participate in community activities">Occasionally, I volunteer or participate in community activities</option>
+                      <option value="No, I do not volunteer or participate in community activities">No, I do not volunteer or participate in community activities</option>
+                    </select>
+                  </div>
+                </div> <br>
+
+                <div class="formbold-mb-3">
+                  <div class="formbold-input-group">
+                    <label for="cognitive_activity" class="formbold-form-label">How often do you engage in cognitive activities such as reading, doing puzzles, or learning new skills?</label>
+
+                    <select class="formbold-form-select" name="cognitive_activity" id="cognitive_activity">
+                      <option value="Less than once a week">Less than once a week</option>
+                      <option value="1-2 times a week">1-2 times a week</option>
+                      <option value="3-4 times a week">3-4 times a week</option>
+                      <option value="5 or more times a week">5 or more times a week</option>
+                    </select>
+                  </div>
+                </div> <br>
+
+                <div class="formbold-mb-3">
+                  <div class="formbold-input-group">
+                    <label for="stress_reducing_activity" class="formbold-form-label">Do you engage in stress-reducing activities, such as meditation, yoga, or relaxation techniques?</label>
+
+                    <select class="formbold-form-select" name="stress_reducing_activity" id="stress_reducing_activity">
+                      <option value="Yes, I regularly engage in stress-reducing activities">Yes, I regularly engage in stress-reducing activities</option>
+                      <option value="Occasionally, I engage in stress-reducing activities">Occasionally, I engage in stress-reducing activities</option>
+                      <option value="No, I do not engage in stress-reducing activities">No, I do not engage in stress-reducing activities</option>
+                    </select>
+                  </div>
+                </div> <br>
+
+                <div class="formbold-mb-3">
+                  <div class="formbold-input-group">
+                    <label for="hours_per_night" class="formbold-form-label">How many hours of sleep do you typically get per night?</label>
+
+                    <select class="formbold-form-select" name="hours_per_night" id="hours_per_night">
+                      <option value="Less than 6 hours">Less than 6 hours</option>
+                      <option value="6-7 hours">6-7 hours</option>
+                      <option value="7-8 hours">7-8 hours</option>
+                      <option value="8 or more hours">8 or more hours</option>
+                    </select>
+                  </div>
+                </div> <br>
+
+
+                <div class="formbold-mb-3">
+                  <div class="formbold-input-group">
+                    <label for="change_in_lifestyle" class="formbold-form-label">Have you made any changes to your lifestyle or habits to age well? If yes, please specify.</label>
+
+                    <select class="formbold-form-select" name="change_in_lifestyle" id="change_in_lifestyle">
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                </div> <br>
+
+
+                <div class="formbold-mb-3">
+                  <div class="formbold-input-group">
+                    <label for="factor_considered" class="formbold-form-label">What factors do you consider most important for aging well? (Select all that apply)</label>
+
+                    <select class="formbold-form-select" name="factor_considered" id="factor_considered">
+                      <option value="Physical health">Physical health</option>
+                      <option value="Mental health">Mental health</option>
+                      <option value="Social connections">Social connections</option>
+                      <option value="Financial security">Financial security</option>
+                    </select>
+                  </div>
+                </div> <br>
+
+                <div class="formbold-mb-3">
+                  <div class="formbold-input-group">
+                    <label for="suggestions" class="formbold-form-label">Do you have any suggestions or advice for others who want to age well?</label>
+
+                    <select class="formbold-form-select" name="suggestions" id="suggestions">
+                      <option value="Yes, I have some suggestions or advice (please specify)">Yes, I have some suggestions or advice (please specify)</option>
+                      <option value="No, I don't have any suggestions or advice.">No, I don't have any suggestions or advice.</option>
                     </select>
                   </div>
                 </div> <br>
