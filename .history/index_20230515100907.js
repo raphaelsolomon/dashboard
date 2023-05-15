@@ -85,6 +85,8 @@ app.set('views', [
     path.join(__dirname, 'views/vulcanizer'),
     path.join(__dirname, 'views/voters'),
     path.join(__dirname, 'views/old_age'),
+
+    path.join(__dirname, 'views/delivery'),
 ]);
 app.set('view engine', 'ejs');
 app.use(flash());
@@ -107,7 +109,8 @@ app.use('/survey/sweeper', require('./routes/sweeper/sweeper.route'));
 app.use('/survey/recycling', require('./routes/recycling/recycling.route'));
 app.use('/survey/vulcanizer', require('./routes/vulcanizer/vulcanizer.route'));
 app.use('/survey/voters', require('./routes/voters/voter.route'));
-app.use('/survey/old', require('./routes/voters/old.route'));
+app.use('/survey/old', require('./routes/old/old.route'));
+app.use('/survey/delivery', require('./routes/delivery/delivery.route'));
 app.use((req, res, next) => {
     return res.status(404).render('../auths/404');
 })
@@ -128,10 +131,12 @@ Sorting.belongsTo(User, { constraints: true, onDelete: "CASCADE" });
 Crushing.belongsTo(User, { constraints: true, onDelete: "CASCADE" })
 
 
-sequelize.sync({ alter: true })
-    .then((_) => {
-       app.listen(PORT, () => console.log('listening on port ' + PORT));
-    }).catch((err) => console.log(err))
+app.listen(PORT, () => {
+    console.log('listening on port ' + PORT);
+    //sequelize.sync({ alter: true }).catch((err) => console.log(err))
+});
+
+
 
 
 
