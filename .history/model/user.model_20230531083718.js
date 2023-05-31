@@ -24,6 +24,7 @@ const User = sequelize.define('users', {
     },
     date_of_birth: {
         type: Sequelize.STRING,
+        
     },
     gender: {
         type: Sequelize.STRING,

@@ -24,14 +24,15 @@ const User = sequelize.define('users', {
     },
     date_of_birth: {
         type: Sequelize.STRING,
+        allowNull: tru
     },
     gender: {
         type: Sequelize.STRING,
-        defaultValue: 'Custom'
+        allowNull: false
     },
     address: {
         type: Sequelize.STRING,
-        defaultValue: ''
+        allowNull: false
     },
     trade: {
         type: Sequelize.STRING,

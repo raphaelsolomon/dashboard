@@ -24,6 +24,7 @@ const User = sequelize.define('users', {
     },
     date_of_birth: {
         type: Sequelize.STRING,
+        allowNull: true
     },
     gender: {
         type: Sequelize.STRING,
@@ -31,7 +32,7 @@ const User = sequelize.define('users', {
     },
     address: {
         type: Sequelize.STRING,
-        defaultValue: ''
+        dea
     },
     trade: {
         type: Sequelize.STRING,
