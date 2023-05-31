@@ -1,0 +1,455 @@
+<%- include('./include/header.ejs') %>
+	<div class="main-container">
+        <div class="min-height-200px">
+
+            <div class="pd-20">
+                <h4 class="text-blue h4">-------------</h4>
+            </div>
+           
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 1: Housekeeping</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>How is the general house keeping of the bank? </th>
+                                <th>Are items stored securely in the right places? </th>
+                                <th>Any signs of trailing cable	</th>
+                                <th>Other comment  </th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let i = 0; i <= housekeeping.length - 1; i++) { %>
+                            <tr>
+                                <td class="table-plus"><%= 1 + i %></td>
+                                <td><%= housekeeping[i].general_house_keeping_of_the_bank !== "Good" ? housekeeping[i].general_house_keeping_of_the_bank_where : housekeeping[i].general_house_keeping_of_the_bank %></td>
+                                <td><%= housekeeping[i].items_stored_securely_in_right_place !== "Yes" ? housekeeping[i].items_stored_securely_in_right_place_where : housekeeping[i].items_stored_securely_in_right_place %></td>
+                                <td><%= housekeeping[i].signs_of_trailing_cable !== "Yes" ? housekeeping[i].signs_of_trailing_cable_where : housekeeping[i].signs_of_trailing_cable %></td>
+                                <td><%= housekeeping[i].other_comment %></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <!-- <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a> -->
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                          <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 2: Gangways	</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>Are gangways free of any obstruction?</th>
+                                <th>Are gangways properly lit?</th>
+                                <th>Are gangways wide enough to accommodate the flow of human traffic?</th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let i = 0; i <= gangways.length - 1; i++) { %>
+                            <tr>
+                                <td class="table-plus"><%= 1 + i %></td>
+                                <td><%= gangways[i].are_gang_way_free_from_obs !== "Good" ? gangways[i].are_gang_way_free_from_obs_where : gangways[i].are_gang_way_free_from_obs %></td>
+                                <td><%= gangways[i].are_gang_way_properly_lit !== "Good" ? gangways[i].are_gang_way_properly_lit_where : gangways[i].are_gang_way_properly_lit %></td>
+                                <td><%= gangways[i].wide_enough_to_accomodate_flow_of_humans !== "Good" ? gangways[i].are_gang_way_properly_lit_where : gangways[i].wide_enough_to_accomodate_flow_of_humans %></td>
+                                <td>-------------</td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                          <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+
+           
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 3: Floors</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>Are all floors even, and free from port holes			</th>
+                                <th>During the audit, did you sight cracked floor tilings?  </th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="table-plus">1</td>
+                                <td>-------------</td>
+                                <td>-------------</td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+
+            
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 4: Lighting – General		</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>Are there clear and visible lighting for workers and visitors?	</th>
+                                <th>Does the facility have room for natural lighting?	</th>
+                                <th>Did you sight any faulty bulbs within the facility?	</th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="table-plus">1</td>
+                                <td>-------------</td>
+                                <td>-------------</td>
+                                <td>-------------</td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+
+            
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 5: Stairs and Staircases	</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>Are all guardrails present?	</th>
+                                <th>Did you sight any faulty guardrails	</th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let i = 0; i <= stairs_staircases.length - 1; i++) { %>
+                                <tr>
+                                <td class="table-plus"><%= 1 + i %></td>
+                                <td><%= stairs_staircases[i].are_all_guardrails_present %></td>
+                                <td><%= stairs_staircases[i].did_you_sight_any_faulty_guardrails === "Yes" ? stairs[i].did_you_sight_any_faulty_guardrails_where : "No" %></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <!-- <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a> -->
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                          <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+
+            
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 6: Access and Exit – General	</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>Are all access doors free of obstruction? </th>
+                                <th>Are all exit doors free of obstruction?	</th>
+                                <th>Are safety signs placed at access doors? </th>
+                                <th>Are safety signs placed at exit doors?</th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let i = 0; i <= access_exit.length - 1; i++) { %>
+                            <tr>
+                                <td class="table-plus"><%= 1 + i %></td>
+                                <td><%= access_exit[i].access_door_free_from_obs %></td>
+                                <td><%= access_exit[i].exit_door_free_from_obs %></td>
+                                <td><%= access_exit[i].are_safety_sign_placed_at_access_door %></td>
+                                <td><%= access_exit[i].are_safety_sign_placed_at_exit_door %></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <!-- <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a> -->
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                          <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+
+            
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 7: Safety Signs – General	</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>Are safety signs installed in strategic locations?	</th>
+                                <th>Are safety signs in their right color coding</th>
+                                <th>Are there any signs faded?	</th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let i = 0; i <= safety_signs.length - 1; i++) { %>
+                                <tr>
+                                <td class="table-plus"><%= 1 + i %></td>
+                                <td><%= safety_signs[i].installed_in_strategic_locations %></td>
+                                <td><%= safety_signs[i].signs_in_their_right_color_code %></td>
+                                <td><%= safety_signs[i].are_there_any_sign_faded %></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% } %>
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+
+        
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 8: Fire Precautions</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>Are there fire fighting equipment around the facility?	</th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let i = 0; i <= fire_precaution.length - 1; i++) { %>
+                            <tr>
+                                <td class="table-plus"><%= 1 + i %></td>
+                                <td><%= fire_precaution[i].state %></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <!-- <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a> -->
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+
+        
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 9: Temperature	</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>Is the facility temperature well regulated?	</th>
+                                <th>Are workers exposed to extreme cold? </th>
+                                <th>Are workers exposed to extreme heat?</th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let i = 0; i <= temperature.length - 1; i++) { %>
+                            <tr>
+                                <td class="table-plus"><%= i + 1 %></td>
+                                <td><%= temperature[i].temp_well_regulated %></td>
+                                <td><%= temperature[i].expose_to_extreme_cold %></td>
+                                <td><%= temperature[i].expose_to_extreme_heat %></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <!-- <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a> -->
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+
+        
+        
+        </div>
+
+
+			<div class="footer-wrap pd-20 mb-20 card-box">
+				Auditor | copyright - 2023
+				<a href="https://github.com/dropways" target="_blank">dech</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- js -->
+	<script src="vendors/scripts/core.js"></script>
+	<script src="vendors/scripts/script.min.js"></script>
+	<script src="vendors/scripts/process.js"></script>
+	<script src="vendors/scripts/layout-settings.js"></script>
+	<script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+    <script src="vendors/scripts/dashboard3.js"></script>
+	<!-- buttons for Export datatable -->
+	<script src="src/plugins/datatables/js/dataTables.buttons.min.js"></script>
+	<script src="src/plugins/datatables/js/buttons.bootstrap4.min.js"></script>
+	<script src="src/plugins/datatables/js/buttons.print.min.js"></script>
+	<script src="src/plugins/datatables/js/buttons.html5.min.js"></script>
+	<script src="src/plugins/datatables/js/buttons.flash.min.js"></script>
+	<script src="src/plugins/datatables/js/pdfmake.min.js"></script>
+	<script src="src/plugins/datatables/js/vfs_fonts.js"></script>
+	<!-- Datatable Setting js -->
+	<script src="vendors/scripts/datatable-setting.js"></script>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS" height="0" width="0"
+			style="display: none; visibility: hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+</body>
+
+</html>

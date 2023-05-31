@@ -1,0 +1,186 @@
+<%- include('./include/header.ejs') %>
+	<div class="main-container">
+		<div class="xs-pd-20-10 pd-ltr-20">
+            <div class="title pb-20 pt-20">
+                <h2 class="h3 mb-0">Pictorial evidence </h2>
+            </div>
+			
+			<!-- horizontal Basic Forms Start -->
+			<div class="pd-20 card-box mb-30">
+				<div class="clearfix">
+					<div class="pull-left">
+						<h4 class="text-blue h4">Section 6</h4>
+						<p class="mb-30"></p>
+					</div>
+					 
+				</div>
+				<form  id="picture" class="Pictorial_evidence" m>
+                    <div class="form-group">
+                        <label>Poor housekeeping </label>
+                        <div class="custom-file">
+                            <input type="file" name="poor_house_keeping" class="custom-file-input" />
+                            <label class="custom-file-label">Choose file</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Trailing Cable </label>
+                        <div class="custom-file">
+                            <input type="file" name="trailing_cable" class="custom-file-input" />
+                            <label class="custom-file-label">Choose file</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Fire fighting equipment  </label>
+                        <div class="custom-file">
+                            <input type="file" name="fire_fighting_equipment" class="custom-file-input" />
+                            <label class="custom-file-label">Choose file</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Waste area  </label>
+                        <div class="custom-file">
+                            <input type="file" name="waste_area" class="custom-file-input" />
+                            <label class="custom-file-label">Choose file</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Stairs and staircases </label>
+                        <div class="custom-file">
+                            <input type="file" name="stairs_and_staircase" class="custom-file-input" />
+                            <label class="custom-file-label">Choose file</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Safety signs  </label>
+                        <div class="custom-file">
+                            <input type="file" name="safety_signs" class="custom-file-input" />
+                            <label class="custom-file-label">Choose file</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Workstations </label>
+                        <div class="custom-file">
+                            <input type="file" name="workstations" class="custom-file-input" />
+                            <label class="custom-file-label">Choose file</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Toilets </label>
+                        <div class="custom-file">
+                            <input type="file" name="toilets" class="custom-file-input" />
+                            <label class="custom-file-label">Choose file</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Lighting </label>
+                        <div class="custom-file">
+                            <input type="file" name="lighting" class="custom-file-input" />
+                            <label class="custom-file-label">Choose file</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Muster Point  </label>
+                        <div class="custom-file">
+                            <input type="file" name="muster_point" class="custom-file-input" />
+                            <label class="custom-file-label">Choose file</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Hazard spotted</label>
+                        <div class="custom-file">
+                            <input type="file" name="hazard_spotted" class="custom-file-input" />
+                            <label class="custom-file-label">Choose file</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Front of the bank</label>
+                        <div class="custom-file">
+                            <input type="file" name="front_of_the_bank" class="custom-file-input" />
+                            <label class="custom-file-label">Choose file</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Generator area</label>
+                        <div class="custom-file">
+                            <input type="file" name="generator_area" class="custom-file-input" />
+                            <label class="custom-file-label">Choose file</label>
+                        </div>
+                    </div>
+
+                 
+					<div class="button">
+						<a class="btn btn-primary" onclick="submit()" style="color: #fff;cursor: pointer;">Submit</a>
+					</div>
+				</form>
+                
+			</div>
+			<!-- horizontal Basic Forms End -->
+
+			<div class="footer-wrap pd-20 mb-20 card-box">
+				Auditor | copyright - 2023
+				<a href="https://github.com/dropways" target="_blank">dech</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- js -->
+	<script src="vendors/scripts/core.js"></script>
+	<script src="vendors/scripts/script.min.js"></script>
+	<script src="vendors/scripts/process.js"></script>
+	<script src="vendors/scripts/layout-settings.js"></script>
+	<script src="src/plugins/apexcharts/apexcharts.min.js"></script>
+	<script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+	<script src="vendors/scripts/dashboard3.js"></script>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS" height="0" width="0"
+			style="display: none; visibility: hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<script src="form-request.js"></script>
+	<script>
+				function submit() {
+					let res = confirm('Are you sure to submit?');
+				if(!res)
+					return;
+					let inputFiles = document.querySelectorAll("input[type='file']");
+			let formData = new FormData();
+			inputFiles.forEach((elem,index) => {
+					formData.append("photos[]", elem.files[0]);
+					formData.append("names[]", elem.name);
+				});
+			fetch("http://localhost/dechaudit/ajax-file-upload.php", {
+					method: "POST",
+					body: formData
+				}).then((re) => {
+					return re.json()
+				}).then((re) => {
+					console.log(re)
+				}).catch((error) => {
+					console.log(error)
+				}).finally((er) => {
+
+				})
+		}
+
+		window.addEventListener("load",function () {
+			setFormPayload();
+		})
+	</script>
+</body>
+
+</html>

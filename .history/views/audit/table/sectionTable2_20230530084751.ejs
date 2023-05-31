@@ -1,0 +1,388 @@
+<%- include('./include/header.ejs') %>
+	<div class="main-container">
+        <div class="min-height-200px">
+
+            <div class="pd-20">
+                <h4 class="text-blue h4">Statutory Compliance</h4>
+            </div>
+           
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 1: Reporting of Injuries, Diseases & Dangerous Occurrences</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>Has there been reporting of injuries, diseases & dangerous occurences to the relevant regulatory body?  </th>
+                                <th>Date of last reported incident? </th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i = 0; i <= injuries.length - 1; i++) { %>
+                            <tr>
+                                <td class="table-plus"><%= i + 1%></td>
+                                <td><%= injuries[i].reporting_injuries_regulatory_body %></td>
+                                <td><%= injuries[i].date_reported_incident %></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <!-- <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a> -->
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                          <% } %>
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 2: First Aid</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>Is there a sufficient first aid box in the facility? </th>
+                                <th>What is the last recorded item used in the first aid box? </th>
+                                <th>Is there any expired item in the first aid box </th>
+                                <th>Is there any other first-aid equipment </th>
+                                <th>Is there a form for issued first aid treatment in the first aid box? </th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i = 0; i <= first_aid.length - 1; i++) { %>
+                            <tr>
+                                <td class="table-plus"><%= i + 1%></td>
+                                <td><%= first_aid[i].sufficient_facility %></td>
+                                <td><%= first_aid[i].last_recorded_first_box %></td>
+                                <td><%= first_aid[i].expired_item_first_aid_box %></td>
+                                <td><%= first_aid[i].other_first_aid_equipment %></td>
+                                <td><%= first_aid[i].issued_first_aid_treatment %></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <!-- <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a> -->
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+
+           
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 3: Fire Safety</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>Are fire extinguishers present in the facility? </th>
+                                <th>What classes of fire extinguishers are in the facility? </th>
+                                <th>When is the expiring date of the fire extinguishers within the facility? </th>
+                                <th>When was the fire equipment serviced last?  </th>
+                                <th>which fire equipment</th>
+                                <th>Is there a fire service certificate for the year 2023? </th>
+                                <th>What other fire-fighting equipment are installed in the facility?   </th>
+                                <th>The fire extinguishers within the premises are they hung on the wall? t </th>
+                                <th>Are they free of obstruction?  </th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i = 0; i <= first_safety.length - 1; i++) { %>
+                            <tr>
+                                <td class="table-plus"><%= i + 1%></td>
+                                <td><%= first_safety[i].fire_extinguishers_present %></td>
+                                <td><%= first_safety[i].classes_fire_extinguishers %></td>
+                                <td><%= first_safety[i].expiring_date_fire_extinguishers %></td>
+                                <td><%= first_safety[i].fire_extinguishers_serviced_last %></td>
+                                <td><%= first_safety[i].fire_equipment %></td>
+                                <td><%= first_safety[i].fire_service_certificate %></td>
+                                <td><%= first_safety[i].other_fire_fighting_equipment_installed %></td>
+                                <td><%= first_safety[i].fire_extinguishers_hung_wall %></td>
+                                <td><%= first_safety[i].free_obstruction %></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <!-- <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a> -->
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                          <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+
+            
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 4: Lifting Operations and Equipment</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>Are lifting equipment provided for workers when lifting and conveying items to a designated point?  </th>
+                                <th>Did you sight any lifting equipment? </th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i = 0; i <= lifting.length - 1; i++) { %>
+                            <tr>
+                                <td class="table-plus"><%= 1 + i %></td>
+                                <td><%= lifting[i].lifting_equipment_provided %></td>
+                                <td><%= lifting[i].sight_any_lifting_equipment %></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <!-- <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a> -->
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                          <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+
+            
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 5: Electricity at work</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>Are electrical distribution boxes securely locked? </th>
+                                <th>Did you sight any trailing cables within the facility?</th>
+                                <th>Did you sight any exposed naked wires within the facility? </th>
+                                <th>Did you sight any faulty sockets or switches within the facility? </th>
+                                <th>Has a fire risk assessment been conducted to identify possible fire ignition sources? </th>
+                                <th>What is the last review date of the fire risk assessment?</th>
+                                <th>Ask for the procedure for monitoring electrical appliances. </th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i = 0; i <= electric.length - 1; i++) { %>
+                            <tr>
+                                <td class="table-plus"><%= i + 1 %></td>
+                                <td><%= electric[i].electrical_distribution_boxes_securely_locked %> </td>
+                                <td><%= electric[i].sight_any_trailing_cables === "Yes"? electric[i].if_sighted: "No" %></td>
+                                <td><%= electric[i].sight_any_exposed_naked_wires === "Yes"? electric[i].if_sighted1: "No" %></td>
+                                <td><%= electric[i].faulty_sockets_switches === "Yes"? electric[i].if_sighted2: "No" %></td>
+                                <td><%= electric[i].fire_risk_assessment %></td>
+                                <td><%= electric[i].last_review_date_fire_risk_assessment %></td>
+                                <td><%= electric[i].procedure_monitoring_electrical_appliances %></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <!-- <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a> -->
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                          <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+
+            
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 6: Control of Substances Hazardous to Health</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>Are harmful substances (ill-health) stored in the facility?  </th>
+                                <th>Are cleaning items stored safely within the facility? </th>
+                                <th>During the audit, did cleaners use personal protective equipment to handle cleaning items/activities?  </th>
+                                <th>Is the generator area free of oil spillage on the floor? </th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i = 0; i <= control_substances.length - 1; i++) { %>
+                            <tr>
+                                <td class="table-plus"><></td>
+                                <td>-------------</td>
+                                <td>-------------</td>
+                                <td>-------------</td>
+                                <td>-------------</td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <!-- <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a> -->
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                          <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+
+            
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 7: Display Screen Equipment</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>Is workers' monitor screens' brightness moderate? </th>
+                                <th>Are eye checks conducted by the banks to evaluate the impact of on-screen looking on workers' eyes? </th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="table-plus">1</td>
+                                <td>-------------</td>
+                                <td>-------------</td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+
+        
+        
+        </div>
+
+
+			<div class="footer-wrap pd-20 mb-20 card-box">
+				Auditor | copyright - 2023
+				<a href="https://github.com/dropways" target="_blank">dech</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- js -->
+	<script src="vendors/scripts/core.js"></script>
+	<script src="vendors/scripts/script.min.js"></script>
+	<script src="vendors/scripts/process.js"></script>
+	<script src="vendors/scripts/layout-settings.js"></script>
+	<script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+    <script src="vendors/scripts/dashboard3.js"></script>
+	<!-- buttons for Export datatable -->
+	<script src="src/plugins/datatables/js/dataTables.buttons.min.js"></script>
+	<script src="src/plugins/datatables/js/buttons.bootstrap4.min.js"></script>
+	<script src="src/plugins/datatables/js/buttons.print.min.js"></script>
+	<script src="src/plugins/datatables/js/buttons.html5.min.js"></script>
+	<script src="src/plugins/datatables/js/buttons.flash.min.js"></script>
+	<script src="src/plugins/datatables/js/pdfmake.min.js"></script>
+	<script src="src/plugins/datatables/js/vfs_fonts.js"></script>
+	<!-- Datatable Setting js -->
+	<script src="vendors/scripts/datatable-setting.js"></script>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS" height="0" width="0"
+			style="display: none; visibility: hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+</body>
+
+</html>
