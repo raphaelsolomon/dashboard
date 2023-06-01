@@ -74,7 +74,7 @@
                     <div class="form-group">
                         <label>Toilets </label>
                         <div class="">
-                            <input type="file" name="toilets" class="form-control" required />
+                            <input type="file" name="toilets" class="custom-file-input" required />
                             <label class="custom-file-label">Choose file</label>
                         </div>
                     </div>
@@ -121,7 +121,7 @@
 
                  
 					<div class="button">
-						<a class="btn btn-primary" onclick="submit(this)" style="color: #fff;cursor: pointer;">Submit</a>
+						<a class="btn btn-primary" onclick="submit()" style="color: #fff;cursor: pointer;">Submit</a>
 					</div>
 				</form>
                 
@@ -153,15 +153,10 @@
 
 	<script src="form-request.js"></script>
 	<script>
-		function submit(elem) {
-            let photoErr = false;
+		function submit() {
 			let res = confirm('Are you sure to submit?');
 			if(!res)return;
 			let inputFiles = document.querySelectorAll("input[type='file']");
-
-            elem.disabled = true;
-			elem.innerHTML = "<i class='fa fa-spinner fa-spin'></i>";
-
 			let formData = new FormData();
 			inputFiles.forEach((elem,index) => {
 				formData.append("photos[]", elem.files[0]);
@@ -186,12 +181,12 @@
                 });
 			}).catch((error) => {
 				console.log(error)
-                photoErr = true;
-			}).finally((err) => {
-                elem.disabled = false;
-				elem.innerHTML = "Submit";
-            })
+			})
 		}
+
+		window.addEventListener("load",function () {
+			setFormPayload();
+		})
 	</script>
 </body>
 

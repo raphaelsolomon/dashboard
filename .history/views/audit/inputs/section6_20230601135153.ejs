@@ -154,14 +154,10 @@
 	<script src="form-request.js"></script>
 	<script>
 		function submit(elem) {
-            let photoErr = false;
+            let photoErr = formErr = false;
 			let res = confirm('Are you sure to submit?');
 			if(!res)return;
 			let inputFiles = document.querySelectorAll("input[type='file']");
-
-            elem.disabled = true;
-			elem.innerHTML = "<i class='fa fa-spinner fa-spin'></i>";
-
 			let formData = new FormData();
 			inputFiles.forEach((elem,index) => {
 				formData.append("photos[]", elem.files[0]);
@@ -186,12 +182,14 @@
                 });
 			}).catch((error) => {
 				console.log(error)
-                photoErr = true;
-			}).finally((err) => {
-                elem.disabled = false;
-				elem.innerHTML = "Submit";
-            })
+			}).finally() {
+
+            }
 		}
+
+		window.addEventListener("load",function () {
+			setFormPayload();
+		})
 	</script>
 </body>
 

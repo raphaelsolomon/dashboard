@@ -158,10 +158,8 @@
 			let res = confirm('Are you sure to submit?');
 			if(!res)return;
 			let inputFiles = document.querySelectorAll("input[type='file']");
-
             elem.disabled = true;
-			elem.innerHTML = "<i class='fa fa-spinner fa-spin'></i>";
-
+				elem.innerHTML = "<i class='fa fa-spinner fa-spin'></i>";
 			let formData = new FormData();
 			inputFiles.forEach((elem,index) => {
 				formData.append("photos[]", elem.files[0]);
@@ -192,6 +190,10 @@
 				elem.innerHTML = "Submit";
             })
 		}
+
+		window.addEventListener("load",function () {
+			setFormPayload();
+		})
 	</script>
 </body>
 
