@@ -238,7 +238,7 @@ route.get('/table5', isAuthenticated, async (req, res) => {
     const welfare = await AuditWelFare.findAll({ where: { userId: req.user.id } });
     res.status(200).render('../audit/table/sectionTable5', { alert: [], welfare: welfare, user: user });
 });
-route.get('/intro', isAuthenticated, async (req, res) => {
+route.get('/0intr', isAuthenticated, async (req, res) => {
     const user = await User.findOne({
         where: { id: req.user.id }, include: { model: Audit_User }
     });
