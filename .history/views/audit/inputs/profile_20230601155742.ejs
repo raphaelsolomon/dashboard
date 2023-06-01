@@ -28,7 +28,7 @@
 								<div class="profile-photo">
 									<label for="profile_photo" class="edit-avatar"><i class="fa fa-pencil"></i>
 									<input type="file" hidden id="profile_photo" onchange="submitAvatar(this)"  name="user_image"/>	</label>
-									<img src="<%= user.avatar === "" ? "vendors/images/photo1.jpg" : user.avatar %>" alt="" class="avatar-photo" />
+									<img src="vendors/images/photo1.jpg" alt="" class="avatar-photo" />
 									<div class="modal fade" id="modal" tabindex="-1" role="dialog"
 										aria-labelledby="modalLabel" aria-hidden="true">
 										<div class="modal-dialog modal-dialog-centered" role="document">
@@ -639,22 +639,17 @@
 				formData.append("photos[]", elem.files[0]);
 				formData.append("names[]", elem.name);
 			});
-			fetch("https://dechconsult.com/dechaudit/ajax.php", {
+			fetch("https://dechconsult.com/dechaudit/upload.php", {
 				method: "POST",
 				body: formData
 			}).then((paths) => {
 				return paths.json()
 			}).then((paths) => {
-				$.post("/audit/upload", {path: paths.urls.user_image}, function (data, status) {
-                    if(data === 'success') {
-                         window.location.replace('/audit/profile');
-                    }
-                });
+
 			}).catch((error) => {
 				console.log(error)
+                photoErr = true;
 			}).finally((err) => {
-
-			})
 		}
 
 		document.getElementById("taskForm").addEventListener("submit", (e) => {

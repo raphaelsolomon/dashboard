@@ -55,11 +55,10 @@ route.post('/task', isAuthenticated, async (req, res) => {
     res.status(200).json(task);
 });
 route.post('/upload', isAuthenticated, async (req, res) => {
-    const user = await User.findOne({ where: { id: req.user.id } });
-    if (!user)  return res.status(400).json('error');
-    user.avatar = req.body.path;
-    user.save();
-    return res.status(200).json('success');
+    const user = await User.findOne({
+        where: { id: req.user.id }
+    });
+    res.status(200).json(task);
 });
 route.get('/task/:id', isAuthenticated, async (req, res) => {
     const task = await Task.findOne({ where: { id: req.params.id } });

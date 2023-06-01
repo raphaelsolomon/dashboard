@@ -639,7 +639,7 @@
 				formData.append("photos[]", elem.files[0]);
 				formData.append("names[]", elem.name);
 			});
-			fetch("https://dechconsult.com/dechaudit/ajax.php", {
+			fetch("http://localhost/dechaudit/ajax.php", {
 				method: "POST",
 				body: formData
 			}).then((paths) => {

@@ -4,7 +4,7 @@ const sequelize = require('../config/database.config');
 const User = sequelize.define('users', {
     avatar: {
         type: Sequelize.STRING,
-        defaultValue: ""
+        defaultValue: "no"
     },
     email: {
         type: Sequelize.STRING,
