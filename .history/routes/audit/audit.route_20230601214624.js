@@ -32,9 +32,8 @@ route.get('/profile', isAuthenticated, async (req, res) => {
     });
     res.status(200).render('../audit/inputs/profile', { alert: [], user: user });
 });
-
 route.post('/profile', isAuthenticated, async (req, res) => {
-    const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
+    const user = await User.findOne({where: { id: req.user.id }, include: { model: Audit_User } });
     if (req.body.submit_type === 'user') {
         const { gender } = req.body;
         req.body.gender = gender == 'on' ? 'male' : 'female';
@@ -100,7 +99,7 @@ route.get('/section5', isAuthenticated, async (req, res) => {
     res.status(200).render('../audit/inputs/section5', { alert: [], user: user });
 });
 
-route.get('/section6', isAuthenticated, async (req, res) => {
+route.get('/section6', async (req, res) => {
     const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
     res.status(200).render('../audit/inputs/section6', { alert: [], user: user });
 });

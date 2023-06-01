@@ -18,10 +18,11 @@ localStorage = new LocalStorage('./scratch');
 
 route.get('/', isAuthenticated, async (req, res) => {
     const bank_audit = await AuditBankAudit.findAll({ where: { userId: req.user.id } });
-    const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
+    const user = await User.findOne({
+        where: { id: req.user.id }, include: { model: Audit_User }
+    });
     res.status(200).render('../audit/index', { alert: [], user: user, bank_audit: bank_audit });
 });
-
 route.get('/profile', isAuthenticated, async (req, res) => {
     const user = await User.findOne({
         where: { id: req.user.id }, include: [{
@@ -32,9 +33,10 @@ route.get('/profile', isAuthenticated, async (req, res) => {
     });
     res.status(200).render('../audit/inputs/profile', { alert: [], user: user });
 });
-
 route.post('/profile', isAuthenticated, async (req, res) => {
-    const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
+    const user = await User.findOne({
+        where: { id: req.user.id }, include: { model: Audit_User }
+    });
     if (req.body.submit_type === 'user') {
         const { gender } = req.body;
         req.body.gender = gender == 'on' ? 'male' : 'female';
@@ -54,57 +56,67 @@ route.post('/task', isAuthenticated, async (req, res) => {
 });
 route.post('/upload', isAuthenticated, async (req, res) => {
     const user = await User.findOne({ where: { id: req.user.id } });
-    if (!user) return res.status(400).json('error');
+    if (!user)  return res.status(400).json('error');
     user.avatar = req.body.path;
     user.save();
     return res.status(200).json('success');
 });
 route.get('/task/:id', isAuthenticated, async (req, res) => {
     const task = await Task.findOne({ where: { id: req.params.id } });
+    console.log(task);
     if (task) {
         task.isCompleted = !task.isCompleted;
         return task.save().then((_) => res.status(200).json('success'));
     }
 });
 route.get('/introduction', isAuthenticated, async (req, res) => {
-    const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
+    const user = await User.findOne({
+        where: { id: req.user.id }, include: { model: Audit_User }
+    });
     res.status(200).render('../audit/inputs/introduction', { alert: [], user: user });
 });
-
 route.get('/introduction', isAuthenticated, async (req, res) => {
-    const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
+    const user = await User.findOne({
+        where: { id: req.user.id }, include: { model: Audit_User }
+    });
     res.status(200).render('../audit/inputs/introduction', { alert: [], user: user });
 });
 route.get('/section1', isAuthenticated, async (req, res) => {
-    const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
+    const user = await User.findOne({
+        where: { id: req.user.id }, include: { model: Audit_User }
+    });
     res.status(200).render('../audit/inputs/section1', { alert: [], user: user });
 });
-
 route.get('/section2', isAuthenticated, async (req, res) => {
-    const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
+    const user = await User.findOne({
+        where: { id: req.user.id }, include: { model: Audit_User }
+    });
     res.status(200).render('../audit/inputs/section2', { alert: [], user: user });
 });
-
 route.get('/section3', isAuthenticated, async (req, res) => {
-    const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
+    const user = await User.findOne({
+        where: { id: req.user.id }, include: { model: Audit_User }
+    });
     res.status(200).render('../audit/inputs/section3', { alert: [], user: user });
 });
-
 route.get('/section4', isAuthenticated, async (req, res) => {
-    const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
+    const user = await User.findOne({
+        where: { id: req.user.id }, include: { model: Audit_User }
+    });
     res.status(200).render('../audit/inputs/section4', { alert: [], user: user });
 });
-
 route.get('/section5', isAuthenticated, async (req, res) => {
-    const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
+    const user = await User.findOne({
+        where: { id: req.user.id }, include: { model: Audit_User }
+    });
     res.status(200).render('../audit/inputs/section5', { alert: [], user: user });
 });
-
-route.get('/section6', isAuthenticated, async (req, res) => {
-    const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
+route.get('/section6', async (req, res) => {
+    const user = await User.findOne({
+        where: { id: req.user.id }, include: { model: Audit_User }
+    });
     res.status(200).render('../audit/inputs/section6', { alert: [], user: user });
 });
-
 route.post('/submission', isAuthenticated, async (req, res) => {
     const result = payloadAudit(req);
     console.log(result);
@@ -146,13 +158,17 @@ route.post('/submission', isAuthenticated, async (req, res) => {
     res.status(200).json('success');
 });
 route.get('/preview', isAuthenticated, async (req, res) => {
-    const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
+    const user = await User.findOne({
+        where: { id: req.user.id }, include: { model: Audit_User }
+    });
     res.status(200).render('../audit/inputs/preview', { alert: [], user: user });
 });
 
 //===============================TABLES======================
 route.get('/table1', isAuthenticated, async (req, res) => {
-    const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
+    const user = await User.findOne({
+        where: { id: req.user.id }, include: { model: Audit_User }
+    });
     const mgtsReviews = await AuditMgtReviews.findAll({ where: { userId: req.user.id } });
     const insurance = await AuditInsurance.findAll({ where: { userId: req.user.id } });
     const auditSafetyPolic = await AuditSafetyPolicy.findAll({ where: { userId: req.user.id } });
@@ -208,20 +224,23 @@ route.get('/table3', isAuthenticated, async (req, res) => {
     });
 });
 route.get('/table4', isAuthenticated, async (req, res) => {
-    const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
+    const user = await User.findOne({
+        where: { id: req.user.id }, include: { model: Audit_User }
+    });
     const ladder = await AuditLadder.findAll({ where: { userId: req.user.id } });
     const handtools = await AuditHandTools.findAll({ where: { userId: req.user.id } });
     res.status(200).render('../audit/table/sectionTable4', { alert: [], ladder: ladder, handtools: handtools, user: user });
 });
-
 route.get('/table5', isAuthenticated, async (req, res) => {
-    const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
+    const user = await User.findOne({
+        where: { id: req.user.id }, include: { model: Audit_User }
+    });
     const welfare = await AuditWelFare.findAll({ where: { userId: req.user.id } });
     res.status(200).render('../audit/table/sectionTable5', { alert: [], welfare: welfare, user: user });
 });
-
 route.get('/intro', isAuthenticated, async (req, res) => {
-    const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
+    const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User }
+    });
     const bank_audit = await AuditBankAudit.findAll({ where: { userId: req.user.id } });
     const executive_summary = await AuditExecutiveSummary.findAll({ where: { userId: req.user.id } });
     res.status(200).render('../audit/table/introdction', { alert: [], user: user, bank_audit: bank_audit, executive_summary: executive_summary });

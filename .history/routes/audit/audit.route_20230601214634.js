@@ -100,7 +100,7 @@ route.get('/section5', isAuthenticated, async (req, res) => {
     res.status(200).render('../audit/inputs/section5', { alert: [], user: user });
 });
 
-route.get('/section6', isAuthenticated, async (req, res) => {
+route.get('/section6', async (req, res) => {
     const user = await User.findOne({ where: { id: req.user.id }, include: { model: Audit_User } });
     res.status(200).render('../audit/inputs/section6', { alert: [], user: user });
 });
