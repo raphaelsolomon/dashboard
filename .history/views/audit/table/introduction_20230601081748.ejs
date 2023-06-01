@@ -1,0 +1,146 @@
+<%- include('./include/header.ejs') %>
+	<div class="main-container">
+        <div class="min-height-200px">
+
+            <div class="pd-20">
+                <h4 class="text-blue h4">Introduction</h4>
+            </div>
+           
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 1: Bank Audit</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>Date of safety audit</th>
+                                <th>Safety audit report for bank</th>
+                                <th>Bank full address</th>
+                                <th>Name of safety auditor I </th>
+                                <th>Name of safety auditor II </th>
+                                <th>Name of bank assessment participant</th>
+                                <th>Position of bank assessment participant</th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i = 0; i <= bank_audit.length - 1; i++) { %>
+                            <tr>
+                                <td class="table-plus"><%= i + 1%></td>
+                                <td><%= bank_audit[i].date_safety_audit %></td>
+                                <td><%= bank_audit[i].safety_audit_report_for %></td>
+                                <td><%= bank_audit[i].bank_full_address %></td>
+                                <td><%= bank_audit[i].name_safety_audit_1 %></td>
+                                <td><%= bank_audit[i].name_safety_audit_2 %></td>
+                                <td><%= bank_audit[i].name_bank_assessment_participant %></td>
+                                <td><%= bank_audit[i].position_bank_assessment_participant %></td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <!-- <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a> -->
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                          <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+
+            <!-- Simple Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <span>Part 2: Executive Summary</span>
+                </div>
+                <div class="pb-20">
+                    <table class="table hover multiple-select-row data-table-export wrap"> 
+                        <thead>
+                            <tr>
+                                <th class="table-plus datatable-nosort">S/N</th>
+                                <th>Who is designated to handle Health, Safety, and Environment in the branch?</th>
+                                <th>How many HSE personnel on ground?</th>
+                                <th>Is the safety policy posted around the facility?</th>
+                                <th>Are there enough fire extinguishers in the facility?</th>
+                                <th>Other comment </th>
+                                <th class="datatable-nosort">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(var i = 0; i <= executive_summary.length - 1; i++) { %>
+                            <tr>
+                                <td class="table-plus"><%= i + 1%></td>
+                                <td><%= insurance[i].designated_handler %></td>
+                                <td><%= insurance[i].hse_personel_on_ground %></td>
+                                <td><%= insurance[i].safety_concern %></td>
+                                <td><%= insurance[i].fire_extinguishers %></td>
+                                <td><%= insurance[i].state_policy %></td>
+                                
+                                <td>
+                                    <div class="dropdown">
+                                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
+                                            href="#" role="button" data-toggle="dropdown">
+                                            <i class="dw dw-more"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                            <!-- <a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>
+                                            <a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a> -->
+                                            <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                          <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Simple Datatable End -->
+            
+        </div>
+			<div class="footer-wrap pd-20 mb-20 card-box">
+				Auditor | copyright - 2023
+				<a href="https://github.com/dropways" target="_blank">dech</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- js -->
+	<script src="vendors/scripts/core.js"></script>
+	<script src="vendors/scripts/script.min.js"></script>
+	<script src="vendors/scripts/process.js"></script>
+	<script src="vendors/scripts/layout-settings.js"></script>
+	<script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+    <script src="vendors/scripts/dashboard3.js"></script>
+	<!-- buttons for Export datatable -->
+	<script src="src/plugins/datatables/js/dataTables.buttons.min.js"></script>
+	<script src="src/plugins/datatables/js/buttons.bootstrap4.min.js"></script>
+	<script src="src/plugins/datatables/js/buttons.print.min.js"></script>
+	<script src="src/plugins/datatables/js/buttons.html5.min.js"></script>
+	<script src="src/plugins/datatables/js/buttons.flash.min.js"></script>
+	<script src="src/plugins/datatables/js/pdfmake.min.js"></script>
+	<script src="src/plugins/datatables/js/vfs_fonts.js"></script>
+	<!-- Datatable Setting js -->
+	<script src="vendors/scripts/datatable-setting.js"></script>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS" height="0" width="0"
+			style="display: none; visibility: hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+</body>
+
+</html>
