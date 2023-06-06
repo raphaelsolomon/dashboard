@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="/survey/js/main.js"></script>
+    <title>Dech - survey</title>
+</head>
+
+<body class="bg-light">
+    <div id="google_translate_element"></div>
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table table-hover mt-5 table-bordered">
+                    <thead class="thead-dark text-center">
+                        <tr>
+                            <th style="font-size: 10px;" scope="col">#</th>
+                            <th style="font-size: 10px;" class="col-sm-1">Date</th>
+                            <th style="font-size: 10px;" scope="col">Email</th>
+                            <th style="font-size: 10px;" scope="col">Location </th>
+                            <th style="font-size: 10px;" scope="col">Phone</th>
+                            <th style="font-size: 10px;" scope="col">Age Group</th>
+                            <th style="font-size: 10px;" scope="col">Gender</th>
+                            <th style="font-size: 10px;" scope="col">Educational Level</th>
+                            <th style="font-size: 10px;" scope="col">Occupation</th>
+
+                            <th style="font-size: 10px;" scope="col">How long have you been working as a vulcanizer?</th>
+                            <th style="font-size: 10px;" scope="col">What types of tire services do you offer?</th>
+                            <th style="font-size: 10px;" scope="col">How do you determine the best course of action for repairing a tire?</th>
+                            <th style="font-size: 10px;" scope="col">How do you ensure that tires are balanced correctly after repair?</th>
+                            <th style="font-size: 10px;" scope="col">What is your typical turnaround time for repairing a tire?</th>
+                            <th style="font-size: 10px;" scope="col">Do you sell new or used tires?</th>
+
+                            <th style="font-size: 10px;" scope="col">How do you keep up to date with new tire technologies and repair techniques?</th>
+                            <th style="font-size: 10px;" scope="col">Have you ever had to deal with a difficult customer, and how did you handle the situation?</th>
+                            <th style="font-size: 10px;" scope="col">What steps do you take to ensure the safety of your customers and their vehicles while you are working on their tires?</th>
+                            <th style="font-size: 10px;" scope="col">Do you always wear safety gear while working?</th>
+                            <th style="font-size: 10px;" scope="col">Have you ever received safety training?</th>
+                            <th style="font-size: 10px;" scope="col">Do you have a fire extinguisher in your workspace?</th>
+                            <th style="font-size: 10px;" scope="col">Do you have a first-aid kit in your workspace?</th>
+                            <th style="font-size: 10px;" scope="col">Do you have a proper ventilation system in your workspace?</th>
+                            
+                            <th style="font-size: 10px;" scope="col">Do you sell new or used tires?</th>
+                            <th style="font-size: 10px;" scope="col">Do you sell new or used tires?</th>
+                            <th style="font-size: 10px;" scope="col">Do you sell new or used tires?</th>
+                            <th style="font-size: 10px;" scope="col">Have you ever experienced an accident while working as a vulcanizer?</th>
+                            <th style="font-size: 10px;" scope="col">Do you think there is a need for better safety regulations in the vulcanization industry?</th>
+                            <th style="font-size: 10px;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0; i <=listItems.length - 1; i++ ) {%>
+                            <tr>
+                                <td style="font-size: 10px;" scope="row"><%= i + 1 %></td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].createdAt %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].email %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].address %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].phone %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].age_group %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].gender %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].education %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].occupation %>
+                                </td>
+
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].vulcanizer_experience %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].tires_offered %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].course_of_actions_in_repairing %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].balanced_correctly_after_repair %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].typical_turnaround_time %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].sell_used_old_tires %>
+                                </td>
+
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].new_tire_tech_and_repair_technique %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].deal_difficult_customer %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].customer_safety %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].safety_gear %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].safety_training %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].fire_extinguisher %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].first_aid_kit %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].proper_ventilation_system %>
+                                </td>
+
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].condition_of_tire_before_working %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].inspect_equipment %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].use_torque_wrench %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].experienced_accident_while_working %>
+                                </td>
+                                <td style="font-size: 10px;" scope="row">
+                                    <%= listItems[i].better_safety_regulations %>
+                                </td>
+                               
+
+                                <td style="font-size: 10px;" scope="row">
+                                    <!-- <button class="btn btn-success btn-sm btn-block">Edit</button> -->
+                                    <a href="/OSHsurvey/delete/<%=listItems[i].id%>" class="btn btn-danger btn-sm btn-block">Delete</a>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

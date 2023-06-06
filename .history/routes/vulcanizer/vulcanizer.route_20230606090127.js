@@ -27,7 +27,7 @@ route.post('/users', (req, res) => {
 
 route.get('/table', async(req, res) => {
     const vulcanizers = await  Vulcanizer.findAll();
-    res.status(200).render('../vulcanizer/table.ejs', {listItems: vulcanizers});
+    res.status(200).render('../vulcanizer/table.ejs', {vulcanizer: vulcanizers});
  })
 
 route.get('/table-users', async(req, res) => {

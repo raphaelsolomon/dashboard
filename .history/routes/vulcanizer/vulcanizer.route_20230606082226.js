@@ -25,13 +25,7 @@ route.post('/users', (req, res) => {
         res.status(200).render('../vulcanizer/vulcanizer_users', { alert: msg })).then((err) => console.log(err));
 })
 
-route.get('/table', async(req, res) => {
-    const vulcanizers = await  Vulcanizer.findAll();
-    res.status(200).render('../vulcanizer/table.ejs', {listItems: vulcanizers});
- })
-
-route.get('/table-users', async(req, res) => {
-   const users = await  Vulcanizer_users.findAll();
-   res.status(200).render('../vulcanizer/table_users.ejs', {listItems: users});
+route.get('/table-users', (req, res) => {
+    Vulcanizer_users.findAll()
 })
 module.exports = route;
