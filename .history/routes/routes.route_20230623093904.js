@@ -20,6 +20,7 @@ route.get('/', async (req, res, next) => {
 })
 
 route.get("/home", isAuthenticated, async (req, res, next) => {
+  process.exit();
   if (req.user.role == true && req.user.type === 0) {
     return require("../controller/admin.controller").index(req, res);
   } else if (req.user.role == true && req.user.type === 1) {
@@ -156,7 +157,7 @@ route.get("/add", isAuthenticated, (req, res, next) => {
 
 route.post("/add", isAuthenticated, async (req, res, next) => {
   if (req.user.trade === "Logistics") {
-    //req.user.createLogistic(req.body);
+    req.user.createLogistic(req.body);
   }
   if (req.user.trade === "Plastics") {
     //req.user.createPlastic(req.body);

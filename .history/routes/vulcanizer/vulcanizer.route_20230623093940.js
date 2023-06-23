@@ -10,7 +10,7 @@ route.get('/', (req, res) => {
 route.post('/', (req, res) => {
     const msg = [];
     msg.push({ msg: "Record Successfully Inserted", err: false });
-    return Vulcanizer.create({}).then((vulcanizer) =>
+    return Vulcanizer.create().then((vulcanizer) =>
         res.status(200).render('../vulcanizer/vulcanizer', { alert: msg })).then((err) => console.log(err));
 })
 
@@ -21,7 +21,7 @@ route.get('/users', (req, res) => {
 route.post('/users', (req, res) => {
     const msg = [];
     msg.push({ msg: "Record Successfully Inserted", err: false });
-    return Vulcanizer_users.create({}).then((vulcanizer_users) =>
+    return Vulcanizer_users.create(req.body).then((vulcanizer_users) =>
         res.status(200).render('../vulcanizer/vulcanizer_users', { alert: msg })).then((err) => console.log(err));
 })
 
