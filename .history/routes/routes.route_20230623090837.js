@@ -20,7 +20,7 @@ route.get('/', async (req, res, next) => {
 })
 
 route.get("/home", isAuthenticated, async (req, res, next) => {
-  process.exit();
+  
   if (req.user.role == true && req.user.type === 0) {
     return require("../controller/admin.controller").index(req, res);
   } else if (req.user.role == true && req.user.type === 1) {
