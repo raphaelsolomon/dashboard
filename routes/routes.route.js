@@ -20,46 +20,47 @@ route.get('/', async (req, res, next) => {
 })
 
 route.get("/home", isAuthenticated, async (req, res, next) => {
-  if (req.user.role == true && req.user.type === 0) {
-    return require("../controller/admin.controller").index(req, res);
-  } else if (req.user.role == true && req.user.type === 1) {
-    return require("../controller/admin.plastic.controller").index(req, res);
-  } else {
-    if (req.user.trade === "Audit") {
-      return res.redirect('/audit/')
-    }
-    if (req.user.trade === "hse") {
-      return res.redirect('/admin/hse')
-    }
-    if (req.user.trade === "Logistics") {
-      return require("../controller/logistic.controller").logisticIndex(
-        req,
-        res,
-        next
-      );
-    }
-    if (req.user.trade === "Plastics") {
-      return require("../controller/plastic.controller").plasticIndex(
-        req,
-        res,
-        next
-      );
-    }
-    if (req.user.trade === "Commodity") {
-      return require("../controller/commodity.controller").commodityIndex(
-        req,
-        res,
-        next
-      );
-    }
-    if (req.user.trade === "Wemabod") {
-      return require("../controller/wemabod.controller").wemabodIndex(
-        req,
-        res,
-        next
-      );
-    }
-  }
+  //res.status(200).redirect('/')
+  // if (req.user.role == true && req.user.type === 0) {
+  //   return require("../controller/admin.controller").index(req, res);
+  // } else if (req.user.role == true && req.user.type === 1) {
+  //   return require("../controller/admin.plastic.controller").index(req, res);
+  // } else {
+  //   if (req.user.trade === "Audit") {
+  //     return res.redirect('/audit/')
+  //   }
+  //   if (req.user.trade === "hse") {
+  //     return res.redirect('/admin/hse')
+  //   }
+  //   if (req.user.trade === "Logistics") {
+  //     return require("../controller/logistic.controller").logisticIndex(
+  //       req,
+  //       res,
+  //       next
+  //     );
+  //   }
+  //   if (req.user.trade === "Plastics") {
+  //     return require("../controller/plastic.controller").plasticIndex(
+  //       req,
+  //       res,
+  //       next
+  //     );
+  //   }
+  //   if (req.user.trade === "Commodity") {
+  //     return require("../controller/commodity.controller").commodityIndex(
+  //       req,
+  //       res,
+  //       next
+  //     );
+  //   }
+  //   if (req.user.trade === "Wemabod") {
+  //     return require("../controller/wemabod.controller").wemabodIndex(
+  //       req,
+  //       res,
+  //       next
+  //     );
+  //   }
+  // }
 });
 
 route.get("/recent/:id", isAuthenticated, async (req, res, next) => {
